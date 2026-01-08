@@ -1,0 +1,542 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Výukové kartičky v NotebookLM - flashcards pro memorování a spaced repetition">
+    <title>Výukové kartičky - NotebookLM pro Učitele</title>
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <link rel="stylesheet" href="../sidebar.css?v=3">
+    <link rel="stylesheet" href="../chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="../assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+                <div class="sidebar-item">
+                    <a href="../index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+                <div class="sidebar-item">
+                    <a href="../use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    </nav> <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="../index.html" class="nav-link nav-link-home">🏠 Domů</a>
+            <a href="#tips" class="nav-link">💡 Tipy</a>
+            <a href="#use-cases" class="nav-link">📚 Use Cases</a>
+            <a href="../use-cases.html#flashcards" class="nav-link">🗂️ Katalog</a>
+        </div>
+    </nav>
+
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-hero-icon">🃏</div>
+            <h1>Výukové kartičky</h1>
+            <p class="module-hero-description">Vytváří kartičky pro učení (flashcards) z vašich zdrojů. Perfektní pro
+                memorování a aktivní opakování.</p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- Tips Section -->
+        <div class="category-section" id="tips">
+            <div class="category-header">
+                <span class="category-icon">💡</span>
+                <h2 class="category-title">Tipy pro kartičky</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h3 class="card-title">Počet kartiček</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Specifikuj počet: "Vytvoř 20 kartiček" je ideální na jednu session. Pro celé téma můžeš
+                            chtít 50+.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎚️</div>
+                        <h3 class="card-title">Typ otázek</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>"Pouze definice" / "Koncepty a jejich vysvětlení" / "Otázka-odpověď" - upřesni formát podle
+                            potřeby.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">⭐</div>
+                        <h3 class="card-title">Obtížnost</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>"Základní termíny" pro začátečníky vs "Komplexní koncepty vyžadující analýzu" pro pokročilé.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workflow -->
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-icon">⚡</span>
+                <h2 class="category-title">Doporučený workflow</h2>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Krok za krokem tvorby kartiček:</h3>
+                <ol class="list-padded-spaced">
+                    <li><strong>Nahraj materiály:</strong> Učebnice, poznámky nebo texty k učení</li>
+                    <li><strong>Specifikuj formát:</strong> "Otázka-odpověď" nebo "Termín-definice"</li>
+                    <li><strong>Urči počet:</strong> 20-30 kartiček je ideální na session</li>
+                    <li><strong>Generuj:</strong> Použij hotový prompt nebo vlastní instrukci</li>
+                    <li><strong>Export:</strong> Zkopíruj do Anki, Quizlet nebo vlastního systému</li>
+                </ol>
+
+                <div class="example-box" class="mt-1-5">
+                    <div class="example-title">🎯 Pro tip</div>
+                    <p>Kombinuj základní a pokročilé kartičky - nejprve memoruj definice, pak procvičuj aplikaci v
+                        kontextu. Spaced repetition funguje nejlépe s pravidelným opakováním!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use Cases Section -->
+        <div class="category-section" id="use-cases">
+            <div class="category-header">
+                <span class="category-icon">📚</span>
+                <h2 class="category-title">Use Cases - Praktické příklady použití</h2>
+            </div>
+        </div>
+
+        <!-- Use Case #7 -->
+        <div class="use-case-card" id="use-case-7">
+            <div class="use-case-header">
+                <span class="use-case-number">#7</span>
+                <h3 class="use-case-title">Tvorba procvičovacích kartiček</h3>
+                <p class="use-case-subtitle">Flashcards pro aktivní učení</p>
+            </div>
+
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <div class="use-case-content">
+                    <p>Vytváří kartičky ve formátu otázka/odpověď ideální pro aktivní učení, memorování faktů a spaced
+                        repetition.</p>
+                </div>
+            </div>
+
+            <div class="use-case-section">
+                <h4>🎯 Perfektní pro</h4>
+                <div class="use-case-content">
+                    <ul>
+                        <li>Memorování faktů a definic</li>
+                        <li>Aktivní opakování (spaced repetition)</li>
+                        <li>Přípravu na zkoušky</li>
+                        <li>Procvičování základních konceptů</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Hotový prompt</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">Z nahraných zdrojů vytvoř 20 flashcards ve struktuře otázka/odpověď. Přidej i
+                    obtížnější variantu otázky.</div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📝 Praktický příklad</div>
+                <p><strong>Scénář:</strong> Žáci potřebují procvičovat pojmy z dějepisu.</p>
+                <p><strong>Workflow:</strong></p>
+                <ol>
+                    <li>Nahraj kapitolu o 19. století</li>
+                    <li>Prompt: "Z nahraných zdrojů vytvoř 20 flashcards pojmů ve struktuře: termín → definice. Přidej i
+                        obtížnější variantu s kontextovou otázkou."</li>
+                    <li>Výstup: Karty typu "Co je nationalismus?" + těžší "Jak se nationalismus projevil v revolucích
+                        1848?"</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Use Case #26 -->
+        <div class="use-case-card" id="use-case-26">
+            <div class="use-case-header">
+                <span class="use-case-number">#26</span>
+                <h3 class="use-case-title">Generování slovní zásoby pro jazyky</h3>
+                <p class="use-case-subtitle">Tematické seznamy slov s příklady</p>
+            </div>
+
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <div class="use-case-content">
+                    <p>Vytváří tematicky uspořádanou slovní zásobu s příklady vět a typickými chybami studentů.</p>
+                </div>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Hotový prompt</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">Vytvoř seznam 40 slov rozdělených do tematických kategorií. Ke každému příklad
+                    věty a běžnou chybu studentů.</div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📝 Praktický příklad</div>
+                <p><strong>Pro anglický jazyk:</strong></p>
+                <p>Prompt: "Vytvoř 40 slov z tématu 'Family & Relationships' rozdělených do kategorií (příbuzenstvo,
+                    vztahy, vlastnosti). Ke každému slovu příklad věty a běžnou chybu českých studentů."</p>
+                <p><strong>Výstup:</strong></p>
+                <ul>
+                    <li>Slovo: "nephew"</li>
+                    <li>Příklad: "My nephew is visiting us next week"</li>
+                    <li>Běžná chyba: Záměna "nephew" a "niece"</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TOP 10 Use Cases Section -->
+        <section id="top-use-cases" class="section">
+            <div class="section-header">
+                <h2 class="section-title">🌟 TOP 10 Nejužitečnějších Use Cases pro Kartičky</h2>
+                <p class="mb-1-5">Nejpraktičtější způsoby vytváření flashcards pro Quizlet, Anki nebo
+                    tisk.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📖</div>
+                        <h3 class="card-title">Základní pojmy (Q/A)</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Rychlé učení slovíček</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř 20 flashcards v podobě otázka/odpověď podle nahraných
+                                zdrojů.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🌍</div>
+                        <h3 class="card-title">Cizí slovíčka v kontextu</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Jazykovou výuku</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř kartičky, kde na jedné straně je cizí slovo a na druhé
+                                straně jeho český překlad + věta, ve které je slovo použito.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔢</div>
+                        <h3 class="card-title">Vzorce a veličiny</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Fyziku, chemii, matematiku</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř kartičky: Název veličiny (přední strana) – Značka, základní
+                                jednotka a vzorec (zadní strana).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔗</div>
+                        <h3 class="card-title">Příčina a následek</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Historii, biologii</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř logické kartičky. Otázka: Co způsobilo [jev]? Odpověď:
+                                Vysvětlení příčiny.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🗺️</div>
+                        <h3 class="card-title">Hlavní města a státy</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Zeměpis</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř klasické kartičky Stát – Hlavní město ze seznamu v textu.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📚</div>
+                        <h3 class="card-title">Odborné definice</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Všechny předměty</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř kartičky pro přesné definování. Přední strana: Pojem. Zadní
+                                strana: Přesná odborná definice.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">✓</div>
+                        <h3 class="card-title">Pravda/Nepravda tvrzení</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Testování znalostí</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř sadu tvrzení. Zadní strana: ANO/NE a stručné vysvětlení
+                                proč.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📜</div>
+                        <h3 class="card-title">Literární postavy</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Výuku literatury</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř kartičky postav. Přední strana: Popis chování a role v
+                                příběhu. Zadní strana: Jméno postavy a název knihy.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">✍️</div>
+                        <h3 class="card-title">Gramatická pravidla</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Jazykovou výuku</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř kartičky pravidel. Přední strana: Název jevu (např. Přítomný
+                                průběhový čas). Zadní strana: Kdy se používá a jak se tvoří.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔄</div>
+                        <h3 class="card-title">Synonyma a Antonyma</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Rozšíření slovní zásoby</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř kartičky slovní zásoby. Přední strana: Slovo. Zadní strana:
+                                2 synonyma a 1 antonymum.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-gradient-box">
+                <strong>🔗 Chcete ještě víc?</strong>
+                <p class="mt-0-5">Máme pro vás připravených celkem <strong>30 způsobů použití</strong>
+                    flashcards! Prohlédněte si kompletní katalog včetně všech promptů.</p>
+                <a href="../use-cases.html#karticky" class="cta-gradient-link">
+                    📚 Zobrazit všech 30 Flashcard Use Cases →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | Výukové kartičky 📚</p>
+        <p class="footer-text">
+            <a href="../index.html#studio-moduly" class="link-primary">Zpět na
+                hlavní průvodce
+                ↑</a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../sidebar.js"></script>
+    <script src="../chatbot-knowledge.js"></script>
+    <script src="../chatbot.js"></script>
+</body>
+
+</html>

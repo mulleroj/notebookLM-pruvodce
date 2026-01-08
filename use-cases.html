@@ -1,0 +1,3541 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kompletní katalog 30 use cases NotebookLM pro učitele - hotové prompty pro přípravy, hodnocení, administrativu">
+    <title>30 Use Cases | NotebookLM pro Učitele</title>
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="sidebar.css?v=3">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar use-cases-page">
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="assets/icons/special/sidebar-logo.png" alt="NotebookLM"
+                    style="width: 100%; height: auto;"></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+                <div class="sidebar-item">
+                    <a href="index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="modules/audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+                <div class="sidebar-item">
+                    <a href="use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+    <!--
+ Sticky Category Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="index.html" class="nav-link nav-link-home">🏠 Domů</a>
+            <a href="#priprava" class="nav-link">📚 Příprava</a>
+            <a href="#hodnoceni" class="nav-link">✅ Hodnocení</a>
+            <a href="#administrativa" class="nav-link">📊 Admin</a>
+            <a href="#podpora" class="nav-link">🎯 Podpora</a>
+            <a href="#kreativita" class="nav-link">🎨 Kreativita</a>
+
+            <!-- Studio Dropdown -->
+            <div class="nav-dropdown">
+                <a href="#studio" class="nav-link dropdown-trigger">
+                    🎬 Studio <span class="dropdown-arrow">▼</span>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="#studio" class="dropdown-item">🎧 Audio</a>
+                    <a href="#video" class="dropdown-item">🎥 Video</a>
+                    <a href="#flashcards" class="dropdown-item">🃏 Flashcards</a>
+                    <a href="#quiz" class="dropdown-item">❓ Quiz</a>
+                    <a href="#infografika" class="dropdown-item">🎨 Infografika</a>
+                    <a href="#prezentace" class="dropdown-item">📽️ Prezentace</a>
+                    <a href="#pokrocile" class="dropdown-item">🔬 Pokročilé</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>192 Způsobů Jak Využít NotebookLM</h1>
+            <p>Kompletní katalog praktických scénářů pro učitele - všechny s hotovými prompty připravenými ke
+                zkopírování a okamžitému použití.</p>
+        </div>
+    </section>
+
+    <main class="container">
+
+        <!-- Category: Příprava výuky -->
+        <div class="category-section" id="priprava" class="section-spacing">
+            <div class="category-header">
+                <span class="category-icon">📚</span>
+                <h2 class="category-title">Příprava výuky</h2>
+                <span class="category-count">5 use cases</span>
+            </div>
+
+            <!-- Use Case 1 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#1</span>
+                    <h3 class="use-case-title">Příprava hodin na míru třídě</h3>
+                    <p class="use-case-subtitle">Automaticky generované přípravy s úrovněmi obtížnosti</p>
+                </div>
+
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <div class="use-case-content">
+                        <p>Automaticky generované přípravy s úrovněmi obtížnosti, aktivitami a rozšířením pro rychlejší
+                            žáky.</p>
+                    </div>
+                </div>
+
+                <div class="use-case-section">
+                    <h4>🎯 Jak použít</h4>
+                    <div class="use-case-content">
+                        <p>Nahraj učebnici, sešit, školní vzdělávací plán, vlastní poznámky.</p>
+                    </div>
+                </div>
+
+                <div class="use-case-section">
+                    <h4>📤 Typické výstupy</h4>
+                    <div class="use-case-content">
+                        <p>Hotový plán A–Z pro 45–90 min strukturované hodiny.</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř kompletní přípravu na 45 minut na téma [téma] podle nahraných
+                        zdrojů. Uveď: cíle, strukturu hodiny, časování, aktivity pro tři úrovně žáků, materiály, domácí
+                        úkol a reflexní otázky.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 3 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#3</span>
+                    <h3 class="use-case-title">Generování pracovních listů pro různé úrovně</h3>
+                    <p class="use-case-subtitle">Diferencované materiály pro všechny žáky</p>
+                </div>
+
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <div class="use-case-content">
+                        <p>Diferencované pracovní listy na tři úrovně obtížnosti ze stejného tématu.</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř tři verze pracovního listu: základní, střední, rozšířenou. Každá
+                        verze musí vycházet z nahraných zdrojů a obsahovat jiný způsob procvičení.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 4 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#4</span>
+                    <h3 class="use-case-title">Tvorba prezentací (Gamma-ready outline)</h3>
+                    <p class="use-case-subtitle">Osnova prezentace připravená k použití</p>
+                </div>
+
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <div class="use-case-content">
+                        <p>Struktura prezentace s obsahem slidů, vizuálními návrhy a texty připravenými pro nástroje
+                            jako Gamma.</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni osnovu prezentace o 10 slidech na téma [téma]. Struktura: claim,
+                        vizuální návrh, text do slidů, návrh grafiky.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 9 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#9</span>
+                    <h3 class="use-case-title">30denní studijní plán</h3>
+                    <p class="use-case-subtitle">Dlouhodobý plán pro zvládnutí tématu</p>
+                </div>
+
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <div class="use-case-content">
+                        <p>Strukturovaný měsíční plán s denními úkoly, testy a miniprojekty.</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Zpracuj 30denní studijní plán pro zvládnutí tématu [téma]: týdenní cíle,
+                        denní úkoly, testy, miniprojekty.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 15 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#15</span>
+                    <h3 class="use-case-title">Tvorba projektové aktivity</h3>
+                    <p class="use-case-subtitle">Komplexní projektová výuka</p>
+                </div>
+
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <div class="use-case-content">
+                        <p>Dvoutýdenní projektová výuka s kroky, výstupy a kritérii hodnocení.</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř projektovou výuku na 2 týdny, téma [téma]. Uveď kroky, výstupy,
+                        prezentaci, kritéria hodnocení.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Hodnocení a zpětná vazba -->
+        <div class="category-section" id="hodnoceni">
+            <div class="category-header">
+                <span class="category-icon">✅</span>
+                <h2 class="category-title">Hodnocení a zpětná vazba</h2>
+                <span class="category-count">5 use cases</span>
+            </div>
+
+            <!-- Use Case 2 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#2</span>
+                    <h3 class="use-case-title">Tvorba testů a kvízů (včetně verzí A/B)</h3>
+                    <p class="use-case-subtitle">Automatické generování testů z vašich materiálů</p>
+                </div>
+
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <div class="use-case-content">
+                        <p>NotebookLM vezme tvoje texty a vygeneruje testové otázky různých typů včetně verzí A a B.</p>
+                    </div>
+                </div>
+
+                <div class="use-case-section">
+                    <h4>🎯 Jak použít</h4>
+                    <div class="use-case-content">
+                        <p>Nahraj kapitolu nebo výklad, který chceš testovat.</p>
+                    </div>
+                </div>
+
+                <div class="use-case-section">
+                    <h4>📤 Typické výstupy</h4>
+                    <div class="use-case-content">
+                        <p>Test A, Test B, klíč odpovědí, bodování.</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Zpracuj test na téma [téma]: 10 otázek (5 otevřených, 5 uzavřených), verze
+                        A/B, klíč, bodování, a bonusové úlohy pro rychlejší žáky.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 10 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#10</span>
+                    <h3 class="use-case-title">Hodnocení písemek – vysvětlení chyb</h3>
+                    <p class="use-case-subtitle">Konstruktivní zpětná vazba k chybám žáků</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Analyzuj tyto odpovědi žáka a na základě zdrojů vysvětli: 1) kde došlo k
+                        chybě, 2) proč, 3) jak by to měl žák příště udělat lépe.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 11 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#11</span>
+                    <h3 class="use-case-title">Tvorba slovní zpětné vazby</h3>
+                    <p class="use-case-subtitle">Komplexní slovní hodnocení žáka</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř slovní hodnocení žáka, zaměřené na vědomosti, dovednosti, aktivitu a
+                        doporučení do budoucna.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 12 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#12</span>
+                    <h3 class="use-case-title">Generování individualizovaných domácích úkolů</h3>
+                    <p class="use-case-subtitle">Úkoly přizpůsobené potřebám žáka</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni domácí úkol pro žáka, který má slabší základy v oblasti [konkrétní
+                        slabina]. Uveď úlohy, vysvětlení a kontrolní otázky.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 28 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#28</span>
+                    <h3 class="use-case-title">Monitoring pokroku žáků</h3>
+                    <p class="use-case-subtitle">Souhrn pokroku a doporučení</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Z analyzovaných dokumentů vytvoř souhrn pokroku žáka: silné stránky, slabé,
+                        doporučení, varovné signály.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Administrativa -->
+        <div class="category-section" id="administrativa">
+            <div class="category-header">
+                <span class="category-icon">📊</span>
+                <h2 class="category-title">Administrativa</h2>
+                <span class="category-count">5 use cases</span>
+            </div>
+
+            <!-- Use Case 16 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#16</span>
+                    <h3 class="use-case-title">Poradní manuály pro třídnictví</h3>
+                    <p class="use-case-subtitle">Rozhodovací stromky pro různé situace</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Na základě školního řádu a dalších dokumentů vytvoř rozhodovací strom pro
+                        situaci [situace]: co musím, co mohu, co nesmím.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 17 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#17</span>
+                    <h3 class="use-case-title">Tvorba individuálního vzdělávacího plánu (IVP)</h3>
+                    <p class="use-case-subtitle">Plán pro žáky se specifickými potřebami</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni IVP pro žáka se specifikem [druh obtíže]: cíle, metody, úpravy
+                        hodnocení, podpůrná opatření.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 18 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#18</span>
+                    <h3 class="use-case-title">Tvorba administrativy – přehledy, tabulky, osnovy</h3>
+                    <p class="use-case-subtitle">Strukturované přehledové dokumenty</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř přehledový dokument pro učitele: klíčové oblasti, povinnosti,
+                        termíny, legislativní rámec.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 20 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#20</span>
+                    <h3 class="use-case-title">Porada → čistý zápis + akční body</h3>
+                    <p class="use-case-subtitle">Strukturovaný zápis z porady</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Z této nahrané porady vytvoř: 1) shrnutí, 2) úkoly s odpovědností, 3)
+                        rizika, 4) věci k rozhodnutí.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 24 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#24</span>
+                    <h3 class="use-case-title">Tvorba checklistů (před hodinou / po hodině)</h3>
+                    <p class="use-case-subtitle">Praktické kontrolní seznamy</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř praktický checklist pro učitele na téma [téma]. Nekomplikuj, jen
+                        jasné kroky.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Podpora žáků -->
+        <div class="category-section" id="podpora">
+            <div class="category-header">
+                <span class="category-icon">🎯</span>
+                <h2 class="category-title">Podpora žáků</h2>
+                <span class="category-count">7 use cases</span>
+            </div>
+
+            <!-- Use Case 6 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#6</span>
+                    <h3 class="use-case-title">Shrnutí kapitoly → krátká verze pro žáky</h3>
+                    <p class="use-case-subtitle">Zhuštěné shrnutí učiva na jednu stránku</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř shrnutí učiva max na 1 stranu A4. Doplň příklady, typické chyby žáků
+                        a jednu metaforu, která pomůže pochopení.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 13 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#13</span>
+                    <h3 class="use-case-title">Příprava inkluzivních úloh (Autík-style)</h3>
+                    <p class="use-case-subtitle">Úlohy pro žáky se specifickými potřebami</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř úlohy pro žáka se SPU (typ specifikuj). Uprav text, strukturu a
+                        způsob zadání tak, aby byly plně inkluzivní.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 14 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#14</span>
+                    <h3 class="use-case-title">Příprava úloh pro bystré žáky ("rychlíci")</h3>
+                    <p class="use-case-subtitle">Rozšiřující úlohy pro nadané žáky</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni 5 rozšiřujících úloh k tématu [téma], které jdou do hloubky a
+                        podporují kreativní myšlení.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 21 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#21</span>
+                    <h3 class="use-case-title">Tvorba písemné práce / eseje jako vzor</h3>
+                    <p class="use-case-subtitle">Vzorová esej pro žáky</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Podle zdrojů vytvoř vzorovou esej na téma [téma] se strukturou
+                        úvod–tělo–závěr a argumenty.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 23 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#23</span>
+                    <h3 class="use-case-title">Koučink psaní – oprava textů žáků</h3>
+                    <p class="use-case-subtitle">Konstruktivní zpětná vazba k textům</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Oprav text žáka podle nahraných zdrojů. Uveď vysvětlení oprav, posily a
+                        návrhy ke zlepšení.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 29 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#29</span>
+                    <h3 class="use-case-title">Vysvětlení složité látky → příměry</h3>
+                    <p class="use-case-subtitle">Vysvětlení pomocí metafor</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vysvětli [těžké téma] třemi různými metaforami, jednou pro slabší žáky,
+                        jednou technickou, jednou humornou.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 30 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#30</span>
+                    <h3 class="use-case-title">Učitelský "mozkový archiv"</h3>
+                    <p class="use-case-subtitle">Váš osobní učitelský manuál</p>
+                </div>
+
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <div class="use-case-content">
+                        <p>Notebook, kde máš vše — přípravy, četby, zákony, scénáře, reflexe, nápady.</p>
+                    </div>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř z těchto zdrojů můj osobní učitelský manuál: principy, styl vedení
+                        hodin, přístup k žákům, zásady hodnocení, krizové situace a co v nich dělat.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Kreativita a materiály -->
+        <div class="category-section" id="kreativita">
+            <div class="category-header">
+                <span class="category-icon">🎨</span>
+                <h2 class="category-title">Kreativita a materiály</h2>
+                <span class="category-count">8 use cases</span>
+            </div>
+
+            <!-- Use Case 5 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#5</span>
+                    <h3 class="use-case-title">Tvorba plakátů a infografik (Nano Banana prompts)</h3>
+                    <p class="use-case-subtitle">Detailní prompty pro AI generátory obrázků</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř detailní Nano Banana prompt pro realistickou školní infografiku na
+                        téma [téma]. Uveď kompozici, styl, barevnost, zakázané prvky a titulky.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 7 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#7</span>
+                    <h3 class="use-case-title">Tvorba procvičovacích kartiček</h3>
+                    <p class="use-case-subtitle">Flashcards pro aktivní učení</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Z nahraných zdrojů vytvoř 20 flashcards ve struktuře otázka/odpověď. Přidej
+                        i obtížnější variantu otázky.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 8 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#8</span>
+                    <h3 class="use-case-title">Tvorba myšlenkových map</h3>
+                    <p class="use-case-subtitle">Hierarchická vizualizace tématu</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Syntetizuj celé téma [téma] do hierarchické myšlenkové mapy: hlavní uzly,
+                        poduzly, příklady.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 19 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#19</span>
+                    <h3 class="use-case-title">Přepis hlasových poznámek učitele</h3>
+                    <p class="use-case-subtitle">Z hlasu na strukturovaný text</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Z mých hlasových poznámek vytvoř čistý přehled: úkoly, nápady, otevřené
+                        otázky, doporučení, rizika.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 22 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#22</span>
+                    <h3 class="use-case-title">Příprava maturitních otázek</h3>
+                    <p class="use-case-subtitle">Komplexní maturitní příprava</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř maturitní přípravu na téma [téma]: strukturovaný výklad, příklady,
+                        otázky, chyby studentů.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 25 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#25</span>
+                    <h3 class="use-case-title">Srovnávací analýzy učebnic</h3>
+                    <p class="use-case-subtitle">Porovnání různých zdrojů</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Porovnej dvě nahrané učebnice podle vysvětlování tématu [téma]. Uveď:
+                        rozdíly, výhody, nevýhody.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 26 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#26</span>
+                    <h3 class="use-case-title">Generování slovní zásoby pro jazyky</h3>
+                    <p class="use-case-subtitle">Tematické seznamy slov s příklady</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř seznam 40 slov rozdělených do tematických kategorií. Ke každému
+                        příklad věty a běžnou chybu studentů.</div>
+                </div>
+            </div>
+
+            <!-- Use Case 27 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#27</span>
+                    <h3 class="use-case-title">Tvorba herních aktivit</h3>
+                    <p class="use-case-subtitle">Edukativní hry pro hodinu</p>
+                </div>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni 5 třídních miniher na téma [téma]. Každá hra musí obsahovat cíl,
+                        postup, materiály a scoring.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Audio Přehled -->
+        <div class="category-section" id="studio">
+            <div class="category-header">
+                <span class="category-icon">🎧</span>
+                <h2 class="category-title">Audio Přehled</h2>
+                <span class="category-count">30 způsobů použití</span>
+            </div>
+            <p class="mb-1-5">NotebookLM umí vygenerovat "podcast", kde dva moderátoři diskutují o
+                vašich materiálech. Skvělé pro poslech cestou do práce nebo pro studenty, kteří raději poslouchají než
+                čtou.</p>
+
+            <!-- Audio Use Case 1 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #1</span>
+                    <h3 class="use-case-title">Rychlá příprava na hodinu cestou do školy</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř krátké audio shrnutí tématu [téma] do 60 sekund, zaměřené na hlavní
+                        principy a časté chyby studentů.</div>
+                </div>
+            </div>
+
+            <!-- Audio Use Case 2 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #2</span>
+                    <h3 class="use-case-title">Audio komentář k písemkám</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Převeď hodnocení těchto odpovědí do 90s audio vysvětlení: co je správně, co
+                        je špatně a co doporučuji příště.</div>
+                </div>
+            </div>
+
+            <!-- Audio Use Case 3 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #3</span>
+                    <h3 class="use-case-title">Připomenutí k zítřejší hodině</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř audio noticku pro zítřejší hodinu: cíle, aktivity, časové odhady.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio Use Case 4 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #4</span>
+                    <h3 class="use-case-title">Audio varianta pracovního listu pro žáky se SPU</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Převeď tento pracovní list do srozumitelného audio výkladu pro žáka s
+                        dyslexií. Zjednoduš strukturu, ponech obsah.</div>
+                </div>
+            </div>
+
+            <!-- Audio Use Case 5 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #5</span>
+                    <h3 class="use-case-title">Audio verze tematického výkladu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř 2min audio výklad tématu [téma] ve stylu jasného učitelského
+                        vysvětlování.</div>
+                </div>
+            </div>
+
+            <!-- Audio Use Case 6 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #6</span>
+                    <h3 class="use-case-title">Audio vysvětlení domácího úkolu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Převeď tento DÚ do jasného audio vysvětlení pro žáka, který tomu nerozumí.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio Use Case 7 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #7</span>
+                    <h3 class="use-case-title">Audio reflexe po hodině</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Z mých poznámek vytvoř 1min reflexi: co fungovalo, co zlepšit, co zkusit
+                        příště.</div>
+                </div>
+            </div>
+
+            <!-- Audio Use Case 8 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #8</span>
+                    <h3 class="use-case-title">Audio shrnutí dlouhého textu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Zjednoduš tuto kapitolu do 2min audio shrnutí: hlavní myšlenky, příklady,
+                        jedna metafora.</div>
+                </div>
+            </div>
+
+            <!-- Audio Use Case 9 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #9</span>
+                    <h3 class="use-case-title">Vysvětlení obtížného termínu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vysvětli pojem [pojem] v audio stopě do 45s, ve třech variantách: pro
+                        začátečníka, pro pokročilého, humorně.</div>
+                </div>
+            </div>
+
+            <!-- Audio Use Case 10 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #10</span>
+                    <h3 class="use-case-title">Příprava na rodičák</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Z podkladů vytvoř audio shrnutí na rodičovské schůzky: výsledky třídy,
+                        doporučení, rizika.</div>
+                </div>
+            </div>
+
+            <!-- Audio Use Cases 11-30 (compact format) -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #11</span>
+                    <h3 class="use-case-title">Audio záznam z porady → čistá verze</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Z přepisu porady vytvoř audio shrnutí: rozhodnutí, úkoly, termíny.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #12</span>
+                    <h3 class="use-case-title">Motivační audio pro studenty</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř 45s motivační audio pro třídu před testem na téma [téma].</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #13</span>
+                    <h3 class="use-case-title">Příprava na hospitaci</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř audio shrnutí přípravy na hospitaci: cíle, metody, inovace,
+                        očekávané výsledky.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #14</span>
+                    <h3 class="use-case-title">Audio anotace učebnice</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Shrň kapitolu do audio anotace: účel, why it matters, 3 otázky k zamyšlení.
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #15</span>
+                    <h3 class="use-case-title">Rychlá orientace v legislativě</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Shrň relevantní části [směrnice] do 90s audio přehledu.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #16</span>
+                    <h3 class="use-case-title">Audio návod k laboratorní práci</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř audio průvodce pro tuto laboratorní práci. Zdůrazni bezpečnostní
+                        rizika, kritické body postupu a co má být výsledkem.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #17</span>
+                    <h3 class="use-case-title">Audio vysvětlení výsledků testu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Na základě nahraných nejčastějších chyb v testu vytvoř audio shrnutí: v čem
+                        celá třída chybovala a jaké je správné řešení.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #18</span>
+                    <h3 class="use-case-title">Audio porovnání dvou teorií</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř debatu, kde se porovnávají tyto dva přístupy [teorie A vs teorie B].
+                        Uveď silné a slabé stránky obou.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #19</span>
+                    <h3 class="use-case-title">Audio shrnutí projektové práce</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Shrň zadání a cíle tohoto projektu do motivačního audia. Proč to děláme a
+                        co se tím žáci naučí.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #20</span>
+                    <h3 class="use-case-title">Audio verze třídních pravidel</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Převeď školní řád a třídní pravidla do přátelského, ale důrazného audio
+                        shrnutí pro studenty.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #21</span>
+                    <h3 class="use-case-title">Audio podpora pro absentéry</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř 3minutový souhrn toho nejdůležitějšího, co jsme dnes probrali, tak,
+                        aby to pochopil i žák, který ve škole nebyl.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #22</span>
+                    <h3 class="use-case-title">Audio popis metodiky pro suplujícího kolegu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Shrň přípravu na hodinu do rychlého vzkazu pro suplujícího učitele: co je
+                        cílem, na co navázat a kde jsou materiály.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #23</span>
+                    <h3 class="use-case-title">Audio shrnutí výpisků studentů</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Analyzuj tyto studentské zápisky a v audiu okomentuj, co v nich chybí
+                        oproti učebnici.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #24</span>
+                    <h3 class="use-case-title">Audio instrukce pro skupinovou práci</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Nahraj instrukce pro práci ve skupinách: rozdělení rolí, časový limit a
+                        kritéria úspěchu.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #25</span>
+                    <h3 class="use-case-title">Audio "fun fact" pro odlehčení hodiny</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Najdi v textu nejzajímavější kuriozitu nebo paradox a vytvoř o tom 30s
+                        zábavný audio klip.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #26</span>
+                    <h3 class="use-case-title">Audio verze literárního rozboru</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř audio rozbor díla: zaměř se na dějový oblouk, hlavní postavy a
+                        dobový kontext.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #27</span>
+                    <h3 class="use-case-title">Audio analýza grafu/tabulky</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Slovně popiš trendy v tomto grafu/tabulce tak, aby si je posluchač dokázal
+                        představit bez dívání.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #28</span>
+                    <h3 class="use-case-title">Audio příprava na soutěž/olympiádu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř hloubkové shrnutí tématu pro pokročilého studenta, který se chystá
+                        na olympiádu. Jdi do detailů.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #29</span>
+                    <h3 class="use-case-title">Audio přepis vlastních učitelských úvah</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Z mých poznámek vytvoř strukturované audio shrnutí mých nápadů na inovaci
+                        výuky.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #30</span>
+                    <h3 class="use-case-title">Audio varianty slovní zásoby v cizím jazyce</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř audio lekci zaměřenou na synonyma a fráze z tohoto textu. Anglický
+                        termín, český překlad, příklad ve větě.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="use-case-card">
+            <div class="use-case-header">
+                <span class="use-case-number">Audio #31</span>
+                <h3 class="use-case-title">Osobní zrcadlo a psychohygiena (Audio Overview)</h3>
+            </div>
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <p>Využití funkce Audio Overview k sebereflexi - nahrajte své pedagogické poznámky a nechte "dva
+                    moderátory" analyzovat váš profesní život.</p>
+            </div>
+            <div class="use-case-section">
+                <h4>🎯 Jak použít</h4>
+                <p>Nahrajte své rychlé poznámky z hodin za poslední měsíc, vaše e-maily (odeslané, kde řešíte problémy),
+                    případně pedagogický deník. Klikněte na Audio Overview → Generate.</p>
+            </div>
+            <div class="use-case-section">
+                <h4>📤 Co získáte</h4>
+                <p>Uslyšíte dva "lidské" hlasy, jak s empatií, ale datovou přesností analyzují vaše vzorce chování,
+                    stresové spouštěče a úspěchy. Terapeutický odstup od vlastní práce.</p>
+            </div>
+            <div class="prompt-box">
+                <div class="prompt-text">Vygeneruj Audio Overview z mých poznámek za poslední měsíc. Zaměř se na moje
+                    vzorce chování, opakující se problémy a úspěchy.</div>
+            </div>
+        </div>
+
+        <!-- Audio #32 - Lecture Mode: Přísný akademik -->
+        <div class="use-case-card">
+            <div class="use-case-header">
+                <span class="use-case-number">Audio #32</span>
+                <h3 class="use-case-title">Lecture Mode: Přísný akademik</h3>
+                <p class="use-case-subtitle">🆕 Pro právo, medicínu, technické manuály</p>
+            </div>
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <p>Využití nového <strong>Lecture Mode</strong> (Prosinec 2025) s nastavením "přísný akademik". Místo
+                    podcastu dostanete formální přednášku jednoho experta.</p>
+            </div>
+            <div class="use-case-section">
+                <h4>🎯 Kdy použít</h4>
+                <p>Když se musíte naučit přesné definice, logické vazby a nesmíte nic vynechat. Žádné vtipy, jen čistá
+                    fakta.</p>
+            </div>
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Instrukce pro Lecture Mode</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">Chovej se jako přísný univerzitní profesor, který přednáší látku na státnice.
+
+                    Struktura: Začni definicí hlavního problému. Poté systematicky procházej jednotlivé body dokumentu.
+
+                    Styl: Buď formální, přesný a stručný. Nepoužívej metafory, pokud nejsou v textu.
+
+                    Důraz: Pokud narazíš na složitý odborný termín, zastav se, explicitně ho definuj a teprve poté
+                    pokračuj.
+
+                    Závěr: Na konci shrň 3 naprosto klíčové body, které si musím zapamatovat, jinak u zkoušky vyletím.
+                </div>
+            </div>
+            <div class="tip-box mt-2">
+                <p><strong>📖 Kompletní průvodce:</strong> <a href="novinky/2025-12-lecture-mode.html"
+                        class="link-primary">Jak používat Lecture Mode →</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Audio #33 - Lecture Mode: Vypravěč příběhů -->
+        <div class="use-case-card">
+            <div class="use-case-header">
+                <span class="use-case-number">Audio #33</span>
+                <h3 class="use-case-title">Lecture Mode: Vypravěč příběhů</h3>
+                <p class="use-case-subtitle">🆕 Pro dějepis, literaturu, marketing</p>
+            </div>
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <p>Využití nového <strong>Lecture Mode</strong> se stylem "vypravěč příběhů". Místo suchých dat
+                    dostanete poutavý narativ.</p>
+            </div>
+            <div class="use-case-section">
+                <h4>🎯 Kdy použít</h4>
+                <p>Když máte hromadu dat a jmen, která se vám pletou, a potřebujete pochopit "velký obraz" a
+                    souvislosti.</p>
+            </div>
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Instrukce pro Lecture Mode</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">Chovej se jako charismatický lektor na TED Talku.
+
+                    Narrativ: Nečti mi data a jména jako telefonní seznam. Spoj informace z mých poznámek do poutavého
+                    příběhu. Hledej příčiny a následky (proč se to stalo?).
+
+                    Styl: Používej živý jazyk, řečnické otázky a přirovnání ze současného života, abych to pochopil.
+
+                    Cíl: Mým cílem není znát každé datum, ale pochopit motivaci aktérů a kontext doby/situace.</div>
+            </div>
+            <div class="tip-box mt-2">
+                <p><strong>📖 Kompletní průvodce:</strong> <a href="novinky/2025-12-lecture-mode.html"
+                        class="link-primary">Jak používat Lecture Mode →</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Audio #34 - Lecture Mode: Executive Briefing -->
+        <div class="use-case-card">
+            <div class="use-case-header">
+                <span class="use-case-number">Audio #34</span>
+                <h3 class="use-case-title">Lecture Mode: Executive Briefing</h3>
+                <p class="use-case-subtitle">🆕 Pro manažery, projektové řízení, reporty</p>
+            </div>
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <p>Využití nového <strong>Lecture Mode</strong> v rychlém režimu "executive briefing". 5 minut, bez
+                    omáčky, jen závěry.</p>
+            </div>
+            <div class="use-case-section">
+                <h4>🎯 Kdy použít</h4>
+                <p>Nemáte čas. Potřebujete výtah z dlouhého reportu, abyste na poradě vypadala chytře.</p>
+            </div>
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Instrukce pro Lecture Mode</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">Chovej se jako můj osobní strategický poradce. Mám jen 5 minut.
+
+                    Priorita: Ignoruj omáčku a úvody. Jdi rovnou k věci: Co jsou hlavní závěry tohoto dokumentu?
+
+                    Akce: Identifikuj v textu problémy (red flags) a navrhovaná řešení. Co po mně autor dokumentu chce?
+
+                    Formát: Mluv rychleji, dynamicky, v odrážkách. Žádná teorie, jen praxe.</div>
+            </div>
+            <div class="tip-box mt-2">
+                <p><strong>📖 Kompletní průvodce:</strong> <a href="novinky/2025-12-lecture-mode.html"
+                        class="link-primary">Jak používat Lecture Mode →</a>
+                </p>
+            </div>
+        </div>
+        </div>
+
+        <!-- Category: Video Přehled -->
+        <div class="category-section" id="video">
+            <div class="category-header">
+                <span class="category-icon">🎥</span>
+                <h2 class="category-title">Video Přehled - Scénáře</h2>
+                <span class="category-count">30 způsobů použití</span>
+            </div>
+            <p class="mb-1-5">NotebookLM nevytváří video, ale napíše vám dokonalý scénář (skript), který
+                pak můžete natočit vy, nebo ho vložit do AI generátorů videa.</p>
+
+            <!-- Video Use Cases 1-10 with full details -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #1</span>
+                    <h3 class="use-case-title">Vysvětlení učiva pro absentéry</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř scénář krátkého vysvětlovacího videa na 1 minutu pro žáka, který
+                        chyběl. Použij metaforu, příklad a minitest na konci.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #2</span>
+                    <h3 class="use-case-title">Video shrnutí kapitoly</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Zjednoduš kapitolu do 60–90s výukového videa. Struktura: problém →
+                        vysvětlení → příklad → otázka.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #3</span>
+                    <h3 class="use-case-title">Procesní video (např. zapojení obvodu)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř krokový scénář videa s jasnými vizuálními instrukcemi, bez odborného
+                        balastu.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #4</span>
+                    <h3 class="use-case-title">Video pro rodiče (orientace v učivu)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Převeď hlavní témata z dokumentu do rodičovsky srozumitelného 1min videa.
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #5</span>
+                    <h3 class="use-case-title">Video pro žáky s SPU</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř scénář pro pomalé, srozumitelné video s důrazem na vizuální ukázky a
+                        minimem textu.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #6</span>
+                    <h3 class="use-case-title">TikTok/Reels styl: Rychlý tip</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Napiš scénář pro 30s vertikální video (Reels) s jedním "Wow faktem" z
+                        tohoto učiva. Musí to být dynamické a vtipné.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #7</span>
+                    <h3 class="use-case-title">"Unboxing" tématu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Napiš scénář ve stylu "unboxing videa", kde postupně "rozbalujeme" složité
+                        téma na jednotlivé jednoduché části.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #8</span>
+                    <h3 class="use-case-title">Video scénka: Historická událost</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Napiš scénář pro 2min video, kde dvě historické postavy z textu vedou
+                        dialog o [událost].</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #9</span>
+                    <h3 class="use-case-title">Video návod: Jak se učit toto téma</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř scénář videa, které radí studentům, jak se efektivně naučit tuto
+                        konkrétní látku (mnemotechniky, na co se zaměřit).</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #10</span>
+                    <h3 class="use-case-title">Video kvíz (Pause & Answer)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř scénář videa se 3 otázkami. Formát: Otázka -> 5 sekund pauza na
+                        rozmyšlenou -> Odhalení správné odpovědi s vysvětlením.</div>
+                </div>
+            </div>
+
+            <!-- Video Use Cases 11-30 (compact) -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #11</span>
+                    <h3 class="use-case-title">Reportážní video</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Napiš scénář pro fiktivní TV reportáž přímo z místa/doby, o které se učíme.
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #12</span>
+                    <h3 class="use-case-title">Video "Mýty a fakta"</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vyber 3 nejčastější mýty z tohoto textu a napiš scénář videa, které je
+                        vyvrací a uvádí na pravou míru.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #13</span>
+                    <h3 class="use-case-title">Video definice pojmu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř scénář pro 15sekundové video, které definuje pojem [pojem] tak
+                        jednoduše, že to pochopí pětileté dítě.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #14</span>
+                    <h3 class="use-case-title">Motivační trailer k tématu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Napiš scénář filmového traileru, který dramaticky uvede téma příští hodiny.
+                        Použij napětí a cliffhanger.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #15</span>
+                    <h3 class="use-case-title">Video reflexe projektu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Napiš osnovu videa, ve kterém studenti shrnou, co se jim na projektu
+                        povedlo a co ne.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #16</span>
+                    <h3 class="use-case-title">"Draw my life" styl</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř vypravěčský text pro video typu "Draw my life" o životě [Osobnost].
+                        Zaměř se na klíčové zvraty.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #17</span>
+                    <h3 class="use-case-title">Video pro suplování</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Napiš kompletní text pro 5minutové výkladové video, které suplující pustí
+                        třídě a které vysvětlí jádro látky.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #18</span>
+                    <h3 class="use-case-title">Video debata (Pro a Proti)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Napiš scénář videa, kde jedna osoba hraje "Advokáta" a druhá "Oponenta" k
+                        tématu [Téma].</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #19</span>
+                    <h3 class="use-case-title">Bezpečnostní instruktáž</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř scénář přísného, ale jasného bezpečnostního videa před touto
+                        aktivitou.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #20</span>
+                    <h3 class="use-case-title">Video vysvětlení vzorečku</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Rozepiš odvození vzorce do vizuálního scénáře. Krok za krokem vysvětli, co
+                        která proměnná znamená.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #21</span>
+                    <h3 class="use-case-title">Časosběrné video (koncept)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Popiš, jak by mělo vypadat zrychlené video zachycující proces [Proces], aby
+                        byly vidět klíčové změny.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #22</span>
+                    <h3 class="use-case-title">Video "Najdi 5 rozdílů/chyb"</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni scénář videa, kde učitel úmyslně udělá 5 chyb v postupu a žáci je
+                        mají odhalit.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #23</span>
+                    <h3 class="use-case-title">Video pozvánka na školní akci</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř scénář krátké videopozvánky na školní jarmark/akademii, vycházející
+                        z programu akce.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #24</span>
+                    <h3 class="use-case-title">Video recenze knihy</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Napiš scénář pro 90s recenzi této knihy ve stylu youtubera. Hodnocení, děj
+                        (bez spoilerů), doporučení.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #25</span>
+                    <h3 class="use-case-title">Video návod na domácí pokus</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř scénář pro bezpečný domácí pokus ilustrující tento jev, s pomůckami,
+                        co mají žáci doma.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #26</span>
+                    <h3 class="use-case-title">Video "Co by se stalo, kdyby..."</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Napiš scénář videa zkoumajícího hypotetickou situaci: Co by se stalo, kdyby
+                        [podmínka].</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #27</span>
+                    <h3 class="use-case-title">Jazykové video (Roleplay)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Napiš scénář dialogu v [jazyk] mezi číšníkem a zákazníkem, s použitím
+                        slovní zásoby z lekce.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #28</span>
+                    <h3 class="use-case-title">Video zpětná vazba pro rodiče</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Shrň čtvrtletní výsledky třídy do scénáře uklidňujícího a informativního
+                        videa pro rodiče.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #29</span>
+                    <h3 class="use-case-title">Video "Za oponou" (Making of)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni krátké video ukazující, jak vznikal tento výukový materiál, pro
+                        zvýšení zájmu žáků.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Video #30</span>
+                    <h3 class="use-case-title">Závěrečné video školního roku</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř dojemný scénář shrnující to nejlepší, co jsme se letos naučili a
+                        zažili.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Kartičky -->
+        <div class="category-section" id="flashcards">
+            <div class="category-header">
+                <span class="category-icon">🃏</span>
+                <h2 class="category-title">Výukové Kartičky (Flashcards)</h2>
+                <span class="category-count">30 způsobů použití</span>
+            </div>
+            <p class="mb-1-5">Ideální pro generování otázek a odpovědí, které pak můžete vložit do
+                aplikací jako Quizlet, Anki nebo vytisknout.</p>
+
+            <!-- Flashcard Use Cases 1-10 with full details -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #1</span>
+                    <h3 class="use-case-title">Základní pojmy</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř 20 flashcards v podobě otázka/odpověď podle nahraných zdrojů.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #2</span>
+                    <h3 class="use-case-title">Kartičky chyb žáků</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř flashcards, kde otázka = typická chyba, odpověď = správné řešení.
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #3</span>
+                    <h3 class="use-case-title">Kartičky analogií</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Převeď hlavní pojmy do srovnávacích kartiček (pojem + metafora).</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #4</span>
+                    <h3 class="use-case-title">Data a události</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř seznam párů: Událost – Datum. Zaměř se na klíčové milníky z textu.
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #5</span>
+                    <h3 class="use-case-title">Osobnosti a jejich díla</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř kartičky ve formátu: Jméno osobnosti (přední strana) – Hlavní
+                        dílo/objev a jeho význam (zadní strana).</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #6</span>
+                    <h3 class="use-case-title">Cizí slovíčka v kontextu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř kartičky, kde na jedné straně je cizí slovo a na druhé straně jeho
+                        český překlad + věta, ve které je slovo použito.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #7</span>
+                    <h3 class="use-case-title">Vzorce a veličiny</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř kartičky: Název veličiny (přední strana) – Značka, základní jednotka
+                        a vzorec (zadní strana).</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #8</span>
+                    <h3 class="use-case-title">Příčina a následek</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř logické kartičky. Otázka: Co způsobilo [jev]? Odpověď: Vysvětlení
+                        příčiny.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #9</span>
+                    <h3 class="use-case-title">Slepé mapy (textový popis)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř kartičky pro slepou mapu. Přední strana: Popis polohy (např. stát
+                        jižně od Německa). Zadní strana: Název státu.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #10</span>
+                    <h3 class="use-case-title">Chemické názvosloví</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř páry: Chemický vzorec – Systematický název.</div>
+                </div>
+            </div>
+
+            <!-- Flashcard Use Cases 11-30 (compact) -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #11</span>
+                    <h3 class="use-case-title">Pravopisné jevy</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky 'Doplň i/y'. Přední strana: Věta s vynechaným písmenem.
+                        Zadní strana: Správné písmeno a zdůvodnění.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #12</span>
+                    <h3 class="use-case-title">Umělecké směry</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky charakteristik. Přední strana: Popis typických znaků směru.
+                        Zadní strana: Název směru a hlavní představitelé.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #13</span>
+                    <h3 class="use-case-title">Hlavní města a státy</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř klasické kartičky Stát – Hlavní město ze seznamu v textu.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #14</span>
+                    <h3 class="use-case-title">Odborné definice</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky pro přesné definování. Přední strana: Pojem. Zadní strana:
+                        Přesná odborná definice.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #15</span>
+                    <h3 class="use-case-title">Kdo to řekl? (Citáty)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky citátů. Přední strana: Slavný výrok. Zadní strana: Autor a
+                        kontext výroku.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #16</span>
+                    <h3 class="use-case-title">Pravda/Nepravda</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř sadu tvrzení. Zadní strana: ANO/NE a stručné vysvětlení proč.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #17</span>
+                    <h3 class="use-case-title">Slovesné tvary</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky na nepravidelná slovesa. Přední strana: Infinitiv. Zadní
+                        strana: Minulý čas a příčestí.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #18</span>
+                    <h3 class="use-case-title">Funkce orgánů</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky anatomie. Přední strana: Název orgánu. Zadní strana: Jeho
+                        hlavní funkce v těle.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #19</span>
+                    <h3 class="use-case-title">Literární postavy</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky postav. Přední strana: Popis chování a role v příběhu.
+                        Zadní strana: Jméno postavy a název knihy.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #20</span>
+                    <h3 class="use-case-title">Zkratky a organizace</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky zkratek (EU, NATO, OSN...). Přední strana: Zkratka. Zadní
+                        strana: Celý název a hlavní účel.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #21</span>
+                    <h3 class="use-case-title">Matematické operace (Slovní úlohy)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř jednoduché slovní úlohy na kartičky. Přední strana: Zadání. Zadní
+                        strana: Výpočet a výsledek.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #22</span>
+                    <h3 class="use-case-title">Řazení událostí</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky 'Co bylo dřív?'. Přední strana: Dvě události. Zadní strana:
+                        Správné chronologické pořadí.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #23</span>
+                    <h3 class="use-case-title">Poznávání rostlin/živočichů</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř poznávací kartičky. Přední strana: Detailní slovní popis vzhledu a
+                        výskytu. Zadní strana: Název organismu.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #24</span>
+                    <h3 class="use-case-title">Gramatická pravidla</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky pravidel. Přední strana: Název jevu (např. Přítomný
+                        průběhový čas). Zadní strana: Kdy se používá a jak se tvoří.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #25</span>
+                    <h3 class="use-case-title">Hlavní myšlenky odstavců</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Projdi text a vytvoř kartičky pro každý odstavec. Přední strana: Číslo
+                        odstavce. Zadní strana: Jedna věta shrnující hlavní myšlenku.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #26</span>
+                    <h3 class="use-case-title">Symboly a značky</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Popiš symbol slovně (přední strana) a uveď jeho význam (zadní strana).
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #27</span>
+                    <h3 class="use-case-title">Argumentační fauly</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky s příklady argumentačních faulů. Přední strana: Konkrétní
+                        výrok. Zadní strana: Typ faulu (např. ad hominem).</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #28</span>
+                    <h3 class="use-case-title">Převody jednotek</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř tréninkové kartičky na převody. Přední strana: Hodnota v jedné
+                        jednotce. Zadní strana: Hodnota v jiné jednotce.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #29</span>
+                    <h3 class="use-case-title">Synonyma a Antonyma</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky slovní zásoby. Přední strana: Slovo. Zadní strana: 2
+                        synonyma a 1 antonymum.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kartičky #30</span>
+                    <h3 class="use-case-title">Bezpečnostní symboly</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř kartičky R-vět a S-vět nebo výstražných symbolů. Přední strana:
+                        Popis rizika. Zadní strana: Kód/Název symbolu.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Kvíz -->
+        <div class="category-section" id="quiz">
+            <div class="category-header">
+                <span class="category-icon">✍️</span>
+                <h2 class="category-title">Kvíz (Testy a zkoušení)</h2>
+                <span class="category-count">30 způsobů použití</span>
+            </div>
+            <p class="mb-1-5">NotebookLM vám pomůže vymyslet otázky pro písemky, Kahoot, Socrative nebo
+                ústní zkoušení.</p>
+
+            <!-- Quiz Use Cases 1-10 with full details -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #1</span>
+                    <h3 class="use-case-title">Rychlý 5min kvíz před hodinou</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř 10 otázek různých typů na téma [téma], stupňované od nejlehčí po
+                        nejtěžší.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #2</span>
+                    <h3 class="use-case-title">Diagnostický vstupní kvíz</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř vstupní kvíz, který zjistí předchozí znalosti žáků. Vyhodnoť
+                        očekávané problémy.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #3</span>
+                    <h3 class="use-case-title">Kvíz s vysvětlením odpovědí</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Ke každé otázce přidej i vysvětlení, proč je správně právě tato možnost.
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #4</span>
+                    <h3 class="use-case-title">Test s výběrem možností (ABCD)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř 15 otázek s výběrem ze 4 možností (A,B,C,D), kde jen jedna je
+                        správná. Možnosti ať nejsou očividně hloupé.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #5</span>
+                    <h3 class="use-case-title">"Najdi vetřelce"</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř 5 úloh typu 'Který pojem do řady nepatří a proč?'. Vycházej z
+                        nahraných textů.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #6</span>
+                    <h3 class="use-case-title">Doplňovačka (Cloze test)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř text o délce 10 vět, ve kterém vynecháš klíčová slova a nahradíš je
+                        podtržítkem. Pod text dej seznam slov k doplnění.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #7</span>
+                    <h3 class="use-case-title">Ústní zkoušení (Sada otázek)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni 5 sad otázek pro ústní zkoušení. Každá sada ať obsahuje: 1x
+                        definici, 1x aplikaci a 1x souvislost.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #8</span>
+                    <h3 class="use-case-title">Kvíz na porozumění textu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř 5 otázek, na které lze odpovědět POUZE po pečlivém přečtení textu.
+                        Žádné obecné znalosti.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #9</span>
+                    <h3 class="use-case-title">Hledání chyb v textu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Přepiš tento odstavec tak, aby v něm bylo 5 faktických chyb. Pod to napiš
+                        klíč s řešením.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #10</span>
+                    <h3 class="use-case-title">Slepá mapa (textový kvíz)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř kvíz o geografii z textu bez použití obrázků (např. 'Město ležící na
+                        soutoku Labe a Vltavy je...').</div>
+                </div>
+            </div>
+
+            <!-- Quiz Use Cases 11-30 (compact) -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #11</span>
+                    <h3 class="use-case-title">Kvíz "Seřaď to"</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř 3 úlohy na seřazení položek (např. historické události, kroky v
+                        receptu, fáze vývoje).</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #12</span>
+                    <h3 class="use-case-title">Scénářový kvíz (Case study)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř krátký příběh/situaci a k němu 3 otázky, jak by měl žák situaci
+                        vyřešit podle pravidel v textu.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #13</span>
+                    <h3 class="use-case-title">Křížovka (podklady)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vygeneruj seznam 10 pojmů a k nim definice tak, aby se to dalo použít jako
+                        legenda pro křížovku.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #14</span>
+                    <h3 class="use-case-title">Kvíz pro Kahoot!</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř tabulku pro Kahoot: Sloupec 1 = Otázka (krátká), Sloupce 2-5 =
+                        Odpovědi, Sloupec 6 = Časový limit (20s).</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #15</span>
+                    <h3 class="use-case-title">Kvíz pro dyslektiky</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř zjednodušený test: krátké věty, žádné chytáky, jasné zadání, výběr
+                        jen ze 2 možností.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #16</span>
+                    <h3 class="use-case-title">Kvíz s otevřenými otázkami</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni 5 otázek, na které nelze odpovědět jedním slovem, ale vyžadují
+                        alespoň dvě věty vysvětlení.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #17</span>
+                    <h3 class="use-case-title">Kvíz "Pravda nebo Lež" s chytáky</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř 10 tvrzení. Některá ať jsou pravdivá, některá lživá a některá
+                        pravdivá jen částečně (chytáky).</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #18</span>
+                    <h3 class="use-case-title">Spojovačka</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř dva sloupce pojmů, které k sobě logicky patří, ale zpřeházej je.
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #19</span>
+                    <h3 class="use-case-title">Kvíz na poslech (podklad)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř text pro diktát, který obsahuje tyto gramatické jevy: [seznam jevů].
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #20</span>
+                    <h3 class="use-case-title">Maturitní otázky (Simulace)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni strukturu jedné maturitní otázky na toto téma: úvod, hlavní stať,
+                        doplňující podotázky.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #21</span>
+                    <h3 class="use-case-title">Kvíz pro nadané žáky (Bonus)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř jednu velmi obtížnou bonusovou otázku, která vyžaduje syntézu
+                        informací z celé kapitoly.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #22</span>
+                    <h3 class="use-case-title">Kvíz na základě grafu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vymysli slovní popis dat a k němu 3 otázky, které ověří, zda žák umí číst v
+                        datech.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #23</span>
+                    <h3 class="use-case-title">Odhadovací kvíz</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř otázky zaměřené na kvalifikovaný odhad (řádová velikost), nikoliv na
+                        přesný výpočet.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #24</span>
+                    <h3 class="use-case-title">Kvíz na slovní zásobu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř test, kde je definice slova a žák musí napsat to slovo (např.
+                        'Person who flies a plane' -> 'Pilot').</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #25</span>
+                    <h3 class="use-case-title">Test porozumění instrukcím</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř test, který ověří, zda žáci pochopili bezpečnostní a pracovní
+                        postup, než začnou pracovat.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #26</span>
+                    <h3 class="use-case-title">Kvíz "Co by následovalo?"</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Popiš rozehranou situaci z knihy/historie a zeptej se, co logicky
+                        následovalo.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #27</span>
+                    <h3 class="use-case-title">Kvíz formou únikové hry</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni 5 navazujících úkolů. Odpověď na první úkol je klíčem k druhému.
+                        Téma: [Téma].</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #28</span>
+                    <h3 class="use-case-title">Sebehodnotící kvíz pro žáky</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř checklist otázek, kterými si žák sám ověří, zda je připraven na
+                        zítřejší test.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #29</span>
+                    <h3 class="use-case-title">Skupinový kvíz (Team battle)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř sadu otázek s gradující obtížností pro týmovou soutěž.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #30</span>
+                    <h3 class="use-case-title">Překladový minitest</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vyber z textu 5 nejtěžších vět a vytvoř z nich překladové cvičení.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Infografika -->
+        <div class="category-section" id="infografika">
+            <div class="category-header">
+                <span class="category-icon">📊</span>
+                <h2 class="category-title">Infografika (Popisy pro vizuální tvorbu)</h2>
+                <span class="category-count">30 způsobů použití</span>
+            </div>
+            <p class="mb-1-5">Tato sekce generuje DETAILNÍ POPISY (prompty), které vložíte do grafických
+                nástrojů (jako Canva, Midjourney) nebo podle nich necháte žáky kreslit.</p>
+
+            <!-- CTA for Prompt Database -->
+            <div class="cta-gradient-box" style="margin-bottom: 2rem;">
+                <strong>💾 Nová: Interaktivní databáze promptů!</strong>
+                <p class="mt-0-5">Prozkoumejte <strong>všech 33 promptů</strong> s možností snadného kopírování,
+                    filtrováním podle kategorií a ukázkovými obrázky. Snadněji než kdy dříve!</p>
+                <a href="modules/infografika-prompty.html" class="cta-gradient-link">
+                    🚀 Otevřít databázi promptů →
+                </a>
+            </div>
+
+            <!-- Infographics Use Cases 1-10 with full details -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #1</span>
+                    <h3 class="use-case-title">Infografika kapitoly</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř zadání pro grafika na infografiku shrnující [téma]. Uveď kompozici,
+                        ikonografii, vztahy mezi prvky a legendu.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #2</span>
+                    <h3 class="use-case-title">Infografika procesu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni infografiku kroků procesu (max 8 kroků). Každý krok = ikona +
+                        krátký popis.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #3</span>
+                    <h3 class="use-case-title">Vizualizace chyb žáků</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř infografiku 'Nejčastější chyby a jak se jim vyhnout' podle zdrojů.
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #4</span>
+                    <h3 class="use-case-title">Časová osa (Timeline)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř návrh horizontální časové osy. Definuj body na ose, jaké obrázky k
+                        nim patří a krátké popisky.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #5</span>
+                    <h3 class="use-case-title">Myšlenková mapa</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni strukturu myšlenkové mapy. Ústřední pojem, hlavní větve a
+                        pod-větve. Popiš barevné kódování.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #6</span>
+                    <h3 class="use-case-title">Komiks (Storyboard)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Rozepis učivo do 6 políček komiksu. Popiš, co je na obrázku a co je v
+                        bublinách.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #7</span>
+                    <h3 class="use-case-title">Srovnávací tabulka (Versus)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni vizuální srovnávací tabulku (Split screen). Vlevo [Jev A], vpravo
+                        [Jev B]. Seznam bodů k porovnání.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #8</span>
+                    <h3 class="use-case-title">Anatomické schéma</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Popiš nákres [orgán/rostlina] s popisky. Kde mají vést šipky a co mají
+                        označovat.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #9</span>
+                    <h3 class="use-case-title">Koloběh (Cyklický diagram)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni kruhový diagram procesu. Popiš jednotlivé fáze a jak na sebe
+                        navazují šipkami.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #10</span>
+                    <h3 class="use-case-title">Pyramida hodnot/hierarchie</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni pyramidovou infografiku. Popiš vrstvy od základny po špičku a
+                        kdo/co v nich je.</div>
+                </div>
+            </div>
+
+            <!-- Infographics Use Cases 11-30 (compact) -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #11</span>
+                    <h3 class="use-case-title">Mapa s legendou</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Popiš, jak má vypadat mapa k tomuto tématu. Co má být zvýrazněno barvou a
+                        co mají znamenat symboly v legendě.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #12</span>
+                    <h3 class="use-case-title">Vennův diagram</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni Vennův diagram (dva kruhy). Co je v průniku a co je vně.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #13</span>
+                    <h3 class="use-case-title">Rozhodovací strom (Flowchart)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř textový návrh vývojového diagramu. Otázka -> Ano/Ne -> Další krok.
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #14</span>
+                    <h3 class="use-case-title">Plakát "Pravidla třídy"</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni vizuál plakátu s pravidly. Jaké ikony použít pro 'respekt',
+                        'dochvilnost', 'pomoc'.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #15</span>
+                    <h3 class="use-case-title">Návod "Jak na to" (IKEA styl)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Popiš sérii piktogramů bez textu, které vysvětlí tento postup, podobně jako
+                        v návodu na nábytek.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #16</span>
+                    <h3 class="use-case-title">Profil osobnosti (RPG karta)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni design 'hráčské karty' pro [Osobnost]. Atributy: Síla, Inteligence,
+                        Dovednosti, Slabiny.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #17</span>
+                    <h3 class="use-case-title">Word Cloud (Mrak slov)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vygeneruj seznam 30 nejdůležitějších slov z textu pro tvorbu Word Cloudu,
+                        seřazených podle důležitosti.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #18</span>
+                    <h3 class="use-case-title">Řez objektem</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Popiš příčný řez [sopkou/motorem]. Co je uvnitř a jak to popsat.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #19</span>
+                    <h3 class="use-case-title">Statistický Dashboard</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni rozložení panelu s grafy. Kde má být koláčový graf, kde sloupcový a
+                        co mají ukazovat.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #20</span>
+                    <h3 class="use-case-title">Metamorfóza (Před a Po)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Popiš dva obrázky vedle sebe: Situace PŘED [událost] a situace PO
+                        [událost]. Zdůrazni rozdíly.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #21</span>
+                    <h3 class="use-case-title">Rodokmen</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř textovou strukturu rodokmenu rodiny [Rodina]. Kdo je rodič, kdo
+                        dítě, kdo partner.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #22</span>
+                    <h3 class="use-case-title">Šachovnice vztahů</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni schéma vztahů mezi postavami. Kdo koho miluje, nenávidí, kdo je
+                        spojenec.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #23</span>
+                    <h3 class="use-case-title">Ikonografie pro aplikaci</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni sadu 5 ikon pro vzdělávací aplikaci k tomuto tématu. Jak má vypadat
+                        ikona pro [funkce]?</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #24</span>
+                    <h3 class="use-case-title">Periodická tabulka (variace)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni 'Periodickou tabulku literárních žánrů'. Jak seskupit prvky k sobě?
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #25</span>
+                    <h3 class="use-case-title">Cesta hrdiny</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Aplikuj schéma 'Cesta hrdiny' na tento román a navrhni kruhovou grafiku s
+                        12 fázemi.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #26</span>
+                    <h3 class="use-case-title">Emoční graf</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni graf vývoje napětí v příběhu. Osa X je čas, osa Y je napětí. Kde
+                        jsou vrcholy?</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #27</span>
+                    <h3 class="use-case-title">Rozborka věty (Strom)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni vizuální syntaktický strom pro tuto složitou větu.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #28</span>
+                    <h3 class="use-case-title">Jídelní lístek (Menu)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni design menu pro restauraci v době [Historické období]. Jaká jídla a
+                        ceny tam budou?</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #29</span>
+                    <h3 class="use-case-title">Volební plakát</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Popiš volební plakát politické strany z textu. Jaká hesla a symboly použít,
+                        aby zaujali voliče?</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #30</span>
+                    <h3 class="use-case-title">Certifikát/Diplom</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni text a rozložení diplomu za zvládnutí této kapitoly.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #31</span>
+                    <h3 class="use-case-title">Vizuální Detektor Lži (Propaganda Deconstructor)</h3>
+                </div>
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <p>Infografika, která nevizualizuje obsah textu, ale jeho manipulační techniky - "rentgenový snímek"
+                        propagandy.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>🎯 Jak použít</h4>
+                    <p>Nahrajte manipulativní text (dezinformační článek, politický projev, agresivní reklamu). Nechte
+                        NotebookLM analyzovat manipulační techniky a navrhnout vizuál s výstražnými ikonami a
+                        propojeními.</p>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Analyzuj nahraný text. Navrhni design infografiky ve stylu 'rentgenového
+                        snímku'. Popiš, jak má výsledný obrázek vypadat: kde umístit výstražné ikony (argumentační faul,
+                        citové vydírání), jak propojit místa kde si autor protiřečí, a navrhni 'Legendu manipulátora'.
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #32</span>
+                    <h3 class="use-case-title">Blueprint pro Živou Infografiku ve třídě</h3>
+                </div>
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <p>Návrh pro fyzickou aktivitu ve třídě, kde se "infografikou" stanou sami žáci nebo nábytek na
+                        podlaze třídy.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>🎯 Jak použít</h4>
+                    <p>Nahrajte učebnici (např. krevní oběh nebo legislativní proces). NotebookLM navrhne "půdorys" -
+                        jak barevnými páskami rozdělit podlahu na zóny, jaké role přiřadit žákům.</p>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Podlaha mé třídy je prázdné plátno. Mám barevné lepicí pásky a žáky.
+                        Navrhni 'půdorys' aktivity. Popiš: 1) Jak páskami rozdělit podlahu na zóny, 2) Definuj 'role'
+                        pro žáky, 3) Pravidla pohybu mezi zónami.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Infografika #33</span>
+                    <h3 class="use-case-title">Metaforický Překladač Abstraktna</h3>
+                </div>
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <p>Návrh infografiky, která vysvětluje abstraktní jev pomocí vizuálně bohaté metafory.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>🎯 Jak použít</h4>
+                    <p>Nahrajte text o abstraktním tématu (např. státní rozpočet). Přiřaďte kreativní metaforu (např.
+                        "děravý vodovodní systém"). NotebookLM namapuje abstraktní koncepty na vizuální systém.</p>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni design infografiky, která vysvětlí [abstraktní téma] pomocí POUZE
+                        metafory [vizuální metafora]. NESMÍŠ použít standardní grafy. Popiš detailně: Co představuje
+                        jednotlivé části? Jak vizualizovat vztahy?</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Prezentace -->
+        <div class="category-section" id="prezentace">
+            <div class="category-header">
+                <span class="category-icon">📽️</span>
+                <h2 class="category-title">Prezentace (Snímky)</h2>
+                <span class="category-count">30 způsobů použití</span>
+            </div>
+            <p class="mb-1-5">NotebookLM vytvoří strukturu prezentace, obsah slidů a poznámky pro
+                řečníka. Výsledek zkopírujete do PowerPointu.</p>
+
+            <!-- Presentation Use Cases 1-10 with full details -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #1</span>
+                    <h3 class="use-case-title">Prezentace k nové látce</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni prezentaci o 10 slidech: claim → vysvětlení → příklad → časté chyby
+                        → miniúkol.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #2</span>
+                    <h3 class="use-case-title">Prezentace pro hospitaci</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř prezentaci, která ukáže didaktickou strukturu hodiny a inovativní
+                        prvky.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #3</span>
+                    <h3 class="use-case-title">Prezentace projektové práce</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Shrň výsledky projektu do 8–12 slidů: problém, postup, data, závěry,
+                        doporučení.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #4</span>
+                    <h3 class="use-case-title">PechaKucha (20x20)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř strukturu pro formát PechaKucha (20 slidů, každý na 20 sekund). Ke
+                        každému slidu napiš jen 1 hlavní větu a návrh obrázku.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #5</span>
+                    <h3 class="use-case-title">Interaktivní prezentace</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni prezentaci, kde každý druhý slide je otázka nebo úkol pro publikum.
+                        Celkem 10 slidů.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #6</span>
+                    <h3 class="use-case-title">Prezentace pro rodičovskou schůzku</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř osnovu prezentace pro rodiče: úspěchy třídy, plán akcí, řešení
+                        problémů, diskuze.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #7</span>
+                    <h3 class="use-case-title">"Pitch" (Prodej tématu)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř 5 slidů, které 'prodají' toto téma studentům. Proč je to cool a k
+                        čemu jim to bude v životě.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #8</span>
+                    <h3 class="use-case-title">Žákovská prezentace (Vzor)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Vytvoř vzorovou osnovu prezentace referátu na téma [Téma]. Úvod, 3 hlavní
+                        body, Závěr, Zdroje.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #9</span>
+                    <h3 class="use-case-title">Prezentace "Krok za krokem"</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Rozlož tento složitý postup do série slidů. Jeden slide = jeden krok s
+                        velkým písmem.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #10</span>
+                    <h3 class="use-case-title">Kvízová prezentace (Riskuj!)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Hotový prompt</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Navrhni slidy pro hru Riskuj. Kategorie, body a otázky skryté na dalších
+                        slidech.</div>
+                </div>
+            </div>
+
+            <!-- Presentation Use Cases 11-30 (compact) -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #11</span>
+                    <h3 class="use-case-title">Prezentace s příběhem (Storytelling)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni prezentaci, která vypráví příběh [Osobnost/Jev]. Začátek, zápletka,
+                        vyvrcholení, rozuzlení.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #12</span>
+                    <h3 class="use-case-title">Debatní podklad</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř 3 slidy s argumenty PRO a 3 slidy s argumenty PROTI k tématu [Téma].
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #13</span>
+                    <h3 class="use-case-title">Minimalistická prezentace (Steve Jobs styl)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř osnovu prezentace, kde na slidu je vždy jen jedno slovo nebo jeden
+                        obrázek. Text pro řečníka napiš do poznámek.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #14</span>
+                    <h3 class="use-case-title">Prezentace výsledků testů</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni slidy ukazující statistiku úspěšnosti třídy, nejčastější chyby a
+                        'Perličky z písemek'.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #15</span>
+                    <h3 class="use-case-title">Výroční zpráva</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Shrň aktivity a úspěchy školního roku do reprezentativní prezentace.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #16</span>
+                    <h3 class="use-case-title">Prezentace metodiky pro kolegy</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř prezentaci o této vyučovací metodě. Teorie, moje zkušenost, ukázky
+                        prací žáků.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #17</span>
+                    <h3 class="use-case-title">Prezentace "Najdi chybu"</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni 5 slidů, kde na každém je uvedena nepravdivá informace nebo chyba
+                        ve výpočtu, kterou mají žáci najít.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #18</span>
+                    <h3 class="use-case-title">Časová osa (Slide po slidu)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Rozděl historické období na jednotlivé slidy chronologicky za sebou. Ke
+                        každému roku přidej klíčovou událost.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #19</span>
+                    <h3 class="use-case-title">Slovníčková prezentace</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř 'Flashcard' prezentaci. Slide 1: Obrázek/Slovo česky. Slide 2: Slovo
+                        anglicky a výslovnost. Opakuj pro 10 slov.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #20</span>
+                    <h3 class="use-case-title">Prezentace experimentu</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Struktura: Hypotéza -> Pomůcky -> Postup -> Pozorování -> Závěr.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #21</span>
+                    <h3 class="use-case-title">Bezpečnostní školení (BOZP)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř strohou a jasnou prezentaci pravidel bezpečnosti v učebně.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #22</span>
+                    <h3 class="use-case-title">Prezentace "Hádej kdo/co jsem"</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni postupné odkrývání indicií na slidech (Slide 1: Těžká indicie...
+                        Slide 4: Jasná indicie), vedoucí k odhalení tématu.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #23</span>
+                    <h3 class="use-case-title">Porovnávací prezentace</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Každý slide rozděl na polovinu. Vlevo Romantismus, vpravo Realismus.
+                        Porovnej znaky.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #24</span>
+                    <h3 class="use-case-title">Citátová prezentace</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vyber 5 klíčových citátů z knihy. Každý dej na samostatný slide a přidej
+                        otázku k zamyšlení.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #25</span>
+                    <h3 class="use-case-title">Prezentace skupinových úkolů</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř slidy se zadáním pro Skupinu A, Skupinu B a Skupinu C. Každá má jiné
+                        instrukce.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #26</span>
+                    <h3 class="use-case-title">"Otázky a Odpovědi" (FAQ)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Sepiš seznam 10 nejčastějších otázek, které by žáky mohly napadnout, a
+                        připrav slidy Otázka -> Odpověď.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #27</span>
+                    <h3 class="use-case-title">Prezentace s hudbou (návrh)</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Navrhni prezentaci o skladateli. K jakému slidu pustit jakou hudební ukázku
+                        (uveď stopáž)?</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #28</span>
+                    <h3 class="use-case-title">Prezentace pro samostudium</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř detailní prezentaci plnou textu, která slouží jako studijní materiál
+                        pro ty, co chyběli.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #29</span>
+                    <h3 class="use-case-title">"To nejdůležitější v bodech"</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoř 3 slidy, na kterých bude přesně to, co si žáci mají opsat do sešitu.
+                        Stručně a jasně.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Prezentace #30</span>
+                    <h3 class="use-case-title">Závěrečné poděkování a zdroje</h3>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vytvoč závěrečný slide se shrnutím, poděkováním za pozornost a seznamem
+                        použité literatury.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category: Pokročilé Techniky -->
+        <div class="category-section" id="pokrocile">
+            <div class="category-header">
+                <span class="category-icon">🎓</span>
+                <h2 class="category-title">Pokročilé techniky (Chat & Analýza)</h2>
+                <span class="category-count">5 pokročilých způsobů</span>
+            </div>
+            <p class="mb-1-5">Tyto use cases využívají pokročilé analytické schopnosti NotebookLM a vyžadují strategické
+                myšlení. Nejsou vázány na konkrétní Studio modul.</p>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Pokročilé #1</span>
+                    <h3 class="use-case-title">Simulátor oponenta (The Devil's Advocate)</h3>
+                </div>
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <p>Využití NotebookLM k simulaci nejtvrdší možné opozice vašemu návrhu. NLM se naučí argumentaci
+                        vašich reálných oponentů a použije ji proti vám.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>🎯 Jak použít</h4>
+                    <p>Nahrajte "nepřátelská" data: školní řád, přepisy stížností rodičů (anonymizované), skeptické
+                        články. Pak nahrajte váš návrh změny. NLM najde slabá místa ve vašem návrhu.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>📤 Co získáte</h4>
+                    <p>Přesnou analýzu 5 nejslabších míst vašeho návrhu z pohledu reálných oponentů. Dokonalý
+                        "pre-mortem" vaší strategie.</p>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Jsi skeptický rodič/kolega, jehož argumentace vychází POUZE z nahraných
+                        stížností. Přečetl sis můj návrh. Roztrhej ho na kusy. Najdi 5 nejslabších míst, kde si
+                        protiřečím s legislativou nebo kde mé argumenty neobstojí proti tvým obavám. Buď nemilosrdný,
+                        ale věcný a opírej se o zdroje.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Pokročilé #2</span>
+                    <h3 class="use-case-title">Interdisciplinární kolizní generátor</h3>
+                </div>
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <p>Nástroj pro tvorbu inovativních interdisciplinárních projektů. Vezměte dva nesouvisející zdroje a
+                        přinuťte NLM najít funkční průnik.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>🎯 Jak použít</h4>
+                    <p>Zdroj A (Exaktní): např. článek o chování mravenců. Zdroj B (Humanitní): např. sociologická
+                        studie o teenagerech. NLM abstrahuje principy z A a aplikuje je na problémy z B.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>📤 Co získáte</h4>
+                    <p>3 konkrétní, realizovatelné projektové náměty, které kombinují obě domény (např. "Návrh školních
+                        chodeb na základě algoritmů mraveniště").</p>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Prostuduj oba zdroje. Tvým úkolem je navrhnout školní projekt, který
+                        aplikuje principy ze Zdroje A na problémy popsané ve Zdroje B. Vymysli 3 konkrétní,
+                        realizovatelné projektové náměty, které striktně vycházejí z obou textů.</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Pokročilé #3</span>
+                    <h3 class="use-case-title">ŠVP Forenzní Auditor (Curriculum Compliance)</h3>
+                </div>
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <p>Automatický audit souladu vašich tématických plánů se Školním vzdělávacím programem. Ušetří
+                        desítky hodin administrativní práce.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>🎯 Jak použít</h4>
+                    <p>Nahrajte celé ŠVP (nebo relevantní část) a vaše tématické plány na rok. NLM projde stovky stránek
+                        a najde "díry" v kurikulu.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>📤 Co získáte</h4>
+                    <p>Tabulku s chybějícími očekávanými výstupy + návrhy konkrétních aktivit, které můžete doplnit pro
+                        zajištění souladu.</p>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Vystupuj jako přísný školní inspektor. Proveď audit souladu mých plánů s
+                        ŠVP. 1) Vytvoř tabulku 'očekávaných výstupů' z ŠVP, které v mých plánech chybí, 2) U každého
+                        chybějícího bodu navrhni konkrétní aktivitu, 3) Ignoruj obecné fráze, hledej konkrétní díry.
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Pokročilé #4</span>
+                    <h3 class="use-case-title">Archeolog konfliktů (Teaching via Contradiction)</h3>
+                </div>
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <p>Nástroj pro výuku kritického myšlení. Místo hledání shody cíleně identifikuje rozpory mezi zdroji
+                        o stejné události.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>🎯 Jak použít</h4>
+                    <p>Nahrajte 3-5 protichůdných primárních zdrojů o jedné události (např. bitva u Lipan z pohledu
+                        husitů, kališníků a katolíků). NLM najde body střetu.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>📤 Co získáte</h4>
+                    <p>3 klíčová fakta, na kterých se zdroje neshodnou + doslovné citace ukazující rozpor + analýzu
+                        motivací autorů.</p>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Analyzuj všechny dokumenty. Tvým úkolem NENÍ událost shrnout. Najdi 3
+                        klíčová fakta, na kterých se zdroje neshodnou. Ke každému vypiš doslovné citace zobrazující
+                        rozpor. Pokus se analyzovat, jakou motivaci mohl mít autor každého zdroje (zaujatost,
+                        propaganda).</div>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Pokročilé #5</span>
+                    <h3 class="use-case-title">Detektor neviditelných bariér (Inclusive Lens Audit)</h3>
+                </div>
+                <div class="use-case-section">
+                    <h4>📋 Co to je</h4>
+                    <p>Využití NLM jako "beta-testera" vašich materiálů z pohledu inkluze. Odhaluje bariéry pro žáky s
+                        SPU, OMJ nebo ze znevýhodněného prostředí.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>🎯 Jak použít</h4>
+                    <p>Nahrajte pracovní list/test a metodiku práce s žáky s SPU. NLM analyzuje jazykovou složitost,
+                        kulturní předpoklady a vizuální přehlednost vašich materiálů.</p>
+                </div>
+                <div class="use-case-section">
+                    <h4>📤 Co získáte</h4>
+                    <p>Konkrétní úpravy textu pro zvýšení přístupnosti bez snížení náročnosti (např. nahrazení idiomů,
+                        zjednodušení souvětí).</p>
+                </div>
+                <div class="prompt-box">
+                    <div class="prompt-text">Jsi speciální pedagog. Analyzuj můj pracovní list. Hledej 'neviditelné
+                        bariéry': 1) Jazyková složitost - souvětí nebo abstraktní pojmy problematické pro žáky s
+                        OMJ/dyslexií, 2) Kulturní předpoklady - vyžaduje úkol znalosti z českého prostředí?, 3) Vizuální
+                        přehlednost. Navrhni konkrétní úpravy textu.</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | Všechny prompty připraveny k použití 📚</p>
+        <p class="footer-text">
+            <a href="index.html#studio-moduly" class="link-primary">Zpět na hlavní
+                průvodce
+                ↑</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="chatbot-knowledge.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+
+</html>

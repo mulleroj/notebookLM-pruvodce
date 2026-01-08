@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Myšlenková mapa v NotebookLM - vizualizace konceptů a jejich vztahů">
+    <title>Myšlenková mapa - NotebookLM pro Učitele</title>
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <link rel="stylesheet" href="../sidebar.css?v=3">
+    <link rel="stylesheet" href="../chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="../assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+                <div class="sidebar-item">
+                    <a href="../index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+                <div class="sidebar-item">
+                    <a href="../use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside> <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="../index.html" class="nav-link nav-link-home">🏠 Domů</a>
+            <a href="#tips" class="nav-link">💡 Tipy</a>
+            <a href="#use-cases" class="nav-link">📚 Příklady</a>
+            <a href="../use-cases.html#pokrocile" class="nav-link">🗂️ Katalog</a>
+        </div>
+    </nav>
+
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-hero-icon">🧠</div>
+            <h1>Myšlenková mapa</h1>
+            <p class="module-hero-description">Vizualizuje koncepty a jejich vztahy ve formě myšlenkové mapy. Ideální
+                pro pochopení struktury komplexních témat.</p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- Tips Section -->
+        <div class="category-section" id="tips">
+            <div class="category-header">
+                <span class="category-icon">💡</span>
+                <h2 class="category-title">Tipy pro myšlenkové mapy</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎚️</div>
+                        <h3 class="card-title">Úroveň detailu</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Specifikuj hloubku: "základní přehled" pro rychlou orientaci, "podrobná mapa" pro komplexní
+                            pochopení.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📏</div>
+                        <h3 class="card-title">Zaměření</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Pro velké sešity: "Myšlenková mapa z kapitoly 3" nebo "Mapa pouze vztahů mezi politickými
+                            stranami".</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔄</div>
+                        <h3 class="card-title">Iterace</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Můžeš požádat: "Rozšiř větev o demokracii" nebo "Přidej příklady ke každému uzlu".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workflow -->
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-icon">⚡</span>
+                <h2 class="category-title">Kdy použít myšlenkovou mapu</h2>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Ideální situace pro myšlenkové mapy:</h3>
+                <ul style="line-height: 1.8;">
+                    <li>📚 <strong>Začátek nového tématu:</strong> Vytvoř mapu pro rychlou orientaci v struktuře látky
+                    </li>
+                    <li>🎓 <strong>Příprava na zkoušky:</strong> Vizualizace vztahů pomáhá lepšímu zapamatování</li>
+                    <li>📝 <strong>Tvorba materiálů:</strong> Mapa jako základ pro výukové prezentace nebo texty</li>
+                    <li>🔍 <strong>Analýza zdrojů:</strong> Pochopení jak spolu souvisí různé dokumenty</li>
+                    <li>👥 <strong>Výuka:</strong> Zobraz žákům "big picture" před detailním výkladem</li>
+                </ul>
+
+                <div class="example-box" style="margin-top: 1.5rem;">
+                    <div class="example-title">🎯 Pro tip</div>
+                    <p>Kombinuj myšlenkovou mapu s jinými moduly: Nejprve mapa pro přehled, pak quiz na jednotlivé
+                        koncepty, nakonec prezentace pro výuku. Každý slouží jinému účelu v procesu učení!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use Cases Section -->
+        <div class="category-section" id="use-cases">
+            <div class="category-header">
+                <span class="category-icon">📚</span>
+                <h2 class="category-title">Use Cases - Praktické příklady použití</h2>
+            </div>
+        </div>
+
+        <!-- Use Case #8 -->
+        <div class="use-case-card" id="use-case-8">
+            <div class="use-case-header">
+                <span class="use-case-number">#8</span>
+                <h3 class="use-case-title">Tvorba myšlenkových map</h3>
+                <p class="use-case-subtitle">Hierarchická vizualizace tématu</p>
+            </div>
+
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <div class="use-case-content">
+                    <p>Vytváří hierarchickou mapu konceptů s hlavními uzly, poduzly a příklady. Vizuálně znázorňuje
+                        vztahy mezi tématy.</p>
+                </div>
+            </div>
+
+            <div class="use-case-section">
+                <h4>🎯 Nejlepší pro</h4>
+                <div class="use-case-content">
+                    <ul>
+                        <li>Pochopení struktury komplexních témat</li>
+                        <li>Identifikace souvislostí mezi koncepty</li>
+                        <li>Vizuální organizace znalostí</li>
+                        <li>Přípravu výukových materiálů</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Hotový prompt</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">Syntetizuj celé téma [téma] do hierarchické myšlenkové mapy: hlavní uzly,
+                    poduzly, příklady.</div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📝 Praktický příklady použití</div>
+
+                <p><strong>Příklad 1: Struktura tématu</strong></p>
+                <p>Prompt: "Vytvoř myšlenkovou mapu vztahů mezi demokracií, občanskou společností a právním státem podle
+                    nahraných zdrojů."</p>
+
+                <p style="margin-top: 1rem;"><strong>Příklad 2: Porovnání konceptů</strong></p>
+                <p>Prompt: "Myšlenková mapa porovnávající různé psychologické směry z dokumentů - hlavní představitelé,
+                    klíčové koncepty, vzájemné vztahy."</p>
+
+                <p style="margin-top: 1rem;"><strong>Příklad 3: Detail
+
+                        ní vs. přehledová</strong></p>
+                <p>Pro základní přehled: "Základní myšlenková mapa hlavních témat"</p>
+                <p>Pro detail: "Podrobná mapa všech konceptů včetně příkladů a definic"</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | Myšlenková mapa 📚</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+            <a href="../index.html#studio-moduly" style="color: var(--primary-blue); text-decoration: none;">Zpět na
+                hlavní průvodce
+                ↑</a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../sidebar.js"></script>
+    <script src="../chatbot-knowledge.js"></script>
+    <script src="../chatbot.js"></script>
+</body>
+
+</html>

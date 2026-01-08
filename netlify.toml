@@ -1,0 +1,58 @@
+# Netlify Configuration for NotebookLM Průvodce
+
+[build]
+  # Publish directory - where the built site files are located
+  # For static HTML sites, this is typically the root directory
+  publish = "."
+  
+  # Build command - not needed for static HTML sites
+  # command = ""
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    
+    # Cache control for static assets
+    Cache-Control = "public, max-age=3600"
+
+# Cache static assets longer
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirects and rewrites
+# Redirect HTTP to HTTPS automatically
+[[redirects]]
+  from = "http://notebooklm-pruvodce.netlify.app/*"
+  to = "https://notebooklm-pruvodce.netlify.app/:splat"
+  status = 301
+  force = true
+
+# 404 page redirect
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+# Pretty URLs (optional - enables /about instead of /about.html)
+# [[redirects]]
+#   from = "/jak-zacit"
+#   to = "/jak-zacit.html"
+#   status = 200

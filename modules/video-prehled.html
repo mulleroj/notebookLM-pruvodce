@@ -1,0 +1,607 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Video přehled v NotebookLM - AI generované video s animacemi vysvětlujícími vaše zdroje">
+    <title>Video přehled - NotebookLM pro Učitele</title>
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <link rel="stylesheet" href="../sidebar.css?v=3">
+    <link rel="stylesheet" href="../chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="../assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+                <div class="sidebar-item">
+                    <a href="../index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+                <div class="sidebar-item">
+                    <a href="../use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+
+    <!--Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="../index.html" class="nav-link nav-link-home">🏠 Domů</a>
+            <a href="#tips" class="nav-link">💡 Tipy</a>
+            <a href="#use-cases" class="nav-link">📚 Use Cases</a>
+            <a href="../use-cases.html#video" class="nav-link">🗂️ Katalog</a>
+            <a href="video-prompty.html" class="nav-link">🎯 Prompty</a>
+        </div>
+    </nav>
+
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-hero-icon">🎥</div>
+            <h1>Video přehled</h1>
+            <p class="module-hero-description">Generuje AI video s animovanými vizualizacemi vašich zdrojů. Ideální pro
+                flipované učení nebo jako vizuální úvod k novému tématu.</p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- Tips Section -->
+        <div class="category-section" id="tips">
+            <div class="category-header">
+                <span class="category-icon">💡</span>
+                <h2 class="category-title">Tipy pro Video přehled</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">⏱️</div>
+                        <h3 class="card-title">Délka videa</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Video typicky trvá 5-15 minut. Můžete specifikovat: "Vytvoř krátké 3minutové video úvod"</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <h3 class="card-title">Zaměření obsahu</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Pro velké sešity diskutuj v chatu o tématu PŘED kliknutím na Video - AI použije kontext!</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎬</div>
+                        <h3 class="card-title">Kdy použít</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Ideální pro flipované učení, domácí přípravu žáků nebo rychlý vizuální přehled tématu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workflow -->
+        <div class="category-section" id="video-metody">
+            <div class="category-header">
+                <span class="category-icon">⚡</span>
+                <h2 class="category-title">Jak cílit video na konkrétní téma</h2>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Metody pro fokusované video (bez vytváření nového sešitu):</h3>
+
+                <div class="example-box" class="mt-1">
+                    <div class="example-title">🎯 Metoda 1 - Chat prompt</div>
+                    <p>V chatu: "Vytvoř video přehled pouze o [konkrétní téma] z dokumentu [název]"</p>
+                    <p>Pak klikni na Video v Studio.</p>
+                </div>
+
+                <div class="example-box">
+                    <div class="example-title">🎯 Metoda 2 - Kontext v chatu (NEJLEPŠÍ)</div>
+                    <ol>
+                        <li>Nejprve diskutuj v chatu o tématu které chceš ve videu</li>
+                        <li>AI si vytvoří kontext a pochopí co tě zajímá</li>
+                        <li>Pak klikni na Video - AI použije kontext konverzace!</li>
+                    </ol>
+                    <p><strong>Příklad:</strong></p>
+                    <ol class="mt-0-5">
+                        <li>"Popiš strukturu politických stran podle dokumentu '10. Politická strana'"</li>
+                        <li>AI odpoví</li>
+                        <li>"Rozveď více o volební kampani"</li>
+                        <li>AI rozve</li>
+                        <li>"Vytvoř video přehled z této konverzace"</li>
+                        <li>Klikni na Video → získáš video zaměřené přesně na politické strany!</li>
+                    </ol>
+                </div>
+
+                <div class="example-box">
+                    <div class="example-title">🎯 Metoda 3 - Citace zdrojů</div>
+                    <p>"Vygeneruj video z informací na straně 15-20 dokumentu XYZ"</p>
+                </div>
+
+                <div class="example-box">
+                    <div class="example-title">💎 Pro tip</div>
+                    <p>Pro nejlepší výsledky kombinuj metody:</p>
+                    <ol>
+                        <li>V chatu vytvoř shrnutí tématu které chceš ve videu</li>
+                        <li>Řekni "Vytvoř video z tohoto shrnutí"</li>
+                        <li>NotebookLM použije váš chat jako základ pro video!</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison Section -->
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-icon">❓</span>
+                <h2 class="category-title">Video přehled vs. Prezentace - co kdy použít?</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>🎥 Video přehled</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Kdy:</strong></p>
+                        <ul class="list-with-margin">
+                            <li>Potřebuješ rychlé vizuální shrnutí</li>
+                            <li>Chceš sdílet s žáky jako domácí přípravu</li>
+                            <li>Vytváříš flipované učení</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>📽️ Prezentace</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Kdy:</strong></p>
+                        <ul class="list-with-margin">
+                            <li>Potřebuješ osnovu pro živý výklad</li>
+                            <li>Chceš kontrolovat tempo a detaily</li>
+                            <li>Prezentuješ na meetingu nebo konferenci</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use Cases Section -->
+        <div class="category-section" id="use-cases">
+            <div class="category-header">
+                <span class="category-icon">📚</span>
+                <h2 class="category-title">Praktické příklady použití</h2>
+            </div>
+        </div>
+
+        <!-- Video Use Case -->
+        <div class="use-case-card">
+            <div class="use-case-header">
+                <span class="use-case-number">Video</span>
+                <h3 class="use-case-title">Flipované učení a vizuální úvody</h3>
+                <p class="use-case-subtitle">AI generované video pro domácí přípravu</p>
+            </div>
+
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <div class="use-case-content">
+                    <p>NotebookLM vytvoří animované video vysvětlující vaše zdroje. Video obsahuje vizualizace, animace
+                        a hlasový doprovod vysvětlující klíčové koncepty.</p>
+                </div>
+            </div>
+
+            <div class="use-case-section">
+                <h4>🎯 Ideální pro</h4>
+                <div class="use-case-content">
+                    <ul>
+                        <li>Flipované učení - žáci sledují doma před hodinou</li>
+                        <li>Vizuální úvod k novému tématu</li>
+                        <li>Shrnutí kapitoly do digestibilní formy</li>
+                        <li>Alternativní formát pro žáky s různými učebními styly</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Hotový prompt</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">Vytvoř krátké video přehled (max 10 minut) o [téma] z nahraných zdrojů. Zaměř
+                    se na klíčové koncepty a praktické příklady.</div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📝 Praktický příklad</div>
+                <p><strong>Scénář:</strong> Chceš, aby žáci měli vizuální přehled o fotosyntéze před hodinou.</p>
+                <p><strong>Workflow:</strong></p>
+                <ol>
+                    <li>Nahraj kapitolu o fotosyntéze do NotebookLM</li>
+                    <li>V chatu: "Vytvoř shrnutí fotosyntézy zaměřené na základní proces, vstupy a výstupy"</li>
+                    <li>AI vytvoří textové shrnutí</li>
+                    <li>Řekni: "Použij toto shrnutí jako základ pro video přehled"</li>
+                    <li>Klikni na Video v Studio</li>
+                    <li>Sdílej video se žáky jako domácí přípravu</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- TOP 10 Use Cases Section -->
+        <section id="top-use-cases" class="section">
+            <div class="section-header">
+                <h2 class="section-title">🌟 TOP 10 Nejužitečnějších Use Cases pro Video</h2>
+                <p class="mb-1-5">Vybrali jsme pro vás 10 nejpraktičtějších způsobů využití AI videí v
+                    každodenní výuce.</p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- TOP Video UC #1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔄</div>
+                        <h3 class="card-title">Fl ipované učení - video úvod</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Domácí přípravu studentů</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř krátké video přehled (max 10 minut) o [téma] z nahraných
+                                zdrojů. Zaměř se na klíčové koncepty a praktické příklady.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP Video UC #2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📐</div>
+                        <h3 class="card-title">Vysvětlení složitého procesu krok za krokem</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Vizualizaci obtížných témat</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř video animaci ukazující postup [proces] krok za krokem s
+                                vysvětlením každé fáze.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP Video UC #3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💭</div>
+                        <h3 class="card-title">Vizualizace abstraktních konceptů</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Zjednodušení těžko pochopitelných témat</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Převeď abstraktní koncept [téma] do vizuálního videa s konkrétními
+                                příklady a metaforami.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP Video UC #4 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎬</div>
+                        <h3 class="card-title">Motivační úvod k novému tématu</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Zaujetí studentů hned na začátku</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř poutavé video zaměřené na to, PROC je téma [téma] důležité a
+                                kde se uplatní v reálném životě.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP Video UC #5 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📚</div>
+                        <h3 class="card-title">Shrnutí kapitoly do digestibilní formy</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Rychlé opakování látky</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Zkondenzu jte tuto kapitolu do 5minutového videa se všemi hlavními
+                                body a příklady.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP Video UC #6 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🌍</div>
+                        <h3 class="card-title">Jazyková výuka s kontextem</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Výuku cizích jazyků s kont extem</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř video vysvětlující [gramatický jev] s vizuálními příklady z
+                                běžných konverzací.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP Video UC #7 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📜</div>
+                        <h3 class="card-title">Historický přehled události</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Chronologické vysvětlení dějinných událostí</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř timeline video události [událost] s vysvětlením příčin,
+                                průběhu a důsledků.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP Video UC #8 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">⚖️</div>
+                        <h3 class="card-title">Srovnání dvou jevů vedle sebe</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Komparativní učení</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř video srovnávající [A] a [B]. Ukaž podobnosti, rozdíly a kdy
+                                použít co.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP Video UC #9 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔧</div>
+                        <h3 class="card-title">Tutoriál na složitý postup</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Laboratorní či praktické činnosti</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř video tutoriál na [postup] s důrazem na bezpečnost a
+                                kritické kroky.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP Video UC #10 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🏥</div>
+                        <h3 class="card-title">Video příklad pro absentéry</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Žáky, kteří chyběli</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Zkondenzu j dnešní hodinu o [téma] do videa pro žáky, kteří
+                                chyběli. Zahrň všechny klíčové body.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Link to prompt database -->
+            <div class="cta-gradient-box">
+                <strong>🎯 Databáze Promptů pro Video</strong>
+                <p class="mt-0-5">Máme pro vás připravené prompty s možností kopírování!</p>
+                <a href="video-prompty.html" class="cta-gradient-link">
+                    📊 Prohlédněte si databázi promptů →
+                </a>
+            </div>
+
+            <!-- Link to full catalog -->
+            <div class="cta-gradient-box">
+                <strong>🔗 Chcete ještě víc?</strong>
+                <p class="mt-0-5">Máme pro vás připravených celkem <strong>30 způsobů použití</strong>
+                    video funkcí! Prohlédněte si kompletní katalog včetně všech promptů.</p>
+                <a href="../use-cases.html#video" class="cta-gradient-link">
+                    📚 Zobrazit všech 30 Video Use Cases →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | Video přehled 📚</p>
+        <p class="footer-text">
+            <a href="../index.html#studio-moduly" class="link-primary">Zpět na
+                hlavní průvodce ↑</a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../sidebar.js"></script>
+    <script src="../chatbot-knowledge.js"></script>
+    <script src="../chatbot.js"></script>
+</body>
+
+</html>

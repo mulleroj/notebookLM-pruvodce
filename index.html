@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kompletní průvodce NotebookLM pro učitele - 30 způsobů jak ušetřit desítky hodin příprav a administrativy">
+    <title>NotebookLM Průvodce pro Učitele | Ušetřete desítky hodin</title>
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="sidebar.css?v=3">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+            <!-- Hlavní sekce -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+
+                <div class="sidebar-item">
+                    <a href="index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Studio moduly (expandable) -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="modules/audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Další sekce -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+
+                <div class="sidebar-item">
+                    <a href="use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation Menu -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="#uvod" class="nav-link">📖 Průvodce</a>
+            <a href="jak-zacit.html" class="nav-link">🔬 Jak začít</a>
+            <a href="#studio-moduly" class="nav-link">📚 Studio Moduly</a>
+            <a href="use-cases.html" class="nav-link">💡 Use Cases (192)</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>NotebookLM Průvodce pro Učitele</h1>
+            <p>Komplexní průvodce, jak NotebookLM ušetří desítky hodin příprav, hodnocení a administrativy. 192
+                praktických
+                use cases s hotovými prompty pro okamžité použití.</p>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">192</span>
+                    <span class="stat-label">Use cases</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Studio modulů</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Copy-paste prompty</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Alert Box -->
+    <div class="container news-alert-container">
+        <a href="novinky.html" class="news-alert-link">
+            <div class="news-alert-box">
+                <div class="news-alert-content">
+                    <span class="news-alert-emoji">🆕</span>
+                    <div>
+                        <strong class="news-alert-title">NOVÉ V NOTEBOOKLM:</strong>
+                        <span class="news-alert-text">Lecture Mode - univerzitní přednáška místo podcastu!</span>
+                    </div>
+                </div>
+                <span class="news-alert-arrow">Všechny novinky →</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- Quick Start Cards -->
+    <section class="quick-start-section">
+        <div class="container">
+            <h2 class="quick-start-title">📍 Kde začít?</h2>
+            <div class="quick-start-grid">
+                <a href="jak-zacit.html" class="quick-start-card">
+                    <div class="quick-start-icon">🚀</div>
+                    <h3>Začínáte?</h3>
+                    <p>Nastavte si NotebookLM za 3 minuty pomocí našeho průvodce krok za krokem</p>
+                    <span class="quick-start-arrow">→</span>
+                </a>
+
+                <a href="#studio-moduly" class="quick-start-card">
+                    <div class="quick-start-icon">📚</div>
+                    <h3>Studio Moduly</h3>
+                    <p>Prozkoumejte 6 modulů: Audio, Video, Flashcards, Quiz, Infografika, Prezentace</p>
+                    <span class="quick-start-arrow">→</span>
+                </a>
+
+                <a href="use-cases.html" class="quick-start-card">
+                    <div class="quick-start-icon">💡</div>
+                    <h3>192 Use Cases</h3>
+                    <p>Hotové prompty připravené ke kopírování - od výuky po administrativu</p>
+                    <span class="quick-start-arrow">→</span>
+                </a>
+
+                <a href="spu-adhd.html" class="quick-start-card">
+                    <div class="quick-start-icon">🧠</div>
+                    <h3>SPU & ADHD</h3>
+                    <p>Speciální průvodce pro práci s žáky s SPU, ADHD a poruchami autistického spektra</p>
+                    <span class="quick-start-arrow">→</span>
+                </a>
+
+                <a href="troubleshooting.html" class="quick-start-card">
+                    <div class="quick-start-icon">🔧</div>
+                    <h3>Troubleshooting</h3>
+                    <p>Řešení častých problémů a otázek při práci s NotebookLM</p>
+                    <span class="quick-start-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Introduction -->
+        <section id="uvod" class="section">
+            <h2 class="section-title">
+                <span class="section-icon">👋</span>
+                Úvod do NotebookLM
+            </h2>
+            <p><strong>NotebookLM</strong> je pokročilý AI asistent od Google, který vám pomáhá pracovat s vašimi
+                dokumenty a zdroji. Na rozdíl od běžných chatbotů, NotebookLM dokáže analyzovat vaše konkrétní zdroje a
+                poskytovat odpovědi založené přímo na vašich datech.</p>
+
+            <h3 class="section-subtitle">Co je NotebookLM?</h3>
+            <ul>
+                <li><strong>Personalizovaný AI asistent</strong> - Pracuje s vašimi vlastními dokumenty</li>
+                <li><strong>Vícezdrojová analýza</strong> - Kombinuje informace z mnoha zdrojů najednou</li>
+                <li><strong>Studio nástroje</strong> - Vytváří audio přehledy, videa, kvízy a další z vašich zdrojů</li>
+                <li><strong>Citační transparentnost</strong> - Všechny odpovědi jsou podložené odkazy na zdroje</li>
+            </ul>
+
+            <div class="tip-box">
+                <div class="tip-box-title">💡 Klíčová výhoda</div>
+                <p>NotebookLM dokáže zpracovat velké množství zdrojů (143+ dokumentů) a přesto poskytovat přesné,
+                    relevantní odpovědi s odkazy na konkrétní části vašich dokumentů.</p>
+            </div>
+
+            <h3 class="section-subtitle">Základní pojmy</h3>
+            <ul>
+                <li><strong>Sešit (Notebook)</strong> - Kontejner pro vaše zdroje a konverzace</li>
+                <li><strong>Zdroje</strong> - Dokumenty, PDF, webové stránky, které nahrajete</li>
+                <li><strong>Chat</strong> - Konverzační rozhraní pro dotazy k vašim zdrojům</li>
+                <li><strong>Studio</strong> - Panel s nástroji pro vytváření výstupů (audio, video, kvízy...)</li>
+            </ul>
+
+            <!-- Getting Started CTA -->
+            <div class="cta-gradient-box mt-2">
+                <strong>🚀 Začínáte s NotebookLM?</strong>
+                <p>Připravili jsme pro vás kompletní průvodce krok za krokem. Nastavte si NotebookLM za 3 minuty a
+                    začněte využívat AI asistenta ve výuce!</p>
+                <a href="jak-zacit.html" class="cta-gradient-link">
+                    📖 Jak začít - Průvodce pro začátečníky →
+                </a>
+            </div>
+        </section>
+
+        <!-- Chat Configuration -->
+        <section id="konfigurace-chatu" class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚙️</span>
+                Konfigurace chatu
+            </h2>
+            <p>Správné nastavení chatu je klíčem k získání nejlepších výsledků z NotebookLM. Chat si můžete přizpůsobit
+                podle svého účelu a stylu práce.</p>
+
+            <h3 class="section-subtitle">Konverzační cíle a role</h3>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><strong>🎯 Výchozí režim</strong></span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p><strong>Nejlepší pro:</strong> Obecný výzkum a brainstorming</p>
+                    <ul>
+                        <li>Vyvážený přístup mezi hloubkou a stručností</li>
+                        <li>Dobré pro explorativní dotazy</li>
+                        <li>Ideální když nevíte přesně, co hledáte</li>
+                    </ul>
+                    <div class="tip-box">
+                        <div class="tip-box-title">💡 Tip</div>
+                        <p>Použijte výchozí režim na začátku práce se sešitem, abyste získali přehled o obsahu.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><strong>📚 Výukový průvodce</strong></span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p><strong>Nejlepší pro:</strong> Učení a pochopení složitých témat</p>
+                    <ul>
+                        <li>Strukturované, pedagogicky zaměřené odpovědi</li>
+                        <li>Vysvětlení krok za krokem</li>
+                        <li>Pravděpodobně delší odpovědi s příklady</li>
+                        <li>Používá Sokratovskou metodu - ptá se zpět pro hlubší pochopení</li>
+                    </ul>
+                    <div class="tip-box">
+                        <div class="tip-box-title">🎓 Ideální použití</div>
+                        <p>Pokud se učíte novou látku nebo potřebujete hluboké pochopení konceptu z vašich zdrojů,
+                            výukový průvodce vám poskytne nejstrukturovanější základ.</p>
+                    </div>
+                    <h4>Příklady dotazů:</h4>
+                    <ul>
+                        <li>"Vysvětli mi koncept občanské společnosti z mých zdrojů"</li>
+                        <li>"Jak souvisí psychologie s demokratickými procesy podle materiálů?"</li>
+                        <li>"Nauč mě základy sociologie podle těchto dokumentů"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><strong>✏️ Vlastní nastavení</strong></span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <p><strong>Nejlepší pro:</strong> Specifické požadavky a pokročilé použití</p>
+                    <ul>
+                        <li>Můžete definovat vlastní roli AI (např. "odborný recenzent", "kritický analytik")</li>
+                        <li>Nastavit specifický styl komunikace</li>
+                        <li>Určit úroveň formálnosti</li>
+                    </ul>
+                    <h4>Příklady vlastních rolí:</h4>
+                    <ul>
+                        <li><strong>Kritický analytik:</strong> "Analyzuj slabá místa v argumentaci těchto zdrojů"</li>
+                        <li><strong>Shrnovač pro laiky:</strong> "Vysvětli obsah jednoduše pro kohokoli bez předchozích
+                            znalostí"</li>
+                        <li><strong>Výzkumný asistent:</strong> "Najdi souvislosti mezi různými zdroji a identifikuj
+                            rozpory"</li>
+                        <li><strong>Konzultant:</strong> "Poskytni praktické doporučení na základě těchto zdrojů"</li>
+                    </ul>
+                    <div class="warning-box">
+                        <strong>⚠️ Upozornění:</strong> Vlastní nastavení vyžaduje pečlivou formulaci. Špatně definovaná
+                        role může vést k méně relevantním odpovědím.
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Délka odpovědí</h3>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📄</div>
+                        <h3 class="card-title">Výchozí</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Vyvážená délka - většina odpovědí bude mít 2-4 odstavce.</p>
+                        <p><strong>Použijte pro:</strong> Standardní dotazy a průzkum</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📜</div>
+                        <h3 class="card-title">Delší</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Podrobné odpovědi - 5+ odstavců s rozsáhlými vysvětleními.</p>
+                        <p><strong>Použijte pro:</strong> Komplexní analýzy, důkladné vysvětlení konceptů</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📝</div>
+                        <h3 class="card-title">Kratší</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Stručné odpovědi - 1-2 odstavce, jen hlavní body.</p>
+                        <p><strong>Použijte pro:</strong> Rychlé odpovědi, faktografické dotazy</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <div class="tip-box-title">💡 Profesionální tip</div>
+                <p>Můžete délku upravovat i v rámci jednoho dotazu - stačí napsat "vysvětli stručně" nebo "podrobně
+                    rozveď".</p>
+            </div>
+        </section>
+
+        <!-- Citations Section -->
+        <section id="citace" class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔍</span>
+                Ochrana proti "lhaní" - Citace
+            </h2>
+            <p><strong>NotebookLM má jednu super-schopnost, kterou ChatGPT nemá.</strong> Umí dokázat, že si nevymýšlí.
+            </p>
+
+            <div class="use-case-card">
+                <h3>Jak ověřit pravdu:</h3>
+                <p>Kdykoliv vám NotebookLM odpoví, uvidíte u textu malá šedá čísla (¹ ² ³).</p>
+
+                <div class="cards-grid" style="margin-top: 1.5rem;">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">1️⃣</div>
+                            <h3 class="card-title">Najeďte myší na číslo</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>Okamžitě se vám zobrazí původní věta z vašeho nahraného dokumentu, ze které AI čerpala.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon">2️⃣</div>
+                            <h3 class="card-title">Klikněte na číslo</h3>
+                        </div>
+                        <div class="card-content">
+                            <p>NotebookLM vás vlevo v okně „Zdroje" přesune přesně na místo v PDF/textu, kde se
+                                informace nachází.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warning-box" style="margin-top: 1.5rem;">
+                    <strong>📚 Tip pro učitele:</strong>
+                    "Vždy před odesláním materiálu žákům namátkově zkontrolujte 2–3 citace (čísla), abyste měli jistotu,
+                    že AI správně pochopila kontext."
+                </div>
+            </div>
+        </section>
+
+        <!-- Example Workflow Section -->
+        <section id="vzorovy-scenar" class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🚀</span>
+                Vzorový scénář - Kompletní workflow
+            </h2>
+            <p><strong>Jak to všechno spojit dohromady?</strong> Tady je ukázka jedné hodiny práce, která vám ušetří 4
+                hodiny příprav.</p>
+
+            <div class="use-case-card">
+                <h3>Situace:</h3>
+                <p>Je neděle večer, připravujete se na téma <strong>„Průmyslová revoluce"</strong>.</p>
+                <p><strong>Máte:</strong> 1× PDF kapitoly z učebnice, 1× své staré poznámky ve Wordu.</p>
+
+                <h3 style="margin-top: 2rem;">Krok za krokem:</h3>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span><strong>1️⃣ Vytvoříte Notebook</strong></span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Nahrajete PDF kapitoly + Word poznámky do nového NotebookLM sešitu.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span><strong>2️⃣ Cesta do práce (Audio přehled)</strong></span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Prompt:</strong> "Vytvoř audio shrnutí Průmyslové revoluce zaměřené na klíčové
+                            vynálezy a sociální dopady."</p>
+                        <p><strong>Akce:</strong> Posloucháte v autě cestou do školy, osvěžíte si souvislosti.</p>
+                        <p><strong>Čas:</strong> 15 minut poslechu</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span><strong>3️⃣ Příprava prezentace</strong></span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Prompt:</strong> "Navrhni prezentaci o 10 slidech na téma Průmyslová revoluce pro
+                            střední školu. Zahrň: vynálezy, sociální změny, vliv na dnešek."</p>
+                        <p><strong>Akce:</strong> Zkopírujete osnovu do PowerPointu nebo Gamma.</p>
+                        <p><strong>Čas:</strong> 5 minut</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span><strong>4️⃣ Aktivita do hodiny (Kvíz)</strong></span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Prompt:</strong> "Vytvoř 15 kvízových otázek o Průmyslové revoluci ve formátu pro
+                            Kahoot - otázka + 4 odpovědi (1 správná)."</p>
+                        <p><strong>Akce:</strong> Vložíte otázky do Kahootu pro interaktivní aktivitu.</p>
+                        <p><strong>Čas:</strong> 5 minut</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span><strong>5️⃣ Materiál pro dyslektiky (Zjednodušený text)</strong></span>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Prompt:</strong> "Vytvoř zjednodušené shrnutí Průmyslové revoluce pro žáky s dyslexií
+                            - krátké věty, jasná struktura, max 1 strana A4."</p>
+                        <p><strong>Akce:</strong> Vytisknete pro 3 žáky, kteří potřebují podpůrný materiál.</p>
+                        <p><strong>Čas:</strong> 3 minuty</p>
+                    </div>
+                </div>
+
+                <div class="tip-box"
+                    style="margin-top: 2rem; background: linear-gradient(135deg, rgba(66, 133, 244, 0.2), rgba(138, 180, 248, 0.2));">
+                    <div class="tip-box-title" style="font-size: 1.1rem;">✨ Výsledek</div>
+                    <p><strong>Za 30 minut máte kompletní, diferencovanou přípravu, která by ručně trvala půl
+                            dne:</strong></p>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>✅ Audio shrnutí pro vlastní přípravu</li>
+                        <li>✅ Prezentaci pro výuku</li>
+                        <li>✅ Interaktivní kvíz (Kahoot)</li>
+                        <li>✅ Podpůrné materiály pro žáky s SPU</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sharing Section -->
+        <section id="sdileni" class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🤝</span>
+                Sdílení a spolupráce
+            </h2>
+            <p><strong>Nevytvářejte všichni to samé. Sdílejte.</strong></p>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📤</div>
+                        <h3 class="card-title">Jak sdílet</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Vpravo nahoře</strong> v NotebookLM je ikona <strong>Sdílet (Share)</strong>.</p>
+                        <p>Můžete poslat odkaz kolegovi z kabinetu - kolega uvidí stejné zdroje a může se AI ptát na
+                            vlastní otázky.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">👥</div>
+                        <h3 class="card-title">Ideální pro</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Sdílení materiálů k maturitním otázkám</li>
+                            <li>Ročníkové projekty</li>
+                            <li>Společnou přípravu tematických celků</li>
+                            <li>Mentoring nových kolegů</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <h3 class="card-title">Výhody</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Jeden nahraje zdroje, všichni využívají asistenta.</strong></p>
+                        <p>Ušetříte čas celému týmu - není potřeba, aby každý nahrával stejné dokumenty zvlášť.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box" style="margin-top: 1.5rem;">
+                <div class="example-title">📝 Praktický příklad</div>
+                <p><strong>Scénář:</strong> Předmětová komise češtináři připravuje materiály k maturitě.</p>
+                <ol>
+                    <li>Jeden kolega vytvoří Notebook a nahraje všechna povinná díla + rozbory</li>
+                    <li>Sdílí odkaz s ostatními z komise</li>
+                    <li>Každý si generuje vlastní materiály podle potřeby (jeden kvízy, druhý prezentace, třetí shrnutí)
+                    </li>
+                    <li>Všichni pracují ze stejných zdrojů → konzistence napříč ročníkem</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Studio Modules -->
+        <section id="studio-moduly" class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🎬</span>
+                Studio moduly
+            </h2>
+            <p>Studio je nejmocnější část NotebookLM - umožňuje automaticky generovat různé typy výstupů z vašich
+                zdrojů. Zde je kompletní průvodce všemi moduly.</p>
+
+            <div class="cards-grid">
+
+                <!-- Audio Overview -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎧</div>
+                        <h3 class="card-title">Audio přehled</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Generuje podcast-style audio konverzaci mezi AI hlasy, které diskutují o vašich zdrojích.
+                            Ideální pro poslech při jiných aktivitách.</p>
+                    </div>
+                    <a href="modules/audio-prehled.html#studio-moduly"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--primary-blue); color: white; text-decoration: none; border-radius: 4px; font-weight: 500; transition: var(--transition);">Detailní
+                        návod pro učitele →</a>
+                    <div class="card-tags">
+                        <span class="tag">Audio</span>
+                        <span class="tag">Přehled</span>
+                        <span class="tag">Konverzace</span>
+                    </div>
+                </div>
+
+                <!-- Video Overview -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎥</div>
+                        <h3 class="card-title">Video přehled</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Generuje AI video s animacemi vysvětlujícími vaše zdroje. Ideální pro flipované učení nebo
+                            vizuální úvod k tématu.</p>
+                    </div>
+                    <a href="modules/video-prehled.html"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--primary-blue); color: white; text-decoration: none; border-radius: 4px; font-weight: 500; transition: var(--transition);">Detailní
+                        návod pro učitele →</a>
+                    <div class="card-tags">
+                        <span class="tag">Video</span>
+                        <span class="tag">AI animace</span>
+                        <span class="tag">Výuka</span>
+                    </div>
+                </div>
+
+                <!-- Mind Map -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🗺️</div>
+                        <h3 class="card-title">Myšlenková mapa</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Vizualizuje koncepty a jejich vztahy hierarchicky. Perfektní pro pochopení struktury
+                            komplexních témat.</p>
+                    </div>
+                    <a href="modules/myslenkova-mapa.html"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--primary-blue); color: white; text-decoration: none; border-radius: 4px; font-weight: 500; transition: var(--transition);">Detailní
+                        návod pro učitele →</a>
+                    <div class="card-tags">
+                        <span class="tag">Vizualizace</span>
+                        <span class="tag">Koncepty</span>
+                        <span class="tag">Vztahy</span>
+                    </div>
+                </div>
+
+                <!-- Zprávy (Messages/Reports) -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📝</div>
+                        <h3 class="card-title">Zprávy</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Vytváří strukturované zprávy, shrnutí a reporty z vašich zdrojů. Perfektní pro dokumentaci a
+                            sdílení poznatků.</p>
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Zpráva</span>
+                        <span class="tag">Report</span>
+                        <span class="tag">Shrnutí</span>
+                    </div>
+                </div>
+
+                <!-- Flashcards (Výukové kartičky) -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🃏</div>
+                        <h3 class="card-title">Výukové kartičky</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Vytváří flashcards pro aktivní učení a memorování. Perfektní pro přípravu na zkoušky.</p>
+                    </div>
+                    <a href="modules/karticky.html"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--primary-blue); color: white; text-decoration: none; border-radius: 4px; font-weight: 500; transition: var(--transition);">Detailní
+                        návod pro učitele →</a>
+                    <div class="card-tags">
+                        <span class="tag">Učení</span>
+                        <span class="tag">Memorování</span>
+                        <span class="tag">Kartičky</span>
+                    </div>
+                </div>
+
+                <!-- Quiz -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">❓</div>
+                        <h3 class="card-title">Quiz</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Generuje testové otázky z vašich zdrojů. Ideální pro přípravu na zkoušky a ověření
+                            porozumění.</p>
+                    </div>
+                    <a href="modules/quiz.html"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--primary-blue); color: white; text-decoration: none; border-radius: 4px; font-weight: 500; transition: var(--transition);">Detailní
+                        návod pro učitele →</a>
+                    <div class="card-tags">
+                        <span class="tag">Test</span>
+                        <span class="tag">Učení</span>
+                        <span class="tag">Interaktivní</span>
+                    </div>
+                </div>
+
+                <!-- Infographic -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎨</div>
+                        <h3 class="card-title">Infografika</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Vytváří prompty pro AI generátory obrázků (Midjourney, DALL-E). Perfektní pro vizualizaci dat
+                            a konceptů.</p>
+                    </div>
+                    <a href="modules/infografika.html"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--primary-blue); color: white; text-decoration: none; border-radius: 4px; font-weight: 500; transition: var(--transition);">Detailní
+                        návod pro učitele →</a>
+                    <div class="card-tags">
+                        <span class="tag">Vizualizace</span>
+                        <span class="tag">Data</span>
+                        <span class="tag">Shrnutí</span>
+                    </div>
+                </div>
+
+                <!-- Presentation -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📽️</div>
+                        <h3 class="card-title">Prezentace</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Vytváří strukturovanou osnovu pro PowerPoint/Google Slides s návrhy slidů, texty a vizuály.
+                            Připraveno k použití v Gamma nebo jiných nástrojích.</p>
+                    </div>
+                    <a href="modules/prezentace.html"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--primary-blue); color: white; text-decoration: none; border-radius: 4px; font-weight: 500; transition: var(--transition);">Detailní
+                        návod pro učitele →</a>
+                    <div class="card-tags">
+                        <span class="tag">Osnova</span>
+                        <span class="tag">Slides</span>
+                        <span class="tag">Gamma-ready</span>
+                    </div>
+                </div>
+
+                <!-- Data Table -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📋</div>
+                        <h3 class="card-title">Tabulka dat</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Strukturuje informace do přehledné tabulky. Skvělé pro porovnání, chronologie a organizaci
+                            faktů.</p>
+                    </div>
+                    <a href="modules/tabulka-dat.html"
+                        style="display: inline-block; margin-top: 1rem; padding: 0.5rem 1rem; background: var(--primary-blue); color: white; text-decoration: none; border-radius: 4px; font-weight: 500; transition: var(--transition);">Detailní
+                        návod pro učitele →</a>
+                    <div class="card-tags">
+                        <span class="tag">Struktura</span>
+                        <span class="tag">Porovnání</span>
+                        <span class="tag">Data</span>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- Advanced Techniques -->
+        <section id="pokrocile-techniky" class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🚀</span>
+                Pokročilé techniky
+            </h2>
+            <p>Zde se dozvíte, jak pracovat s NotebookLM jako profesionál - zejména jak efektivně využívat Studio moduly
+                i v sešitech s velkým množstvím zdrojů bez nutnosti vytvářet nové sešity.</p>
+
+            <h3 class="section-subtitle">🎯 Hlavní výzva: Velké sešity s mnoha zdroji</h3>
+            <p>Když máte sešit se 143+ zdroji, standardní použití Studio modulů může generovat příliš obecné výstupy.
+                Zde jsou osvědčené techniky, jak z nich dostat přesně to, co potřebujete:</p>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><strong>Metoda 1: Chat-first přístup (NEJLEPŠÍ)</strong></span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <h4>Jak to funguje:</h4>
+                    <ol>
+                        <li><strong>Konverzace:</strong> Nejprve v chatu diskutujte o konkrétním tématu</li>
+                        <li><strong>Kontext:</strong> AI si vytvoří kontext a pochopí, co vás zajímá</li>
+                        <li><strong>Studio modul:</strong> Pak klikněte na Studio modul - použije kontext z chatu!</li>
+                    </ol>
+
+                    <h4>Praktický příklad:</h4>
+                    <div class="tip-box">
+                        <p><strong>Chci video o politických stranách z jednoho konkrétního dokumentu:</strong></p>
+                        <ol>
+                            <li>V chatu: "Popiš mi strukturu politických stran podle dokumentu '10. Politická strana a
+                                hnutí'"</li>
+                            <li>AI odpoví s informacemi z tohoto dokumentu</li>
+                            <li>Pak: "Rozveď více o volební kampani"</li>
+                            <li>Nakonec: "Vytvoř video přehled z této konverzace"</li>
+                            <li>Klikněte na Video přehled v Studio → získáte video zaměřené přesně na politické strany!
+                            </li>
+                        </ol>
+                    </div>
+
+                    <h4>Proč to funguje nejlépe:</h4>
+                    <ul>
+                        <li>AI má jasný kontext z konverzace</li>
+                        <li>Můžete iterativně zpřesňovat zaměření</li>
+                        <li>Vidíte preview obsahu před vytvořením modulu</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><strong>Metoda 2: Explicitní targeting zdrojů</strong></span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <h4>Přesná specifikace dokumentů:</h4>
+                    <p>V chatu před použitím Studio modulu napište:</p>
+                    <ul>
+                        <li>"Vytvoř audio přehled pouze z dokumentu '1.a) Psychohygiena.docx'"</li>
+                        <li>"Vygeneruj quiz z dokumentů 5 až 10"</li>
+                        <li>"Myšlenková mapa pouze ze zdrojů o demokracii"</li>
+                        <li>"Prezentace z PDF '052.pdf' na stránkách 15-30"</li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <div class="tip-box-title">💡 Tip na organizaci</div>
+                        <p>Pojmenujte své zdroje systematicky (např. "01_Psychologie", "02_Sociologie") - pak je mnohem
+                            snazší na ně odkazovat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><strong>Metoda 3: Tematické filtrování</strong></span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <h4>Cílení podle tématu, nikoli dokumentu:</h4>
+                    <ul>
+                        <li>"Vytvoř infografiku pouze o tématech spojených s volbami"</li>
+                        <li>"Audio přehled zaměřený výhradně na psychologické aspekty"</li>
+                        <li>"Quiz pouze o faktech z 19. století"</li>
+                    </ul>
+
+                    <p>AI projde všechny zdroje, ale zahrne jen relevantní informace k tématu.</p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><strong>Metoda 4: Dvoustupňový proces</strong></span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <h4>Pro maximální kontrolu:</h4>
+                    <ol>
+                        <li><strong>Krok 1:</strong> "Vytvoř mi shrnutí politických stran z dokumentu XYZ"</li>
+                        <li><strong>Krok 2:</strong> "Použij toto shrnutí jako základ pro prezentaci"</li>
+                    </ol>
+
+                    <p>Tímto způsobem máte plnou kontrolu nad obsahem, který půjde do Studio modulu.</p>
+
+                    <div class="tip-box">
+                        <div class="tip-box-title">🎯 Pro expertní výsledky</div>
+                        <p>Kombinujte metody! Např.: Nejprve tematicky filtrujte (Metoda 3), pak vytvořte kontext v
+                            chatu (Metoda 1), a nakonec explicitně požádejte o modul (Metoda 2).</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">📚 Best Practices pro velké sešity</h3>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🗂️</div>
+                        <h3 class="card-title">Organizace zdrojů</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Používejte deskriptivní názvy souborů</li>
+                            <li>Číslujte dokumenty podle logiky (01_, 02_...)</li>
+                            <li>Gruppujte podobná témata do složek před nahráním</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔖</div>
+                        <h3 class="card-title">Citační techniky</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Používejte přesné názvy dokumentů v uvozovkách</li>
+                            <li>Odkazujte na čísla stránek když jsou dostupná</li>
+                            <li>Ptejte se "Jaké zdroje se vztahují k X?" pro mapování</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎨</div>
+                        <h3 class="card-title">Iterativní zpřesňování</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Začněte širokým dotazem, pak zužujte</li>
+                            <li>Ptejte se "Co ještě?" pro rozšíření kontextu</li>
+                            <li>Používejte follow-up otázky k hlubší analýze</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">🔍 Pokročilé dotazovací techniky</h3>
+
+            <div class="tip-box">
+                <div class="tip-box-title">Příklady pokročilých dotazů</div>
+                <ul>
+                    <li><strong>Komparativní:</strong> "Porovnej přístup k demokracii v dokumentech 5 a 12"</li>
+                    <li><strong>Analytický:</strong> "Jaké jsou hlavní rozpory mezi zdroji o politických stranách?"</li>
+                    <li><strong>Syntetický:</strong> "Vytvoř komplexní framework kombinující nápady z psychologie a
+                        sociologie zdrojů"</li>
+                    <li><strong>Meta-dotaz:</strong> "Které zdroje jsou nejrelevantnější pro téma občanské společnosti?"
+                    </li>
+                </ul>
+            </div>
+
+            <h3 class="section-subtitle">⚡ Workflow optimization</h3>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><strong>Efektivní pracovní postup</strong></span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <ol>
+                        <li><strong>Začněte s mapováním:</strong> "Seskup moje zdroje podle hlavních témat"</li>
+                        <li><strong>Identifikujte klíčové zdroje:</strong> "Které dokumenty jsou nejdůležitější pro
+                            [téma]?"</li>
+                        <li><strong>Hlubší průzkum:</strong> Fokusované otázky na specifické zdroje</li>
+                        <li><strong>Generování výstupů:</strong> S kontextem z kroku 3 použijte Studio moduly</li>
+                        <li><strong>Iterace:</strong> Upravujte a zpřesňujte podle potřeby</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Časté chyby, kterým se vyhnout:</strong>
+                <ul>
+                    <li>❌ Nevytvářejte nový sešit pro každý výstup (neefektivní!)</li>
+                    <li>❌ Neklikejte na Studio modul bez kontextu z chatu</li>
+                    <li>❌ Nepoužívejte vágní dotazy jako "řekni mi něco"</li>
+                    <li>✅ Místo toho: Vytvořte kontext, buďte specifičtí, iterujte</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Advanced Use Cases Section -->
+        <section id="pokrocile-use-cases" class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🚀</span>
+                Pokročilé use cases - Extrémně užitečné techniky
+            </h2>
+            <p>Tady jsou pokročilé způsoby použití NotebookLM, které vás posunou z úrovně "umím to používat" na úroveň
+                "jsem v tom expert".</p>
+
+            <!-- Didactic Package Template -->
+            <div class="use-case-card"
+                style="background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(138, 180, 248, 0.05)); border-left: 4px solid var(--primary-blue);">
+                <h3>🎓 Master Template - Kompletní didaktický balíček</h3>
+                <p><strong>Univerzální prompt pro kompletní přípravu na 45 minut</strong></p>
+
+                <div class="prompt-box">
+                    <div class="prompt-header">
+                        <span class="prompt-label">💬 Didaktický balíček - Copy-paste ready</span>
+                        <button class="copy-button">📋 Zkopírovat</button>
+                    </div>
+                    <div class="prompt-text">Zpracuj kompletní didaktický balíček na 45 minut na téma [téma]. Na základě
+                        zdrojů vytvoř: 1) cíle hodiny (vědomosti + dovednosti), 2) přípravu krok za krokem, 3) tři
+                        úrovně úloh (A–C), 4) minitest na konci, 5) reflexní otázky pro žáky, 6) doporučení, co s
+                        rychlejšími žáky, 7) návrh domácí úlohy. Nepoužívej nic mimo nahrané zdroje.</div>
+                </div>
+
+                <div class="tip-box" style="margin-top: 1rem;">
+                    <div class="tip-box-title">⭐ Proč je tento prompt zlatý</div>
+                    <p>Vytváří <strong>kompletní diferencovanou přípravu</strong> za 2 minuty místo 40 minut. Zahrnuje
+                        všechno: cíle, postup, úlohy pro všechny úrovně, hodnocení i domácí úkol.</p>
+                </div>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Use Case 1: Project Brain -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🧠</div>
+                        <h3 class="card-title">Projektový Mozek</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Co to je:</strong> NotebookLM jako chytrý šéf projektu - plánování, rizika, milníky,
+                            workflow.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Použití:</strong> Nahraj cíl projektu, podklady, e-maily
+                            → LM vytvoří plán, rizika, závislosti.</p>
+                    </div>
+                </div>
+
+                <!-- Use Case 2: AI Editor -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">✏️</div>
+                        <h3 class="card-title">AI Editor & Stylový Přepisovač</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Co to je:</strong> Přepis textu v tvém stylu - zachová tón, tempo, slovník.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Použití:</strong> Nahraj ukázky stylu → dávej texty k
+                            úpravě → konzistentní výstupy.</p>
+                    </div>
+                </div>
+
+                <!-- Use Case 3: AI Mentor -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <h3 class="card-title">AI Mentor & Skill Builder</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Co to je:</strong> Osobní trenér pro rozvoj dovedností - řečové dovednosti, řízení,
+                            matematika...</p>
+                        <p style="margin-top: 0.5rem;"><strong>Použití:</strong> Nahraj materiály → analýza mezer →
+                            60denní tréninkový plán.</p>
+                    </div>
+                </div>
+
+                <!-- Use Case 4: Creative Engine -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📖</div>
+                        <h3 class="card-title">Creative Engine</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Co to je:</strong> AI spisovatel - konzistentní příběhy, scénáře, světy.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Použití:</strong> Nahraj lore, postavy, mapy → LM
+                            generuje kapitoly, zápletky, alt verze.</p>
+                    </div>
+                </div>
+
+                <!-- Use Case 5: Process Automator -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">⚙️</div>
+                        <h3 class="card-title">Procesní Automatizátor</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Co to je:</strong> Převod složitých předpisů na rozhodovací strom.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Použití:</strong> Nahraj pravidla/smlouvy → dostaneš
+                            jasný manuál a checklisty.</p>
+                    </div>
+                </div>
+
+                <!-- Use Case 6: Decision Simulator -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎲</div>
+                        <h3 class="card-title">Decision Simulator</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Co to je:</strong> Simulace dopadů rozhodnutí - "co když" analýzy.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Použití:</strong> Nahraj data → LM simuluje různé scénáře
+                            → preferovaná varianta + argumenty.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span><strong>📋 Detailní prompty pro pokročilé use cases</strong></span>
+                    <span class="accordion-icon">▼</span>
+                </div>
+                <div class="accordion-content">
+                    <h4>🧠 Projektový Mozek - Prompt:</h4>
+                    <div class="prompt-box">
+                        <div class="prompt-text" style="font-size: 0.9rem;">"Na základě všech nahraných zdrojů vytvoř
+                            kompletní projektový plán podle zásady 'Minimum Viable Planning'. Vyrob: milníky, dílčí
+                            úkoly (včetně vlastníků), rizika, předpoklady, závislosti, měřitelné metriky a kritickou
+                            cestu. Potom navrhni sprintovou strukturu na 6 týdnů a simuluj největší rizikové scénáře."
+                        </div>
+                    </div>
+
+                    <h4 style="margin-top: 1.5rem;">✏️ AI Editor - Prompt:</h4>
+                    <div class="prompt-box">
+                        <div class="prompt-text" style="font-size: 0.9rem;">"Využij pouze zdroje nahrané v tomto
+                            notebooku. Přepiš text tak, aby plně odpovídal stylu dokumentu [název zdroje]: tempo,
+                            slovník, tón, humor, argumentace. Nezkracuj, ale zesil logiku, strukturu a přesvědčivost. Po
+                            přepisu vysvětli, co přesně jsi změnil a proč."</div>
+                    </div>
+
+                    <h4 style="margin-top: 1.5rem;">🎯 AI Mentor - Prompt:</h4>
+                    <div class="prompt-box">
+                        <div class="prompt-text" style="font-size: 0.9rem;">"Z analyzovaných zdrojů zjisti, jaké mám
+                            silné a slabé stránky v oblasti [dovednost]. Sestav 60denní trénink podle principu
+                            'deliberate practice': týdenní cíle, každodenní úkoly, minitest 1× týdně, 3 velké projekty,
+                            měřitelné ukazatele pokroku. Na konci vytvoř shrnutí s doporučením 'co mě zbrzdí' a 'co mi
+                            pomůže růst'."</div>
+                    </div>
+
+                    <h4 style="margin-top: 1.5rem;">⚙️ Procesní Automatizátor - Prompt:</h4>
+                    <div class="prompt-box">
+                        <div class="prompt-text" style="font-size: 0.9rem;">"Na základě všech nahraných pravidel a
+                            směrnic vytvoř rozhodovací strom, který učiteli umožní během 60 vteřin poznat: co smí, co
+                            musí, co nesmí, koho má kontaktovat. Na konci vytvoř verzi shrnutou do jednoho A4."</div>
+                    </div>
+
+                    <h4 style="margin-top: 1.5rem;">🎲 Decision Simulator - Prompt:</h4>
+                    <div class="prompt-box">
+                        <div class="prompt-text" style="font-size: 0.9rem;">"Pouze ze zdrojů v notebooku vyhodnoť tři
+                            možné strategie: A, B, C. Pro každou simuluj dopad na čas, zdroje, rizika, výstupy a
+                            dlouhodobý efekt. Na závěr zvol preferovanou variantu + argumenty."</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 2rem;">
+                <div class="tip-box-title">💡 Kdy použít pokročilé techniky</div>
+                <p>Tyto use cases jsou pro situace, kdy potřebuješ:</p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>✅ Systematický přístup k velkému projektu</li>
+                    <li>✅ Konzistentní styl napříč mnoha dokumenty</li>
+                    <li>✅ Strukturovaný rozvoj dovedností</li>
+                    <li>✅ Rozhodovací podporu při složitých volbách</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Tips and Tricks -->
+        <section id="tipy-triky" class="section">
+            <h2 class="section-title">
+                <span class="section-icon">💎</span>
+                Bonusové tipy a triky
+            </h2>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <h3 class="card-title">Časté klávesové zkratky</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li><strong>Ctrl/Cmd + K:</strong> Rychlé vyhledávání</li>
+                            <li><strong>Ctrl/Cmd + Enter:</strong> Odeslat zprávu</li>
+                            <li><strong>Ctrl/Cmd + /:</strong> Zobrazit všechny zkratky</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎓</div>
+                        <h3 class="card-title">Učební strategie</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Kombinujte audio přehled s kartičkami</li>
+                            <li>Používejte quiz po každé studijní session</li>
+                            <li>Vytvořte myšlenkovou mapu na začátku učení nového tématu</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔄</div>
+                        <h3 class="card-title">Iterativní zpřesňování</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Nebojte se požádat o úpravu výstupu</li>
+                            <li>"Přidej více detailů o X"</li>
+                            <li>"Zjednoduš toto vysvětlení"</li>
+                            <li>"Zaměř se více na praktické aplikace"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📱</div>
+                        <h3 class="card-title">Mobilní použití</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Audio přehledy jsou ideální pro mobil</li>
+                            <li>Kartičky fungují skvěle na dotykovém displeji</li>
+                            <li>Používejte hlasové zadávání pro rychlejší práci</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🤝</div>
+                        <h3 class="card-title">Kolaborace</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Sdílejte vygenerované materiály s týmem</li>
+                            <li>Exportujte prezentace pro meetingy</li>
+                            <li>Používejte infografiky v reportech</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <h3 class="card-title">Produktivita</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>Vytvořte "template" dotazy pro opakující se úkoly</li>
+                            <li>Používejte citace pro rychlou verifikaci</li>
+                            <li>Bookmarkujte často používané sešity</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <div class="tip-box-title">🏆 Zlaté pravidlo NotebookLM</div>
+                <p style="font-size: 1.1rem;"><strong>Čím konkrétnější je váš dotaz, tím lepší je odpověď.</strong>
+                    Nebojte se být detailní a iterativní ve svých požadavcích!</p>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="zaver" class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🎉</span>
+                Závěr
+            </h2>
+            <p>Gratulujeme! Nyní znáte všechny nástroje a techniky pro maximální využití NotebookLM. Pamatujte:</p>
+
+            <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">1️⃣</div>
+                        <h3 class="card-title">Vytvořte kontext</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Vždy začněte konverzací v chatu před použitím Studio modulů</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">2️⃣</div>
+                        <h3 class="card-title">Buďte specifičtí</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Specifikujte dokumenty, témata a požadovaný formát výstupu</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">3️⃣</div>
+                        <h3 class="card-title">Iterujte</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Nebojte se zpřesňovat a upravovat své dotazy</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">4️⃣</div>
+                        <h3 class="card-title">Experimentujte</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Vyzkoušejte všechny Studio moduly a najděte svůj workflow</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box"
+                style="background: linear-gradient(135deg, rgba(66, 133, 244, 0.2), rgba(138, 180, 248, 0.2)); margin-top: 2rem;">
+                <div class="tip-box-title" style="font-size: 1.2rem;">🚀 Další kroky</div>
+                <p>Nyní jste připraveni využít NotebookLM naplno! Začněte aplikovat tyto techniky na vlastních
+                    projektech a objevujte nové možnosti. Čím více budete NotebookLM používat, tím efektivnější budete.
+                </p>
+                <p><strong>Hodně štěstí a úspěšného učení!</strong></p>
+            </div>
+        </section>
+
+        <!-- Section: Limity a kdy použít co -->
+        <section id="limity" class="section">
+            <h2 class="section-title">
+                <span class="section-icon">📊</span>
+                Limity a kdy použít co
+            </h2>
+            <p>NotebookLM je skvělý nástroj, ale není univerzální řešení na všechno. Zde je přehled, kdy použít
+                NotebookLM a kdy jiné AI nástroje.</p>
+
+            <!-- Comparison Table -->
+            <h3 class="section-subtitle">Srovnání AI nástrojů</h3>
+            <div style="overflow-x: auto; margin: 2rem 0;">
+                <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                    <thead>
+                        <tr style="background: var(--primary-blue); color: white;">
+                            <th style="padding: 1rem; text-align: left; border: 1px solid #ddd;">Úkol</th>
+                            <th style="padding: 1rem; text-align: center; border: 1px solid #ddd;">NotebookLM</th>
+                            <th style="padding: 1rem; text-align: center; border: 1px solid #ddd;">ChatGPT</th>
+                            <th style="padding: 1rem; text-align: center; border: 1px solid #ddd;">Gemini</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Analýza vlastních dokumentů</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #d4edda;">
+                                ✅ Výborné</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #fff3cd;">
+                                ⚠️ Plus/Team</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #fff3cd;">
+                                ⚠️ Možné</td>
+                        </tr>
+                        <tr style="background: var(--bg-secondary);">
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Obecné dotazy bez kontextu</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #fff3cd;">
+                                ⚠️ Možné</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #d4edda;">
+                                ✅ Výborné</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #d4edda;">
+                                ✅ Výborné</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Audio/Video přehledy</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #d4edda;">
+                                ✅ Unikátní</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #f8d7da;">
+                                ❌ Ne</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #f8d7da;">
+                                ❌ Ne</td>
+                        </tr>
+                        <tr style="background: var(--bg-secondary);">
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Citace zdrojů</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #d4edda;">
+                                ✅ Automatické</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #f8d7da;">
+                                ❌ Ne</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #fff3cd;">
+                                ⚠️ Omezené</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Multimodální vstupy (obrázky)</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #d4edda;">
+                                ✅ Ano</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #d4edda;">
+                                ✅ Ano</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #d4edda;">
+                                ✅ Ano</td>
+                        </tr>
+                        <tr style="background: var(--bg-secondary);">
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Dostupnost offline</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #f8d7da;">
+                                ❌ Ne</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #f8d7da;">
+                                ❌ Ne</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #f8d7da;">
+                                ❌ Ne</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Cena</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #d4edda;">
+                                🆓 Zdarma</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #fff3cd;">
+                                ⚠️ Free + Paid</td>
+                            <td
+                                style="padding: 0.75rem; border: 1px solid #ddd; text-align: center; background: #fff3cd;">
+                                ⚠️ Free + Paid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Technical Limits -->
+            <h3 class="section-subtitle">Technické limity NotebookLM</h3>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📄</div>
+                        <h4 class="card-title">Počet zdrojů</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Osobní účet:</strong> Max 50 zdrojů na notebook</p>
+                        <p style="margin-top: 0.5rem;"><strong>Google Workspace:</strong> Max 300 zdrojů na notebook</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Tip: Rozdělte
+                            rozsáhlé projekty do více notebooků</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💾</div>
+                        <h4 class="card-title">Velikost souborů</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Max 200 MB</strong> na soubor</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Tip: Komprimujte
+                            PDF nebo rozdělte velké dokumenty</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📝</div>
+                        <h4 class="card-title">Podporované formáty</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>PDF, TXT, DOCX, Google Docs, Slides, Weby, YouTube videa</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Tip:
+                            Excel/Numbers convertujte na Google Sheets</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🌍</div>
+                        <h4 class="card-title">Jazyková podpora</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>100+ jazyků</strong> včetně češtiny</p>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">Audio přehledy
+                            aktuálně pouze v angličtině</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decision Guide -->
+            <h3 class="section-subtitle">Kdy použít co? - Rozhodovací průvodce</h3>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">📚 Scénář 1: Příprava z vlastních materiálů</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Situace:</strong> Potřebuji připravit hodinu z učebnice, vlastních poznámek a článků</p>
+                    <p style="margin-top: 1rem;"><strong>✅ Použijte NotebookLM</strong></p>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Nahrajte všechny materiály do jednoho notebooku</li>
+                        <li>AI bude odpovídat POUZE z vašich zdrojů</li>
+                        <li>Každá odpověď bude mít odkazy na konkrétní stránky</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">💡 Scénář 2: Brainstorming nových nápadů</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Situace:</strong> Hledám nové aktivity pro hodinu, nemám žádné konkrétní materiály</p>
+                    <p style="margin-top: 1rem;"><strong>✅ Použijte ChatGPT nebo Gemini</strong></p>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>NotebookLM potřebuje zdroje, bez nich je omezený</li>
+                        <li>ChatGPT/Gemini mají širší všeobecné znalosti</li>
+                        <li>Lepší pro kreativní brainstorming</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">🎧 Scénář 3: Audio shrnutí pro žáky</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Situace:</strong> Chci vytvořit podcast-style shrnutí pro domácí přípravu</p>
+                    <p style="margin-top: 1rem;"><strong>✅ Použijte NotebookLM (unikátní funkce!)</strong></p>
+                    <ul style="margin-top: 0.5rem;">
+                        <li>Audio Overview je dostupný POUZE v NotebookLM</li>
+                        <li>Dva AI moderátoři diskutují o vašich materiálech</li>
+                        <li>Ideální pro auditivní learners</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="warning-box" style="margin-top: 2rem;">
+                <div class="tip-box-title">⚠️ Co NotebookLM NEUMÍ</div>
+                <ul style="margin-top: 1rem;">
+                    <li>Generovat obrázky (použijte DALL-E, Midjourney)</li>
+                    <li>Vytvářet prezentace (použijte Gamma.app s NotebookLM výstupem)</li>
+                    <li>Upravovat zdrojové dokumenty (pouze čtení)</li>
+                    <li>Pracovat offline (vyžaduje internetové připojení)</li>
+                    <li>Odpovídat na otázky mimo nahrané zdroje (má omezenou všeobecnou znalost)</li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>NotebookLM Průvodce | Vytvořeno pro maximalizaci vašeho poznání 📚</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-secondary);">
+            Verze 1.0 | © 2025 |
+            <a href="#uvod" class="link-primary">Zpět nahoru ↑</a>
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="chatbot-knowledge.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+
+</html>

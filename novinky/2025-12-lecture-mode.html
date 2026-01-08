@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lecture Mode - nový režim univerzitní přednášky v NotebookLM">
+    <title>Lecture Mode - NotebookLM Průvodce</title>
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <link rel="stylesheet" href="../sidebar.css?v=3">
+    <link rel="stylesheet" href="../chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="../assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+            <!-- Hlavní sekce -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+
+                <div class="sidebar-item">
+                    <a href="../index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Studio moduly (expandable) -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="../modules/audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Další sekce -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+
+                <div class="sidebar-item">
+                    <a href="../use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../novinky.html" class="sidebar-link active">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="../index.html" class="nav-link nav-link-home">🏠 Domů</a>
+            <a href="../novinky.html" class="nav-link">📰 Novinky</a>
+            <a href="../use-cases.html" class="nav-link">💡 Use Cases</a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb">
+        <div class="breadcrumb-content">
+            <a href="../index.html">Hlavní průvodce</a>
+            <span class="breadcrumb-separator">›</span>
+            <a href="../novinky.html">Co je nového</a>
+            <span class="breadcrumb-separator">›</span>
+            <span>Lecture Mode</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-hero-icon">🎓</div>
+            <h1>Lecture Mode - Režim přednášky</h1>
+            <p class="module-hero-description">
+                Nový formát audio shrnutí: univerzitní přednáška jednoho experta místo podcastu dvou moderátorů
+            </p>
+            <p class="mt-1 text-secondary">
+                <strong>Vydáno:</strong> Prosinec 2025
+            </p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- What is Lecture Mode -->
+        <section class="section section-spacing">
+            <h2 class="section-title">
+                <span class="section-icon">❓</span>
+                Co je to "Lecture Mode"?
+            </h2>
+
+            <p>Zatímco klasický <strong>Audio Overview</strong> simuluje rozhovor dvou lidí (muže a ženy), kteří si o
+                tématu povídají, vtipkují a používají metafory, <strong>Lecture Mode</strong> simuluje univerzitní
+                přednášku.</p>
+
+            <div class="cards-grid card-spacing">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎙️</div>
+                        <h4 class="card-title">Jeden hlas</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>Mluví k tobě pouze jeden autoritativní hlas (expert/profesor)</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📋</div>
+                        <h4 class="card-title">Jasná struktura</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>Místo "skákání do řeči" má audio jasný úvod, body 1–2–3 a závěr</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💎</div>
+                        <h4 class="card-title">Hustota informací</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>Mnohem vyšší než podcast. Odstraňuje "omáčku" a soustředí se čistě na fakta a logický výklad
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔍</div>
+                        <h4 class="card-title">Vizuální podpora</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>V desktopu se při přehrávání automaticky zvýrazňují pasáže v textu (citation sync)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box card-spacing">
+                <div class="tip-box-title">💡 Proč Google tuto funkci přidal?</div>
+                <p class="mt-1">Google ji přidal na základě masivní zpětné vazby od studentů a
+                    akademiků, kterým původní formát "Audio Overview" (podcast dvou moderátorů) připadal někdy až příliš
+                    "upovídaný" a málo strukturovaný.</p>
+            </div>
+        </section>
+
+        <!-- Where to Find It -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔎</span>
+                Kde funkci najdeš?
+            </h2>
+
+            <div class="use-case-card">
+                <h3>Postup krok za krokem</h3>
+                <div class="use-case-content">
+                    <ol class="mt-2" style="line-height: 1.8;">
+                        <li class="mt-2">
+                            <strong>Otevři svůj Notebook</strong> v NotebookLM
+                        </li>
+                        <li class="mt-2">
+                            <strong>Jdi do sekce Audio Overview</strong> (tam, kde jsi zvyklá generovat podcast)
+                        </li>
+                        <li class="mt-2">
+                            <strong>Klikni na "Customize"</strong> - tlačítko nastavení/konfigurace vedle "Generate"
+                            (ikona posuvníků nebo ozubeného kola)
+                        </li>
+                        <li class="mt-2">
+                            <strong>V nabídce "Format" nebo "Style"</strong> změň nastavení z:<br>
+                            <code class="code-inline">Conversation (Default)</code>
+                            →
+                            <code class="code-inline-primary">Lecture (Single Host)</code>
+                        </li>
+                    </ol>
+
+                    <div class="tip-box mt-3">
+                        <div class="tip-box-title">💡 Tip navíc</div>
+                        <p class="mt-1">Můžeš si zde často vybrat i <strong>"Personu"</strong>
+                            přednášejícího - např. "Academic", "Friendly Tutor", "Brief Executive"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- When to Use -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🎯</span>
+                Kdy použít Lecture Mode místo Podcastu?
+            </h2>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">1️⃣ Rychlé opakování před zkouškou</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Situace:</strong> Nemáš čas poslouchat 15 minut vtipkování moderátorů. Potřebuješ 5 minut
+                        "hutného" výkladu.</p>
+                    <p class="mt-1 text-secondary">✅ Lecture Mode ti dá koncentrované
+                        fakta bez "omáčky"</p>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">2️⃣ Složité technické téma</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Situace:</strong> U témat jako "Kvantová fyzika" nebo "Daňové zákony" je dialog dvou
+                        laiků často matoucí.</p>
+                    <p class="mt-1 text-secondary">✅ Jeden expert, který to vysvětluje
+                        krok po kroku, je efektivnější</p>
+                </div>
+            </div>
+
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">3️⃣ Tvorba vlastních výukových materiálů</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Situace:</strong> Učitelé potřebují vygenerovat "výklad" pro žáky, který jim pošlou jako
+                        MP3 k poslechu doma.</p>
+                    <p class="mt-1 text-secondary">✅ Lecture Mode vytvoří profesionální
+                        výukové audio</p>
+                </div>
+            </div>
+
+            <div class="warning-box card-spacing">
+                <div class="tip-box-title">💡 Expertní tip</div>
+                <p class="mt-1"><strong>Zkus do Lecture Mode nahrát své vlastní poznámky a nech si je
+                        "přednášet" zpátky.</strong> Je to nejlepší způsob, jak odhalit, jestli tvé poznámky dávají
+                    logický smysl.</p>
+            </div>
+        </section>
+
+        <!-- 3 Scenarios -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🎭</span>
+                3 scénáře podle typu obsahu
+            </h2>
+            <p>Lecture Mode můžeš přizpůsobit pomocí vlastních instrukcí. Zde jsou 3 osvědčené varianty:</p>
+
+            <!-- Scenario 1 -->
+            <div class="use-case-card card-spacing">
+                <div class="use-case-header">
+                    <span class="use-case-number">#1</span>
+                    <h3 class="use-case-title">Scénář: "Přísný akademik"</h3>
+                    <p class="use-case-subtitle">Pro právo, směrnice, medicínu, technické manuály</p>
+                </div>
+
+                <div class="use-case-content">
+                    <h4>📋 Kdy použít</h4>
+                    <p>Když se musíš naučit přesné definice, logické vazby a nesmíš nic vynechat. Žádné vtipy, jen čistá
+                        fakta.</p>
+
+                    <div class="prompt-box mt-3">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Instrukce pro Lecture Mode</span>
+                            <button class="copy-button">📋 Zkopírovat</button>
+                        </div>
+                        <div class="prompt-content">
+                            <pre class="pre-wrapped">Chovej se jako přísný univerzitní profesor, který přednáší látku na státnice.
+
+Struktura: Začni definicí hlavního problému. Poté systematicky procházej jednotlivé body dokumentu.
+
+Styl: Buď formální, přesný a stručný. Nepoužívej metafory, pokud nejsou v textu.
+
+Důraz: Pokud narazíš na složitý odborný termín, zastav se, explicitně ho definuj a teprve poté pokračuj.
+
+Závěr: Na konci shrň 3 naprosto klíčové body, které si musím zapamatovat, jinak u zkoušky vyletím.</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scenario 2 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#2</span>
+                    <h3 class="use-case-title">Scénář: "Vypravěč příběhů"</h3>
+                    <p class="use-case-subtitle">Pro dějepis, literaturu, marketing, biografie</p>
+                </div>
+
+                <div class="use-case-content">
+                    <h4>📋 Kdy použít</h4>
+                    <p>Když máš hromadu dat a jmen, která se ti pletou, a potřebuješ pochopit "velký obraz" a
+                        souvislosti.</p>
+
+                    <div class="prompt-box mt-3">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Instrukce pro Lecture Mode</span>
+                            <button class="copy-button">📋 Zkopírovat</button>
+                        </div>
+                        <div class="prompt-content">
+                            <pre class="pre-wrapped">Chovej se jako charismatický lektor na TED Talku.
+
+Narrativ: Nečti mi data a jména jako telefonní seznam. Spoj informace z mých poznámek do poutavého příběhu. Hledej příčiny a následky (proč se to stalo?).
+
+Styl: Používej živý jazyk, řečnické otázky a přirovnání ze současného života, abych to pochopil.
+
+Cíl: Mým cílem není znát každé datum, ale pochopit motivaci aktérů a kontext doby/situace.</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scenario 3 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#3</span>
+                    <h3 class="use-case-title">Scénář: "Executive Briefing"</h3>
+                    <p class="use-case-subtitle">Pro manažery, projektové řízení, reporty</p>
+                </div>
+
+                <div class="use-case-content">
+                    <h4>📋 Kdy použít</h4>
+                    <p>Nemáš čas. Potřebuješ výtah z dlouhého reportu, abys na poradě vypadala chytře.</p>
+
+                    <div class="prompt-box mt-3">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Instrukce pro Lecture Mode</span>
+                            <button class="copy-button">📋 Zkopírovat</button>
+                        </div>
+                        <div class="prompt-content">
+                            <pre class="pre-wrapped">Chovej se jako můj osobní strategický poradce. Mám jen 5 minut.
+
+Priorita: Ignoruj omáčku a úvody. Jdi rovnou k věci: Co jsou hlavní závěry tohoto dokumentu?
+
+Akce: Identifikuj v textu problémy (red flags) a navrhovaná řešení. Co po mně autor dokumentu chce?
+
+Formát: Mluv rychleji, dynamicky, v odrážkách. Žádná teorie, jen praxe.</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Setup -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-icon">⚙️</span>
+                Jak to technicky nastavit
+            </h2>
+
+            <div class="use-case-card">
+                <h3>Postup s vlastními instrukcemi</h3>
+                <div class="use-case-content">
+                    <ol class="mt-2" style="line-height: 1.8;">
+                        <li>V NotebookLM klikni na sekci <strong>Audio Overview</strong></li>
+                        <li>Klikni na <strong>"Customize"</strong> (tlačítko vedle generování)</li>
+                        <li>V roletce <strong>Style</strong> přepni na <strong>"Lecture"</strong></li>
+                        <li>Do textového pole pod tím vlož jeden z výše uvedených promptů</li>
+                        <li>Klikni na <strong>Generate</strong></li>
+                    </ol>
+
+                    <div class="tip-box card-spacing">
+                        <div class="tip-box-title">💡 Pro tip</div>
+                        <p class="mt-1">Můžeš si uložit oblíbené prompty mimo NotebookLM (např. v Google
+                            Keep) a kopírovat je podle potřeby. NotebookLM si je bohužel zatím neumí pamatovat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Modules -->
+        <section class="section">
+            <h2 class="section-title">
+                <span class="section-icon">🔗</span>
+                Související moduly
+            </h2>
+
+            <div class="cards-grid">
+                <a href="../modules/audio.html" class="card no-decoration">
+                    <div class="card-header">
+                        <div class="card-icon">🎧</div>
+                        <h4 class="card-title">Audio Overview</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>Kompletní průvodce audio funkcemi včetně klasického podcast formátu</p>
+                    </div>
+                </a>
+
+                <a href="../use-cases.html" class="card" style="text-decoration: none; color: inherit;">
+                    <div class="card-header">
+                        <div class="card-icon">💡</div>
+                        <h4 class="card-title">192 Use Cases</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>Další praktické způsoby využití NotebookLM ve výuce</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | Lecture Mode 🎓</p>
+        <p class="footer-text">
+            <a href="../novinky.html" class="link-primary">← Zpět na novinky</a> |
+            <a href="../index.html" class="link-primary">Hlavní průvodce</a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../sidebar.js"></script>
+    <script src="../chatbot-knowledge.js"></script>
+    <script src="../chatbot.js"></script>
+</body>
+
+</html>

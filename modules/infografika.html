@@ -1,0 +1,524 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Infografika v NotebookLM - vizuální shrnutí dat a konceptů">
+    <title>Infografika - NotebookLM pro Učitele</title>
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <link rel="stylesheet" href="../sidebar.css?v=3">
+    <link rel="stylesheet" href="../chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="../assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+                <div class="sidebar-item">
+                    <a href="../index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+                <div class="sidebar-item">
+                    <a href="../use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside> <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="../index.html" class="nav-link nav-link-home">🏠 Domů</a>
+            <a href="#kdy-pouzit" class="nav-link">💡 Kdy použít</a>
+            <a href="#use-cases" class="nav-link">📚 Use Cases</a>
+            <a href="infografika-styly.html" class="nav-link">🎨 Styly</a>
+            <a href="infografika-prompty.html" class="nav-link">🎯 Prompty</a>
+            <a href="../use-cases.html#infografika" class="nav-link">🗂️ Katalog</a>
+        </div>
+    </nav>
+
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-hero-icon">📊</div>
+            <h1>Infografika</h1>
+            <p class="module-hero-description">Vytváří vizuální shrnutí informací ve formě infografiky. Ideální pro
+                prezentaci statistik, dat a klíčových bodů.</p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- Tips Section -->
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-icon">💡</span>
+                <h2 class="category-title">Tipy pro infografiky</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📈</div>
+                        <h3 class="card-title">Data-driven</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Prompt: "Infografika statistik z průzkumu na straně 20-25" - ideální pro vizualizaci dat.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💡</div>
+                        <h3 class="card-title">Konceptuální</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>"Vizualizuj hlavní myšlenky z prvních 3 dokumentů" - pro shrnutí obsahu.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">⚖️</div>
+                        <h3 class="card-title">Porovnání</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>"Vytvoř infografiku porovnávající přístupy z dokumentu A vs B" - srovnávací analýza.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workflow -->
+        <div class="category-section" id="kdy-pouzit">
+            <div class="category-header">
+                <span class="category-icon">⚡</span>
+                <h2 class="category-title">Kdy použít infografiku</h2>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Ideální situace:</h3>
+                <ul class="list-spaced">
+                    <li>📊 <strong>Vizualizace dat:</strong> Statistiky, průzkumy, čísla - infografika je udělá
+                        srozumitelnější</li>
+                    <li>📝 <strong>Shrnutí složité látky:</strong> Komplexní téma zjednodušené do vizuálního přehledu
+                    </li>
+                    <li>🎓 <strong>Výukové materiály:</strong> Plakáty na zeď třídy, handouty pro žáky</li>
+                    <li>📱 <strong>Sdílení online:</strong> Infografiky fungují skvěle na sociálních sítích</li>
+                    <li>📽️ <strong>Prezentace:</strong> Jako slide v prezentaci pro lepší zapamatování</li>
+                </ul>
+
+                <div class="example-box" class="mt-1-5">
+                    <div class="example-title">🎯 Pro tip</div>
+                    <p>NotebookLM vytvoří PROMPT pro AI generátor, ne přímo infografiku. To ti dává kontrolu - můžeš
+                        prompt upravit, vyzkoušet v různých AI nástrojích a iterovat dokud nedostaneš perfektní
+                        výsledek!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Style Catalog CTA -->
+        <div class="cta-gradient-box mt-2">
+            <strong>🎨 Stylistický katalog infografik</strong>
+            <p>Než začnete tvořit, prozkoumejte 7 prověřených stylů pro didaktické infografiky. Každý styl má své
+                ideální použití - naučte se je rozpoznat!</p>
+            <a href="infografika-styly.html" class="cta-gradient-link">
+                📖 Zobrazit katalog stylů →
+            </a>
+        </div>
+
+        <!-- Use Cases Section -->
+        <div class="category-section" id="use-cases" style="margin-top: 4rem;">
+            <div class="category-header">
+                <span class="category-icon">📚</span>
+                <h2 class="category-title">Use Cases - Praktické příklady použití</h2>
+            </div>
+        </div>
+
+        <!-- Use Case #5 -->
+        <div class="use-case-card" id="use-case-5">
+            <div class="use-case-header">
+                <span class="use-case-number">#5</span>
+                <h3 class="use-case-title">Tvorba plakátů a infografik (Nano Banana prompts)</h3>
+                <p class="use-case-subtitle">Detailní prompty pro AI generátory obrázků</p>
+            </div>
+
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <div class="use-case-content">
+                    <p>NotebookLM vytvoří detailní prompt pro AI generátory obrázků (Midjourney, DALL-E, Ideogram),
+                        který přesně specifikuje jak má infografika vypadat.</p>
+                </div>
+            </div>
+
+            <div class="use-case-section">
+                <h4>🎯 Ideální pro</h4>
+                <div class="use-case-content">
+                    <ul>
+                        <li>Prezentaci statistik a dat</li>
+                        <li>Rychlé shrnutí klíčových bodů</li>
+                        <li>Sdílení na sociálních sítích nebo prezentacích</li>
+                        <li>Vizuální výukové materiály</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Hotový prompt</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">Vytvoř detailní Nano Banana prompt pro realistickou školní infografiku na téma
+                    [téma]. Uveď kompozici, styl, barevnost, zakázané prvky a titulky.</div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📝 Praktický příklad</div>
+                <p><strong>Scénář:</strong> Potřebuješ infografiku o ekosystému lesa pro přírodovědu.</p>
+                <p><strong>Workflow:</strong></p>
+                <ol>
+                    <li>Nahraj kapitolu o lesních ekosystémech do NotebookLM</li>
+                    <li>Prompt: "Vytvoř Nano Banana prompt pro realistickou školní infografiku 'Ekosystém lesa'.
+                        Kompozice: vertikální, vrstvy od půdy po korunu stromů. Styl: vzdělávací ilustrace. Barevnost:
+                        přírodní tóny. Titulky: český text."</li>
+                    <li>NotebookLM vytvoří detailní prompt pro AI generátor</li>
+                    <li>Zkopíruješ prompt do Midjourney/DALL-E a dostaneš vizuál</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- TOP 10 Use Cases Section -->
+        <section id="top-use-cases" class="section">
+            <div class="section-header">
+                <h2 class="section-title">🌟 TOP 10 Nejužitečnějších Use Cases pro Infografiku</h2>
+                <p class="mb-1-5">Nejpraktičtější způsoby generování AI prompt ů pro vizuální obsah
+                    (Ideogram, DALL-E, Midjourney).</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h3 class="card-title">Diagram procesu</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Vizualizaci postupů</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř AI prompt pro diagram znázorňující proces [proces] ve stylu
+                                školní nástěnky s ikonami a šipkami.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📅</div>
+                        <h3 class="card-title">Časová osa</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Historické události</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř prompt pro horizontální timeline [období], s klíčovými daty,
+                                ikonami a barevným kódováním.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🥧</div>
+                        <h3 class="card-title">Koláčový graf</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Zastoupení částí</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Popisnej cirkulární infografiku zobrazující poměr [data] s
+                                procenty, legendou a barevnou paletou.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🧠</div>
+                        <h3 class="card-title">Mind mapa</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Rozvětvené koncepty</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř prompt pro myšlenkovou mapu centrovanou na [téma], s
+                                hlavními větvemi, podvětvemi a ikonami.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">⚖️</div>
+                        <h3 class="card-title">Before/After</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Srovnání změn</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Popisnej infografiku rozdělené na polovinu: vlevo PŘED [událost],
+                                vpravo PO [událost]. Realistický styl.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🫀</div>
+                        <h3 class="card-title">Anatomický popis</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Biologii, zdravovědu</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř prompt pro detailní anatomický diagram [orgán/systém] s
+                                popiskami klíčových částí.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">➡️</div>
+                        <h3 class="card-title">Workflow diagram</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Procesní plánování</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Napiš prompt pro workflow s kroky: START → [krok1] → [krok2] →
+                                konec. Včetně rozhodovacích bodů.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📈</div>
+                        <h3 class="card-title">Vizualizace dat</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Statistiky</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř prompt pro sloupcový graf zobrazující [data] napříč
+                                lety/kategoriemi. Čisté, profesionální provedení.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🗺️</div>
+                        <h3 class="card-title">Geografická mapa</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Zeměpis, historii</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Popisnej mapu regionu [region], zobrazte hranice, hlavní města,
+                                řeky a horstva s popisky.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📖</div>
+                        <h3 class="card-title">Ilustrovaný slovník</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Slovní zásobu</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř grid 10 slov s ilustracemi. Každé slovo má obrázek a
+                                jednoduchý popis pod ním.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-gradient-box">
+                <strong>💾 Interaktivní databáze promptů</strong>
+                <p class="mt-0-5">Prozkoumejte <strong>33 připravených promptů</strong> s možností snadného kopírování a
+                    ukázkovými obrázky!</p>
+                <a href="infografika-prompty.html" class="cta-gradient-link">
+                    🚀 Otevřít databázi promptů →
+                </a>
+            </div>
+            <div class="cta-gradient-box" style="margin-top: 1.5rem;">
+                <strong>🔗 Chcete ještě víc?</strong>
+                <p class="mt-0-5">Máme pro vás připravených celkem <strong>30 způsobů použití</strong>!
+                    Prohlédněte si kompletní katalog promptů.</p>
+                <a href="../use-cases.html#infografika" class="cta-gradient-link">
+                    📚 Zobrazit všech 30 Infografika Use Cases →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | Infografika 📚</p>
+        <p class="footer-text">
+            <a href="../index.html#studio-moduly" class="link-primary">Zpět na
+                hlavní průvodce
+                ↑</a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../sidebar.js"></script>
+    <script src="../chatbot-knowledge.js"></script>
+    <script src="../chatbot.js"></script>
+</body>
+
+</html>

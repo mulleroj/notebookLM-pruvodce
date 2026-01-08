@@ -1,0 +1,600 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz modul NotebookLM pro učitele - tvorba testů, kartiček a maturitních otázek">
+    <title>Quiz - NotebookLM pro Učitele</title>
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <link rel="stylesheet" href="../sidebar.css?v=3">
+    <link rel="stylesheet" href="../chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="../assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+                <div class="sidebar-item">
+                    <a href="../index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+                <div class="sidebar-item">
+                    <a href="../use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside> <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="../index.html" class="nav-link nav-link-home">🏠 Domů</a>
+            <a href="#tips" class="nav-link">💡 Tipy</a>
+            <a href="#use-cases" class="nav-link">📚 Use Cases</a>
+            <a href="../use-cases.html#quiz" class="nav-link">🗂️ Katalog</a>
+        </div>
+    </nav>
+
+    <!-- Module Hero -->
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-hero-icon">❓</div>
+            <h1>Quiz</h1>
+            <p class="module-hero-description">
+                Generuje interaktivní kvízy a testové otázky z vašich zdrojů. Ideální pro přípravu na zkoušky, ověření
+                porozumění a aktivní učení.
+            </p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- Tips Section -->
+        <div class="category-section" id="tips">
+            <div class="category-header">
+                <span class="category-icon">💡</span>
+                <h2 class="category-title">Tipy pro maximální využití Quiz modulu</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎚️</div>
+                        <h3 class="card-title">Nastavení obtížnosti</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Explicitně požádej o úroveň: "základní otázky", "střední úroveň" nebo "náročný test pro
+                            pokročilé".</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📏</div>
+                        <h3 class="card-title">Specifické zaměření</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Pro velké sešity: "Quiz pouze z kapitoly 3" nebo "Otázky jen o tématu demokracie".</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔄</div>
+                        <h3 class="card-title">Iterativní vylepšování</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Po vygenerování můžeš říct: "Přidej 3 obtížnější otázky" nebo "Nahraď otázku 5 praktickým
+                            příkladem".</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workflow -->
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-icon">⚡</span>
+                <h2 class="category-title">Doporučený workflow</h2>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Krok za krokem použití Quiz modulu:</h3>
+                <ol class="list-padded-spaced">
+                    <li><strong>Příprava zdrojů:</strong> Nahraj materiály do NotebookLM (učebnice, přednášky, poznámky)
+                    </li>
+                    <li><strong>Stanovení cíle:</strong> V chatu specifikuj co potřebuješ - typ otázek, počet, obtížnost
+                    </li>
+                    <li><strong>Použití promptu:</strong> Zkopíruj příslušný prompt a uprav podle potřeby</li>
+                    <li><strong>Generování:</strong> Klikni na Quiz modul v Studio</li>
+                    <li><strong>Revize:</strong> Zkontroluj otázky, případně požádej o úpravy</li>
+                    <li><strong>Export:</strong> Zkopíruj výsledný quiz do dokumentu nebo přímo vytiskni</li>
+                </ol>
+
+                <div class="example-box" class="mt-1-5">
+                    <div class="example-title">🎯 Pro tip</div>
+                    <p>Kombinuj různé typy - nejprve vytvoř kartičky pro memorování základů, pak kvíz pro procvičení a
+                        nakonec test pro hodnocení. Každý typ slouží jinému účelu v učebním procesu!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use Cases Section -->
+        <div class="category-section" id="use-cases">
+            <div class="category-header">
+                <span class="category-icon">📚</span>
+                <h2 class="category-title">Use Cases - Praktické příklady použití</h2>
+            </div>
+        </div>
+
+        <!-- Use Case #2: Tvorba testů -->
+        <div class="use-case-card" id="use-case-2">
+            <div class="use-case-header">
+                <span class="use-case-number">#2</span>
+                <h3 class="use-case-title">Tvorba testů a kvízů (včetně verzí A/B)</h3>
+                <p class="use-case-subtitle">Automatické generování testů z vašich materiálů</p>
+            </div>
+
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <div class="use-case-content">
+                    <p>NotebookLM vezme tvoje texty a vygeneruje testové otázky různých typů včetně verzí A a B pro
+                        zamezení opisování.</p>
+                </div>
+            </div>
+
+            <div class="use-case-section">
+                <h4>🎯 Jak použít</h4>
+                <div class="use-case-content">
+                    <p>Nahraj kapitolu nebo výklad, který chceš testovat. Quiz modul automaticky identifikuje klíčové
+                        koncepty a vytvoří otázky.</p>
+                </div>
+            </div>
+
+            <div class="use-case-section">
+                <h4>📤 Typické výstupy</h4>
+                <div class="use-case-content">
+                    <ul>
+                        <li>Test verze A s 10 otázkami</li>
+                        <li>Test verze B se stejnými tématy, ale jiným zněním</li>
+                        <li>Klíč správných odpovědí</li>
+                        <li>Bodovací schéma</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Hotový prompt</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">Zpracuj test na téma [téma]: 10 otázek (5 otevřených, 5 uzavřených), verze A/B,
+                    klíč, bodování, a bonusové úlohy pro rychlejší žáky.</div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📝 Praktický příklad</div>
+                <p><strong>Scénář:</strong> Potřebuješ test z občanské nauky o politických stranách.</p>
+                <p><strong>Postup:</strong></p>
+                <ol>
+                    <li>Nahraj kapitolu o politických stranách do NotebookLM</li>
+                    <li>V chatu napiš: "Zpracuj test na téma politické strany: 10 otázek (5 otevřených, 5 uzavřených),
+                        verze A/B, klíč, bodování"</li>
+                    <li>Klikni na Quiz modul v Studio</li>
+                    <li>Dostaneš dva testy připravené k vytištění</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Use Case #7: Procvičovací kartičky -->
+        <div class="use-case-card" id="use-case-7">
+            <div class="use-case-header">
+                <span class="use-case-number">#7</span>
+                <h3 class="use-case-title">Tvorba procvičovacích kartiček</h3>
+                <p class="use-case-subtitle">Flashcards pro aktivní učení a memorování</p>
+            </div>
+
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <div class="use-case-content">
+                    <p>Vytváří kartičky ve formátu otázka/odpověď (flashcards) ideální pro aktivní opakování a spaced
+                        repetition.</p>
+                </div>
+            </div>
+
+            <div class="use-case-section">
+                <h4>🎯 Jak použít</h4>
+                <div class="use-case-content">
+                    <p>Ideální pro definice, data, vzorce či základní koncepty. Kartičky podporují aktivní vybavování
+                        informací.</p>
+                </div>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Hotový prompt</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">Z nahraných zdrojů vytvoř 20 flashcards ve struktuře otázka/odpověď. Přidej i
+                    obtížnější variantu otázky.</div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📝 Praktický příklad</div>
+                <p><strong>Scénář:</strong> Žáci potřebují procvičovat slovní zásobu z dějepisu.</p>
+                <p><strong>Prompt:</strong> "Z nahraných zdrojů vytvoř 20 flashcards pojmů z 19. století ve struktuře:
+                    termín → definice. Přidej i obtížnější variantu s kontextovou otázkou."</p>
+                <p><strong>Výstup:</strong> Získáš karty typu "Co je nationalismus?" + těžší "Jak se nationalismus
+                    projevil v revolucích 1848?"</p>
+            </div>
+        </div>
+
+        <!-- Use Case #22: Maturitní otázky -->
+        <div class="use-case-card" id="use-case-22">
+            <div class="use-case-header">
+                <span class="use-case-number">#22</span>
+                <h3 class="use-case-title">Příprava maturitních otázek</h3>
+                <p class="use-case-subtitle">Komplexní maturitní příprava s výkladem a příklady</p>
+            </div>
+
+            <div class="use-case-section">
+                <h4>📋 Co to je</h4>
+                <div class="use-case-content">
+                    <p>Vytváří strukturovanou maturitní přípravu včetně výkladu, příkladů, otázek a typických chyb
+                        studentů.</p>
+                </div>
+            </div>
+
+            <div class="use-case-section">
+                <h4>🎯 Jak použít</h4>
+                <div class="use-case-content">
+                    <p>Nahraj maturitní témata nebo učebnice. NotebookLM vytvoří komplexní přípravu podle struktury
+                        státní maturity.</p>
+                </div>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Hotový prompt</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">Vytvoř maturitní přípravu na téma [téma]: strukturovaný výklad, příklady,
+                    otázky, chyby studentů.</div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📝 Praktický příklad</div>
+                <p><strong>Téma:</strong> Druhá světová válka pro ústní maturitu z dějepisu</p>
+                <p><strong>Prompt:</strong> "Vytvoř maturitní přípravu na téma 'Druhá světová válka': strukturovaný
+                    výklad rozdělený na úvod, průběh, důsledky, příklady konkrétních událostí, 5 maturitních otázek,
+                    typické chyby studentů."</p>
+                <p><strong>Výstup:</strong> Kompletní příprava pro studenta - od základního výkladu po náročné otázky
+                    komise.</p>
+            </div>
+        </div>
+
+        <!-- TOP 10 Use Cases Section -->
+        <section id="top-use-cases" class="section">
+            <div class="section-header">
+                <h2 class="section-title">🌟 TOP 10 Nejužitečnějších Use Cases pro Kvíz</h2>
+                <p class="mb-1-5">Nejpraktičtější způsoby vytváření testů, kvízů a zkoušení.</p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">⚡</div>
+                        <h3 class="card-title">Rychlý 5min kvíz</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Ověření znalostí před hodinou</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř 10 otázek různých typů na téma [téma], stupňované od
+                                nejlehčí po nejtěžší.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📝</div>
+                        <h3 class="card-title">Test ABCD</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Klasické testování</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř 15 otázek s výběrem ze 4 možností (A,B,C,D), kde jen jedna
+                                je správná. Možnosti ať nejsou očividně hloupé.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📄</div>
+                        <h3 class="card-title">Doplňovačka</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Procvičování termínů</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř text o délce 10 vět, ve kterém vynecháš klíčová slova a
+                                nahradíš je podtržítkem. Pod text dej seznam slov k doplnění.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🗣️</div>
+                        <h3 class="card-title">Ústní zkoušení</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Příprava sad</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Navrhni 5 sad otázek pro ústní zkoušení. Každá sada ať obsahuje: 1x
+                                definici, 1x aplikaci a 1x souvislost.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎮</div>
+                        <h3 class="card-title">Kahoot! kvíz</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Interaktivní výuku</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř tabulku pro Kahoot: Sloupec 1 = Otázka (krátká), Sloupce 2-5
+                                = Odpovědi, Sloupec 6 = Časový limit (20s).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">✅</div>
+                        <h3 class="card-title">Pravda/Lež</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Rychlé testování</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř 10 tvrzení. Některá ať jsou pravdivá, některá lživá a
+                                některá pravdivá jen částečně (chytáky).</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔗</div>
+                        <h3 class="card-title">Spojovačka</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Párování pojmů</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř dva sloupce pojmů, které k sobě logicky patří, ale zpřeházej
+                                je.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎓</div>
+                        <h3 class="card-title">Maturitní otázky</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Přípravu k maturitě</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Navrhni strukturu jedné maturitní otázky na toto téma: úvod, hlavní
+                                stať, doplňující podotázky.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <h3 class="card-title">Sebehodnocení</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Žáky před testem</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vytvoř checklist otázek, kterými si žák sám ověří, zda je připraven
+                                na zítřejší test.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🌍</div>
+                        <h3 class="card-title">Překladový test</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Jazykovou výuku</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header"><span class="prompt-label">💬 Hotový prompt</span><button
+                                    class="copy-button">📋 Zkopírovat</button></div>
+                            <div class="prompt-text">Vyber z textu 5 nejtěžších vět a vytvoř z nich překladové cvičení.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-gradient-box">
+                <strong>🔗 Chcete ještě víc?</strong>
+                <p class="mt-0-5">Máme pro vás připravených celkem <strong>30 způsobů použití</strong>
+                    kvízů a testů! Prohlédněte si kompletní katalog včetně všech promptů.</p>
+                <a href="../use-cases.html#kviz" class="cta-gradient-link">
+                    📚 Zobrazit všech 30 Quiz Use Cases →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | Quiz modul 📚</p>
+        <p class="footer-text">
+            <a href="../index.html#studio-moduly" class="link-primary">Zpět na
+                hlavní průvodce
+                ↑</a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../sidebar.js"></script>
+    <script src="../chatbot-knowledge.js"></script>
+    <script src="../chatbot.js"></script>
+</body>
+
+</html>

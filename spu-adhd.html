@@ -1,0 +1,948 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Komplexní průvodce použitím NotebookLM pro žáky s SPU, ADHD a autismem">
+    <title>SPU & ADHD - NotebookLM Průvodce</title>
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="sidebar.css?v=3">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+                <div class="sidebar-item">
+                    <a href="index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="modules/audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+                <div class="sidebar-item">
+                    <a href="use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside> <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="index.html" class="nav-link nav-link-home">🏠 Domů</a>
+            <a href="#princip" class="nav-link">🧠 Základní princip</a>
+            <a href="#moduly" class="nav-link">🔹 Moduly</a>
+            <a href="#rezim" class="nav-link">📁 Režim</a>
+            <a href="#prehled" class="nav-link">📊 Přehled</a>
+            <a href="#konkretni-use-cases" class="nav-link">💼 Use Cases</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-hero-icon">🧠</div>
+            <h1>NotebookLM pro žáky s SPU & ADHD</h1>
+            <p class="module-hero-description">
+                Kompletní průvodce pro práci s dětmi se specificky and learning difficulties, ADHD a poruchami
+                autistického spektra
+            </p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- Základní princip -->
+        <section class="category-section" id="princip" style="margin-top: 3rem;">
+            <div class="category-header">
+                <span class="category-icon">🎯</span>
+                <h2 class="category-title">Základní princip (důležitější než moduly)</h2>
+            </div>
+
+            <div class="use-case-card">
+                <p><strong>U dětí se SPU / ADHD neřešíš „obsah", ale:</strong></p>
+                <ul style="line-height: 1.8; margin-top: 1rem;">
+                    <li><strong>kognitivní zátěž</strong> (čím méně kroků, tím líp)</li>
+                    <li><strong>předvídatelnost</strong> (stálá struktura)</li>
+                    <li><strong>mikro-úspěch</strong> (rychlá zpětná vazba)</li>
+                    <li><strong>možnost volby</strong> (kontrola = klid)</li>
+                </ul>
+
+                <div class="warning-box" style="margin-top: 1.5rem;">
+                    <p><strong>NotebookLM funguje, když ho nepřetížíš.</strong></p>
+                    <p style="margin-top: 0.5rem;">Radši 3 silné moduly než 10 polofunkčních.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doporučené moduly -->
+        <section class="category-section" id="moduly">
+            <div class="category-header">
+                <span class="category-icon">🔹</span>
+                <h2 class="category-title">MODULY NOTEBOOKLM – CO DOPORUČUJI</h2>
+            </div>
+
+            <!-- Modul 1: Shrnutí -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">1️⃣</span>
+                    <h3 class="use-case-title">Modul: Shrnutí / přepis zdrojů</h3>
+                    <p class="use-case-subtitle">🧠 Záchrana pro SPU (dyslexie, dysgrafie), ADHD (rozptýlení)</p>
+                </div>
+
+                <div class="use-case-content">
+                    <h4>Proč funguje</h4>
+                    <ul>
+                        <li>dítě nemusí číst dlouhý text</li>
+                        <li>dostane krátkou, strukturovanou informaci</li>
+                        <li>žádné hledání „co je důležité"</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1.5rem;">Typické použití</h4>
+                    <div class="cards-grid" style="margin-top: 0.5rem;">
+                        <div class="card">
+                            <div class="card-content">učebnice</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">pracovní list</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">výklad učitele (přepsaný do textu)</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-content">PDF, prezentace</div>
+                        </div>
+                    </div>
+
+                    <div class="prompt-box" style="margin-top: 1.5rem;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Doporučený prompt (učitelský)</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre style="white-space: pre-wrap; font-family: inherit;">Shrň tento text pro žáka se SPU.
+Použij krátké věty.
+Odděl informace do bodů.
+Vyhni se odborným slovům, pokud nejsou nutná.
+Na konci napiš 3 věci, které si má žák zapamatovat.</pre>
+                        </div>
+                    </div>
+
+                    <div class="tip-box" style="margin-top: 1rem;">
+                        <strong>Tip z praxe</strong>
+                        <p style="margin-top: 0.5rem;">➡️ Jedno shrnutí = jeden list A4 max. Jakmile je to delší, ADHD
+                            mozek to vypne.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modul 2: Otázky a odpovědi -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">2️⃣</span>
+                    <h3 class="use-case-title">Modul: Otázky a odpovědi nad zdrojem</h3>
+                    <p class="use-case-subtitle">🧠 Ideální pro ADHD – aktivní práce místo pasivního čtení</p>
+                </div>
+
+                <div class="use-case-content">
+                    <h4>Proč funguje</h4>
+                    <ul>
+                        <li>dítě se ptá, není zkoušené</li>
+                        <li>žádná prázdná stránka</li>
+                        <li>okamžitá reakce</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1.5rem;">Typical použití</h4>
+                    <ul>
+                        <li>„Zeptej se sešitu"</li>
+                        <li>domácí příprava bez stresu</li>
+                        <li>suplování</li>
+                    </ul>
+
+                    <div class="prompt-box" style="margin-top: 1.5rem;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Doporučený prompt (pro žáky – jednoduchý!)</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre style="white-space: pre-wrap; font-family: inherit;">Odpovídej jednoduše.
+Používej krátké věty.
+Když se zeptám hloupost, oprav mě.
+Když nerozumím, vysvětli to jinak.</pre>
+                        </div>
+                    </div>
+
+                    <div class="tip-box" style="margin-top: 1rem;">
+                        <strong>Tip</strong>
+                        <p style="margin-top: 0.5rem;">➡️ U ADHD funguje instrukce „oprav mě" – mozek je ve hře, ne v
+                            obraně.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modul 3: Infografika -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">3️⃣</span>
+                    <h3 class="use-case-title">Modul: Infografika</h3>
+                    <p class="use-case-subtitle">🧠 Zlatý grál pro SPU</p>
+                </div>
+
+                <div class="use-case-content">
+                    <h4>Proč funguje</h4>
+                    <ul>
+                        <li>minimum textu</li>
+                        <li>vizuální paměť</li>
+                        <li>struktura bez psaní</li>
+                    </ul>
+
+                    <h4 style="margin-top: 1.5rem;">Co do infografiky dávat</h4>
+                    <ul>
+                        <li>postupy (krok 1–2–3)</li>
+                        <li>přehledy (časová osa, tabulka)</li>
+                        <li>rozdíly (A × B)</li>
+                    </ul>
+
+                    <div class="prompt-box" style="margin-top: 1.5rem;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Prompt (ověřený pro SPU)</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre style="white-space: pre-wrap; font-family: inherit;">Vytvoř jednoduchou infografiku.
+Použij maximálně 6 bodů.
+Každý bod max. 10 slov.
+Použij ikony a barevné bloky.
+Žádné dlouhé věty.</pre>
+                        </div>
+                    </div>
+
+                    <div class="tip-box" style="margin-top: 1rem;">
+                        <strong>Tip</strong>
+                        <p style="margin-top: 0.5rem;">➡️ Jedna infografika = jedno téma. Nesnaž se „ušetřit papír".</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modul 4: Test -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">4️⃣</span>
+                    <h3 class="use-case-title">Modul: Test / sebehodnocení (bez známek!)</h3>
+                    <p class="use-case-subtitle">🧠 Motivace bez stresu</p>
+                </div>
+
+                <div class="use-case-content">
+                    <h4>Proč funguje</h4>
+                    <ul>
+                        <li>děti se SPU se nebojí chyby</li>
+                        <li>ADHD děti mají jasný cíl</li>
+                        <li>žádná ostuda před třídou</li>
+                    </ul>
+
+                    <div class="prompt-box" style="margin-top: 1.5rem;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Doporučený prompt</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre style="white-space: pre-wrap; font-family: inherit;">Vytvoř krátký test pro sebekontrolu.
+Maximálně 5 otázek.
+Napiš správné odpovědi hned pod otázky.
+Použij jednoduchý jazyk.</pre>
+                        </div>
+                    </div>
+
+                    <div class="tip-box" style="margin-top: 1rem;">
+                        <strong>Tip</strong>
+                        <p style="margin-top: 0.5rem;">➡️ Nikdy to nenazývej „test". Říkej tomu: „kontrola", „zkus si
+                            to", „rychlá hra"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modul 5: Role-play -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">5️⃣</span>
+                    <h3 class="use-case-title">Modul: Role-play / scénáře</h3>
+                    <p class="use-case-subtitle">🧠 ADHD děti → pohyb v hlavě místo v lavici</p>
+                </div>
+
+                <div class="use-case-content">
+                    <h4>Proč funguje</h4>
+                    <ul>
+                        <li>simuluje situaci</li>
+                        <li>zapojuje emoce</li>
+                        <li>žádné biflování</li>
+                    </ul>
+
+                    <div class="prompt-box" style="margin-top: 1.5rem;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Příklad promptu</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre style="white-space: pre-wrap; font-family: inherit;">Hraj se mnou krátký scénář.
+Ty jsi spolužák, já odpovídám.
+Když odpovím špatně, pomoz mi.
+Scénář ať má maximálně 5 replik.</pre>
+                        </div>
+                    </div>
+
+                    <div class="tip-box" style="margin-top: 1rem;">
+                        <strong>Tip</strong>
+                        <p style="margin-top: 0.5rem;">➡️ Skvělé na: cizí jazyk, občanku, etiku, odborné situace
+                            (servis, zákazník)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metodické tipy -->
+        <section class="category-section" id="tipy">
+            <div class="category-header">
+                <span class="category-icon">🔧</span>
+                <h2 class="category-title">METODICKÉ TIPY, KTERÉ DĚLAJÍ ROZDÍL</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">🔹 Jedno pravidlo = jeden sešit</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>Nemíchej shrnutí, testy a infografiky do jednoho notebooku.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Chaos = konec pozornosti.</strong></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">🔹 Stejný prompt pořád dokola</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>Děti se SPU potřebují stereotyp.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Neměň formulace jen proto, že se nudíš ty.</strong></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">🔹 QR kód → jeden úkol</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>QR kód má vést buď na shrnutí, nebo na otázky, nebo na infografiku.</p>
+                        <p style="margin-top: 0.5rem;"><strong>Ne na „všechno".</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases z reálné třídy -->
+        <section class="category-section" id="use-cases">
+            <div class="category-header">
+                <span class="category-icon">🎯</span>
+                <h2 class="category-title">USE CASES Z REÁLNÉ TŘÍDY</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">✔️ Suplování</h4>
+                    </div>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li>→ zdroj = učebnice</li>
+                            <li>→ modul = otázky</li>
+                            <li>→ úkol = „zeptej se sešitu na 5 věcí"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">✔️ Domácí příprava SPU</h4>
+                    </div>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li>→ zdroj = shrnutí</li>
+                            <li>→ modul = infografika</li>
+                            <li>→ výstup = „řekni 3 věci"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">✔️ ADHD žák po vyrušování</h4>
+                    </div>
+                    <div class="card-content">
+                        <ul style="list-style: none; padding: 0;">
+                            <li>→ zdroj = krátký text</li>
+                            <li>→ modul = role-play</li>
+                            <li>→ práce = 5 minut, hotovo, klid</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box" style="margin-top: 2rem;">
+                <strong>Tvrdá pravda na závěr</strong>
+                <p style="margin-top: 1rem;">NotebookLM není kouzelná hůlka. Ale:</p>
+                <ul style="margin-top: 0.5rem;">
+                    <li>snižuje frustraci</li>
+                    <li>zvyšuje samostatnost</li>
+                    <li>dává kontrolu zpět dítěti</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>A to je u SPU a ADHD víc než půlka úspěchu.</strong></p>
+            </div>
+        </section>
+
+
+        <!-- Školní SPU/ADHD režim -->
+        <section class="category-section" id="rezim">
+            <div class="category-header">
+                <span class="category-icon">🧠</span>
+                <h2 class="category-title">ŠKOLNÍ "SPU / ADHD REŽIM" PRO NOTEBOOKLM</h2>
+            </div>
+
+            <div class="use-case-card">
+                <h3>ZÁKLADNÍ FILOZOFIE (drž se jí, jinak se to rozpadne)</h3>
+                <ul style="line-height: 1.8; margin-top: 1rem;">
+                    <li>málo sešitů, jasná funkce</li>
+                    <li>stálé prompty – nemění se</li>
+                    <li>krátké výstupy</li>
+                    <li>žádné tresty za chyby</li>
+                    <li>rychlé dokončení = úspěch</li>
+                </ul>
+                <p style="margin-top: 1.5rem;"><em>Tohle je režim, kde neučíš pozornost, ale učíš i bez pozornosti.</em>
+                </p>
+            </div>
+
+            <!-- 4 Sešity -->
+            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">📁 STRUKTURA SEŠITŮ (NOTEBOOKŮ)</h3>
+            <p><strong>👉 Doporučuji 4 sešity max.</strong> Každý má jediný účel. Nic víc.</p>
+
+            <div class="cards-grid" style="margin-top: 1.5rem;">
+                <!-- Sešit 1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📘</div>
+                        <h4 class="card-title">1. SEŠIT: "Rychlé pochopení"</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>🎯 SPU – dyslexie, dysgrafie / ADHD po výpadku pozornosti</strong></p>
+                        <p style="margin-top: 0.5rem;"><strong>Co do něj patří:</strong> učebnice, pracovní listy,
+                            přepsaný výklad, krátké texty</p>
+                        <p style="margin-top: 0.5rem;"><strong>Co z něj dítě dělá:</strong> čte shrnutí, hledá „hlavní
+                            myšlenku", neodpovídá písemně</p>
+                    </div>
+                </div>
+
+                <!-- Sešit 2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📙</div>
+                        <h4 class="card-title">2. SEŠIT: "Zeptej se sešitu"</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>🎯 ADHD – aktivace, interakce, suplování</strong></p>
+                        <p style="margin-top: 0.5rem;"><strong>Co do něj patří:</strong> stejné zdroje jako výše (klidně
+                            duplicitně), NE přehledy, NE testy</p>
+                        <p style="margin-top: 0.5rem;"><strong>Co z něj dítě dělá:</strong> ptá se, zkouší, opravuje se
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sešit 3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📗</div>
+                        <h4 class="card-title">3. SEŠIT: "Vidím – chápu"</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>🎯 SPU – vizuální paměť, struktura</strong></p>
+                        <p style="margin-top: 0.5rem;"><strong>Co do něj patří:</strong> témata, která se pořád pletou,
+                            postupy, srovnání, přehledy</p>
+                        <p style="margin-top: 0.5rem;"><strong>Výstup:</strong> infografika, max. jedna obrazovka</p>
+                    </div>
+                </div>
+
+                <!-- Sešit 4 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📕</div>
+                        <h4 class="card-title">4. SEŠIT: "Zkus si to"</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>🎯 Sebehodnocení bez stresu</strong></p>
+                        <p style="margin-top: 0.5rem;"><strong>Co do něj patří:</strong> krátké otázky, mikro-testy,
+                            kontrola pochopení</p>
+                        <p style="margin-top: 0.5rem;"><strong>Co se NESMÍ:</strong> známkování, bodování nahlas,
+                            porovnávání</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="warning-box" style="margin-top: 2rem;">
+                <strong>🔑 ZLATÁ PRAVIDLA, KTERÁ NEPORUŠUJ</strong>
+                <ol style="margin-top: 1rem; line-height: 1.8;">
+                    <li>Neměň názvy sešitů</li>
+                    <li>Neměň prompty</li>
+                    <li>Nech žáky vybírat pořadí</li>
+                    <li>Neřeš krásu výstupu</li>
+                    <li>Jedna aktivita = jeden cíl</li>
+                </ol>
+            </div>
+
+            <div class="tip-box" style="margin-top: 1.5rem;">
+                <strong>Co z toho máš ty (učitelsky, cynicky, upřímně)</strong>
+                <ul style="margin-top: 0.5rem; line-height: 1.8;">
+                    <li>méně opisování</li>
+                    <li>méně konfliktů</li>
+                    <li>méně „já to nechápu"</li>
+                    <li>víc klidu</li>
+                    <li>lepší obhajitelnost podpůrných opatření</li>
+                </ul>
+                <p style="margin-top: 1rem;"><strong>A hlavně: 👉 tohle je systém, ne improvizace.</strong></p>
+            </div>
+        </section>
+
+        <!-- Přehled: Porucha × modul -->
+        <section class="category-section" id="prehled">
+            <div class="category-header">
+                <span class="category-icon">📊</span>
+                <h2 class="category-title">PŘEHLED: PORUCHA × MODUL NOTEBOOKLM</h2>
+            </div>
+
+            <!-- SPU -->
+            <div class="use-case-card">
+                <h3 style="color: var(--primary-blue);">🟦 SPU – dyslexie, dysgrafie, dysortografie</h3>
+
+                <div style="margin-top: 1rem;">
+                    <h4>Co je problém</h4>
+                    <ul>
+                        <li>čtení = vyčerpání</li>
+                        <li>psaní = blok</li>
+                        <li>dlouhý text = konec pozornosti</li>
+                        <li>chaos v informacích</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4>❌ Co NEfunguje</h4>
+                    <ul>
+                        <li>dlouhé pracovní listy</li>
+                        <li>opisování</li>
+                        <li>„najdi v textu"</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4>✅ Doporučené moduly</h4>
+                    <p><strong>1️⃣ Shrnutí zdrojů</strong> (👉 základní modul pro SPU)</p>
+                    <p style="margin-top: 0.5rem;"><em>Proč:</em> odd
+
+                        ělí obsah od čtení, zkrátí text, odstraní balast</p>
+
+                    <p style="margin-top: 1rem;"><strong>2️⃣ Infografika</strong> (👉 vizuální paměť > text)</p>
+                    <p style="margin-top: 0.5rem;"><em>Proč:</em> SPU děti myslí v obrazech, struktura bez psaní</p>
+
+                    <p style="margin-top: 1rem;"><strong>3️⃣ Otázky a odpovědi (řízené)</strong></p>
+                    <p style="margin-top: 0.5rem;"><em>Poznámka:</em> jen krátké, jednoduché dotazy</p>
+                </div>
+            </div>
+
+            <!-- ADHD -->
+            <div class="use-case-card">
+                <h3 style="color: #f59e0b;">🟨 ADHD</h3>
+
+                <div style="margin-top: 1rem;">
+                    <h4>Co je problém</h4>
+                    <ul>
+                        <li>kolísající pozornost</li>
+                        <li>potřeba okamžité reakce</li>
+                        <li>dlouhá aktivita = frustrace</li>
+                        <li>pasivita = útěk</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4>❌ Co NEfunguje</h4>
+                    <ul>
+                        <li>čtení bez cíle</li>
+                        <li>čekání</li>
+                        <li>dlouhé instrukce</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4>✅ Doporučené moduly</h4>
+                    <p><strong>1️⃣ Otázky a odpovědi nad zdrojem</strong> (👉 absolutní základ)</p>
+                    <p style="margin-top: 0.5rem;"><em>Proč:</em> interakce, reakce v reálném čase, mozek je „ve hře"
+                    </p>
+
+                    <p style="margin-top: 1rem;"><strong>2️⃣ Role-play / scénáře</strong> (👉 pohyb v hlavě místo pohybu
+                        v lavici)</p>
+                    <p style="margin-top: 0.5rem;"><em>Proč:</em> simuluje situaci, zapojuje emoce, žádné biflování</p>
+
+                    <p style="margin-top: 1rem;"><strong>3️⃣ Krátká sebehodnocení</strong> (👉 mikro-úspěch)</p>
+                    <p style="margin-top: 0.5rem;"><em>Poznámka:</em> U ADHD vždy pracuj s časem: „5 minut", „3 otázky",
+                        „1 scénář"</p>
+                </div>
+            </div>
+
+            <!-- PAS / Autismus -->
+            <div class="use-case-card">
+                <h3 style="color: #10b981;">🟩 PAS / autismus (vysoce funkční i běžný školní kontext)</h3>
+
+                <div style="margin-top: 1rem;">
+                    <h4>Co je problém</h4>
+                    <ul>
+                        <li>nejistota</li>
+                        <li>nejasné zadání</li>
+                        <li>změna pravidel</li>
+                        <li>sociální interpretace</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4>❌ Co NEfunguje</h4>
+                    <ul>
+                        <li>otevřené úkoly</li>
+                        <li>„jak chceš"</li>
+                        <li>metafory bez vysvětlení</li>
+                    </ul>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <h4>✅ Doporučené moduly</h4>
+                    <p><strong>1️⃣ Shrnutí zdrojů (velmi strukturované)</strong> (👉 klíčový modul)</p>
+                    <p style="margin-top: 0.5rem;"><em>Proč:</em> jasná pravidla, žádné domýšlení, stabilní formát</p>
+
+                    <p style="margin-top: 1rem;"><strong>2️⃣ Infografika (procesní)</strong> (👉 krok za krokem)</p>
+                    <p style="margin-top: 0.5rem;"><em>Proč:</em> sekvence, předvídatelnost, kontrola</p>
+
+                    <p style="margin-top: 1rem;"><strong>3️⃣ Modelové odpovědi / vzory</strong> (👉 extrémně důležité)
+                    </p>
+                    <p style="margin-top: 0.5rem;"><em>Poznámka:</em> Autistické děti často milují NotebookLM, protože:
+                        nereaguje emocionálně, drží pravidla, nemění tón. Ale jen pokud neměníš prompty.</p>
+                </div>
+            </div>
+
+            <!-- Rychlá mapa - tabulka -->
+            <div class="use-case-card" style="margin-top: 2rem;">
+                <h3>🔄 RYCHLÁ MAPA (SHRNUTÍ)</h3>
+                <div style="overflow-x: auto; margin-top: 1rem;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                        <thead>
+                            <tr style="background: var(--primary-blue); color: white;">
+                                <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Porucha</th>
+                                <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Hlavní modul
+                                </th>
+                                <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Vedlejší moduly
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;">SPU</td>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Shrnutí</strong></td>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Infografika, Q&A</td>
+                            </tr>
+                            <tr style="background: var(--bg-secondary);">
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;">ADHD</td>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Q&A</strong></td>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Role-play, krátké testy</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Autismus</td>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Shrnutí</strong></td>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Infografika, vzory</td>
+                            </tr>
+                            <tr style="background: var(--bg-secondary);">
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Kombinace SPU + ADHD</td>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Shrnutí + Q&A</strong>
+                                </td>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Infografika</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;">PAS + úzkost</td>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>Shrnutí + vzory</strong>
+                                </td>
+                                <td style="padding: 0.75rem; border: 1px solid #ddd;">Infografika</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="warning-box" style="margin-top: 2rem;">
+                <strong>Tvrdá pedagogická pravda</strong>
+                <p style="margin-top: 1rem;">NotebookLM není kompenzace poruchy.<br>
+                    Je to kompenzace školního prostředí, které je pro tyto děti špatně navržené.</p>
+                <p style="margin-top: 1rem;"><strong>A přesně proto funguje.</strong></p>
+            </div>
+        </section>
+
+        <!-- Konkrétní Use Cases z katalogu -->
+        <section class="category-section" id="konkretni-use-cases">
+            <div class="category-header">
+                <span class="category-icon">💼</span>
+                <h2 class="category-title">KONKRÉTNÍ USE CASES Z KATALOGU</h2>
+            </div>
+
+            <p style="margin-bottom: 2rem;">Zde jsou vybrané use cases z našeho hlavního katalogu, které jsou obzvlášť
+                vhodné pro žáky s SPU/ADHD:</p>
+
+            <!-- Use Case 1: Pracovní listy -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">#3</span>
+                    <h3 class="use-case-title">Generování pracovních listů pro různé úrovně</h3>
+                    <p class="use-case-subtitle">📚 Diferencované materiály pro všechny žáky</p>
+                </div>
+
+                <div class="use-case-content">
+                    <h4>💡 Proč je to perfektní pro SPU/ADHD</h4>
+                    <ul>
+                        <li>Žák se SPU dostane jednodušší verzi bez pocitu neúspěchu</li>
+                        <li>Všechny verze vypadají profesionálně</li>
+                        <li>Šetří čas učitele při tvorbě diferenciace</li>
+                    </ul>
+
+                    <div class="prompt-box" style="margin-top: 1.5rem;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Hotový prompt</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre style="white-space: pre-wrap; font-family: inherit;">Vytvoř tři verze pracovního listu: základní, střední, rozšířenou.
+Každá verze musí vycházet z nahraných zdrojů a obsahovat jiný způsob procvičení.</pre>
+                        </div>
+                    </div>
+
+                    <div class="tip-box" style="margin-top: 1rem;">
+                        <strong>Tip pro SPU</strong>
+                        <p style="margin-top: 0.5rem;">Základní verzi ještě zjednodušte promptem: "Použij krátké věty,
+                            maximum 10 slov. Bez cizích slov."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Use Case 2: Audio varianta -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Audio #4</span>
+                    <h3 class="use-case-title">Audio varianta pracovního listu pro žáky se SPU</h3>
+                    <p class="use-case-subtitle">🎧 Poslech místo čtení</p>
+                </div>
+
+                <div class="use-case-content">
+                    <h4>💡 Proč je to perfektní pro SPU/ADHD</h4>
+                    <ul>
+                        <li>Dyslektické dítě nemusí bojovat s textem</li>
+                        <li>ADHD žák může poslouchat při pohybu</li>
+                        <li>Auditiv learners dostanou optimální formu</li>
+                    </ul>
+
+                    <div class="prompt-box" style="margin-top: 1.5rem;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Hotový prompt</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre style="white-space: pre-wrap; font-family: inherit;">Převeď tento pracovní list do srozumitelného audio výkladu pro žáka s dyslexií.
+Zjednoduš strukturu, ponech obsah.</pre>
+                        </div>
+                    </div>
+
+                    <div class="tip-box" style="margin-top: 1rem;">
+                        <strong>Tip pro ADHD</strong>
+                        <p style="margin-top: 0.5rem;">Audio rozdělte na 3minutové úseky s jasným začátkem a koncem.
+                            ADHD mozek potřebuje viditelné cíle.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Use Case 3: Kvíz pro dyslektiky -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <span class="use-case-number">Kvíz #15</span>
+                    <h3 class="use-case-title">Kvíz pro dyslektiky</h3>
+                    <p class="use-case-subtitle">✅ Sebehodnocení bez stresu</p>
+                </div>
+
+                <div class="use-case-content">
+                    <h4>💡 Proč je to perfektní pro SPU/ADHD</h4>
+                    <ul>
+                        <li>Krátké věty = méně kognitivní zátěže</li>
+                        <li>Pouze 2 možnosti = rychlejší rozhodování</li>
+                        <li>Žádné chytáky = snížení úzkosti</li>
+                    </ul>
+
+                    <div class="prompt-box" style="margin-top: 1.5rem;">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Hotový prompt</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre
+                                style="white-space: pre-wrap; font-family: inherit;">Vytvoř zjednodušený test: krátké věty, žádné chytáky, jasné zadání, výběr jen ze 2 možností.</pre>
+                        </div>
+                    </div>
+
+                    <div class="tip-box" style="margin-top: 1rem;">
+                        <strong>Tip kombinovaný (SPU + ADHD)</strong>
+                        <p style="margin-top: 0.5rem;">Maximálně 5 otázek najednou. Pak pauza. Pak dalších 5. Funguje
+                            pro obě skupiny.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-gradient-box" style="margin-top: 2rem;">
+                <strong>🔍 Chcete více use cases?</strong>
+                <p style="margin-top: 1rem;">V našem katalogu najdete 192 dalších use cases s hotovými prompty. Mnoho z
+                    nich lze přizpůsobit pro SPU/ADHD žáky.</p>
+                <a href="use-cases.html" class="cta-gradient-link">
+                    📚 Procházet celý katalog →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | SPU & ADHD 🧠</p>
+        <p class="footer-text">
+            <a href="index.html" class="link-primary">Zpět na hlavní průvodce ↑</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="chatbot-knowledge.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,605 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Troubleshooting a řešení častých problémů s NotebookLM">
+    <title>Troubleshooting - NotebookLM Průvodce</title>
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="sidebar.css?v=3">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+            <!-- Hlavní sekce -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+
+                <div class="sidebar-item">
+                    <a href="index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Studio moduly (expandable) -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="modules/audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="modules/tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Další sekce -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+
+                <div class="sidebar-item">
+                    <a href="use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside> <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="index.html" class="nav-link nav-link-home">🏠 Domů</a>
+            <a href="#opravna" class="nav-link">🛠️ Opravna</a>
+            <a href="#technicke" class="nav-link">🔧 Technické</a>
+            <a href="#kvalita" class="nav-link">✨ Kvalita výstupů</a>
+            <a href="#zdroje" class="nav-link">📁 Zdroje</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-hero-icon">🔧</div>
+            <h1>Troubleshooting - Časté problémy</h1>
+            <p class="module-hero-description">
+                Řešení nejčastějších problémů a otázek při práci s NotebookLM
+            </p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- Opravna Section -->
+        <section id="opravna" class="section section-spacing">
+            <h2 class="section-title">
+                <span class="section-icon">🛠️</span>
+                "Opravna" - Když výsledek není ono
+            </h2>
+            <p>AI není telepat. Někdy nepochopí zadání napoprvé. <strong>Nezahazujte výsledek, ale mluvte s ní
+                    dál.</strong> Tady jsou „opravné příkazy", které zachrání situaci:</p>
+
+            <div class="use-case-card">
+                <h3>Opravné prompty - Záchrana špatného výsledku</h3>
+                <table class="troubleshooting-table">
+                    <thead>
+                        <tr>
+                            <th>Co je špatně?</th>
+                            <th>Opravný prompt (napište do
+                                chatu)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Je to moc dlouhé</td>
+                            <td class="prompt-cell">
+                                "Zkrať to na polovinu. Odstraň omáčku a nech jen fakta."</td>
+                        </tr>
+                        <tr>
+                            <td>Je to moc složité</td>
+                            <td class="prompt-cell">
+                                "Přepiš to tak, aby to pochopil žák 6. třídy. Použij jednodušší slova."</td>
+                        </tr>
+                        <tr>
+                            <td>Je to moc stručné</td>
+                            <td class="prompt-cell">
+                                "Rozepiš bod č. 3 do větších detailů. Uveď konkrétní příklad."</td>
+                        </tr>
+                        <tr>
+                            <td>Špatný formát</td>
+                            <td class="prompt-cell">
+                                "Převeď ten text do přehledné tabulky."</td>
+                        </tr>
+                        <tr>
+                            <td>Chybí kontext</td>
+                            <td class="prompt-cell">
+                                "Přidej k tomu historické souvislosti a data."</td>
+                        </tr>
+                        <tr>
+                            <td>Je to nudné</td>
+                            <td class="prompt-cell">
+                                "Přepiš to víc neformálně, přidej vtip nebo metaforu."</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem;">Zapomněl na něco</td>
+                            <td class="prompt-cell">
+                                "V textu se píše i o [X], zapracuj to tam taky."</td>
+                        </tr>
+                        < /tbody>
+                </table>
+
+                <div class="tip-box mt-3">
+                    <div class="tip-box-title">💡 Klíčová poučka</div>
+                    <p><strong>Většina lidí s AI skončí v momentě, kdy jim poprvé odpoví hloupost.</strong> Sekce
+                        "Opravna" vám říká: "To je normální, jen jí řekni, ať to opraví." Iterace je klíčem k úspěchu!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technické problémy -->
+        <section class="category-section" id="technicke" class="section-spacing">
+            <div class="category-header">
+                <span class="category-icon">🔧</span>
+                <h2 class="category-title">Technické problémy</h2>
+            </div>
+
+            <!-- FAQ 1 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">❓ Audio/Video přehled se negeneruje</h3>
+                </div>
+                <div class="use-case-content">
+                    <h4>✅ Řešení</h4>
+                    <ol>
+                        <li>Ověřte, že máte nahrané **alespoň 2 zdroje** (Audio Overview potřebuje kontext)</li>
+                        <li>Počkejte 2-5 minut - generování může trvat</li>
+                        <li>Zkuste **Refresh** stránky (F5)</li>
+                        <li>Zkontrolujte, zda zdroje nejsou **prázdné** nebo jen s obrázky</li>
+                        <li>Vyzkoušejte **nový notebook** - občas pomůže čistý start</li>
+                    </ol>
+
+                    <h4 class="mt-3">💡 Prevence</h4>
+                    <ul>
+                        <li>Nahrajte zdroje s **dostatečným textovým obsahem** (min. 500 slov)</li>
+                        <li>Používejte **PDF s textem**, ne skenované obrázky</li>
+                        <li>Dejte NotebookLM čas - negenerujte audio hned po nahrání</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">❓ NotebookLM nereaguje / zamrzá</h3>
+                </div>
+                <div class="use-case-content">
+                    <h4>✅ Řešení</h4>
+                    <ol>
+                        <li>**Obnovte stránku** (Ctrl/Cmd + R)</li>
+                        <li>**Vyčistěte cache** prohlížeče: Nastavení → Soukromí → Vymazat data</li>
+                        <li>Zkuste **inkognito/soukromé okno**</li>
+                        <li>Vyzkoušejte **jiný prohlížeč** (Chrome doporučeno)</li>
+                        <li>Zkontrolujte **připojení k internetu**</li>
+                        <li>Odhlaste se a znovu přihlaste do Google účtu</li>
+                    </ol>
+
+                    <h4 class="mt-3">💡 Prevence</h4>
+                    <ul>
+                        <li>Nenahrevejte **více než 10 souborů najednou**</li>
+                        <li>Používejte **nejnovější verzi** prohlížeče</li>
+                        <li>Zavřete **ostatní těžké záložky** (např. desítky otevřených tabů)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">❓ Nemohu nahrát dokument</h3>
+                </div>
+                <div class="use-case-content">
+                    <h4>✅ Řešení</h4>
+                    <ol>
+                        <li>Zkontrolujte **velikost souboru** (max 200 MB)</li>
+                        <li>Ověřte **podporovaný formát**: PDF, DOCX, TXT, Google Docs, Google Slides</li>
+                        <li>Zkuste **komprimovat PDF** (např. přes Smallpdf.com)</li>
+                        <li>Rozdělte **velký dokument** na menší části</li>
+                        <li>Zkontrolujte, zda máte **volné místo** v Google Drive</li>
+                        <li>Pro Excel/Numbers: **převeďte na Google Sheets**, pak nahrajte</li>
+                    </ol>
+
+                    <h4 class="mt-3">💡 Prevence</h4>
+                    <ul>
+                        <li>Používejte **optimalizované PDF** (ne skeny v plném rozlišení)</li>
+                        <li>Pro obrázky: vkládejte je do Google Docs, pak nahrejte</li>
+                        <li>Držte se **podporovaných formátů**</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kvalita výstupů -->
+        <section class="category-section" id="kvalita">
+            <div class="category-header">
+                <span class="category-icon">✨</span>
+                <h2 class="category-title">Kvalita výstupů</h2>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">❓ AI mi vrací irelevantní odpovědi</h3>
+                </div>
+                <div class="use-case-content">
+                    <h4>✅ Řešení</h4>
+                    <ol>
+                        <li>**Upřesněte prompt** - buďte konkrétnější: Místo "Shrň to", napište "Shrň první kapitolu v 5
+                            bodech"</li>
+                        <li>**Uveďte kontext** v dotazu: "Na základě nahraného učebnicového materiálu..."</li>
+                        <li>**Použijte citace**: Klikněte na citace v odpovědi a ověřte, co AI četla</li>
+                        <li>**Zkuste jinak formulovat otázku**</li>
+                        <li>Zkontrolujte, zda máte nahrané **správné zdroje**</li>
+                    </ol>
+
+                    <h4 class="mt-3">💡 Prevence</h4>
+                    <ul>
+                        <li>Používejte **specifické prompty** s jasnými instrukcemi</li>
+                        <li>Říkejte AI **formát výstupu**: "Odpověz v 3 bodech", "Vytvoř tabulku", atd.</li>
+                        <li>Zadejte **omezení**: "Maximálně 200 slov", "Pro žáky 6. třídy"</li>
+                    </ul>
+
+                    <div class="prompt-box mt-3">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Příklad dobrého promptu</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre class="pre-wrapped">Na základě nahrané učebnice dějepisu vytvoř shrnutí kapitoly o 2. světové válce.
+Použij maximálně 10 bodů.
+Každý bod ať má max. 15 slov.
+Zaměř se na příčiny, průběh a důsledky.</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 5 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">❓ Shrnutí je příliš dlouhé/krátké</h3>
+                </div>
+                <div class="use-case-content">
+                    <h4>✅ Řešení</h4>
+                    <ol>
+                        <li>**Specifikujte délku** v promptu: "v 5 bodech", "maximálně 200 slov", "na půl stránky A4"
+                        </li>
+                        <li>Použijte **konkrétní číselné limity**</li>
+                        <li>Požádejte AI o **rozšíření/zkrácení**: "Rozveď bod 3 více" nebo "Zkrať to na polovinu"</li>
+                    </ol>
+
+                    <div class="prompt-box mt-3">
+                        <div class="prompt-header">
+                            <span class="prompt-label">💬 Prompty pro kontrolu délky</span>
+                        </div>
+                        <div class="prompt-content">
+                            <pre class="pre-wrapped">Krátká verze: "Shrň v 3 větách"
+Střední verze: "Shrň v 200-300 slovech"
+Dlouhá verze: "Vytvoř podrobné shrnutí na 1-2 stránky"</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 6 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">❓ Audio přehled mluví o jiném tématu</h3>
+                </div>
+                <div class="use-case-content">
+                    <h4>✅ Řešení</h4>
+                    <ol>
+                        <li>Zkontrolujte, **co máte nahrané** - možná jste zapomněli odstranit staré zdroje</li>
+                        <li>**Odstraňte irelevantní zdroje** z notebooku</li>
+                        <li>Vytvořte **nový notebook** pouze s relevantními zdroji</li>
+                        <li>Vygenerujte audio znovu</li>
+                    </ol>
+
+                    <h4 class="mt-3">💡 Prevence</h4>
+                    <ul>
+                        <li>**Jeden notebook = jedno téma**</li>
+                        <li>Pravidelně **mažte staré zdroje**, které už nepotřebujete</li>
+                        <li>Pojmenujte notebooky **popisně** (např. "Dějepis - 2. světová válka")</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Práce se zdroji -->
+        <section class="category-section" id="zdroje">
+            <div class="category-header">
+                <span class="category-icon">📁</span>
+                <h2 class="category-title">Práce se zdroji</h2>
+            </div>
+
+            <!-- FAQ 7 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">❓ Můžu nahrát celý sešit jako jeden PDF?</h3>
+                </div>
+                <div class="use-case-content">
+                    <h4>✅ Odpověď: ANO, ale...</h4>
+                    <p>Můžete nahrát celý sešit, ale doporučujeme **rozdělení**:</p>
+
+                    <h4 style="margin-top: 1.5rem;">👍 Výhody rozdělení po kapitolách:</h4>
+                    <ul>
+                        <li>AI dokáže **lépe citovat** konkrétní části</li>
+                        <li>Můžete **vypnout/zapnout** jednotlivé kapitoly podle potřeby</li>
+                        <li>**Rychlejší nahrávání** a zpracování</li>
+                        <li>Snazší **správa** - víte, co kde máte</li>
+                    </ul>
+
+                    <h4 class="mt-3">💡 Doporučený přístup</h4>
+                    <ol>
+                        <li>Rozdělte sešit na **kapitoly nebo témata**</li>
+                        <li>Každou kapitolu nahrajte jako **samostatný zdroj**</li>
+                        <li>Pojmenujte soubory popisně: "Kapitola01_Uvod.pdf", "Kapitola02_Atomy.pdf"</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- FAQ 8 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">❓ Jak smazat citlivá data ze zdroje?</h3>
+                </div>
+                <div class="use-case-content">
+                    <h4>✅ Řešení</h4>
+                    <p><strong>NotebookLM neumožňuje editaci zdrojů</strong> - můžete pouze:</p>
+
+                    <ol class="mt-2">
+                        <li>**Smazat celý zdroj**: Klikněte na zdroj → ikona koše</li>
+                        <li>**Nahrát novou verzi**: Upravte originální dokument, pak nahrajte znovu</li>
+                    </ol>
+
+                    <h4 class="mt-3">💡 Prevence - co NEnahrávat</h4>
+                    <div class="warning-box mt-2">
+                        <ul>
+                            <li>❌ Jména žáků</li>
+                            <li>❌ Rodná čísla</li>
+                            <li>❌ Adresy</li>
+                            <li>❌ Hodnocení konkrétních žáků</li>
+                            <li>❌ Interní školní dokumenty s citlivými údaji</li>
+                        </ul>
+                    </div>
+
+                    <div class="tip-box mt-2">
+                        <strong>Bezpečný přístup:</strong>
+                        <p class="mt-1">Před nahráním **anonymizujte** dokumenty - nahraďte jména písemny
+                            "Žák A", "Žák B" atd.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 9 -->
+            <div class="use-case-card">
+                <div class="use-case-header">
+                    <h3 class="use-case-title">❓ NotebookLM nečte tabulky správně</h3>
+                </div>
+                <div class="use-case-content">
+                    <h4>✅ Řešení</h4>
+                    <ol>
+                        <li>**Pro Excel/Numbers**: Převeďte na **Google Sheets**, pak nahrajte jako zdroj</li>
+                        <li>**Pro tabulky v PDF**:
+                            <ul class="mt-1">
+                                <li>Zkuste PDF s **textovou vrstvou** (ne sken)</li>
+                                <li>Nebo převeďte tabulku na **seznam bodů** v Google Docs</li>
+                            </ul>
+                        </li>
+                        <li>**Alternativa**: Přepište klíčová data do **textového formátu**:
+                            <pre class="mt-1"
+                                style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">Místo tabulky:
+Žák A: Matematika 1, Čeština 2
+Žák B: Matematika 3, Čeština 2</pre>
+                        </li>
+                    </ol>
+
+                    <h4 style="margin-top: 1.5rem;">💡 Prevence</h4>
+                    <ul>
+                        <li>Používejte **Google Sheets** pro tabulková data</li>
+                        <li>V PDF udržujte tabulky **jednoduché** (méně slučovaných buněk)</li>
+                        <li>Pro složité tabulky vytvořte **textový popis** vedle</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Tips -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-icon">💡</span>
+                <h2 class="category-title">Rychlé tipy pro lepší výsledky</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">1️⃣ Buďte specifičtí</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>Místo "Udělej shrnutí" → "Shrň kapitolu 3 v 5 bodech pro žáky 8. třídy"</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">2️⃣ Zadejte formát</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>Řekněte AI, jak má výstup vypadat: "Vytvoř tabulku", "Použij odrážky", "Napiš jako dialog"
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">3️⃣ Iterujte</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>První výstup není finální. Řekněte: "Rozveď bod 2", "Zkrať to na polovinu", "Změň tón na
+                            formálnější"</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">4️⃣ Organizujte zdroje</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>Jeden notebook = jedno téma. Mažte staré zdroje. Pojmenov
+
+                            ávejte popisně.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | Troubleshooting 🔧</p>
+        <p class="footer-text">
+            <a href="index.html" class="link-primary">Zpět na hlavní průvodce ↑</a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="chatbot-knowledge.js"></script>
+    <script src="chatbot.js"></script>
+</body>
+
+</html>

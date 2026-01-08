@@ -1,0 +1,836 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tabulka dat v NotebookLM - strukturování informací do přehledných tabulek">
+    <title>Tabulka dat - NotebookLM pro Učitele</title>
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <link rel="stylesheet" href="../sidebar.css?v=3">
+    <link rel="stylesheet" href="../chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="../assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+                <div class="sidebar-item">
+                    <a href="../index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="#" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+                <div class="sidebar-item">
+                    <a href="../use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside> <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="../index.html" class="nav-link nav-link-home">🏠 Domů</a>
+            <a href="#tips" class="nav-link">💡 Tipy</a>
+            <a href="#use-cases" class="nav-link">📚 Use Cases</a>
+            <a href="../use-cases.html#pokrocile" class="nav-link">🗂️ Katalog</a>
+        </div>
+    </nav>
+
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-hero-icon">📋</div>
+            <h1>Tabulka dat</h1>
+            <p class="module-hero-description">Strukturuje informace do přehledné tabulky. Ideální pro porovnání,
+                organizaci faktů a chronologické přehledy.</p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- What is Tabulka Dat -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-icon">📋</span>
+                <h2 class="category-title">Co je modul „Tabulka dat" (a co rozhodně není)</h2>
+            </div>
+
+            <div class="use-case-card">
+                <p class="text-lg-relaxed">Tabulka dat v NotebookLM <strong>není Excel ani
+                        databáze</strong>. Je to <strong>strukturovaný myšlenkový organizér</strong>:</p>
+                <ul class="lh-relaxed mt-2">
+                    <li>přehled,</li>
+                    <li>porovnání,</li>
+                    <li>mapování vztahů,</li>
+                    <li>extrakce informací ze zdrojů.</li>
+                </ul>
+                <p class="mt-3 text-md-relaxed">Je silná tam, kde text začíná být nepřehledný, ale
+                    ještě nechceš psát analýzu nebo infografiku.</p>
+
+                <div class="example-box mt-3">
+                    <div class="example-title">💭 Typicky</div>
+                    <p><em>„Mám v dokumentech spoustu informací, ale potřebuju v nich vidět řád."</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kdy použít -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-icon">🎯</span>
+                <h2 class="category-title">Kdy po tabulce sáhnout (praktická rozhodovací pomůcka)</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">✅</div>
+                        <h3 class="card-title">Použij Tabulku dat, když</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul class="lh-relaxed">
+                            <li>porovnáváš více variant (pojmy, autory, zákony, argumenty)</li>
+                            <li>chceš vytáhnout strukturu z textu</li>
+                            <li>připravuješ podklady pro další výstup (infografika, test, prezentace)</li>
+                            <li>chceš rychle vidět rozdíly a souvislosti</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">❌</div>
+                        <h3 class="card-title">Nepoužívej ji, když</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul class="lh-relaxed">
+                            <li>potřebuješ výpočty</li>
+                            <li>řešíš chronologický příběh (tam je lepší časová osa)</li>
+                            <li>chceš hotový vizuál pro žáky (to je role infografiky)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Základní workflow -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-icon">⚡</span>
+                <h2 class="category-title">Základní workflow (ověřené z učitelské praxe)</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>1️⃣ Vstupy</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Nahraj:</strong></p>
+                        <ul>
+                            <li>učební texty</li>
+                            <li>zákony / metodiky</li>
+                            <li>články</li>
+                            <li>vlastní poznámky</li>
+                        </ul>
+                        <p class="mt-2"><em>Čím kvalitnější zdroje, tím chytřejší tabulka. NotebookLM
+                                nevymýšlí – strukturuje to, co má.</em></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>2️⃣ Zadání struktury (klíčový moment)</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Neříkej jen „udělej tabulku".</strong><br>Řekni:</p>
+                        <ul>
+                            <li>co má být ve sloupcích</li>
+                            <li>jaký je účel tabulky</li>
+                        </ul>
+                        <div class="example-box mt-2">
+                            <div class="example-title">Příklad dobrého zadání</div>
+                            <p><em>„Vytvoř tabulku se sloupci: pojem – definice – příklad z praxe – častá chyba
+                                    žáků."</em></p>
+                            <p class="mt-1">Tohle je rozdíl mezi „meh" výstupem a „tohle fakt použiju".
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>3️⃣ První verze = surovina</h4>
+                    </div>
+                    <div class="card-content">
+                        <p>První tabulka:</p>
+                        <ul>
+                            <li>bude trochu generická</li>
+                            <li>bude chtít zpřesnit názvy sloupců</li>
+                            <li>často odhalí, že ti chybí zdroj nebo kontext</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>To je v pořádku.</strong> Tohle není finále, ale náčrt
+                            mapy.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>4️⃣ Iterace (tady se rodí kvalita)</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Typické další kroky:</strong></p>
+                        <ul>
+                            <li>přejmenuješ sloupce</li>
+                            <li>jeden sloupec rozdělíš na dva</li>
+                            <li>přidáš „poznámka pro učitele"</li>
+                            <li>vyhodíš balast</li>
+                        </ul>
+                        <p style="margin-top: 1rem;">NotebookLM je v tomhle překvapivě poslušný.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>5️⃣ Recyklace výstupu</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Hotovou tabulku:</strong></p>
+                        <ul>
+                            <li>použiješ jako zdroj pro infografiku</li>
+                            <li>přepíšeš do testových úloh</li>
+                            <li>rozdělíš na žákovskou / učitelskou verzi</li>
+                            <li>použiješ jako promptový základ pro další agenty</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><strong>Tohle je její skutečná síla.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="category-section" id="use-cases">
+            <div class="category-header">
+                <span class="category-icon">📚</span>
+                <h2 class="category-title">Typické a osvědčené use cases (ze školního světa)</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📘</div>
+                        <h3 class="card-title">Jazykové předměty</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>přehled gramatických jevů</li>
+                            <li>porovnání časů, kondicionálů, modálních sloves</li>
+                            <li>typické chyby + správná alternativa</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><em>Skvělé jako mezikrok před infografikou.</em></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🏛️</div>
+                        <h3 class="card-title">Společenské vědy / občanka</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>srovnání politických systémů</li>
+                            <li>přehled práv a povinností</li>
+                            <li>rozdíl zákon × vyhláška × nařízení</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><em>Tabulka pomáhá odpolitizovat emoce a ukázat strukturu.</em></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔧</div>
+                        <h3 class="card-title">Odborné předměty (technické, učňovské)</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>postupy práce</li>
+                            <li>nástroje × použití × rizika</li>
+                            <li>porovnání materiálů</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><em>Tady tabulka supluje to, co se dřív psalo křídou na
+                                tabuli.</em></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🧠</div>
+                        <h3 class="card-title">Metodika pro učitele</h3>
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li>výukové metody × vhodné třídy</li>
+                            <li>formativní hodnocení – možnosti</li>
+                            <li>AI nástroje × využití × rizika</li>
+                        </ul>
+                        <p style="margin-top: 1rem;"><em>Ano, přesně sem patří i tvoje „učitelská sada".</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tipy -->
+        <section class="category-section" id="tips">
+            <div class="category-header">
+                <span class="category-icon">💡</span>
+                <h2 class="category-title">Tipy, které šetří nervy (a čas)</h2>
+            </div>
+
+            <div class="use-case-card">
+                <ul style="line-height: 1.8;">
+                    <li><strong>Raději víc sloupců než dlouhé buňky</strong> – Každý sloupec = jedna myšlenková funkce
+                    </li>
+                    <li><strong>Neboj se explicitně napsat:</strong> „Tabulka má být použitelná pro žáky 1. ročníku SŠ"
+                    </li>
+                    <li><strong>Když se ti tabulka „rozpadá"</strong>, znamená to, že téma ještě nemáš myšlenkově
+                        ujasněné (a to je cenná informace)</li>
+                </ul>
+
+                <div class="example-box card-spacing">
+                    <div class="example-title">⚠️ Časté chyby</div>
+                    <ul>
+                        <li>chtít po tabulce kreativitu</li>
+                        <li>cpát do ní celý text</li>
+                        <li>brát první výstup jako hotový</li>
+                        <li>používat ji místo infografiky nebo prezentace</li>
+                    </ul>
+                    <p class="mt-2"><em><strong>Tabulka je myšlenkový skeleton, ne výklad.</strong></em>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Silný závěr -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-icon">⭐</span>
+                <h2 class="category-title">Silný závěr (bez růžových brýlí)</h2>
+            </div>
+
+            <div class="use-case-card">
+                <p class="text-lg-relaxed">Modul Tabulka dat je <strong>nenápadný
+                        dříč</strong>.<br>Není sexy, ale:</p>
+                <ul class="lh-relaxed mt-2">
+                    <li>zpřehledňuje chaos</li>
+                    <li>zrychluje přípravu</li>
+                    <li>dramaticky zvyšuje kvalitu dalších výstupů</li>
+                </ul>
+                <p class="mt-3 text-md-relaxed">Ve chvíli, kdy ji začneš používat
+                    <strong>systematicky</strong>, přestaneš psát materiály „od nuly" a začneš je stavět
+                    <strong>modulárně</strong>. A to je přesně ten posun, který odděluje digitální učitele od
+                    digitálního improvizátora.
+                </p>
+            </div>
+        </section>
+
+        <!-- POKROČILÉ TECHNIKY -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-icon">🚀</span>
+                <h2 class="category-title">Pokročilé integrace</h2>
+            </div>
+        </section>
+
+        <!-- Základní princip -->
+        <section class="category-section">
+            <div class="category-header">
+                <h3 class="section-header-xl">🎯 Základní princip (jedna věta, která rozhoduje)
+                </h3>
+            </div>
+
+            <div class="use-case-card">
+                <p class="highlight-box">
+                    <strong>Každý sloupec tabulky má jednu pedagogickou funkci.</strong><br>
+                    <span class="text-sm mt-1 d-block">Jakmile tohle platí, zbytek je
+                        automat.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Varianta A: Tabulka → Infografika -->
+        <section class="category-section">
+            <div class="category-header">
+                <h3 class="section-header-xl">🎨 Varianta A: Tabulka → Infografika (bez
+                    kreativity, jen řemeslo)</h3>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Ideální tabulka pro infografiku</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Minimální „svatá trojice" sloupců:</strong></p>
+                        <ol>
+                            <li>Pojem / jev</li>
+                            <li>Krátké vysvětlení (max. 1–2 věty)</li>
+                            <li>Vizualizovatelný prvek (příklad, ikona, situace)</li>
+                        </ol>
+                        <p class="mt-2"><em>Jakmile máš tenhle tvar, infografika se sama diktuje.</em></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Převodní workflow</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>1️⃣ Uzamkni strukturu</strong></p>
+                        <p class="mb-2"><em>„Použij každý řádek tabulky jako jeden blok infografiky.
+                                Zachovej pořadí."</em></p>
+
+                        <p><strong>2️⃣ Přepiš jazyk</strong></p>
+                        <p class="mb-2"><em>„Přeformuluj text do stručných bodů vhodných pro
+                                infografiku. Bez nových informací."</em></p>
+
+                        <p><strong>3️⃣ Přidej vizuální instrukce</strong></p>
+                        <p><em>„Ke každému bloku navrhni jednoduchý vizuální motiv (ikona, situace, metafora)."</em></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box mt-3">
+                <div class="example-title">📋 Co vznikne</div>
+                <ul>
+                    <li>Každý řádek = jeden infografický panel</li>
+                    <li>Každý sloupec = vrstva informace</li>
+                    <li>Design už jen vykresluje strukturu</li>
+                </ul>
+                <p class="mt-2"><strong>Typický příklad:</strong><br>
+                    Tabulka: | Čas | Použití | Příklad | → Infografika: blok „Present Simple" + kdy se používá + jeden
+                    příklad + jedna ikona</p>
+            </div>
+        </section>
+
+        <!-- Varianta B: Tabulka → Test -->
+        <section class="category-section">
+            <div class="category-header">
+                <h3 class="section-header-xl">✅ Varianta B: Tabulka → Test (ještě víc automat)
+                </h3>
+            </div>
+
+            <div class="use-case-card">
+                <p class="text-md-relaxed mb-3"><em>Tady je to skoro nefér, jak je to snadné.</em>
+                </p>
+
+                <p><strong>Ideální tabulka pro testy – sloupce:</strong></p>
+                <ul class="my-2">
+                    <li>Fakt / pravidlo</li>
+                    <li>Správná odpověď</li>
+                    <li>Typická chyba</li>
+                    <li>(volitelně) kontext / příklad</li>
+                </ul>
+                <p><em>Tohle je v podstatě databáze úloh.</em></p>
+            </div>
+
+            <div class="cards-grid card-spacing">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>1️⃣ Definuj typ testu</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><em>„Z každého řádku tabulky vytvoř jednu testovou otázku typu…"</em></p>
+                        <p class="mt-1">Např.: výběr z možností, doplňování, pravda/nepravda</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>2️⃣ Automatické distraktory</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><em>„Použij typickou chybu jako nesprávnou možnost."</em></p>
+                        <p class="mt-1"><strong>Tohle je pedagogické zlato.</strong> Test je okamžitě
+                            kvalitní.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>3️⃣ Normalizuj obtížnost</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><em>„Uprav jazyk na úroveň A2 / B1 / učňovský obor."</em></p>
+                        <p class="mt-1">Tabulka drží obsah, prompt jen upraví obal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box card-spacing">
+                <div class="example-title">🎯 Největší hack: Dvojí výstup z jedné tabulky</div>
+                <p><strong>Jedna tabulka →</strong></p>
+                <ul>
+                    <li>Infografika pro výklad</li>
+                    <li>Test pro ověření</li>
+                </ul>
+                <p style="margin-top: 1rem;"><em>Bez přepisování obsahu. Jen jiný filtr.</em></p>
+            </div>
+        </section>
+
+        <!-- Meta-prompt -->
+        <section class="category-section">
+            <div class="category-header">
+                <h3 class="section-header-xl">🔥 Praktický „copy-paste" meta-prompt</h3>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Univerzální meta-prompt pro dvojí výstup</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">„Níže je tabulka.
+
+                    Nejprve ji převeď na strukturu infografiky (blok = řádek).
+
+                    Poté z té samé tabulky vytvoř test o X otázkách.
+                    Zachovej význam, nepřidávej nové informace."</div>
+            </div>
+
+            <p class="mt-3 text-md-relaxed"><em>Tohle je přesně ten moment, kdy AI šetří mozkovou
+                    kapacitu učitele.</em></p>
+        </section>
+
+        <!-- Upřímný závěr integrace -->
+        <section class="category-section">
+            <div class="use-case-card">
+                <p class="text-lg-relaxed text-center">
+                    <strong>Kdo dělá infografiku nebo test „od nuly", pálí čas.</strong><br>
+                    <strong>Kdo to dělá z tabulky, staví systém.</strong>
+                </p>
+                <p class="mt-3 text-md-relaxed text-center">
+                    Tabulka není mezikrok.<br>
+                    <strong>Je to centrální zdroj pravdy, ze kterého se jen různě publikuje.</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Univerzální tabulka -->
+        <section class="category-section">
+            <div class="category-header">
+                <span class="category-icon">⚡</span>
+                <h2 class="category-title">„Zlatý řez" univerzální tabulky (ověřený model)</h2>
+            </div>
+
+            <div class="use-case-card mb-4">
+                <p class="highlight-box-sm">
+                    <strong>Základní zákon univerzální tabulky:</strong><br>
+                    Každý sloupec = jedna pedagogická funkce.<br>
+                    Každý řádek = jedna myšlenka, kterou lze ověřit.
+                </p>
+                <p class="mt-2"><em>Jakmile tohle porušíš, univerzalita se rozpadá.</em></p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>1️⃣ JEV / POJEM</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>👉 O čem to je</strong></p>
+                        <p>gramatický jev • zákon • proces • nástroj • historický fakt</p>
+                        <p style="margin-top: 0.5rem;"><strong>➡️ Kotva pro všechny výstupy</strong></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>2️⃣ JÁDRO VÝZNAMU (1 věta)</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>👉 Co si má žák zapamatovat</strong></p>
+                        <p>bez vysvětlování • bez příkladů • bez výjimek</p>
+                        <p class="mt-1"><strong>➡️ Text pro infografiku a prezentaci</strong></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>3️⃣ KONTEXT / POUŽITÍ</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>👉 Kdy a proč se to používá</strong></p>
+                        <p>situace • účel • praktický význam</p>
+                        <p class="mt-1"><strong>➡️ Výklad + pracovní list</strong></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>4️⃣ MODEL / PŘÍKLAD</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>👉 Jak to vypadá v praxi</strong></p>
+                        <p>věta • scénář • případ • krok postupu</p>
+                        <p class="mt-1"><strong>➡️ Cvičení, ukázky, prezentace</strong></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>5️⃣ TYPOVÁ CHYBA</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>👉 Kde žáci padají na hubu</strong></p>
+                        <p>typické nedorozumění • špatná formulace • častý omyl</p>
+                        <p class="mt-1"><strong>➡️ Základ pro testové distraktory</strong></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>6️⃣ OTESTOVATELNÝ PRVEK</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>👉 Co přesně lze zkontrolovat</strong></p>
+                        <p>výběr správné varianty • doplnění • rozhodnutí ano/ne</p>
+                        <p class="mt-1"><strong>➡️ Testy bez vymýšlení</strong></p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>7️⃣ DIDAKTICKÁ POZNÁMKA (skrytá)</h4>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>👉 Pro učitele, ne pro žáky</strong></p>
+                        <p>upozornění • doporučení • zjednodušení</p>
+                        <p style="margin-top: 0.5rem;"><strong>➡️ Metodika, diferenciace</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proč to funguje -->
+        <section class="category-section">
+            <div class="category-header">
+                <h3 class="section-header-xl">✨ Proč to funguje (bez magie)</h3>
+            </div>
+
+            <div class="use-case-card">
+                <ul class="text-md-relaxed" style="line-height: 2;">
+                    <li><strong>Infografika</strong> čte sloupce 1–2</li>
+                    <li><strong>Prezentace</strong> čte 1–4</li>
+                    <li><strong>Pracovní list</strong> čte 3–6</li>
+                    <li><strong>Test</strong> čte 4–6</li>
+                    <li><strong>Učitel</strong> čte 7</li>
+                </ul>
+                <p class="mt-3 text-center"
+                    style="font-size: 1.15rem; background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
+                    <strong>Jedna tabulka, pět publikací.</strong><br>
+                    <span class="text-sm">Bez přepisování obsahu.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Kritická pravidla -->
+        <section class="category-section">
+            <div class="category-header">
+                <h3 class="section-header-xl">⚠️ Kritická pravidla, která se neodpouštějí</h3>
+            </div>
+
+            <div class="use-case-card">
+                <ul style="line-height: 1.8;">
+                    <li>❌ Jeden sloupec = víc myšlenek → rozpad</li>
+                    <li>❌ Dlouhé odstavce → nepoužitelné pro infografiku</li>
+                    <li>❌ Smíchaný jazyk (učitelský + žákovský) → chaos</li>
+                    <li>❌ „Hezké formulace" místo funkčních → zdržení</li>
+                </ul>
+                <p class="mt-3 text-md-relaxed"><em>Univerzální tabulka je ošklivě praktická. A to je
+                        její krása.</em></p>
+            </div>
+        </section>
+
+        <!-- Jak to dělat v NotebookLM -->
+        <section class="category-section">
+            <div class="category-header">
+                <h3 class="section-header-xl">🎯 Jak to dělat chytře v NotebookLM</h3>
+            </div>
+
+            <div class="prompt-box">
+                <div class="prompt-header">
+                    <span class="prompt-label">💬 Startovní prompt pro univerzální tabulku</span>
+                    <button class="copy-button">📋 Zkopírovat</button>
+                </div>
+                <div class="prompt-text">„Navrhni tabulku tak, aby každý sloupec odpovídal jiné výukové funkci
+                    (infografika, prezentace, pracovní list, test). Texty drž stručné a jednoznačné."</div>
+            </div>
+
+            <p class="mt-3">A pak už jen:</p>
+            <ul>
+                <li>přidáváš řádky</li>
+                <li>ladíš sloupce</li>
+                <li>recykluješ výstupy</li>
+            </ul>
+        </section>
+
+        <!-- Tvrdá pravda -->
+        <section class="category-section">
+            <div class="use-case-card">
+                <p
+                    style="font-size: 1.2rem; text-align: center; line-height: 1.8; padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 12px;">
+                    <strong>Kdo tvoří výstupy, maká pořád.</strong><br>
+                    <strong>Kdo tvoří datové jádro výuky, škáluje.</strong>
+                </p>
+                <p style="margin-top: 2rem; font-size: 1.1rem; text-align: center;">
+                    <strong>Tahle tabulka je kurikulum v kostce.</strong><br>
+                    A jakmile ji máš, AI přestává být hračka a začíná být <strong>výrobní nástroj učitele</strong>.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | Tabulka dat 📚</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+            <a href="../index.html#studio-moduly" style="color: var(--primary-blue); text-decoration: none;">Zpět na
+                hlavní průvodce
+                ↑</a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../sidebar.js"></script>
+    <script src="../chatbot-knowledge.js"></script>
+    <script src="../chatbot.js"></script>
+</body>
+
+</html>

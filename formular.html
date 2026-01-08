@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulář pro NotebookLM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            color: #555;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .helper-text {
+            color: #999;
+            font-size: 12px;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .example-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-top: 25px;
+            border-radius: 8px;
+        }
+
+        .example-box h3 {
+            color: #667eea;
+            font-size: 14px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .example-item {
+            color: #666;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+
+        .example-item strong {
+            color: #333;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .result {
+            margin-top: 25px;
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .result h3 {
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .result-text {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            border: 1px solid #c8e6c9;
+        }
+
+        .copy-btn {
+            width: auto;
+            padding: 8px 20px;
+            margin-top: 10px;
+            font-size: 14px;
+            background: #2e7d32;
+        }
+
+        .copy-btn:hover {
+            background: #1b5e20;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📚 Formulář pro NotebookLM</h1>
+        <p class="subtitle">Aby byl výsledek perfektní, vyplň následující údaje:</p>
+
+        <form id="notebookForm">
+            <div class="form-group">
+                <label>
+                    <span class="question-number">1.</span>
+                    NÁZEV tvé sbírky/sešitu:
+                </label>
+                <input type="text" id="sbirka" placeholder="např. Občanská nauka" required>
+                <div class="helper-text">Jak se jmenuje tvůj sešit v NotebookLM?</div>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <span class="question-number">2.</span>
+                    Kolik CELKEM máš ve zdrojích DOKUMENTŮ?
+                </label>
+                <input type="number" id="dokumenty" placeholder="např. 250" min="1" required>
+                <div class="helper-text">Celkový počet materiálů v této sbírce</div>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <span class="question-number">3.</span>
+                    O jaké KONKRÉTNÍ TÉMA ze zdrojů se chceš dozvědět?
+                </label>
+                <input type="text" id="tema" placeholder="např. Politické strany ČR" required>
+                <div class="helper-text">Téma, které se vyskytuje v tvých dokumentech</div>
+            </div>
+
+            <button type="submit">✨ Vygenerovat odpověď</button>
+        </form>
+
+        <div class="result" id="result">
+            <h3>✅ Tvá odpověď je připravena:</h3>
+            <div class="result-text" id="resultText"></div>
+            <button class="copy-btn" onclick="copyToClipboard()">📋 Zkopírovat</button>
+        </div>
+
+        <div class="example-box">
+            <h3>💡 Příklad vyplnění:</h3>
+            <div class="example-item"><strong>Sbírka:</strong> Občanská nauka</div>
+            <div class="example-item"><strong>Dokumentů celkem:</strong> 250</div>
+            <div class="example-item"><strong>Téma:</strong> Politické strany ČR</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('notebookForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const sbirka = document.getElementById('sbirka').value;
+            const dokumenty = document.getElementById('dokumenty').value;
+            const tema = document.getElementById('tema').value;
+
+            const result = `Sbírka: ${sbirka}, Dokumentů celkem: ${dokumenty}, Téma: ${tema}`;
+
+            document.getElementById('resultText').textContent = result;
+            document.getElementById('result').style.display = 'block';
+
+            // Smooth scroll to result
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        });
+
+        function copyToClipboard() {
+            const text = document.getElementById('resultText').textContent;
+            navigator.clipboard.writeText(text).then(function () {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Zkopírováno!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>
