@@ -1,4 +1,19 @@
 /* ============================================
+   CHATBOT CSS VARIABLES
+   ============================================ */
+:root {
+    --primary-blue: #4285f4;
+    --primary-dark: #1a73e8;
+    --secondary-blue: #8ab4f8;
+    --bg-main: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --border-color: #dadce0;
+    --transition: all 0.3s ease;
+}
+
+/* ============================================
    CHATBOT WIDGET STYLES
    ============================================ */
 
