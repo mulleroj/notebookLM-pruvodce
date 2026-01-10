@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Databáze promptů pro tvorbu video přehledir v NotebookLM">
-    <title>Databáze Promptů - Video Přehled | NotebookLM</title>
+    <meta name="description" content="Databáze promptů pro infografiku - snadné kopírování a ukázkové obrázky">
+    <title>Databáze Promptů - Infografika | NotebookLM</title>
     <link rel="stylesheet" href="../styles.css?v=3">
     <link rel="stylesheet" href="../sidebar.css?v=3">
     <link rel="stylesheet" href="../chatbot.css">
@@ -849,9 +849,9 @@
     <nav class="sticky-nav">
         <div class="sticky-nav-content">
             <a href="../index.html" class="nav-link nav-link-home">🏠 Domů</a>
-            <a href="video-prehled.html" class="nav-link">🎥 Video přehled</a>
-            <a href="#tips" class="nav-link">💡 Tipy</a>
-            <a href="../use-cases.html#video" class="nav-link">🗂️ Katalog</a>
+            <a href="infografika.html" class="nav-link">🎨 Infografika</a>
+            <a href="infografika-styly.html" class="nav-link">🎨 Styly</a>
+            <a href="../use-cases.html#infografika" class="nav-link">🗂️ Katalog</a>
             <a href="#" id="admin-button" onclick="handleAdminButtonClick(); return false;"
                 class="nav-link nav-link-admin">
                 <span id="admin-button-text">🔒 Přihlásit</span>
@@ -862,8 +862,8 @@
     <!-- Prompt Database Header -->
     <div class="prompt-database-header">
         <div class="container">
-            <h1>🎥 Databáze Promptů pro Video Přehled</h1>
-            <p>Připravené prompty s možností snadného kopírování</p>
+            <h1>📊 Databáze Promptů pro Infografiku</h1>
+            <p>33 připravených promptů s možností snadného kopírování a ukázkovými obrázky</p>
         </div>
     </div>
 
@@ -882,7 +882,7 @@
 
         <!-- Filters -->
         <div class="filters-container">
-            <input type="text" class="search-input" id="search-input" autocomplete="off"
+            <input type="text" class="search-input" id="search-input"
                 placeholder="🔍 Hledat podle názvu, textu nebo kategorie...">
             <select class="category-filter" id="category-filter">
                 <option value="Všechny">📂 Všechny kategorie</option>
@@ -1059,9 +1059,9 @@
     </div>
 
     <footer>
-        <p>NotebookLM Průvodce pro Učitele | Databáze Promptů pro Video Přehled 📚</p>
+        <p>NotebookLM Průvodce pro Učitele | Databáze Promptů 📚</p>
         <p class="footer-text">
-            <a href="video-prehled.html" class="link-primary">Zpět na Video přehled ↑</a>
+            <a href="../index.html" class="link-primary">Zpět na hlavní průvodce ↑</a>
         </p>
     </footer>
 
@@ -1335,7 +1335,7 @@
         }
 
         async function addNewPrompt(promptData) {
-            const result = await addVideoPrompt(promptData);
+            const result = await addInfografikaPrompt(promptData);
 
             if (result.success) {
                 alert('✅ Prompt přidán! Stránka se obnoví...');
@@ -1371,7 +1371,7 @@
         async function deletePrompt(promptId) {
             if (!confirm('Opravdu smazat tento prompt?')) return;
 
-            const result = await deleteVideoPrompt(promptId);
+            const result = await deleteInfografikaPrompt(promptId);
 
             if (result.success) {
                 alert('✅ Prompt smazán! Stránka se obnoví...');
@@ -1408,14 +1408,14 @@
             container.innerHTML = '\u003cp class="loading"\u003e⏳ Načítám prompty z databáze...\u003c/p\u003e';
 
             // Try to load from Supabase first
-            let prompts = await getVideoPromptsFromSupabase();
+            let prompts = await getInfografikaPromptsFromSupabase();
 
             // Fallback to local data if Supabase fails
             if (!prompts || prompts.length === 0) {
-                console.log('No video prompts found in Supabase');
-                prompts = []; // Empty array if no data
+                console.log('Using local infografika-prompts-db.js as fallback');
+                prompts = INFOGRAFIKA_PROMPTS; // From infografika-prompts-db.js
             } else {
-                console.log(`✅ Loaded ${prompts.length} video prompts from Supabase`);
+                console.log(`✅ Loaded ${prompts.length} prompts from Supabase`);
             }
 
             // Store prompts globally for search/filter
@@ -2034,39 +2034,52 @@
         // UPLOAD IMAGE FUNCTIONALITY FOR PROMPT FORM
         // =======================================================
 
+        // Initialize upload area in prompt form
         function initializePromptFormUpload() {
             const uploadArea = document.getElementById('upload-area-inline');
             const fileInput = document.getElementById('prompt-image-file');
 
             if (!uploadArea || !fileInput) return;
 
+            // Click to upload
             uploadArea.addEventListener('click', () => fileInput.click());
+
+            // Drag and drop handlers
             uploadArea.addEventListener('dragover', (e) => {
                 e.preventDefault();
                 uploadArea.style.borderColor = '#667eea';
                 uploadArea.style.background = '#edf2f7';
             });
+
             uploadArea.addEventListener('dragleave', () => {
                 uploadArea.style.borderColor = '#cbd5e0';
                 uploadArea.style.background = '#f7fafc';
             });
+
             uploadArea.addEventListener('drop', (e) => {
                 e.preventDefault();
                 uploadArea.style.borderColor = '#cbd5e0';
                 uploadArea.style.background = '#f7fafc';
+
                 const file = e.dataTransfer.files[0];
                 if (file && file.type.startsWith('image/')) {
                     handlePromptImagePreview(file);
                 }
             });
+
+            // File input change
             fileInput.addEventListener('change', (e) => {
                 const file = e.target.files[0];
-                if (file) handlePromptImagePreview(file);
+                if (file) {
+                    handlePromptImagePreview(file);
+                }
             });
         }
 
+        // Preview uploaded image
         function handlePromptImagePreview(file) {
             const previewDiv = document.getElementById('prompt-upload-preview');
+
             const reader = new FileReader();
             reader.onload = (e) => {
                 previewDiv.innerHTML = `
@@ -2079,7 +2092,9 @@
             reader.readAsDataURL(file);
         }
 
+        // Call this when opening admin modal
         document.addEventListener('DOMContentLoaded', () => {
+            // Initialize upload on page load
             initializePromptFormUpload();
         });
 
