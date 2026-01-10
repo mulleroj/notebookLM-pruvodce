@@ -1331,6 +1331,16 @@
             document.getElementById('prompt-category').value = 'Základní';
             document.getElementById('prompt-icon').value = '';
             document.getElementById('prompt-text').value = '';
+
+            // Clear image preview and file input
+            const imageInput = document.getElementById('prompt-image-file');
+            const previewDiv = document.getElementById('prompt-upload-preview');
+            const statusDiv = document.getElementById('prompt-upload-status');
+
+            if (imageInput) imageInput.value = '';
+            if (previewDiv) previewDiv.innerHTML = '';
+            if (statusDiv) statusDiv.textContent = '';
+
             document.getElementById('prompt-form').style.display = 'block';
         }
 
@@ -1818,6 +1828,15 @@
         // Cancel prompt form
         function cancelPromptForm() {
             document.getElementById('prompt-form').style.display = 'none';
+
+            // Clear image preview and file input
+            const imageInput = document.getElementById('prompt-image-file');
+            const previewDiv = document.getElementById('prompt-upload-preview');
+            const statusDiv = document.getElementById('prompt-upload-status');
+
+            if (imageInput) imageInput.value = '';
+            if (previewDiv) previewDiv.innerHTML = '';
+            if (statusDiv) statusDiv.textContent = '';
         }
 
         // Helper function to get unique categories from prompts
@@ -1855,6 +1874,10 @@
 
             const editId = document.getElementById('edit-prompt-id').value;
 
+            // Get selected image file if any
+            const imageInput = document.getElementById('prompt-image-file');
+            const imageFile = imageInput?.files?.[0] || null;
+
             if (editId) {
                 // Edit existing prompt - use Supabase
                 const result = await updateInfografikaPrompt(editId, {
@@ -1866,6 +1889,23 @@
                 });
 
                 if (result.success) {
+                    // If there's an image, upload it after successful prompt update
+                    if (imageFile) {
+                        const uploadStatus = document.getElementById('prompt-upload-status');
+                        uploadStatus.textContent = '📤 Nahrávám obrázek...';
+                        uploadStatus.style.color = '#667eea';
+
+                        const uploadResult = await uploadPromptExample(imageFile, editId);
+
+                        if (uploadResult.success) {
+                            uploadStatus.textContent = '✅ Obrázek nahrán!';
+                            uploadStatus.style.color = '#48bb78';
+                        } else {
+                            uploadStatus.textContent = '⚠️ Chyba při nahrávání obrázku: ' + uploadResult.error;
+                            uploadStatus.style.color = '#f56565';
+                        }
+                    }
+
                     alert('✅ Prompt aktualizován! Stránka se obnoví...');
                     cancelPromptForm();
                     closeAdminModal();
@@ -1887,6 +1927,23 @@
                 });
 
                 if (result.success) {
+                    // If there's an image, upload it after successful prompt creation
+                    if (imageFile) {
+                        const uploadStatus = document.getElementById('prompt-upload-status');
+                        uploadStatus.textContent = '📤 Nahrávám obrázek...';
+                        uploadStatus.style.color = '#667eea';
+
+                        const uploadResult = await uploadPromptExample(imageFile, result.data.id);
+
+                        if (uploadResult.success) {
+                            uploadStatus.textContent = '✅ Obrázek nahrán!';
+                            uploadStatus.style.color = '#48bb78';
+                        } else {
+                            uploadStatus.textContent = '⚠️ Chyba při nahrávání obrázku: ' + uploadResult.error;
+                            uploadStatus.style.color = '#f56565';
+                        }
+                    }
+
                     alert('✅ Prompt přidán! Stránka se obnoví...');
                     cancelPromptForm();
                     closeAdminModal();
