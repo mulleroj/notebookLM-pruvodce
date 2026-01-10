@@ -546,10 +546,29 @@
 
         .form-textarea {
             width: 100%;
-            min-height: 120px;
+            height: 250px;
             margin: 0;
-            resize: vertical;
+            overflow-y: auto;
             font-family: inherit;
+            resize: none;
+        }
+
+        .form-textarea::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .form-textarea::-webkit-scrollbar-track {
+            background: #e0e0e0;
+            border-radius: 4px;
+        }
+
+        .form-textarea::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+        }
+
+        .form-textarea::-webkit-scrollbar-thumb:hover {
+            background: #5568d3;
         }
 
         .form-actions {
@@ -559,6 +578,44 @@
 
         .form-btn-flex {
             flex: 1;
+        }
+
+        /* Upload area inline */
+        .upload-area-inline {
+            border: 2px dashed #cbd5e0;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f7fafc;
+        }
+
+        .upload-area-inline:hover {
+            border-color: #667eea;
+            background: #edf2f7;
+        }
+
+        .upload-area-inline p {
+            margin: 0.25rem 0;
+            color: #4a5568;
+        }
+
+        #prompt-upload-preview {
+            margin-top: 1rem;
+        }
+
+        #prompt-upload-preview img {
+            max-width: 100%;
+            max-height: 200px;
+            border-radius: 8px;
+            border: 2px solid #e0e0e0;
+        }
+
+        #prompt-upload-status {
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            text-align: center;
         }
 
 
@@ -856,24 +913,7 @@
 
             <!-- Tabs -->
             <div class="admin-tabs">
-                <button class="admin-tab active" onclick="switchAdminTab('upload')">📤 Nahrát obrázek</button>
-                <button class="admin-tab" onclick="switchAdminTab('prompts')">✏️ Spravovat prompty</button>
-            </div>
-
-            <!-- Upload Tab -->
-            <div class="admin-tab-content" id="upload-tab">
-                <div>
-                    <label for="prompt-select">Vyberte prompt:</label>
-                    <select id="prompt-select" class="category-filter admin-select-full">
-                        <!-- Options will be populated dynamically -->
-                    </select>
-                </div>
-                <div class="upload-area" id="upload-area">
-                    <p>📤 Klikněte nebo přetáhněte obrázek</p>
-                    <p class="admin-file-hint">Max 5MB, automatická optimalizace</p>
-                    <input type="file" id="file-input" accept="image/*" class="hidden-input">
-                </div>
-                <div id="upload-status"></div>
+                <button class="admin-tab active" onclick="switchAdminTab('prompts')">✏️ Spravovat prompty</button>
             </div>
 
             <!-- Prompts Management Tab -->
@@ -903,15 +943,42 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="prompt-icon" class="form-label">Ikona (emoji):</label>
-                        <input type="text" id="prompt-icon" class="search-input form-icon-input" placeholder="🎨"
-                            maxlength="2">
+                        <label for="prompt-icon" class="form-label">Ikona:</label>
+                        <select id="prompt-icon" class="category-filter form-input-full">
+                            <option value="🎨">🎨 Umění & Design</option>
+                            <option value="📊">📊 Data & Statistiky</option>
+                            <option value="🎯">🎯 Cíle & Strategie</option>
+                            <option value="💡">💡 Nápady & Inspirace</option>
+                            <option value="📈">📈 Růst & Progress</option>
+                            <option value="🌍">🌍 Geografie & Mapy</option>
+                            <option value="⏱️">⏱️ Čas & Termíny</option>
+                            <option value="💰">💰 Finance & Business</option>
+                            <option value="🎓">🎓 Vzdělávání</option>
+                            <option value="🔬">🔬 Věda & Výzkum</option>
+                            <option value="🏆">🏆 Úspěch & Ocenění</option>
+                            <option value="🌟">🌟 Kvalita & Excelence</option>
+                            <option value="📱">📱 Technologie</option>
+                            <option value="🎭">🎭 Kultura & Umění</option>
+                            <option value="🌱">🌱 Růst & Rozvoj</option>
+                        </select>
                     </div>
 
                     <div class="form-group">
                         <label for="prompt-text" class="form-label">Text promptu:</label>
                         <textarea id="prompt-text" class="search-input form-textarea"
                             placeholder="Napište text promptu..."></textarea>
+                    </div>
+
+                    <!-- Upload obrázku -->
+                    <div class="form-group">
+                        <label for="prompt-image-file" class="form-label">Obrázek promptu (volitelné):</label>
+                        <div class="upload-area-inline" id="upload-area-inline">
+                            <p>📤 Klikněte nebo přetáhněte obrázek</p>
+                            <p class="admin-file-hint">Max 5MB, automatická optimalizace</p>
+                            <input type="file" id="prompt-image-file" accept="image/*" class="hidden-input">
+                        </div>
+                        <div id="prompt-upload-preview"></div>
+                        <div id="prompt-upload-status"></div>
                     </div>
 
                     <div class="form-actions">
@@ -1962,6 +2029,74 @@
             // Reset file input
             event.target.value = '';
         }
+
+        // =======================================================
+        // UPLOAD IMAGE FUNCTIONALITY FOR PROMPT FORM
+        // =======================================================
+
+        // Initialize upload area in prompt form
+        function initializePromptFormUpload() {
+            const uploadArea = document.getElementById('upload-area-inline');
+            const fileInput = document.getElementById('prompt-image-file');
+
+            if (!uploadArea || !fileInput) return;
+
+            // Click to upload
+            uploadArea.addEventListener('click', () => fileInput.click());
+
+            // Drag and drop handlers
+            uploadArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = '#667eea';
+                uploadArea.style.background = '#edf2f7';
+            });
+
+            uploadArea.addEventListener('dragleave', () => {
+                uploadArea.style.borderColor = '#cbd5e0';
+                uploadArea.style.background = '#f7fafc';
+            });
+
+            uploadArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadArea.style.borderColor = '#cbd5e0';
+                uploadArea.style.background = '#f7fafc';
+
+                const file = e.dataTransfer.files[0];
+                if (file && file.type.startsWith('image/')) {
+                    handlePromptImagePreview(file);
+                }
+            });
+
+            // File input change
+            fileInput.addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    handlePromptImagePreview(file);
+                }
+            });
+        }
+
+        // Preview uploaded image
+        function handlePromptImagePreview(file) {
+            const previewDiv = document.getElementById('prompt-upload-preview');
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                previewDiv.innerHTML = `
+                    <img src="${e.target.result}" alt="Náhled">
+                    <p style="margin-top: 0.5rem; color: #4a5568; font-size: 0.875rem;">
+                        ${file.name} (${(file.size / 1024).toFixed(1)} KB)
+                    </p>
+                `;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Call this when opening admin modal
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize upload on page load
+            initializePromptFormUpload();
+        });
 
     </script>
 
