@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Zprávy v NotebookLM pro učitele - vytváření strukturovaných reportů, shrnutí a dokumentů z vašich zdrojů">
+    <title>Zprávy - NotebookLM pro Učitele</title>
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <link rel="stylesheet" href="../sidebar.css?v=3">
+    <link rel="stylesheet" href="../chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="../assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+                <div class="sidebar-item">
+                    <a href="../index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="zpravy-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+                <div class="sidebar-item">
+                    <a href="../use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+                <div class="sidebar-item">
+                    <a href="../novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside> <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="../index.html" class="nav-link nav-link-home">🏠 Domů</a>
+            <a href="#tips" class="nav-link">💡 Tipy</a>
+            <a href="#use-cases" class="nav-link">📚 Use Cases</a>
+            <a href="../use-cases.html#zpravy" class="nav-link">🗂️ Katalog</a>
+        </div>
+    </nav>
+
+    <!-- Module Hero -->
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-hero-icon">📄</div>
+            <h1>Zprávy</h1>
+            <p class="module-hero-description">
+                Vytváří strukturované zprávy, shrnutí a reporty z vašich zdrojů. Perfektní pro dokumentaci, studijní
+                materiály a sdílení poznatků.
+            </p>
+        </div>
+    </div>
+
+    <main class="container">
+
+        <!-- Visual Preview of Reports Module -->
+        <div class="tip-box gradient-bg-primary mt-3 border-left-primary">
+            <div class="tip-box-title">👁️ Jak vypadá modul po otevření</div>
+            <p class="mt-2">Po kliknutí na "Zprávy" v Studio se zobrazí dialog s výběrem formátu:</p>
+            <img src="../assets/screenshots/zpravy-dialog.png" alt="Dialog výběru formátu zprávy v NotebookLM"
+                style="width: 100%; border-radius: 8px; margin-top: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+            <p class="mt-2 text-secondary" style="font-size: 0.9rem;">
+                <strong>Formáty:</strong> Vytvořit vlastní, Informační dokument, Studijní příručka, Příspěvek,
+                Strategický dokument, Pedagogický rámec, Základní pojmy, Koncepční přehled
+            </p>
+        </div>
+
+        <!-- Kdy použít jaký formát -->
+        <div class="category-section" id="formats">
+            <div class="category-header">
+                <span class="category-icon">🎯</span>
+                <h2 class="category-title">Kdy použít jaký formát</h2>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Format 1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📄</div>
+                        <h3 class="card-title">Vytvořit vlastní</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Použití:</strong> Vlastní specifikace formátu</p>
+                        <p class="mt-1">Zadáním struktury, stylu, tónu a dalších prvků můžete vytvořit zprávu podle
+                            svých požadavků.</p>
+                    </div>
+                </div>
+
+                <!-- Format 2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📋</div>
+                        <h3 class="card-title">Informační dokument</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Použití:</strong> Přehled zdrojů</p>
+                        <p class="mt-1">Přehled vašich zdrojů s klíčovými poznámkami a citacemi.</p>
+                    </div>
+                </div>
+
+                <!-- Format 3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📚</div>
+                        <h3 class="card-title">Studijní příručka</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Použití:</strong> Pro žáky a studenty</p>
+                        <p class="mt-1">Kvíz s krátkými odpověďmi, návrhy esejových otázek a glosář klíčových pojmů.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Format 4 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">✍️</div>
+                        <h3 class="card-title">Příspěvek</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Použití:</strong> Blog nebo článek</p>
+                        <p class="mt-1">Zajímavé poznámky shrnuté do snadno čitelného článku pro laickou veřejnost.</p>
+                    </div>
+                </div>
+
+                <!-- Format 5 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <h3 class="card-title">Strategický dokument</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Použití:</strong> Plánování a strategie</p>
+                        <p class="mt-1">Strategie implementace agentů s důležitou inteligencí pro zvýšení produktivity
+                            ve výuce.</p>
+                    </div>
+                </div>
+
+                <!-- Format 6 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎓</div>
+                        <h3 class="card-title">Pedagogický rámec</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Použití:</strong> Integrace AI do výuky</p>
+                        <p class="mt-1">Rámec pro integraci generativní umělé inteligence do vzdělávacích osnov a
+                            aktivit.</p>
+                    </div>
+                </div>
+
+                <!-- Format 7 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📖</div>
+                        <h3 class="card-title">Základní pojmy</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Použití:</strong> Úvod do tématu</p>
+                        <p class="mt-1">Seznámení se základními pojmy a principy prompt engineeringu pro velké jazykové
+                            modely.</p>
+                    </div>
+                </div>
+
+                <!-- Format 8 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💡</div>
+                        <h3 class="card-title">Koncepční přehled</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Použití:</strong> Vysvětlení konceptů</p>
+                        <p class="mt-1">Pochopení toho, co jsou AI agenti a jak fungují, pomocí jednoduchých vysvětlení.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tips Section -->
+        <div class="category-section" id="tips">
+            <div class="category-header">
+                <span class="category-icon">💡</span>
+                <h2 class="category-title">Tipy pro tvorbu zpráv</h2>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <h3 class="card-title">Specifikujte cílovou skupinu</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Vždy uveďte, pro koho je zpráva určena (žáci, studenti, kolegové, rodiče). AI přizpůsobí
+                            jazyk a složitost.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📐</div>
+                        <h3 class="card-title">Definujte strukturu</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Pro vlastní formát specifikujte: úvod, hlavní části, závěr, jaký styl (formální/neformální).
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔄</div>
+                        <h3 class="card-title">Kombinujte s chatem</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Nejprve diskutujte téma v chatu, vytvořte kontext, pak použijte modul Zprávy pro finální
+                            dokument.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Workflow -->
+        <div class="category-section">
+            <div class="category-header">
+                <span class="category-icon">⚡</span>
+                <h2 class="category-title">Doporučený workflow</h2>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Krok za krokem vytvoření zprávy:</h3>
+                <ol style="line-height: 1.8; padding-left: 1.5rem;">
+                    <li><strong>Příprava:</strong> Nahrajte všechny relevantní materiály do NotebookLM</li>
+                    <li><strong>Kontext v chatu:</strong> Diskutujte téma, specifikujte zaměření</li>
+                    <li><strong>Výběr formátu:</strong> Klikněte na Zprávy v Studio a vyberte vhodný formát</li>
+                    <li><strong>Customize:</strong> Upravte generovaný dokument podle potřeby v chatu</li>
+                    <li><strong>Export:</strong> Zkopírujte výsledný text nebo screenshot pro další použití</li>
+                </ol>
+
+                <div class="example-box" style="margin-top: 1.5rem;">
+                    <div class="example-title">🎯 Pro tip</div>
+                    <p>Pokud vytváříte více zpráv stejného typu, vytvořte si šablonu vlastního formátu a opakovaně ji
+                        používejte!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- TOP 10 Use Cases Section -->
+        <section id="use-cases" class="section">
+            <div class="section-header">
+                <h2 class="section-title">🌟 TOP 10 Nejužitečnějších Use Cases pro Zprávy</h2>
+                <p class="mb-1-5">Vybrali jsme pro vás 10 nejpraktičtějších způsobů použití modulu Zprávy
+                    ve výuce.</p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- TOP UC #1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📚</div>
+                        <h3 class="card-title">Studijní materiál z kapitoly</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Konverze učebnice na studijní příručku</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř studijní příručku z kapitoly [téma]: kvíz s krátkými
+                                odpověďmi, 3 esejové otázky a glosář pojmů.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP UC #2 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📋</div>
+                        <h3 class="card-title">Report pro rodiče</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Sdílení pokroku žáka</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř informační dokument o pokroku žáka [jméno] za toto období:
+                                silné stránky, oblasti ke zlepšení, doporučení.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP UC #3 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎓</div>
+                        <h3 class="card-title">Pedagogický plán</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Rámec pro výuku tématu</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř pedagogický rámec pro výuku [téma]: cíle, metody, aktivity,
+                                hodnocení a potřebné zdroje.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP UC #4 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">💡</div>
+                        <h3 class="card-title">Koncepční přehled</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Vysvětlení složitého konceptu</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř koncepční přehled [téma] jednoduchým jazykem: co to je, jak
+                                to funguje, příklady z praxe.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP UC #5 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📊</div>
+                        <h3 class="card-title">Dokumentace projektu</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Shrnutí žákovských projektů</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř informační dokument shrnující projekt [název]: cíle, proces,
+                                výsledky a reflexe.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP UC #6 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">✍️</div>
+                        <h3 class="card-title">Blog příspěvek</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Sdílení s veřejností</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř příspěvek o [téma] pro školní blog: zajímavý úvod, hlavní
+                                body, příklady a závěr pro rodiče.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP UC #7 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔍</div>
+                        <h3 class="card-title">Základní pojmy tématu</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Úvodní materiál</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř dokument Základní pojmy pro [téma]: definice klíčových
+                                termínů s příklady.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP UC #8 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🎯</div>
+                        <h3 class="card-title">Strategický dokument</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Implementace nových metod</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř strategický dokument pro implementaci [metody]: cíle, kroky,
+                                rizika, časová osa a metriky úspěchu.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP UC #9 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📝</div>
+                        <h3 class="card-title">Shrnutí pro absentéry</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Žáky, kteří chyběli</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř informační dokument o dnešní hodině [téma]: co jsme
+                                probrali,
+                                klíčové body, domácí úkol.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOP UC #10 -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🏆</div>
+                        <h3 class="card-title">Vlastní formát - hodnocení</h3>
+                    </div>
+                    <div class="card-content">
+                        <p><strong>Pro:</strong> Personalizované hodnocení</p>
+                        <div class="prompt-box">
+                            <div class="prompt-header">
+                                <span class="prompt-label">💬 Hotový prompt</span>
+                                <button class="copy-button">📋 Zkopírovat</button>
+                            </div>
+                            <div class="prompt-text">Vytvoř vlastní zprávu s těmito sekcemi: 1) Co se naučil, 2) Jak
+                                aplikoval znalosti, 3) Doporučení k rozvoji, 4) Skóre 1-5.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Link to full catalog -->
+            <div class="cta-gradient-box">
+                <strong>🔗 Chcete ještě víc?</strong>
+                <p class="mt-0-5">Máme pro vás připravených celkem <strong>24 způsobů použití</strong>
+                    modulu Zprávy! Prohlédněte si kompletní katalog včetně všech promptů.</p>
+                <a href="../use-cases.html#zpravy" class="cta-gradient-link">
+                    📚 Zobrazit všech 24 Use Cases pro Zprávy →
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | Zprávy 📚</p>
+        <p class="footer-text">
+            <a href="../index.html#studio-moduly" class="link-primary">Zpět na
+                hlavní průvodce
+                ↑</a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../sidebar.js"></script>
+    <script src="../chatbot-knowledge.js"></script>
+    <script src="../chatbot.js"></script>
+</body>
+
+</html>

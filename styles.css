@@ -780,6 +780,16 @@ body.use-cases-page .dropdown-menu {
     margin-top: 0.75rem;
 }
 
+/* Screenshot Images */
+.example-box img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: var(--radius-md);
+    margin-top: 1rem;
+    box-shadow: var(--shadow-md);
+    display: block;
+}
+
 /* Footer */
 footer {
     background: var(--primary-dark);
