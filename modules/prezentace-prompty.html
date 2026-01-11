@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="cs">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DatabĂĄze promptĹŻ pro tvorbu prezentacĂ­ v NotebookLM">
-    <title>DatabĂĄze PromptĹŻ - Prezentace | NotebookLM</title>
+    <meta name="description" content="Databáze promptů pro tvorbu prezentací v NotebookLM">
+    <title>Databáze Promptů - Prezentace | NotebookLM</title>
     <link rel="stylesheet" href="../styles.css?v=4">
     <link rel="stylesheet" href="../sidebar.css?v=3">
     <link rel="stylesheet" href="../chatbot.css">
@@ -862,8 +862,8 @@
     <!-- Prompt Database Header -->
     <div class="prompt-database-header">
         <div class="container">
-            <h1>đ˝ď¸ DatabĂĄze PromptĹŻ pro Prezentace</h1>
-            <p>30 pĹipravenĂ˝ch promptĹŻ s moĹžnostĂ­ snadnĂŠho kopĂ­rovĂĄnĂ­ a ukĂĄzkovĂ˝mi obrĂĄzky</p>
+            <h1>🖥️ Databáze Promptů pro Prezentace</h1>
+            <p>30 připravených promptů s možností snadného kopírování a ukázkovými obrázky</p>
         </div>
     </div>
 
@@ -1563,7 +1563,7 @@
                                  class="example-image"
                                  onclick="openImagePreview('${ex.image_url}')">
                         `).join('') :
-                    '<div class="no-examples">ZatĂ­m ĹžĂĄdnĂŠ ukĂĄzky</div>'
+                    '<div class="no-examples">Zatím žádné ukázky</div>'
                 }
                 </div>
             `;
@@ -1990,7 +1990,7 @@
             const customPrompts = loadCustomPrompts();
 
             if (customPrompts.length === 0) {
-                container.innerHTML = '<p style="color: #a0aec0; font-style: italic;">ZatĂ­m nemĂĄte ĹžĂĄdnĂŠ vlastnĂ­ prompty.</p>';
+                container.innerHTML = '<p style="color: #a0aec0; font-style: italic;">Zatím nemáte žádné vlastní prompty.</p>';
                 return;
             }
 
@@ -2005,8 +2005,8 @@
                         </div>
                     </div>
                     <div style="display: flex; gap: 0.5rem; margin-top: 0.75rem;">
-                        <button class="btn-edit" onclick="editCustomPrompt('${prompt.id}')">âď¸ Upravit</button>
-                        <button class="btn-delete" onclick="deleteCustomPrompt('${prompt.id}')">đď¸ Smazat</button>
+                        <button class="btn-edit" onclick="editCustomPrompt('${prompt.id}')">✏️ Upravit</button>
+                        <button class="btn-delete" onclick="deleteCustomPrompt('${prompt.id}')">🗑️ Smazat</button>
                     </div>
                 </div>
             `).join('');
@@ -2017,7 +2017,7 @@
             const customPrompts = loadCustomPrompts();
 
             if (customPrompts.length === 0) {
-                alert('NemĂĄte ĹžĂĄdnĂŠ vlastnĂ­ prompty k exportu!');
+                alert('Nemáte žádné vlastní prompty k exportu!');
                 return;
             }
 

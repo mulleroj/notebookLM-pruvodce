@@ -385,8 +385,7 @@ async function deleteCustomPromptFromSupabase(promptId) {
  */
 async function getInfografikaPromptsFromSupabase() {
     try {
-        const client = initSupabase
-            ();
+        const client = initSupabase();
         if (!client) {
             console.warn('Supabase not initialized, using local infografika-prompts-db.js');
             return null; // Signal to use local data

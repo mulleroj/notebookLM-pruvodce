@@ -15,19 +15,28 @@ const STATE = {
 // DOM ELEMENTS
 // ==========================================
 
-const elements = {
-    chatMessages: document.getElementById('chatMessages'),
-    userInput: document.getElementById('userInput'),
-    sendBtn: document.getElementById('sendBtn'),
-    restartBtn: document.getElementById('restartBtn'),
-    typingIndicator: document.getElementById('typingIndicator')
-};
+let elements = {};
 
 // ==========================================
 // INITIALIZATION
 // ==========================================
 
 function init() {
+    // Get DOM elements
+    elements = {
+        chatMessages: document.getElementById('chatMessages'),
+        userInput: document.getElementById('userInput'),
+        sendBtn: document.getElementById('sendBtn'),
+        restartBtn: document.getElementById('restartBtn'),
+        typingIndicator: document.getElementById('typingIndicator')
+    };
+
+    // Check if all required elements exist
+    if (!elements.chatMessages || !elements.userInput || !elements.sendBtn || !elements.restartBtn || !elements.typingIndicator) {
+        console.error('Required DOM elements not found. Make sure the HTML contains all required elements.');
+        return;
+    }
+
     // Event listeners
     elements.sendBtn.addEventListener('click', handleSend);
     elements.userInput.addEventListener('keypress', (e) => {

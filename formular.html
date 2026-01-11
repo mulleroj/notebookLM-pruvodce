@@ -212,7 +212,7 @@
         <div class="result" id="result">
             <h3>✅ Tvá odpověď je připravena:</h3>
             <div class="result-text" id="resultText"></div>
-            <button class="copy-btn" onclick="copyToClipboard()">📋 Zkopírovat</button>
+            <button class="copy-btn" onclick="copyToClipboard(event)">📋 Zkopírovat</button>
         </div>
 
         <div class="example-box">
@@ -240,10 +240,10 @@
             document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         });
 
-        function copyToClipboard() {
+        function copyToClipboard(event) {
             const text = document.getElementById('resultText').textContent;
             navigator.clipboard.writeText(text).then(function () {
-                const btn = event.target;
+                const btn = event ? event.target : document.querySelector('.copy-btn');
                 const originalText = btn.textContent;
                 btn.textContent = '✓ Zkopírováno!';
                 setTimeout(() => {

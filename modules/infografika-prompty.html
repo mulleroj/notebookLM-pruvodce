@@ -1,11 +1,11 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="cs">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="DatabĂĄze promptĹŻ pro infografiku - snadnĂŠ kopĂ­rovĂĄnĂ­ a ukĂĄzkovĂŠ obrĂĄzky">
-    <title>DatabĂĄze PromptĹŻ - Infografika | NotebookLM</title>
+    <meta name="description" content="Databáze promptů pro infografiku - snadné kopírování a ukázkové obrázky">
+    <title>Databáze Promptů - Infografika | NotebookLM</title>
     <link rel="stylesheet" href="../styles.css?v=4">
     <link rel="stylesheet" href="../sidebar.css?v=3">
     <link rel="stylesheet" href="../chatbot.css">
@@ -862,8 +862,8 @@
     <!-- Prompt Database Header -->
     <div class="prompt-database-header">
         <div class="container">
-            <h1>đ DatabĂĄze PromptĹŻ pro Infografiku</h1>
-            <p>33 pĹipravenĂ˝ch promptĹŻ s moĹžnostĂ­ snadnĂŠho kopĂ­rovĂĄnĂ­ a ukĂĄzkovĂ˝mi obrĂĄzky</p>
+            <h1>📊 Databáze Promptů pro Infografiku</h1>
+            <p>33 připravených promptů s možností snadného kopírování a ukázkovými obrázky</p>
         </div>
     </div>
 
@@ -1002,7 +1002,7 @@
                         </button>
                         <button class="btn-toggle-examples" onclick="document.getElementById('import-file').click()"
                             style="flex: 1;">
-                            đ¤ Import promptĹŻ
+                            📥 Import promptů
                         </button>
                     </div>
                     <input type="file" id="import-file" accept=".json" style="display: none;"
@@ -1108,10 +1108,10 @@
             const buttonText = document.getElementById('admin-button-text');
 
             if (currentAdmin) {
-                buttonText.innerHTML = 'â Admin | OdhlĂĄsit';
+                buttonText.innerHTML = '✅ Admin | Odhlásit';
                 showAdminControls();
             } else {
-                buttonText.innerHTML = 'đ PĹihlĂĄsit';
+                buttonText.innerHTML = '🔒 Přihlásit';
                 hideAdminControls();
             }
         }
@@ -1157,7 +1157,7 @@
                 updateUIForAuthState();
                 alert('â ĂspÄĹĄnÄ pĹihlĂĄĹĄen jako admin!');
             } else {
-                errorDiv.textContent = `â ${result.error}`;
+                errorDiv.textContent = `❌ ${result.error}`;
                 errorDiv.style.display = 'block';
             }
         }
@@ -1415,7 +1415,7 @@
 
             // Show loading indicator
             const container = document.getElementById('prompts-container');
-            container.innerHTML = '\u003cp class="loading"\u003eâł NaÄĂ­tĂĄm prompty z databĂĄze...\u003c/p\u003e';
+            container.innerHTML = '<p class="loading">⏳ Načítám prompty z databáze...</p>';
 
             // Try to load from Supabase first
             let prompts = await getInfografikaPromptsFromSupabase();
@@ -1547,7 +1547,7 @@
                 <div class="prompt-text">${prompt.prompt}</div>
                 <div class="prompt-actions">
                     <button class="btn-copy" onclick="handleCopy('${prompt.id}', this)">
-                        đ ZkopĂ­rovat prompt
+                        📋 Zkopírovat prompt
                     </button>
                     ${examples.length > 0 ? `
                         <button class="btn-toggle-examples" onclick="toggleExamples('${prompt.id}')">
@@ -1563,7 +1563,7 @@
                                  class="example-image"
                                  onclick="openImagePreview('${ex.image_url}')">
                         `).join('') :
-                    '<div class="no-examples">ZatĂ­m ĹžĂĄdnĂŠ ukĂĄzky</div>'
+                    '<div class="no-examples">Zatím žádné ukázky</div>'
                 }
                 </div>
             `;
@@ -1594,8 +1594,8 @@
                 }, 2000);
 
             } catch (error) {
-                console.error('Chyba pĹi kopĂ­rovĂĄnĂ­:', error);
-                alert('Chyba pĹi kopĂ­rovĂĄnĂ­: ' + error.message);
+                console.error('Chyba při kopírování:', error);
+                alert('Chyba při kopírování: ' + error.message);
             }
         }
 
@@ -1716,7 +1716,7 @@
             const promptId = document.getElementById('prompt-select').value;
             const statusDiv = document.getElementById('upload-status');
 
-            statusDiv.innerHTML = '<p class="loading">âł NahrĂĄvĂĄm...</p>';
+            statusDiv.innerHTML = '<p class="loading">⏳ Nahrávám...</p>';
 
             const result = await uploadPromptExample(file, promptId);
 
@@ -1727,7 +1727,7 @@
                     location.reload(); // Refresh to show new image
                 }, 1500);
             } else {
-                statusDiv.innerHTML = `<p style="color: #f56565;">â Chyba: ${result.error}</p>`;
+                statusDiv.innerHTML = `<p style="color: #f56565;">❌ Chyba: ${result.error}</p>`;
             }
         }
 
@@ -1901,7 +1901,7 @@
                             uploadStatus.textContent = 'â ObrĂĄzek nahrĂĄn!';
                             uploadStatus.style.color = '#48bb78';
                         } else {
-                            uploadStatus.textContent = 'â ď¸ Chyba pĹi nahrĂĄvĂĄnĂ­ obrĂĄzku: ' + uploadResult.error;
+                            uploadStatus.textContent = '⚠️ Chyba při nahrávání obrázku: ' + uploadResult.error;
                             uploadStatus.style.color = '#f56565';
                         }
                     }
@@ -1939,7 +1939,7 @@
                             uploadStatus.textContent = 'â ObrĂĄzek nahrĂĄn!';
                             uploadStatus.style.color = '#48bb78';
                         } else {
-                            uploadStatus.textContent = 'â ď¸ Chyba pĹi nahrĂĄvĂĄnĂ­ obrĂĄzku: ' + uploadResult.error;
+                            uploadStatus.textContent = '⚠️ Chyba při nahrávání obrázku: ' + uploadResult.error;
                             uploadStatus.style.color = '#f56565';
                         }
                     }
@@ -2005,8 +2005,8 @@
                         </div>
                     </div>
                     <div style="display: flex; gap: 0.5rem; margin-top: 0.75rem;">
-                        <button class="btn-edit" onclick="editCustomPrompt('${prompt.id}')">âď¸ Upravit</button>
-                        <button class="btn-delete" onclick="deleteCustomPrompt('${prompt.id}')">đď¸ Smazat</button>
+                        <button class="btn-edit" onclick="editCustomPrompt('${prompt.id}')">✏️ Upravit</button>
+                        <button class="btn-delete" onclick="deleteCustomPrompt('${prompt.id}')">🗑️ Smazat</button>
                     </div>
                 </div>
             `).join('');
@@ -2017,7 +2017,7 @@
             const customPrompts = loadCustomPrompts();
 
             if (customPrompts.length === 0) {
-                alert('NemĂĄte ĹžĂĄdnĂŠ vlastnĂ­ prompty k exportu!');
+                alert('Nemáte žádné vlastní prompty k exportu!');
                 return;
             }
 
@@ -2076,7 +2076,7 @@
                     displayCustomPromptsList();
                     initializeDatabase();
 
-                    alert(`â ImportovĂĄno ${importedPrompts.length} promptĹŻ!`);
+                    alert(`✅ Importováno ${importedPrompts.length} promptů!`);
                 } catch (error) {
                     alert('â Chyba pĹi importu: ' + error.message);
                 }
