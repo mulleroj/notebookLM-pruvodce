@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Databáze promptů pro tvorbu audio pĹehledů v NotebookLM">
-    <title>Databáze promptů - Audio PĹehled | NotebookLM</title>
+    <meta name="description" content="Databáze promptů pro tvorbu audio přehledů v NotebookLM">
+    <title>Databáze promptů - Audio Přehled | NotebookLM</title>
     <link rel="stylesheet" href="../styles.css?v=4">
     <link rel="stylesheet" href="../sidebar.css?v=3">
     <link rel="stylesheet" href="../chatbot.css">
@@ -730,7 +730,7 @@
 <body class="has-sidebar">
 
     <!-- Hamburger Toggle (Mobile) -->
-    <button class="sidebar-toggle" aria-label="Toggle menu">â°</button>
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
 
     <!-- Sidebar Overlay (Mobile) -->
     <div class="sidebar-overlay"></div>
@@ -892,8 +892,8 @@
     <!-- Prompt Database Header -->
     <div class="prompt-database-header">
         <div class="container">
-            <h1>đ§ Databáze promptů pro Audio PĹehled</h1>
-            <p>PĹipravenĂŠ prompty s možností snadného kopírování</p>
+            <h1>đ§ Databáze promptů pro Audio Přehled</h1>
+            <p>PřipravenĂŠ prompty s možností snadného kopírování</p>
         </div>
     </div>
 
@@ -915,7 +915,7 @@
             <input type="text" class="search-input" id="search-input" autocomplete="one-time-code" name="search"
                 placeholder="đ Hledat podle názvu, textu nebo kategorie...">
             <select class="category-filter" id="category-filter">
-                <option value="VĹĄechny">đ VĹĄechny kategorie</option>
+                <option value="Vťechny">đ Vťechny kategorie</option>
             </select>
         </div>
 
@@ -950,7 +950,7 @@
             <div class="admin-tab-content admin-tab-hidden" id="prompts-tab">
                 <div class="admin-section-bottom">
                     <button class="btn-copy btn-full-width" onclick="showAddPromptForm()">
-                        â PĹidat nový prompt
+                        â Přidat nový prompt
                     </button>
                 </div>
 
@@ -1003,7 +1003,7 @@
                     <div class="form-group">
                         <label for="prompt-image-file" class="form-label">Obrázek promptu (volitelnĂŠ):</label>
                         <div class="upload-area-inline" id="upload-area-inline">
-                            <p>đ¤ KliknÄte nebo pĹetáhnÄte obrázek</p>
+                            <p>đ¤ Klikněte nebo přetáhněte obrázek</p>
                             <p class="admin-file-hint">Max 5MB, automatická optimalizace</p>
                             <input type="file" id="prompt-image-file" accept="image/*" class="hidden-input">
                         </div>
@@ -1039,7 +1039,7 @@
                     <input type="file" id="import-file" accept=".json" style="display: none;"
                         onchange="importCustomPrompts(event)">
                     <p style="font-size: 0.875rem; color: #a0aec0; margin: 0.5rem 0 0 0;">
-                        Export uloží vaĹĄe vlastní prompty do JSON souboru. Import naÄte prompty ze souboru.
+                        Export uloží vaťe vlastní prompty do JSON souboru. Import načte prompty ze souboru.
                     </p>
                 </div>
             </div>
@@ -1062,13 +1062,13 @@
     <div class="modal" id="login-modal">
         <div class="modal-content" style="max-width: 400px;">
             <div class="modal-header">
-                <h2>đ Admin PĹihláĹĄení</h2>
+                <h2>đ Admin Přihláťení</h2>
                 <button class="modal-close" onclick="closeLoginModal()">Ă</button>
             </div>
 
             <div style="margin-bottom: 1.5rem;">
                 <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email:</label>
-                <input type="email" id="login-email" class="login-input" placeholder="VáĹĄ email" autocomplete="email"
+                <input type="email" id="login-email" class="login-input" placeholder="Váť email" autocomplete="email"
                     style="width: 100%; margin: 0;">
             </div>
 
@@ -1084,15 +1084,15 @@
             </div>
 
             <button class="btn-copy" onclick="handleLogin()" style="width: 100%;">
-                đ PĹihlásit se
+                đ Přihlásit se
             </button>
         </div>
     </div>
 
     <footer>
-        <p>NotebookLM Průvodce pro UÄitele | Databáze promptů pro Audio PĹehled đ</p>
+        <p>NotebookLM Průvodce pro Učitele | Databáze promptů pro Audio Přehled đ</p>
         <p class="footer-text">
-            <a href="audio-prehled.html" class="link-primary">ZpÄt na Audio pĹehled â</a>
+            <a href="audio-prehled.html" class="link-primary">Zpět na Audio přehled â</a>
         </p>
     </footer>
 
@@ -1175,7 +1175,7 @@
             const errorDiv = document.getElementById('login-error');
 
             if (!email || !password) {
-                errorDiv.textContent = 'â ď¸ VyplĹte email i heslo';
+                errorDiv.textContent = 'â ď¸ Vyplňte email i heslo';
                 errorDiv.style.display = 'block';
                 return;
             }
@@ -1187,7 +1187,7 @@
                 closeLoginModal();
                 updateUIForAuthState();
                 alert('â
- ĂspÄĹĄnÄ pĹihláĹĄen jako admin!');
+ Ăspěťně přihláťen jako admin!');
             } else {
                 errorDiv.textContent = `â ${result.error}`;
                 errorDiv.style.display = 'block';
@@ -1207,7 +1207,7 @@
             modal.innerHTML = `
                 <div class="modal-content" style="max-width: 400px;">
                     <div class="modal-header">
-                        <h2>â ď¸ OdhláĹĄení</h2>
+                        <h2>â ď¸ Odhláťení</h2>
                     </div>
                     <div style="padding: 1.5rem; text-align: center;">
                         <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Opravdu se chcete odhlásit?</p>
@@ -1250,7 +1250,7 @@
                 const result = await logout();
 
                 if (result && !result.success) {
-                    showMessage(`â Chyba pĹi odhláĹĄení: ${result.error}`, 'error');
+                    showMessage(`â Chyba při odhláťení: ${result.error}`, 'error');
                     return;
                 }
 
@@ -1268,7 +1268,7 @@
 
             } catch (error) {
                 console.error('Logout error:', error);
-                showMessage('â Chyba pĹi odhláĹĄení', 'error');
+                showMessage('â Chyba při odhláťení', 'error');
             }
         }
 
@@ -1333,7 +1333,7 @@
                 addBtn.id = 'add-prompt-btn';
                 addBtn.className = 'btn-copy';
                 addBtn.style.cssText = 'margin-top: 1rem;';
-                addBtn.innerHTML = 'â PĹidat nový prompt';
+                addBtn.innerHTML = 'â Přidat nový prompt';
                 addBtn.onclick = showAddPromptForm;
                 header.appendChild(addBtn);
             }
@@ -1382,7 +1382,7 @@
 
             if (result.success) {
                 alert('â
- Prompt pĹidán! Stránka se obnoví...');
+ Prompt přidán! Stránka se obnoví...');
                 location.reload();
             } else {
                 alert('â Chyba: ' + result.error);
@@ -1449,7 +1449,7 @@
 
             // Show loading indicator
             const container = document.getElementById('prompts-container');
-            container.innerHTML = '\u003cp class="loading"\u003eâł NaÄítám prompty z databáze...\u003c/p\u003e';
+            container.innerHTML = '\u003cp class="loading"\u003eâł Načítám prompty z databáze...\u003c/p\u003e';
 
             // Try to load from Supabase first
             let prompts = await getAudioPromptsFromSupabase();
@@ -1469,7 +1469,7 @@
             // Get and populate categories
             const categories = [...new Set(prompts.map(p => p.category))].sort();
             const categoryFilter = document.getElementById('category-filter');
-            categoryFilter.innerHTML = '\u003coption value="VĹĄechny"\u003eđ VĹĄechny kategorie\u003c/option\u003e';
+            categoryFilter.innerHTML = '\u003coption value="Vťechny"\u003eđ Vťechny kategorie\u003c/option\u003e';
             categories.forEach(cat => {
                 const option = document.createElement('option');
                 option.value = cat;
@@ -1570,7 +1570,7 @@
             // Fetch image for this prompt (now returns single base64 string or null)
             const imageData = await getPromptExamples(prompt.id);
             // Convert single string to array format for compatibility
-            const examples = imageData ? [{ image_url: imageData, title: 'PĹíklad' }] : [];
+            const examples = imageData ? [{ image_url: imageData, title: 'Příklad' }] : [];
 
             card.innerHTML = `
                 <div class="prompt-card-header">
@@ -1594,11 +1594,11 @@
                     ${examples.length > 0 ?
                     examples.map(ex => `
                             <img src="${ex.image_url}" 
-                                 alt="${ex.title || 'PĹíklad'}" 
+                                 alt="${ex.title || 'Příklad'}" 
                                  class="example-image"
                                  onclick="openImagePreview('${ex.image_url}')">
                         `).join('') :
-                    '<div class="no-examples">Zatím ĹžádnĂŠ ukázky</div>'
+                    '<div class="no-examples">Zatím žádnĂŠ ukázky</div>'
                 }
                 </div>
             `;
@@ -2052,7 +2052,7 @@
             const customPrompts = loadCustomPrompts();
 
             if (customPrompts.length === 0) {
-                alert('Nemáte ĹžádnĂŠ vlastní prompty k exportu!');
+                alert('Nemáte žádnĂŠ vlastní prompty k exportu!');
                 return;
             }
 
@@ -2091,7 +2091,7 @@
                     );
 
                     if (!isValid) {
-                        throw new Error('NÄkterĂŠ prompty nemají poĹžadovaná pole');
+                        throw new Error('NěkterĂŠ prompty nemají požadovaná pole');
                     }
 
                     // Merge with existing custom prompts
@@ -2115,7 +2115,7 @@
                     alert(`â
  Importováno ${importedPrompts.length} promptů!`);
                 } catch (error) {
-                    alert('â Chyba pĹi importu: ' + error.message);
+                    alert('â Chyba při importu: ' + error.message);
                 }
             };
             reader.readAsText(file);
