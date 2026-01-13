@@ -9,17 +9,29 @@ Supabase je už nakonfigurované v projektu:
 
 ## 🔧 Co je potřeba zkontrolovat
 
-### 1. CORS nastavení v Supabase
+### 1. CORS nastavení v Supabase ⚠️ **KRITICKÉ**
 
-Supabase musí povolit požadavky z Netlify domény. Zkontroluj v Supabase Dashboard:
+Supabase musí povolit požadavky z Netlify domény. **Bez tohoto nastavení nebude Supabase fungovat na produkci!**
+
+**Krok za krokem:**
 
 1. Jdi na [Supabase Dashboard](https://supabase.com/dashboard)
 2. Vyber projekt: `ukrwqmaiddvmvkmeqzcv`
-3. **Settings** → **API** → **CORS**
-4. Přidej do whitelist:
-   - `https://notebooklm-pruvodce.netlify.app`
-   - `https://*.netlify.app` (pro preview deployments)
-   - `http://localhost:3000` (pro lokální vývoj)
+3. V levém menu klikni na **Settings** (⚙️ ikona)
+4. V sekci **API** najdi **CORS** nebo **Allowed Origins**
+5. Přidej do whitelist (každý na nový řádek):
+   ```
+   https://notebooklm-pruvodce.netlify.app
+   https://*.netlify.app
+   http://localhost:3000
+   http://localhost:8000
+   http://127.0.0.1:8000
+   ```
+6. Klikni **Save** nebo **Update**
+
+**Poznámka:** Pokud nevidíš CORS sekci, může být v:
+- **Settings** → **API** → **CORS settings**
+- Nebo **Settings** → **Auth** → **URL Configuration** → **Redirect URLs**
 
 ### 2. Row Level Security (RLS) Policies
 
