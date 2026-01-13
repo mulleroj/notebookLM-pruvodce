@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supabase Connection Test</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .test-item {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 4px solid #ddd;
+            background: #f9f9f9;
+        }
+        .test-item.success {
+            border-left-color: #48bb78;
+            background: #f0fff4;
+        }
+        .test-item.error {
+            border-left-color: #f56565;
+            background: #fff5f5;
+        }
+        .test-item.pending {
+            border-left-color: #667eea;
+            background: #f7fafc;
+        }
+        .test-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .test-result {
+            font-family: monospace;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 10px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        .log {
+            background: #1a202c;
+            color: #a0aec0;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            max-height: 300px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔍 Supabase Connection Test</h1>
+        <p>Test připojení k Supabase pro projekt NotebookLM Průvodce</p>
+        
+        <div id="test-results">
+            <div class="test-item pending" id="test-cdn">
+                <div class="test-title">1. Kontrola Supabase CDN</div>
+                <div class="test-result">Čekám...</div>
+            </div>
+            
+            <div class="test-item pending" id="test-config">
+                <div class="test-title">2. Kontrola konfigurace</div>
+                <div class="test-result">Čekám...</div>
+            </div>
+            
+            <div class="test-item pending" id="test-client">
+                <div class="test-title">3. Inicializace Supabase klienta</div>
+                <div class="test-result">Čekám...</div>
+            </div>
+            
+            <div class="test-item pending" id="test-connection">
+                <div class="test-title">4. Test připojení k databázi</div>
+                <div class="test-result">Čekám...</div>
+            </div>
+            
+            <div class="test-item pending" id="test-prompts">
+                <div class="test-title">5. Test načtení promptů</div>
+                <div class="test-result">Čekám...</div>
+            </div>
+            
+            <div class="test-item pending" id="test-cors">
+                <div class="test-title">6. Kontrola CORS</div>
+                <div class="test-result">Čekám...</div>
+            </div>
+        </div>
+        
+        <button onclick="runTests()">▶️ Spustit testy</button>
+        
+        <div class="log" id="log">
+            <div>Log bude zobrazen zde...</div>
+        </div>
+    </div>
+
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+
+    <script>
+        const log = document.getElementById('log');
+        
+        function addLog(message, type = 'info') {
+            const time = new Date().toLocaleTimeString();
+            const color = type === 'error' ? '#f56565' : type === 'success' ? '#48bb78' : '#a0aec0';
+            log.innerHTML += `<div style="color: ${color}">[${time}] ${message}</div>`;
+            log.scrollTop = log.scrollHeight;
+        }
+        
+        function updateTest(testId, status, message) {
+            const test = document.getElementById(testId);
+            test.className = `test-item ${status}`;
+            test.querySelector('.test-result').textContent = message;
+        }
+        
+        async function runTests() {
+            log.innerHTML = '<div>Spouštím testy...</div>';
+            addLog('=== Začátek testů ===', 'info');
+            
+            // Test 1: CDN
+            addLog('Test 1: Kontrola Supabase CDN...', 'info');
+            if (typeof supabase !== 'undefined') {
+                updateTest('test-cdn', 'success', '✅ Supabase CDN načten');
+                addLog('✅ Supabase CDN je dostupný', 'success');
+            } else {
+                updateTest('test-cdn', 'error', '❌ Supabase CDN není načten');
+                addLog('❌ Supabase CDN není dostupný', 'error');
+                return;
+            }
+            
+            // Test 2: Konfigurace
+            addLog('Test 2: Kontrola konfigurace...', 'info');
+            if (typeof SUPABASE_CONFIG !== 'undefined' && SUPABASE_CONFIG.url && SUPABASE_CONFIG.anonKey) {
+                updateTest('test-config', 'success', `✅ Konfigurace OK (URL: ${SUPABASE_CONFIG.url.substring(0, 30)}...)`);
+                addLog(`✅ Konfigurace nalezena: ${SUPABASE_CONFIG.url}`, 'success');
+            } else {
+                updateTest('test-config', 'error', '❌ Konfigurace chybí');
+                addLog('❌ Konfigurace není nalezena', 'error');
+                return;
+            }
+            
+            // Test 3: Inicializace klienta
+            addLog('Test 3: Inicializace Supabase klienta...', 'info');
+            try {
+                const client = initSupabase();
+                if (client) {
+                    updateTest('test-client', 'success', '✅ Klient úspěšně inicializován');
+                    addLog('✅ Supabase klient vytvořen', 'success');
+                } else {
+                    updateTest('test-client', 'error', '❌ Nepodařilo se inicializovat klienta');
+                    addLog('❌ Inicializace klienta selhala', 'error');
+                    return;
+                }
+            } catch (error) {
+                updateTest('test-client', 'error', `❌ Chyba: ${error.message}`);
+                addLog(`❌ Chyba při inicializaci: ${error.message}`, 'error');
+                return;
+            }
+            
+            // Test 4: Připojení k databázi
+            addLog('Test 4: Test připojení k databázi...', 'info');
+            try {
+                const client = initSupabase();
+                // Zkus jednoduchý dotaz na health check
+                const { data, error } = await client.from('prompts').select('id').limit(1);
+                
+                if (error) {
+                    if (error.code === 'PGRST301' || error.message.includes('CORS')) {
+                        updateTest('test-connection', 'error', '❌ CORS chyba - zkontroluj CORS nastavení v Supabase');
+                        addLog(`❌ CORS chyba: ${error.message}`, 'error');
+                        updateTest('test-cors', 'error', '❌ CORS není správně nastaven');
+                    } else {
+                        updateTest('test-connection', 'error', `❌ Chyba: ${error.message}`);
+                        addLog(`❌ Databázová chyba: ${error.message}`, 'error');
+                    }
+                } else {
+                    updateTest('test-connection', 'success', '✅ Připojení k databázi OK');
+                    addLog('✅ Připojení k databázi úspěšné', 'success');
+                    updateTest('test-cors', 'success', '✅ CORS je správně nastaven');
+                }
+            } catch (error) {
+                updateTest('test-connection', 'error', `❌ Chyba: ${error.message}`);
+                addLog(`❌ Neočekávaná chyba: ${error.message}`, 'error');
+            }
+            
+            // Test 5: Načtení promptů
+            addLog('Test 5: Test načtení promptů...', 'info');
+            try {
+                const prompts = await getInfografikaPromptsFromSupabase();
+                if (prompts && prompts.length > 0) {
+                    updateTest('test-prompts', 'success', `✅ Načteno ${prompts.length} promptů`);
+                    addLog(`✅ Načteno ${prompts.length} promptů z databáze`, 'success');
+                } else if (prompts === null) {
+                    updateTest('test-prompts', 'error', '⚠️ Supabase není dostupný, používá se fallback');
+                    addLog('⚠️ Supabase není dostupný, používá se lokální data', 'info');
+                } else {
+                    updateTest('test-prompts', 'error', '⚠️ Databáze je prázdná');
+                    addLog('⚠️ V databázi nejsou žádné prompty', 'info');
+                }
+            } catch (error) {
+                updateTest('test-prompts', 'error', `❌ Chyba: ${error.message}`);
+                addLog(`❌ Chyba při načítání promptů: ${error.message}`, 'error');
+            }
+            
+            addLog('=== Konec testů ===', 'info');
+        }
+        
+        // Auto-run tests on load
+        window.addEventListener('load', () => {
+            setTimeout(runTests, 500);
+        });
+    </script>
+</body>
+</html>
