@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS Setup & Test - Supabase</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 6px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .log {
+            background: #1a202c;
+            color: #a0ec0;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .status.success {
+            background: #4caf50;
+            color: white;
+        }
+        .status.error {
+            background: #f44336;
+            color: white;
+        }
+        .status.pending {
+            background: #ff9800;
+            color: white;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 CORS Setup & Test pro Supabase</h1>
+        
+        <div class="info-box">
+            <strong>ℹ️ Důležité informace:</strong>
+            <p>Supabase automaticky nastavuje základní CORS hlavičky pro REST API. Pokud máš problémy s CORS, může to být způsobeno:</p>
+            <ul>
+                <li>RLS (Row Level Security) policies blokují požadavky</li>
+                <li>Nesprávná konfigurace Supabase klienta</li>
+                <li>Problém s autentizací</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h2>1. Test CORS připojení</h2>
+            <p>Otestuj, jestli Supabase správně odpovídá na CORS požadavky z této domény.</p>
+            <button onclick="testCORS()">▶️ Spustit CORS test</button>
+            <span id="cors-status" class="status pending">Čekám...</span>
+            
+            <div id="cors-result" style="margin-top: 15px;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>2. Test databázového připojení</h2>
+            <p>Otestuj, jestli můžeš načíst data z Supabase databáze.</p>
+            <button onclick="testDatabase()">▶️ Spustit databázový test</button>
+            <span id="db-status" class="status pending">Čekám...</span>
+            
+            <div id="db-result" style="margin-top: 15px;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>3. Diagnostika CORS hlaviček</h2>
+            <p>Zkontroluj, jaké CORS hlavičky Supabase vrací.</p>
+            <button onclick="diagnoseCORS()">▶️ Diagnostikovat CORS</button>
+            <span id="diag-status" class="status pending">Čekám...</span>
+            
+            <div id="diag-result" style="margin-top: 15px;"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>4. Řešení problémů</h2>
+            <div id="solutions"></div>
+        </div>
+
+        <div class="log" id="log">
+            <div>Log bude zobrazen zde...</div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+
+    <script>
+        const SUPABASE_URL = 'https://ukrwqmaiddvmvkmeqzcv.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVrcndxbWFpZGR2bXZrbWVxemN2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU5MTI3MDQsImV4cCI6MjA4MTQ4ODcwNH0.uYsPfhSY3Ib2lIpPu8nj8E8Zr4tz1Cgq0Xaom3I4bWU';
+        
+        const log = document.getElementById('log');
+        
+        function addLog(message, type = 'info') {
+            const time = new Date().toLocaleTimeString();
+            const colors = {
+                error: '#f56565',
+                success: '#48bb78',
+                warning: '#ed8936',
+                info: '#a0ec0'
+            };
+            const color = colors[type] || colors.info;
+            log.innerHTML += `<div style="color: ${color}">[${time}] ${message}</div>`;
+            log.scrollTop = log.scrollHeight;
+        }
+
+        function updateStatus(elementId, status, text) {
+            const el = document.getElementById(elementId);
+            el.className = `status ${status}`;
+            el.textContent = text;
+        }
+
+        async function testCORS() {
+            updateStatus('cors-status', 'pending', 'Testuji...');
+            const resultDiv = document.getElementById('cors-result');
+            resultDiv.innerHTML = '';
+            addLog('=== CORS Test ===', 'info');
+
+            try {
+                // Test 1: OPTIONS request (preflight)
+                addLog('Test 1: OPTIONS preflight request...', 'info');
+                const optionsResponse = await fetch(`${SUPABASE_URL}/rest/v1/prompts`, {
+                    method: 'OPTIONS',
+                    headers: {
+                        'Origin': window.location.origin,
+                        'Access-Control-Request-Method': 'GET',
+                        'Access-Control-Request-Headers': 'apikey,authorization'
+                    }
+                });
+
+                const corsHeaders = {
+                    'access-control-allow-origin': optionsResponse.headers.get('access-control-allow-origin'),
+                    'access-control-allow-methods': optionsResponse.headers.get('access-control-allow-methods'),
+                    'access-control-allow-headers': optionsResponse.headers.get('access-control-allow-headers')
+                };
+
+                addLog(`OPTIONS status: ${optionsResponse.status}`, optionsResponse.ok ? 'success' : 'error');
+                addLog(`CORS headers: ${JSON.stringify(corsHeaders, null, 2)}`, 'info');
+
+                // Test 2: Actual GET request
+                addLog('Test 2: GET request s CORS...', 'info');
+                const getResponse = await fetch(`${SUPABASE_URL}/rest/v1/prompts?select=id&limit=1`, {
+                    method: 'GET',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (getResponse.ok) {
+                    const data = await getResponse.json();
+                    updateStatus('cors-status', 'success', '✅ CORS funguje');
+                    resultDiv.innerHTML = `
+                        <div class="success-box">
+                            <strong>✅ CORS je správně nastaven!</strong>
+                            <p>Supabase přijímá požadavky z této domény.</p>
+                            <pre>${JSON.stringify(corsHeaders, null, 2)}</pre>
+                        </div>
+                    `;
+                    addLog('✅ CORS test úspěšný', 'success');
+                } else {
+                    throw new Error(`HTTP ${getResponse.status}: ${getResponse.statusText}`);
+                }
+
+            } catch (error) {
+                updateStatus('cors-status', 'error', '❌ CORS chyba');
+                let errorMsg = error.message;
+                
+                if (error.message.includes('CORS') || error.message.includes('Failed to fetch')) {
+                    errorMsg = 'CORS chyba - Supabase blokuje požadavky z této domény';
+                }
+
+                resultDiv.innerHTML = `
+                    <div class="warning-box">
+                        <strong>❌ CORS problém detekován</strong>
+                        <p>${errorMsg}</p>
+                        <p><strong>Řešení:</strong> Supabase by měl automaticky povolit CORS. Pokud vidíš tuto chybu, zkontroluj:</p>
+                        <ul>
+                            <li>RLS policies v Supabase Dashboard</li>
+                            <li>Jestli je Supabase projekt aktivní</li>
+                            <li>Jestli není problém s firewallem nebo VPN</li>
+                        </ul>
+                    </div>
+                `;
+                addLog(`❌ CORS chyba: ${errorMsg}`, 'error');
+            }
+        }
+
+        async function testDatabase() {
+            updateStatus('db-status', 'pending', 'Testuji...');
+            const resultDiv = document.getElementById('db-result');
+            resultDiv.innerHTML = '';
+            addLog('=== Database Test ===', 'info');
+
+            try {
+                const client = initSupabase();
+                if (!client) {
+                    throw new Error('Supabase klient není inicializován');
+                }
+
+                addLog('Test: Načítání promptů z databáze...', 'info');
+                const { data, error } = await client
+                    .from('prompts')
+                    .select('id, title')
+                    .limit(5);
+
+                if (error) {
+                    throw error;
+                }
+
+                updateStatus('db-status', 'success', '✅ Databáze OK');
+                resultDiv.innerHTML = `
+                    <div class="success-box">
+                        <strong>✅ Databázové připojení funguje!</strong>
+                        <p>Načteno ${data.length} záznamů z tabulky prompts.</p>
+                        ${data.length > 0 ? `<pre>${JSON.stringify(data, null, 2)}</pre>` : '<p>Databáze je prázdná.</p>'}
+                    </div>
+                `;
+                addLog(`✅ Načteno ${data.length} záznamů`, 'success');
+
+            } catch (error) {
+                updateStatus('db-status', 'error', '❌ Chyba');
+                let errorMsg = error.message;
+                let solution = '';
+
+                if (error.code === 'PGRST301' || error.message.includes('CORS')) {
+                    errorMsg = 'CORS chyba při přístupu k databázi';
+                    solution = '<p><strong>Řešení:</strong> CORS není správně nastaven. Supabase by měl automaticky povolit CORS, ale zkontroluj RLS policies.</p>';
+                } else if (error.message.includes('permission denied') || error.message.includes('RLS')) {
+                    errorMsg = 'RLS (Row Level Security) blokuje přístup';
+                    solution = '<p><strong>Řešení:</strong> Zkontroluj RLS policies v Supabase Dashboard → Authentication → Policies. Měly by povolit SELECT pro anon role.</p>';
+                }
+
+                resultDiv.innerHTML = `
+                    <div class="warning-box">
+                        <strong>❌ Databázová chyba</strong>
+                        <p>${errorMsg}</p>
+                        ${solution}
+                    </div>
+                `;
+                addLog(`❌ Databázová chyba: ${errorMsg}`, 'error');
+            }
+        }
+
+        async function diagnoseCORS() {
+            updateStatus('diag-status', 'pending', 'Diagnostikuji...');
+            const resultDiv = document.getElementById('diag-result');
+            resultDiv.innerHTML = '';
+            addLog('=== CORS Diagnostika ===', 'info');
+
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/`, {
+                    method: 'OPTIONS',
+                    headers: {
+                        'Origin': window.location.origin
+                    }
+                });
+
+                const headers = {};
+                for (const [key, value] of response.headers.entries()) {
+                    if (key.toLowerCase().includes('access-control') || key.toLowerCase().includes('cors')) {
+                        headers[key] = value;
+                    }
+                }
+
+                updateStatus('diag-status', 'success', '✅ Hotovo');
+                resultDiv.innerHTML = `
+                    <div class="info-box">
+                        <strong>📊 CORS hlavičky z Supabase:</strong>
+                        <pre>${JSON.stringify(headers, null, 2)}</pre>
+                        <p><strong>Origin:</strong> ${window.location.origin}</p>
+                        <p><strong>Supabase URL:</strong> ${SUPABASE_URL}</p>
+                    </div>
+                `;
+                addLog('✅ Diagnostika dokončena', 'success');
+
+            } catch (error) {
+                updateStatus('diag-status', 'error', '❌ Chyba');
+                resultDiv.innerHTML = `
+                    <div class="warning-box">
+                        <strong>❌ Nepodařilo se získat CORS hlavičky</strong>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+                addLog(`❌ Diagnostická chyba: ${error.message}`, 'error');
+            }
+        }
+
+        // Auto-run na načtení
+        window.addEventListener('load', () => {
+            addLog('Stránka načtena, připraveno k testování', 'info');
+            updateSolutions();
+        });
+
+        function updateSolutions() {
+            const solutionsDiv = document.getElementById('solutions');
+            solutionsDiv.innerHTML = `
+                <h3>💡 Možná řešení CORS problémů:</h3>
+                <ol>
+                    <li>
+                        <strong>Zkontroluj RLS policies:</strong>
+                        <p>Jdi do Supabase Dashboard → Authentication → Policies a ověř, že máš policy, která povoluje SELECT pro anon role na tabulce prompts.</p>
+                    </li>
+                    <li>
+                        <strong>Supabase automaticky nastavuje CORS:</strong>
+                        <p>Supabase by měl automaticky povolit CORS požadavky. Pokud nefunguje, může to být problém s RLS nebo s konfigurací projektu.</p>
+                    </li>
+                    <li>
+                        <strong>Zkontroluj Supabase projekt:</strong>
+                        <p>Ověř, že projekt <code>ukrwqmaiddvmvkmeqzcv</code> je aktivní a běží.</p>
+                    </li>
+                    <li>
+                        <strong>Test na produkci:</strong>
+                        <p>Otestuj na <code>https://notebooklm-pruvodce.netlify.app/test-supabase-connection.html</code> a zkontroluj Console pro chyby.</p>
+                    </li>
+                </ol>
+            `;
+        }
+    </script>
+</body>
+</html>

@@ -9,29 +9,30 @@ Supabase je už nakonfigurované v projektu:
 
 ## 🔧 Co je potřeba zkontrolovat
 
-### 1. CORS nastavení v Supabase ⚠️ **KRITICKÉ**
+### 1. CORS nastavení v Supabase ✅ **AUTOMATICKÉ**
 
-Supabase musí povolit požadavky z Netlify domény. **Bez tohoto nastavení nebude Supabase fungovat na produkci!**
+**Důležitá informace:** Supabase automaticky nastavuje základní CORS hlavičky pro REST API (PostgREST). **Není potřeba ručně nastavovat CORS v Dashboard** - Supabase to dělá automaticky.
 
-**Krok za krokem:**
+**Co zkontrolovat místo toho:**
 
-1. Jdi na [Supabase Dashboard](https://supabase.com/dashboard)
-2. Vyber projekt: `ukrwqmaiddvmvkmeqzcv`
-3. V levém menu klikni na **Settings** (⚙️ ikona)
-4. V sekci **API** najdi **CORS** nebo **Allowed Origins**
-5. Přidej do whitelist (každý na nový řádek):
-   ```
-   https://notebooklm-pruvodce.netlify.app
-   https://*.netlify.app
-   http://localhost:3000
-   http://localhost:8000
-   http://127.0.0.1:8000
-   ```
-6. Klikni **Save** nebo **Update**
+1. **RLS (Row Level Security) Policies** - to je nejčastější příčina problémů:
+   - Jdi na [Supabase Dashboard](https://supabase.com/dashboard/project/ukrwqmaiddvmvkmeqzcv)
+   - **Authentication** → **Policies**
+   - Zkontroluj, že tabulka `prompts` má policy, která povoluje `SELECT` pro `anon` role
+   - Pokud nemáš policy, vytvoř novou:
+     ```sql
+     -- Povolit čtení pro všechny (anon)
+     CREATE POLICY "Allow public read access" 
+     ON prompts FOR SELECT 
+     USING (true);
+     ```
 
-**Poznámka:** Pokud nevidíš CORS sekci, může být v:
-- **Settings** → **API** → **CORS settings**
-- Nebo **Settings** → **Auth** → **URL Configuration** → **Redirect URLs**
+2. **Test CORS připojení:**
+   - Otevři `setup-cors.html` v prohlížeči (lokálně nebo na produkci)
+   - Spusť všechny testy a zkontroluj výsledky
+   - Pokud vidíš CORS chyby, problém je pravděpodobně v RLS policies, ne v CORS nastavení
+
+**Poznámka:** Pokud Supabase odstranil CORS sekci z Dashboard (což se stalo v 2025), je to proto, že CORS je nyní automatický. Problémy s přístupem k databázi jsou obvykle způsobeny RLS policies, ne CORS.
 
 ### 2. Row Level Security (RLS) Policies
 
@@ -57,27 +58,43 @@ Zkontroluj, že RLS policies umožňují:
 
 ## 🧪 Testování připojení
 
-### Lokální test
+### Rychlý test pomocí diagnostického nástroje
+
+**Lokálně:**
+1. Otevři `setup-cors.html` v prohlížeči
+2. Klikni na všechny tlačítka testů
+3. Zkontroluj výsledky a log
+
+**Na produkci:**
+1. Otevři `https://notebooklm-pruvodce.netlify.app/setup-cors.html`
+2. Spusť všechny testy
+3. Zkontroluj, jestli CORS a databázové připojení fungují
+
+### Manuální test v Console
+
 ```javascript
-// Otevři Console v prohlížeči na lokální stránce
+// Otevři Console v prohlížeči (F12)
 initSupabase();
 const client = initSupabase();
 console.log('Supabase client:', client);
-```
 
-### Produkční test
-1. Otevři `https://notebooklm-pruvodce.netlify.app`
-2. F12 → Console
-3. Zkontroluj, jestli jsou nějaké CORS chyby
-4. Zkus načíst prompty - měly by se načíst z Supabase
+// Test načtení dat
+client.from('prompts').select('id').limit(1).then(({data, error}) => {
+    if (error) {
+        console.error('❌ Chyba:', error);
+    } else {
+        console.log('✅ Data načtena:', data);
+    }
+});
+```
 
 ## 📋 Checklist
 
-- [ ] CORS nastavení v Supabase Dashboard ⚠️ **DŮLEŽITÉ - ZKONTROLUJ!**
-- [ ] RLS policies zkontrolované
+- [x] CORS nastavení ✅ **AUTOMATICKÉ** (Supabase to dělá sám)
+- [ ] RLS policies zkontrolované ⚠️ **DŮLEŽITÉ - ZKONTROLUJ!**
 - [x] Environment variables v Netlify ✅ **HOTOVO**
-- [ ] Test lokálně - Supabase funguje
-- [ ] Test na produkci - Supabase funguje
+- [ ] Test lokálně - Supabase funguje (použij `setup-cors.html`)
+- [ ] Test na produkci - Supabase funguje (použij `setup-cors.html`)
 - [ ] Admin login funguje
 - [ ] Prompty se načítají z databáze
 
@@ -86,8 +103,10 @@ console.log('Supabase client:', client);
 ### Problém: CORS chyby v Console
 
 **Řešení:**
-- Zkontroluj CORS whitelist v Supabase Dashboard
-- Přidej Netlify URL do whitelist
+- Supabase automaticky nastavuje CORS, takže problém je pravděpodobně v RLS policies
+- Zkontroluj RLS policies v Supabase Dashboard → Authentication → Policies
+- Ověř, že tabulka `prompts` má policy povolující SELECT pro anon role
+- Použij `setup-cors.html` pro diagnostiku
 
 ### Problém: "Supabase library not loaded"
 
@@ -114,3 +133,5 @@ console.log('Supabase client:', client);
 - [Supabase Dashboard](https://supabase.com/dashboard/project/ukrwqmaiddvmvkmeqzcv)
 - [Netlify Dashboard](https://app.netlify.com/sites/notebooklm-pruvodce)
 - [Supabase JavaScript Client Docs](https://supabase.com/docs/reference/javascript/introduction)
+- [CORS Diagnostika](setup-cors.html) - lokální test
+- [CORS Diagnostika (produkce)](https://notebooklm-pruvodce.netlify.app/setup-cors.html) - test na produkci
