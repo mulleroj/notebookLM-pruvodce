@@ -1,18 +1,18 @@
 
-import codecs
+import os
 
-def inspect_file(path):
-    print(f"--- Inspecting {path} ---")
-    try:
-        with codecs.open(path, 'r', 'utf-8') as f:
-            lines = f.readlines()
-            # Inspect Header line (approx 895)
-            for i, line in enumerate(lines):
-                if "Databáze promptů" in line or "DatabĂĄze" in line or "PĹ™ehled" in line:
-                    print(f"Line {i+1}: {repr(line)}")
-                if "â ąď¸ " in line or "ÄŒas" in line:
-                    print(f"Line {i+1}: {repr(line)}")
-    except Exception as e:
-        print(f"Error reading {path}: {e}")
+path = r'c:\Users\mulle\OneDrive\Dokumenty\Antigravity_agent\Gema\modules\prezentace-prompty.html'
 
-inspect_file('modules/video-prompty.html')
+with open(path, 'rb') as f:
+    content = f.read()
+
+# Find "Zkopírovat"
+idx = content.find(b'Zkop')
+if idx != -1:
+    # Print surrounding bytes
+    start = max(0, idx - 15)
+    end = min(len(content), idx + 20)
+    snippet = content[start:end]
+    print(f"Hex: {snippet.hex(' ')}")
+else:
+    print("Not found")

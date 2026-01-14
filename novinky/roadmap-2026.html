@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Roadmapa NotebookLM pro rok 2026 - Přehled nadcházejících funkcí">
+    <title>Roadmapa 2026 - NotebookLM Průvodce</title>
+    <link rel="stylesheet" href="../styles.css?v=3">
+    <link rel="stylesheet" href="../sidebar.css?v=3">
+    <link rel="stylesheet" href="../chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body class="has-sidebar">
+
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="../assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+            <!-- Hlavní sekce -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+
+                <div class="sidebar-item">
+                    <a href="../index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Studio moduly (expandable) -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="../modules/audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/zpravy-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="../modules/tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Další sekce -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+
+                <div class="sidebar-item">
+                    <a href="../use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../novinky.html" class="sidebar-link active">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="module-hero">
+        <div class="container">
+            <div class="module-hero-icon">🗓️</div>
+            <h1>Roadmapa 2026</h1>
+            <p class="module-hero-description">
+                Kompletní přehled 13 zásadních novinek pro český trh.
+            </p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <div class="tip-box gradient-bg-primary mt-5 border-left-primary">
+            <div class="tip-box-title">ℹ️ O této roadmapě</div>
+            <p class="mt-2">Tento přehled vychází z interních informací pro Google I/O a evropský rollout. Termíny jsou
+                odhadované, ale pořadí funkcí je potvrzené pro region CEE (Střední a Východní Evropa).</p>
+        </div>
+
+        <div class="timeline-container mt-5">
+
+            <!-- Leden (2. polovina) -->
+            <div class="use-case-card mb-4 border-left-secondary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-secondary">Leden (2. polovina)</span>
+                    <h3 class="use-case-title mt-2">🌍 Global Voices Pack</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Oficiální podpora britské, australské a indické angličtiny. Mění se
+                        nejen přízvuk, ale i slovní zásoba a idiomy.</p>
+                    <p class="mt-2 text-sm">Target: Studenti jazyků, evropští uživatelé.</p>
+                </div>
+            </div>
+
+            <!-- Leden / Únor -->
+            <div class="use-case-card mb-4 border-left-secondary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-secondary">Leden / Únor</span>
+                    <h3 class="use-case-title mt-2">👥 Team Spaces (Beta)</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Reálná spolupráce více lidí v jednom Notebooku najednou (Google Docs
+                        style). Kurzory kolegů vidíte v reálném čase.</p>
+                    <p class="mt-2 text-sm">Target: Týmy, studenti na skupinových projektech.</p>
+                </div>
+            </div>
+
+            <!-- Únor -->
+            <div class="use-case-card mb-4 border-left-secondary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-secondary">Únor</span>
+                    <h3 class="use-case-title mt-2">📱 Full Mobile Parity</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Mobilní aplikace konečně umí 100 % toho co webová verze. Včetně
+                        pokročilé editace audia a správy zdrojů.</p>
+                    <p class="mt-2 text-sm">Target: Lidé v terénu, dojíždějící.</p>
+                </div>
+            </div>
+
+            <!-- Březen -->
+            <div class="use-case-card mb-4 border-left-secondary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-secondary">Březen</span>
+                    <h3 class="use-case-title mt-2">🔌 Public API v1.0</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Oficiální možnost napojit NotebookLM na externí aplikace (Slack,
+                        Notion, firemní databáze). Automatizace workflow.</p>
+                    <p class="mt-2 text-sm">Target: Vývojáři, firmy, automatizace.</p>
+                </div>
+            </div>
+
+            <!-- Duben (EU Rollout) -->
+            <div class="use-case-card mb-4 border-left-primary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-primary">Duben (EU Rollout)</span>
+                    <h3 class="use-case-title mt-2">👑 Join the Conversation (CZ)</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Zásadní novinka. Oficiální spuštění funkce "vstupu do diskuze" v EU a
+                        plná podpora češtiny pro real-time interakci s moderátory.</p>
+                    <p class="mt-2 text-sm">Target: Doučování, příprava na zkoušky v češtině.</p>
+                </div>
+            </div>
+
+            <!-- Duben / Květen -->
+            <div class="use-case-card mb-4 border-left-secondary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-secondary">Duben / Květen</span>
+                    <h3 class="use-case-title mt-2">📊 Instant Slide Decks</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Jedno tlačítko "Export to Slides". AI vygeneruje celou prezentaci v
+                        Google Slides včetně vizuálů a strukturovaného textu.</p>
+                    <p class="mt-2 text-sm">Target: Manažeři, obchodníci, učitelé.</p>
+                </div>
+            </div>
+
+            <!-- Květen (Google I/O) -->
+            <div class="use-case-card mb-4 border-left-secondary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-secondary">Květen (Google I/O)</span>
+                    <h3 class="use-case-title mt-2">🎧 Whisper Mode</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Hluboká integrace do sluchátek (Pixel Buds). Umožňuje plnohodnotnou
+                        hlasovou interakci s poznámkami bez nutnosti dívat se na obrazovku.</p>
+                    <p class="mt-2 text-sm">Target: Lidé na schůzkách, hands-free studium.</p>
+                </div>
+            </div>
+
+            <!-- Červen -->
+            <div class="use-case-card mb-4 border-left-secondary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-secondary">Červen</span>
+                    <h3 class="use-case-title mt-2">🧠 Dynamic Mind Maps</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Interaktivní myšlenkové mapy přímo ve Studiu. Přesouvání "bublin"
+                        reálně mění strukturu a propojení vašich poznámek.</p>
+                    <p class="mt-2 text-sm">Target: Vizuální myslitelé, stratégové.</p>
+                </div>
+            </div>
+
+            <!-- Červenec / Srpen -->
+            <div class="use-case-card mb-4 border-left-secondary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-secondary">Červenec / Srpen</span>
+                    <h3 class="use-case-title mt-2">🎬 Audio Director</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Editace podcastu pomocí textu. Můžete mazat věty, vkládat pauzy a
+                        zvukové efekty editací přepisu, ne zvukové stopy.</p>
+                    <p class="mt-2 text-sm">Target: Tvůrci obsahu, perfekcionisté.</p>
+                </div>
+            </div>
+
+            <!-- Září -->
+            <div class="use-case-card mb-4 border-left-primary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-primary">Září</span>
+                    <h3 class="use-case-title mt-2">🔮 The Meta-Brain</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Možnost pokládat dotazy napříč VŠEMI vašimi Notebooky najednou. Konec
+                        izolovaných sil. AI propojuje znalosti ze všech projektů.</p>
+                    <p class="mt-2 text-sm">Target: Power-users, výzkumníci.</p>
+                </div>
+            </div>
+
+            <!-- Říjen -->
+            <div class="use-case-card mb-4 border-left-secondary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-secondary">Říjen</span>
+                    <h3 class="use-case-title mt-2">🗣️ Video Avatars</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Vizuální podoba moderátorů (AI generované postavy) s dokonalým
+                        lip-syncem. Audio Overview se mění na Video Overview.</p>
+                    <p class="mt-2 text-sm">Target: YouTubeři, tvorba školících videí.</p>
+                </div>
+            </div>
+
+            <!-- Listopad -->
+            <div class="use-case-card mb-4 border-left-secondary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-secondary">Listopad</span>
+                    <h3 class="use-case-title mt-2">🎥 Veo Integration</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Generování video ilustrací (B-Roll) přímo z textu poznámek. Vloží se
+                        automaticky do Video Overview v relevantních časech.</p>
+                    <p class="mt-2 text-sm">Target: Filmaři, marketing.</p>
+                </div>
+            </div>
+
+            <!-- Prosinec -->
+            <div class="use-case-card mb-4 border-left-primary">
+                <div class="use-case-header">
+                    <span class="text-sm font-bold text-primary">Prosinec</span>
+                    <h3 class="use-case-title mt-2">✍️ Active Writer (Alpha)</h3>
+                </div>
+                <div class="use-case-content">
+                    <p><strong>Co to umí:</strong> Ghostwriting nové generace. AI nečeká na prompt, ale "našeptává" celé
+                        odstavce textu do prázdného dokumentu na základě vašich zdrojů.</p>
+                    <p class="mt-2 text-sm">Target: Spisovatelé, studenti.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>NotebookLM Průvodce pro Učitele | Roadmapa 2026 🗓️</p>
+        <p class="footer-text">
+            <a href="../novinky.html" class="link-primary">Zpět na novinky ↑</a>
+        </p>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../sidebar.js"></script>
+    <script src="../chatbot-knowledge.js"></script>
+    <script src="../chatbot.js"></script>
+
+</body>
+
+</html>

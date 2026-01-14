@@ -153,8 +153,8 @@ body.has-sidebar .nav-link-home {
     padding: 0 2rem;
     display: flex;
     gap: 0.5rem;
-    overflow-x: auto;
-    scrollbar-width: thin;
+    overflow-x: hidden;
+    flex-wrap: wrap;
 }
 
 .sticky-nav-content::-webkit-scrollbar {

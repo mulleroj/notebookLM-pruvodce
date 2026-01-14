@@ -384,12 +384,28 @@ async function deleteCustomPromptFromSupabase(promptId) {
  * @returns {Promise<Array>} Array of infograf ika prompt objects
  */
 async function getInfografikaPromptsFromSupabase() {
+    // #region agent log
+    fetch('http://127.0.0.1:7242/ingest/fa3b0347-06b8-425b-9066-81eadbbfdd24',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'supabase-config.js:386',message:'getInfografikaPromptsFromSupabase started',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+    // #endregion
+    
     try {
         const client = initSupabase();
+        
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/fa3b0347-06b8-425b-9066-81eadbbfdd24',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'supabase-config.js:390',message:'Client initialized',data:{clientExists:!!client},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+        // #endregion
+        
         if (!client) {
             console.warn('Supabase not initialized, using local infografika-prompts-db.js');
+            // #region agent log
+            fetch('http://127.0.0.1:7242/ingest/fa3b0347-06b8-425b-9066-81eadbbfdd24',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'supabase-config.js:393',message:'Client is null, returning null',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'G'})}).catch(()=>{});
+            // #endregion
             return null; // Signal to use local data
         }
+
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/fa3b0347-06b8-425b-9066-81eadbbfdd24',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'supabase-config.js:399',message:'Before Supabase query',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+        // #endregion
 
         const { data, error } = await client
             .from('prompts')
@@ -397,8 +413,15 @@ async function getInfografikaPromptsFromSupabase() {
             .eq('type', 'infografika')
             .order('title', { ascending: true });
 
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/fa3b0347-06b8-425b-9066-81eadbbfdd24',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'supabase-config.js:407',message:'After Supabase query',data:{hasError:!!error,dataLength:data?.length||0,errorMessage:error?.message||'none'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+        // #endregion
+
         if (error) {
             console.error('Error fetching infografika prompts:', error);
+            // #region agent log
+            fetch('http://127.0.0.1:7242/ingest/fa3b0347-06b8-425b-9066-81eadbbfdd24',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'supabase-config.js:411',message:'Supabase query error',data:{errorCode:error.code,errorMessage:error.message},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'H'})}).catch(()=>{});
+            // #endregion
             return null;
         }
 
@@ -415,10 +438,17 @@ async function getInfografikaPromptsFromSupabase() {
         // Sort by number
         mapped.sort((a, b) => a.number - b.number);
 
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/fa3b0347-06b8-425b-9066-81eadbbfdd24',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'supabase-config.js:428',message:'Returning mapped prompts',data:{mappedCount:mapped.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'F'})}).catch(()=>{});
+        // #endregion
+
         return mapped;
 
     } catch (error) {
         console.error('Error in getInfografikaPromptsFromSupabase:', error);
+        // #region agent log
+        fetch('http://127.0.0.1:7242/ingest/fa3b0347-06b8-425b-9066-81eadbbfdd24',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'supabase-config.js:434',message:'Exception caught',data:{errorMessage:error.message},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'I'})}).catch(()=>{});
+        // #endregion
         return null;
     }
 }
