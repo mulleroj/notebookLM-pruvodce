@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hotové prompty pro chat v NotebookLM">
+    <title>Prompty pro chat | NotebookLM</title>
+    <link rel="stylesheet" href="../styles.css?v=5">
+    <link rel="stylesheet" href="../sidebar.css?v=3">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .prompts-header {
+            background: linear-gradient(135deg, #4285f4 0%, #1a73e8 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .prompts-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .prompts-header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .prompt-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .prompt-card:hover {
+            border-color: #4285f4;
+            box-shadow: 0 4px 12px rgba(66, 133, 244, 0.15);
+        }
+
+        .prompt-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .prompt-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin: 0;
+        }
+
+        .prompt-number {
+            background: #4285f4;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .prompt-text {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #4a5568;
+            margin-bottom: 1rem;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+        }
+
+        .copy-button {
+            background: #4285f4;
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .copy-button:hover {
+            background: #1a73e8;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(66, 133, 244, 0.3);
+        }
+
+        .copy-button.copied {
+            background: #34a853;
+        }
+
+        .intro-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid #4285f4;
+        }
+
+        .intro-section h3 {
+            color: #2d3748;
+            margin-top: 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #4285f4;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #1a73e8;
+            transform: translateX(-4px);
+        }
+    </style>
+</head>
+
+<body class="has-sidebar">
+    <!-- Hamburger Toggle (Mobile) -->
+    <button class="sidebar-toggle" aria-label="Toggle menu">☰</button>
+
+    <!-- Sidebar Overlay (Mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+            <div class="sidebar-logo"><img src="../assets/icons/special/sidebar-logo.png" alt="NotebookLM"></div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="sidebar-nav">
+            <!-- Hlavní sekce -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Hlavní menu</h3>
+
+                <div class="sidebar-item">
+                    <a href="../index.html" class="sidebar-link">
+                        <span class="sidebar-icon">🏠</span>
+                        <span class="sidebar-text">Domů</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../jak-zacit.html" class="sidebar-link">
+                        <span class="sidebar-icon">🚀</span>
+                        <span class="sidebar-text">Jak začít</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Studio moduly (expandable) -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Studio</h3>
+
+                <div class="sidebar-item">
+                    <a href="#" class="sidebar-link expandable">
+                        <span class="sidebar-icon">🎬</span>
+                        <span class="sidebar-text">Studio Moduly</span>
+                        <span class="sidebar-arrow">▼</span>
+                    </a>
+                    <div class="sidebar-submenu">
+                        <div class="sidebar-subitem">
+                            <a href="audio-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎧</span>
+                                <span class="sidebar-text">Audio přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="video-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎥</span>
+                                <span class="sidebar-text">Video přehled</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="myslenkova-mapa.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🗺️</span>
+                                <span class="sidebar-text">Myšlenková mapa</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="zpravy-prehled.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📝</span>
+                                <span class="sidebar-text">Zprávy</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="karticky.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🃏</span>
+                                <span class="sidebar-text">Výukové kartičky</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="quiz.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">❓</span>
+                                <span class="sidebar-text">Kvíz</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="infografika.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">🎨</span>
+                                <span class="sidebar-text">Infografika</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="prezentace.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📽️</span>
+                                <span class="sidebar-text">Prezentace</span>
+                            </a>
+                        </div>
+                        <div class="sidebar-subitem">
+                            <a href="tabulka-dat.html" class="sidebar-sublink">
+                                <span class="sidebar-icon">📋</span>
+                                <span class="sidebar-text">Tabulka dat</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Další sekce -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-title">Obsah</h3>
+
+                <div class="sidebar-item">
+                    <a href="../use-cases.html" class="sidebar-link">
+                        <span class="sidebar-icon">💡</span>
+                        <span class="sidebar-text">Use Cases</span>
+                        <span class="sidebar-badge">192</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../troubleshooting.html" class="sidebar-link">
+                        <span class="sidebar-icon">🔧</span>
+                        <span class="sidebar-text">Troubleshooting</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../spu-adhd.html" class="sidebar-link">
+                        <span class="sidebar-icon">🧠</span>
+                        <span class="sidebar-text">SPU & ADHD</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-item">
+                    <a href="../novinky.html" class="sidebar-link">
+                        <span class="sidebar-icon">📰</span>
+                        <span class="sidebar-text">Co je nového</span>
+                        <span class="sidebar-badge">🆕</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">📚</div>
+                <span>NotebookLM Průvodce</span>
+            </a>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="search" placeholder="Hledejte v průvodci...">
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation -->
+    <nav class="sticky-nav">
+        <div class="sticky-nav-content">
+            <a href="../index.html#uvod" class="nav-link">📖 Průvodce</a>
+            <a href="../index.html#konfigurace-chatu" class="nav-link">💬 Chat</a>
+            <a href="../index.html#citace" class="nav-link">🔍 Citace</a>
+            <a href="../index.html#vzorovy-scenar" class="nav-link">🚀 Workflow</a>
+            <a href="../index.html#studio-moduly" class="nav-link">📚 Studio</a>
+            <a href="../index.html#sdileni" class="nav-link">🤝 Sdílení</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <div class="prompts-header">
+        <h1>💬 Prompty pro chat</h1>
+        <p>Hotové prompty připravené ke kopírování do chatu NotebookLM</p>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <a href="../index.html#konfigurace-chatu" class="back-link">← Zpět na úvodní stránku</a>
+
+        <div class="intro-section">
+            <h3>🎯 Jak používat tyto prompty</h3>
+            <p>Každý prompt můžete zkopírovat tlačítkem "Kopírovat" a vložit přímo do chatu NotebookLM. Některé prompty
+                obsahují proměnné v hranatých závorkách [TÉMA], [JAZYK] apod. - tyto nahraďte svým konkrétním obsahem
+                před použitím.</p>
+        </div>
+
+        <!-- Prompt 1 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">5 klíčových otázek</h3>
+                <span class="prompt-number">#1</span>
+            </div>
+            <div class="prompt-text">Analyzuj všechny vstupy a vygeneruj 5 klíčových otázek, které po zodpovězení
+                zachytí hlavní body a základní význam všech vstupů.</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Analyzuj všechny vstupy a vygeneruj 5 klíčových otázek, které po zodpovězení zachytí hlavní body a základní význam všech vstupů.')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 2 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Ultimátní prompt pro přednášky</h3>
+                <span class="prompt-number">#2</span>
+            </div>
+            <div class="prompt-text">Projdi všechny nahrané materiály a vygeneruj 5 klíčových otázek, které zachytí
+                jejich základní význam. Zaměř se na:
+                - hlavní témata a definice
+                - klíčové pojmy, které jsou zdůrazňovány
+                - vztahy mezi pojmy
+                - zmíněné praktické aplikace</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Projdi všechny nahrané materiály a vygeneruj 5 klíčových otázek, které zachytí jejich základní význam. Zaměř se na:\n- hlavní témata a definice\n- klíčové pojmy, které jsou zdůrazňovány\n- vztahy mezi pojmy\n- zmíněné praktické aplikace')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 3 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">„Zajímavé části" (Interesting Bits)</h3>
+                <span class="prompt-number">#3</span>
+            </div>
+            <div class="prompt-text">Jaké jsou nejpřekvapivější nebo nejzajímavější informace v těchto zdrojích? Uveď
+                klíčové citace.</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Jaké jsou nejpřekvapivější nebo nejzajímavější informace v těchto zdrojích? Uveď klíčové citace.')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 4 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Řízené „zajímavé části"</h3>
+                <span class="prompt-number">#4</span>
+            </div>
+            <div class="prompt-text">Zajímá mě psaní o [TÉMA]. Jaká jsou nejpřekvapivější fakta nebo myšlenky
+                související s [TÉMA] v těchto zdrojích? Uveď klíčové citace. Zaměř se na [KONKRÉTNÍ ASPEKT], nikoli na
+                [JINÉ ASPEKTY].</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Zajímá mě psaní o [TÉMA]. Jaká jsou nejpřekvapivější fakta nebo myšlenky související s [TÉMA] v těchto zdrojích? Uveď klíčové citace. Zaměř se na [KONKRÉTNÍ ASPEKT], nikoli na [JINÉ ASPEKTY].')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 5 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Kvízová show (Audio Overview)</h3>
+                <span class="prompt-number">#5</span>
+            </div>
+            <div class="prompt-text">Vytvoř kvízovou show se dvěma moderátory. První moderátor zkouší druhého z tématu
+                [TÉMA].
+                Celkem 10 otázek.
+                Kombinuj otázky s výběrem odpovědí a True/False.
+                Moderátor občas odpoví špatně.
+                Druhý ho opraví správnou odpovědí.
+                Na konci shrň výsledky.</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Vytvoř kvízovou show se dvěma moderátory. První moderátor zkouší druhého z tématu [TÉMA].\nCelkem 10 otázek.\nKombinuj otázky s výběrem odpovědí a True/False.\nModerátor občas odpoví špatně.\nDruhý ho opraví správnou odpovědí.\nNa konci shrň výsledky.')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 6 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Vícejazyčný podcast</h3>
+                <span class="prompt-number">#6</span>
+            </div>
+            <div class="prompt-text">Toto je první mezinárodní speciální epizoda pořadu Deep Dive, vedená kompletně v
+                jazyce [JAZYK].
+
+                Speciální instrukce:
+                - po celou dobu používej pouze [JAZYK]
+                - nepoužívej angličtinu, kromě vysvětlení unikátních pojmů</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Toto je první mezinárodní speciální epizoda pořadu Deep Dive, vedená kompletně v jazyce [JAZYK].\n\nSpeciální instrukce:\n- po celou dobu používej pouze [JAZYK]\n- nepoužívej angličtinu, kromě vysvětlení unikátních pojmů')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 7 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Persona produktového manažera</h3>
+                <span class="prompt-number">#7</span>
+            </div>
+            <div class="prompt-text">Jednej jako vedoucí produktový manažer hodnotící interní dokumentaci.
+                Nemilosrdně hledej akční poznatky a ignoruj výplň.
+                Shrň výstup do formátu „Decision Memo":
+                - Důkazy od uživatelů: přímé citace popisující problémy
+                - Kontrola proveditelnosti: zmíněná technická omezení
+                - Slepá místa: co ve zdrojích chybí
+
+                Používej odrážky.
+                Pokud položím vágní otázku, přinuť mě ji upřesnit.</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Jednej jako vedoucí produktový manažer hodnotící interní dokumentaci.\nNemilosrdně hledej akční poznatky a ignoruj výplň.\nShrň výstup do formátu Decision Memo:\n- Důkazy od uživatelů: přímé citace popisující problémy\n- Kontrola proveditelnosti: zmíněná technická omezení\n- Slepá místa: co ve zdrojích chybí\n\nPoužívej odrážky.\nPokud položím vágní otázku, přinuť mě ji upřesnit.')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 8 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Persona vědeckého výzkumníka</h3>
+                <span class="prompt-number">#8</span>
+            </div>
+            <div class="prompt-text">Jednej jako výzkumný asistent seniorního vědce.
+                Tón: striktně objektivní, formální, přesný.
+                Předpokládej pokročilé znalosti oboru [OBOR].
+                Nevysvětluj standardní terminologii.
+                Zaměř se na metodologii, integritu dat a rozporné důkazy.
+                Upřednostni velikost vzorku, experimentální design a statistickou významnost před obecnými závěry.
+
+                Struktura:
+                - Klíčová zjištění
+                - Metodologické silné a slabé stránky
+                - Rozpory</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Jednej jako výzkumný asistent seniorního vědce.\nTón: striktně objektivní, formální, přesný.\nPředpokládej pokročilé znalosti oboru [OBOR].\nNevysvětluj standardní terminologii.\nZaměř se na metodologii, integritu dat a rozporné důkazy.\nUpřednostni velikost vzorku, experimentální design a statistickou významnost před obecnými závěry.\n\nStruktura:\n- Klíčová zjištění\n- Metodologické silné a slabé stránky\n- Rozpory')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 9 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Persona učitele druhého stupně</h3>
+                <span class="prompt-number">#9</span>
+            </div>
+            <div class="prompt-text">Jednej jako poutavý učitel pro 7. ročník.
+                Přelož zdrojové dokumenty do jazyka srozumitelného pro žáka.
+                Každou odpověď strukturovat:
+                - tl;dr: jedna věta jednoduchými slovy
+                - Analogie: přirovnání z reálného světa
+                - Slovníček: 3 obtížná slova vysvětlená jednoduše
+
+                Husté pasáže rozděl do formátu True/False kvízu.</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Jednej jako poutavý učitel pro 7. ročník.\nPřelož zdrojové dokumenty do jazyka srozumitelného pro žáka.\nKaždou odpověď strukturovat:\n- tl;dr: jedna věta jednoduchými slovy\n- Analogie: přirovnání z reálného světa\n- Slovníček: 3 obtížná slova vysvětlená jednoduše\n\nHusté pasáže rozděl do formátu True/False kvízu.')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 10 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Témata literární rešerše</h3>
+                <span class="prompt-number">#10</span>
+            </div>
+            <div class="prompt-text">Z odborných textů na téma [TÉMA] identifikuj 5–10 nejčastěji se opakujících témat.
+                Pro každé téma uveď:
+                1. krátkou definici vlastními slovy
+                2. které práce jej zmiňují (s citacemi)
+                3. jak je téma zpracováno (diskutované / předpokládané / testované)
+
+                Prezentuj jako strukturovanou tabulku.</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Z odborných textů na téma [TÉMA] identifikuj 5–10 nejčastěji se opakujících témat.\nPro každé téma uveď:\n1. krátkou definici vlastními slovy\n2. které práce jej zmiňují (s citacemi)\n3. jak je téma zpracováno (diskutované / předpokládané / testované)\n\nPrezentuj jako strukturovanou tabulku.')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 11 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Hledání rozporů</h3>
+                <span class="prompt-number">#11</span>
+            </div>
+            <div class="prompt-text">Z odborných textů na téma [TÉMA] identifikuj hlavní rozpory nebo protichůdná
+                zjištění.
+                Pro každý rozpor uveď:
+                1. konkrétní tvrzení obou stran (citace + zdroj)
+                2. možné důvody rozdílů (metodika, vzorek, kontext)
+                3. jaký důkaz by rozpor vyřešil</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Z odborných textů na téma [TÉMA] identifikuj hlavní rozpory nebo protichůdná zjištění.\nPro každý rozpor uveď:\n1. konkrétní tvrzení obou stran (citace + zdroj)\n2. možné důvody rozdílů (metodika, vzorek, kontext)\n3. jaký důkaz by rozpor vyřešil')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 12 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Analýza mezer založená na zdrojích</h3>
+                <span class="prompt-number">#12</span>
+            </div>
+            <div class="prompt-text">Analyzuj tento pokus ve vztahu k nahraným materiálům:
+
+                Projekt: [CO JSEM ZKUSIL]
+                Postup: [KROKY]
+                Výsledek: [CO SE STALO]
+                Očekávání: [CO SE MĚLO STÁT]
+
+                Porovnej se zdroji:
+                - cituj metodiky, které jsem nedodržel
+                - identifikuj pojmy, které mi úplně unikly
+                - najdi předpoklady, které jsem přeskočil
+
+                Výstupní formát:
+                „Mezera v [POJEM]: Vynechal jsi [KROK], ale [ZDROJ, STRANA] uvádí: ‚[CITACE]'"</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Analyzuj tento pokus ve vztahu k nahraným materiálům:\n\nProjekt: [CO JSEM ZKUSIL]\nPostup: [KROKY]\nVýsledek: [CO SE STALO]\nOčekávání: [CO SE MĚLO STÁT]\n\nPorovnej se zdroji:\n- cituj metodiky, které jsem nedodržel\n- identifikuj pojmy, které mi úplně unikly\n- najdi předpoklady, které jsem přeskočil\n\nVýstupní formát:\nMezera v [POJEM]: Vynechal jsi [KROK], ale [ZDROJ, STRANA] uvádí: [CITACE]')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 13 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Implementace konceptu</h3>
+                <span class="prompt-number">#13</span>
+            </div>
+            <div class="prompt-text">Pomoz mi implementovat koncept [TÉMA].
+                Pro každý relevantní zdroj:
+                1. cituj klíčový důkaz
+                2. propoj ho s ostatními informacemi
+                3. uveď protichůdné názory
+                4. navrhni jasný konkrétní krok
+
+                Výsledky syntetizuj do uspořádaného seznamu akčních kroků.
+                Vše zakládej na konkrétních citacích.
+                Uznávej mezery ve znalostech.</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Pomoz mi implementovat koncept [TÉMA].\nPro každý relevantní zdroj:\n1. cituj klíčový důkaz\n2. propoj ho s ostatními informacemi\n3. uveď protichůdné názory\n4. navrhni jasný konkrétní krok\n\nVýsledky syntetizuj do uspořádaného seznamu akčních kroků.\nVše zakládej na konkrétních citacích.\nUznávej mezery ve znalostech.')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 14 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Syntéza konceptů</h3>
+                <span class="prompt-number">#14</span>
+            </div>
+            <div class="prompt-text">Syntetizuj souvislost, i abstraktní, mezi [TÉMA 1] a [TÉMA 2].
+                Pro každý relevantní zdroj:
+                1. cituj klíčový důkaz
+                2. propojuj s ostatními informacemi
+                3. uveď protichůdné pohledy
+                4. zaznamenej zajímavé kombinace
+
+                Vytvoř jasné shrnutí zaměřené na propojení.
+                Vše podlož citacemi.
+                Uznávej mezery.</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Syntetizuj souvislost, i abstraktní, mezi [TÉMA 1] a [TÉMA 2].\nPro každý relevantní zdroj:\n1. cituj klíčový důkaz\n2. propojuj s ostatními informacemi\n3. uveď protichůdné pohledy\n4. zaznamenej zajímavé kombinace\n\nVytvoř jasné shrnutí zaměřené na propojení.\nVše podlož citacemi.\nUznávej mezery.')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 15 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Komplexní analýza tématu</h3>
+                <span class="prompt-number">#15</span>
+            </div>
+            <div class="prompt-text">Poskytni přesné a dobře odůvodněné informace o tématu [TÉMA].
+
+                Plánování:
+                - jaké zásadní aspekty je třeba prozkoumat?
+                - jaké klíčové otázky je nutné zodpovědět?
+                - jaké existují debaty nebo kontroverze?
+
+                Struktura:
+                PŘEHLED: shrnutí, hlavní pojmy, aktuální relevance
+                ANALÝZA: diskuse podložená důkazy, příklady, omezení
+                ZDROJE: klíčové zdroje, rozpory, míra jistoty
+
+                Standardy:
+                - odděluj fakta od interpretací
+                - podporuj tvrzení důkazy
+                - zachovej objektivitu</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Poskytni přesné a dobře odůvodněné informace o tématu [TÉMA].\n\nPlánování:\n- jaké zásadní aspekty je třeba prozkoumat?\n- jaké klíčové otázky je nutné zodpovědět?\n- jaké existují debaty nebo kontroverze?\n\nStruktura:\nPŘEHLED: shrnutí, hlavní pojmy, aktuální relevance\nANALÝZA: diskuse podložená důkazy, příklady, omezení\nZDROJE: klíčové zdroje, rozpory, míra jistoty\n\nStandardy:\n- odděluj fakta od interpretací\n- podporuj tvrzení důkazy\n- zachovej objektivitu')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+        <!-- Prompt 16 -->
+        <div class="prompt-card">
+            <div class="prompt-header">
+                <h3 class="prompt-title">Debatní formát</h3>
+                <span class="prompt-number">#16</span>
+            </div>
+            <div class="prompt-text">Vygeneruj debatu dvou moderátorů s protichůdnými názory na [TÉMA].
+                Moderátor 1 obhajuje pozici [POZICE A].
+                Moderátor 2 obhajuje pozici [POZICE B].
+                Vzájemně si oponují, citují konkrétní důkazy ze zdrojů
+                a nechávají posluchače rozhodnout, kdo měl silnější argumenty.</div>
+            <button class="copy-button"
+                onclick="copyPrompt(this, 'Vygeneruj debatu dvou moderátorů s protichůdnými názory na [TÉMA].\nModerátor 1 obhajuje pozici [POZICE A].\nModerátor 2 obhajuje pozici [POZICE B].\nVzájemně si oponují, citují konkrétní důkazy ze zdrojů\na nechávají posluchače rozhodnout, kdo měl silnější argumenty.')">
+                📋 Kopírovat
+            </button>
+        </div>
+
+    </main>
+
+    <script src="../sidebar.js"></script>
+    <script>
+        function copyPrompt(button, text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.innerHTML;
+                button.innerHTML = '✓ Zkopírováno!';
+                button.classList.add('copied');
+
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Chyba při kopírování:', err);
+                alert('Nepodařilo se zkopírovat text');
+            });
+        }
+    </script>
+</body>
+
+</html>
