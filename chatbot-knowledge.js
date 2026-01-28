@@ -202,6 +202,63 @@ window.CHATBOT_KNOWLEDGE = {
                 'Tabulka slovíček s překlady',
                 'Výpisky z textu do přehledné formy'
             ]
+        },
+        'zpravy-prehled': {
+            title: 'Zprávy (Messages/Reports)',
+            url: 'modules/zpravy-prehled.html',
+            description: 'Vytváří strukturované zprávy, shrnutí a reporty z vašich zdrojů - perfektní pro dokumentaci a sdílení poznatků',
+            sections: [
+                { id: 'tips', title: 'Tipy pro zprávy', keywords: ['zprávy', 'report', 'shrnutí', 'dokumentace'] },
+                { id: 'use-cases', title: 'Use Cases - Zprávy', keywords: ['zprávy', 'příklady', 'dokumentace'] }
+            ],
+            topUseCases: [
+                'Zpráva pro rodiče o pokroku žáka',
+                'Shrnutí porady',
+                'Report z projektu'
+            ]
+        },
+        'chat-prompty': {
+            title: 'Prompty pro chat',
+            url: 'modules/chat-prompty.html',
+            description: 'Hotové prompty pro chat v NotebookLM - kopírujte a používejte rovnou pro různé analýzy a výstupy',
+            sections: [
+                { id: 'prompty', title: '16 hotových promptů', keywords: ['prompty', 'chat', 'hotové', 'prompt', 'šablony'] }
+            ],
+            topUseCases: [
+                '5 klíčových otázek z dokumentů',
+                'Ultimátní prompt pro přednášky',
+                'Analýza mezer v dokumentaci',
+                'Syntéza konceptů'
+            ]
+        }
+    },
+
+    // Databáze promptů
+    promptDatabases: {
+        'audio-prompty': {
+            title: 'Audio prompty',
+            url: 'modules/audio-prompty.html',
+            description: 'Databáze promptů pro audio overview s možností kopírování'
+        },
+        'video-prompty': {
+            title: 'Video prompty',
+            url: 'modules/video-prompty.html',
+            description: 'Databáze promptů pro video overview s možností kopírování'
+        },
+        'infografika-prompty': {
+            title: 'Infografika prompty',
+            url: 'modules/infografika-prompty.html',
+            description: 'Databáze promptů pro infografiku s možností kopírování'
+        },
+        'prezentace-prompty': {
+            title: 'Prezentace prompty',
+            url: 'modules/prezentace-prompty.html',
+            description: 'Databáze promptů pro prezentace s možností kopírování'
+        },
+        'chat-prompty': {
+            title: 'Chat prompty',
+            url: 'modules/chat-prompty.html',
+            description: '16 hotových promptů pro chat v NotebookLM s možností kopírování'
         }
     },
 
