@@ -87,7 +87,7 @@ function processUserInput(input) {
 function showWelcomeMessage() {
     const modules = getAllModules();
     const moduleListHTML = modules.map(m =>
-        `<div class="module-item" onclick="selectModule(${m.number})">${m.number}. ${m.icon} <strong>${m.name}</strong></div>`
+        `<div class="module-item" data-module-number="${m.number}">${m.number}. ${m.icon} <strong>${m.name}</strong></div>`
     ).join('');
 
     const welcomeText = `
@@ -98,7 +98,7 @@ function showWelcomeMessage() {
         <p class="mt-2" style="color: var(--color-text-muted); font-size: 0.875rem;">Můžeš napsat číslo nebo kliknout na modul.</p>
     `;
 
-    addMessage('ai', welcomeText);
+    addTrustedMessage('ai', welcomeText);
 }
 
 function handlePhase1(input) {
@@ -109,11 +109,11 @@ function handlePhase1(input) {
         STATE.phase = 2;
 
         const module = getModuleInfo(moduleNum);
-        addMessage('ai', `
+        addTrustedMessage('ai', `
             <p>Výborná volba! ${module.icon} <strong>${module.name}</strong></p>
             <p>Aby byl výsledek perfektní, vyplň následující údaje:</p>
             
-            <form id="topicForm" onsubmit="event.preventDefault(); submitTopicForm();">
+            <form id="topicForm">
                 <div class="form-group">
                     <label>
                         <span class="question-number">1.</span>
@@ -171,7 +171,7 @@ function handlePhase1(input) {
             </div>
         `);
     } else {
-        addMessage('ai', '<p>Prosím, zadej číslo modulu od 1 do 9. 😊</p>');
+        addTrustedMessage('ai', '<p>Prosím, zadej číslo modulu od 1 do 9. 😊</p>');
     }
 }
 
@@ -197,7 +197,7 @@ function handlePhase2(input) {
             handleScenarioB();
         }
     } else {
-        addMessage('ai', `
+        addTrustedMessage('ai', `
             <p>Omlouvám se, nerozuměla jsem úplně. 😅</p>
             <p>Zkus prosím odpovědět ve formátu:<br>
             <strong>"Sbírka: [název], Dokumentů celkem: [počet], Téma: [téma]"</strong></p>
@@ -217,7 +217,7 @@ function handleScenarioA() {
 
     const filterPrompt = getMasterFilterPrompt(STATE.topic);
 
-    addMessage('ai', `
+    addTrustedMessage('ai', `
         <p>⚠️ <strong>Pozor!</strong> Máš <strong>${STATE.documentCount} dokumentů</strong>.</p>
         <p>Při tomto množství zdrojů musíme nejdřív <strong>filtrovat</strong>, jinak bude výsledek nekvalitní a NotebookLM by míchal páté přes deváté.</p>
         <p><strong>📋 KROK 1: Filtrování</strong></p>
@@ -226,7 +226,7 @@ function handleScenarioA() {
 
     addCodeBlock(filterPrompt, 'Master filtrační prompt');
 
-    addMessage('ai', `
+    addTrustedMessage('ai', `
         <p style="margin-top: 1rem;"><strong>Jakmile máš výsledek uložený jako poznámku, napiš sem:</strong> <code style="background: rgba(139, 92, 246, 0.2); padding: 0.25rem 0.5rem; border-radius: 4px;">HOTOVO</code></p>
     `);
 }
@@ -238,14 +238,14 @@ function handleScenarioB() {
     const modulePrompt = getModulePrompt(STATE.selectedModule, STATE.topic, false);
     const module = getModuleInfo(STATE.selectedModule);
 
-    addMessage('ai', `
+    addTrustedMessage('ai', `
         <p>✅ Perfektní! S <strong>${STATE.documentCount} dokumenty</strong> můžeme pracovat rovnou.</p>
         <p><strong>${module.icon} Prompt pro ${module.name}:</strong></p>
     `);
 
     addCodeBlock(modulePrompt, `Prompt pro ${module.name}`);
 
-    addMessage('ai', `
+    addTrustedMessage('ai', `
         <p style="margin-top: 1rem;">Vlož tento prompt do NotebookLM a užij si výsledek! 🎉</p>
         <p style="color: var(--color-text-muted); font-size: 0.875rem;">Chceš pracovat s jiným modulem? Klikni na <strong>Restart</strong> nahoře.</p>
     `);
@@ -259,19 +259,19 @@ function handleHotovoConfirmation(input) {
         const modulePrompt = getModulePrompt(STATE.selectedModule, STATE.topic, true);
         const module = getModuleInfo(STATE.selectedModule);
 
-        addMessage('ai', `
+        addTrustedMessage('ai', `
             <p>🎯 Skvělé! Teď vygeneruji finální prompt.</p>
             <p><strong>${module.icon} Prompt pro ${module.name} (s filtrovanými daty):</strong></p>
         `);
 
         addCodeBlock(modulePrompt, `Prompt pro ${module.name}`);
 
-        addMessage('ai', `
+        addTrustedMessage('ai', `
             <p style="margin-top: 1rem;">Vlož tento prompt do NotebookLM (který má už otevřenou poznámku Source Briefing) a užij si perfektní výsledek! 🎉</p>
             <p style="color: var(--color-text-muted); font-size: 0.875rem;">Potřebuješ další modul? Klikni na <strong>Restart</strong>.</p>
         `);
     } else {
-        addMessage('ai', '<p>Čekám na potvrzení. Napiš <strong>HOTOVO</strong>, až budeš mít filtrovaná data uložená jako poznámku. 😊</p>');
+        addTrustedMessage('ai', '<p>Čekám na potvrzení. Napiš <strong>HOTOVO</strong>, až budeš mít filtrovaná data uložená jako poznámku. 😊</p>');
     }
 }
 
@@ -280,40 +280,81 @@ function handleHotovoConfirmation(input) {
 // ==========================================
 
 function addMessage(type, content) {
-    const avatar = type === 'ai' ? '💎' : '👤';
-    const messageHTML = `
-        <div class="message ${type}">
-            <div class="message-avatar">${avatar}</div>
-            <div class="message-content">
-                <div class="message-text">${content}</div>
-            </div>
-        </div>
-    `;
+    const messageText = createMessageShell(type);
+    const lines = String(content).replace(/\r\n?/g, '\n').split('\n');
 
-    elements.chatMessages.insertAdjacentHTML('beforeend', messageHTML);
+    lines.forEach((line) => {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = line;
+        messageText.append(paragraph);
+    });
+
     scrollToBottom();
 }
 
-function addCodeBlock(code, label = 'Prompt') {
-    const codeHTML = `
-        <div class="code-container">
-            <div class="code-header">
-                <span class="code-label">${label}</span>
-                <button class="copy-btn" onclick="copyToClipboard(this, \`${escapeForTemplate(code)}\`)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                    Kopírovat
-                </button>
-            </div>
-            <pre class="code-block">${escapeHTML(code)}</pre>
-        </div>
-    `;
+function addTrustedMessage(type, trustedHtml) {
+    const messageText = createMessageShell(type);
+    const template = document.createElement('template');
+    template.innerHTML = trustedHtml;
+    messageText.append(template.content.cloneNode(true));
 
+    messageText.querySelectorAll('[data-module-number]').forEach((item) => {
+        item.addEventListener('click', () => selectModule(Number(item.dataset.moduleNumber)));
+    });
+
+    const topicForm = messageText.querySelector('#topicForm');
+    if (topicForm) {
+        topicForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            submitTopicForm();
+        });
+    }
+
+    scrollToBottom();
+}
+
+function createMessageShell(type) {
+    const safeType = type === 'ai' ? 'ai' : 'user';
+    const message = document.createElement('div');
+    message.className = `message ${safeType}`;
+
+    const avatar = document.createElement('div');
+    avatar.className = 'message-avatar';
+    avatar.textContent = safeType === 'ai' ? '💎' : '👤';
+
+    const messageContent = document.createElement('div');
+    messageContent.className = 'message-content';
+    const messageText = document.createElement('div');
+    messageText.className = 'message-text';
+    messageContent.append(messageText);
+    message.append(avatar, messageContent);
+    elements.chatMessages.append(message);
+
+    return messageText;
+}
+
+function addCodeBlock(code, label = 'Prompt') {
     const lastMessage = elements.chatMessages.lastElementChild;
     if (lastMessage) {
-        lastMessage.querySelector('.message-text').insertAdjacentHTML('beforeend', codeHTML);
+        const container = document.createElement('div');
+        container.className = 'code-container';
+        const header = document.createElement('div');
+        header.className = 'code-header';
+        const codeLabel = document.createElement('span');
+        codeLabel.className = 'code-label';
+        codeLabel.textContent = label;
+        const copyButton = document.createElement('button');
+        copyButton.type = 'button';
+        copyButton.className = 'copy-btn';
+        copyButton.append(createCopyIcon(), document.createTextNode(' Kopírovat'));
+        copyButton.addEventListener('click', () => copyToClipboard(copyButton, code));
+        const codeBlock = document.createElement('pre');
+        codeBlock.className = 'code-block';
+        codeBlock.textContent = code;
+
+        header.append(codeLabel, copyButton);
+        container.append(header, codeBlock);
+        lastMessage.querySelector('.message-text').append(container);
     }
 }
 
@@ -338,30 +379,44 @@ function scrollToBottom() {
 
 function copyToClipboard(button, text) {
     navigator.clipboard.writeText(text).then(() => {
-        const originalHTML = button.innerHTML;
+        const originalContent = Array.from(button.childNodes, (node) => node.cloneNode(true));
         button.classList.add('copied');
-        button.innerHTML = `
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="20 6 9 17 4 12"></polyline>
-            </svg>
-            Zkopírováno!
-        `;
+        button.replaceChildren(createCopyIcon(true), document.createTextNode(' Zkopírováno!'));
 
         setTimeout(() => {
             button.classList.remove('copied');
-            button.innerHTML = originalHTML;
+            button.replaceChildren(...originalContent);
         }, 2000);
     });
 }
 
-function escapeHTML(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-}
+function createCopyIcon(copied = false) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', '14');
+    svg.setAttribute('height', '14');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '2');
 
-function escapeForTemplate(text) {
-    return text.replace(/`/g, '\\`').replace(/\$/g, '\\$');
+    if (copied) {
+        const check = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+        check.setAttribute('points', '20 6 9 17 4 12');
+        svg.append(check);
+    } else {
+        const rectangle = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        rectangle.setAttribute('x', '9');
+        rectangle.setAttribute('y', '9');
+        rectangle.setAttribute('width', '13');
+        rectangle.setAttribute('height', '13');
+        rectangle.setAttribute('rx', '2');
+        rectangle.setAttribute('ry', '2');
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', 'M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1');
+        svg.append(rectangle, path);
+    }
+
+    return svg;
 }
 
 function submitTopicForm() {
@@ -377,7 +432,7 @@ function submitTopicForm() {
     const formattedResponse = `Sbírka: ${sbirka}, Dokumentů celkem: ${dokumenty}, Téma: ${tema}`;
 
     // Display as user message
-    addMessage('user', `<p>${formattedResponse}</p>`);
+    addMessage('user', formattedResponse);
 
     // Process the input
     setTimeout(() => processUserInput(formattedResponse), 500);
