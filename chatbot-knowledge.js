@@ -1,6 +1,6 @@
 /**
  * Knowledge Base pro chatbot
- * Kompletní databáze obsahu webu NotebookLM Průvodce
+ * Kompletní databáze obsahu webu Gemini Notebook průvodce
  * Tento soubor musí být načten PŘED chatbot.js
  */
 
@@ -14,7 +14,7 @@ window.CHATBOT_KNOWLEDGE = {
                 { id: 'uvod', title: 'Úvod', keywords: ['začít', 'úvod', 'co je notebooklm', 'home', 'domů'] },
                 { id: 'rychle-karty', title: 'Rychlé karty', keywords: ['rychlý start', 'první kroky', 'quick start'] },
                 { id: 'studio-moduly', title: 'Studio Moduly', keywords: ['studio', 'moduly', 'nástroje', 'tools', 'panel'] },
-                { id: 'chat', title: 'Chat s NotebookLM', keywords: ['chat', 'konverzace', 'ai', 'asistent'] },
+                { id: 'chat', title: 'Chat s Gemini Notebook', keywords: ['chat', 'konverzace', 'ai', 'asistent'] },
                 { id: 'citace', title: 'Citace', keywords: ['citace', 'zdroje', 'odkazy', 'reference'] }
             ]
         },
@@ -220,7 +220,7 @@ window.CHATBOT_KNOWLEDGE = {
         'chat-prompty': {
             title: 'Prompty pro chat',
             url: 'modules/chat-prompty.html',
-            description: 'Hotové prompty pro chat v NotebookLM - kopírujte a používejte rovnou pro různé analýzy a výstupy',
+            description: 'Hotové prompty pro chat v Gemini Notebook - kopírujte a používejte rovnou pro různé analýzy a výstupy',
             sections: [
                 { id: 'prompty', title: '16 hotových promptů', keywords: ['prompty', 'chat', 'hotové', 'prompt', 'šablony'] }
             ],
@@ -258,7 +258,7 @@ window.CHATBOT_KNOWLEDGE = {
         'chat-prompty': {
             title: 'Chat prompty',
             url: 'modules/chat-prompty.html',
-            description: '16 hotových promptů pro chat v NotebookLM s možností kopírování'
+            description: '16 hotových promptů pro chat v Gemini Notebook s možností kopírování'
         }
     },
 
@@ -442,7 +442,7 @@ window.CHATBOT_KNOWLEDGE = {
             link: 'use-cases.html#admin'
         },
         'chat': {
-            answer: 'Chat s NotebookLM funguje jako AI asistent:\\n\\n✅ Ptejte se na obsah dokumentů\\n✅ Generujte shrnutí\\n✅ Získejte odpovědi s citacemi\\n\\nVíce o chatu:',
+            answer: 'Chat s Gemini Notebook funguje jako AI asistent:\\n\\n✅ Ptejte se na obsah dokumentů\\n✅ Generujte shrnutí\\n✅ Získejte odpovědi s citacemi\\n\\nVíce o chatu:',
             link: 'index.html#chat'
         },
         'citace': {

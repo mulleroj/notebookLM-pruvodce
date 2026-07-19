@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulář pro NotebookLM</title>
+    <meta name="description"
+        content="Formulář pro doplnění obsahu do neoficiálního průvodce Gemini Notebook pro učitele.">
+    <title>Formulář pro Gemini Notebook | Neoficiální průvodce</title>
     <style>
         * {
             margin: 0;
@@ -175,7 +177,7 @@
 
 <body>
     <div class="container">
-        <h1>📚 Formulář pro NotebookLM</h1>
+        <h1>📚 Formulář pro Gemini Notebook</h1>
         <p class="subtitle">Aby byl výsledek perfektní, vyplň následující údaje:</p>
 
         <form id="notebookForm">
@@ -185,7 +187,7 @@
                     NÁZEV tvé sbírky/sešitu:
                 </label>
                 <input type="text" id="sbirka" placeholder="např. Občanská nauka" required>
-                <div class="helper-text">Jak se jmenuje tvůj sešit v NotebookLM?</div>
+                <div class="helper-text">Jak se jmenuje tvůj sešit v Gemini Notebook?</div>
             </div>
 
             <div class="form-group">
@@ -222,7 +224,10 @@
             <div class="example-item"><strong>Téma:</strong> Politické strany ČR</div>
         </div>
     </div>
-
+    <footer>
+        <p>Neoficiální průvodce Gemini Notebook</p>
+        <p class="site-disclaimer">Neoficiální průvodce pro učitele. Web není provozován ani schválen společností Google.</p>
+    </footer>
     <script>
         document.getElementById('notebookForm').addEventListener('submit', function (e) {
             e.preventDefault();
