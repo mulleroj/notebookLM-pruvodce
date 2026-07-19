@@ -27,7 +27,7 @@ Výstup si uložím jako poznámku.`,
         3: { // Myšlenková mapa
             name: "Myšlenková mapa",
             icon: "🕸️",
-            template: (topic, scenarioNote) => `POZNÁMKA: Myšlenková mapa v NotebookLM se generuje automaticky bez možnosti customizace. Stačí kliknout na tlačítko "Generovat myšlenkovou mapu" a NotebookLM vytvoří vizuální mapu ze zdrojů k tématu "${topic}".${scenarioNote}`
+            template: (topic, scenarioNote) => `POZNÁMKA: Myšlenková mapa v Gemini Notebook se generuje automaticky bez možnosti customizace. Stačí kliknout na tlačítko "Generovat myšlenkovou mapu" a Gemini Notebook vytvoří vizuální mapu ze zdrojů k tématu "${topic}".${scenarioNote}`
         },
         4: { // Zprávy
             name: "Zprávy",

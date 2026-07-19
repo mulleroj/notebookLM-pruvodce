@@ -6,7 +6,7 @@ const INFOGRAFIKA_PROMPTS = [
         title: "Základní vizualizace dat",
         category: "Data & Statistiky",
         icon: "📊",
-        prompt: "Vytvoř návrh infografiky pro téma 'Výsledky prodeje Q1'. Hlavní body: nárůst obratu o 15%, 3 nové trhy, top produkt 'NotebookLM'. Použij sloupcový graf pro porovnání s minulým rokem a koláčový graf pro podíl na trhu. Styl: Profesionální, modrá barevná paleta.",
+        prompt: "Vytvoř návrh infografiky pro téma 'Výsledky prodeje Q1'. Hlavní body: nárůst obratu o 15%, 3 nové trhy, top produkt 'Gemini Notebook'. Použij sloupcový graf pro porovnání s minulým rokem a koláčový graf pro podíl na trhu. Styl: Profesionální, modrá barevná paleta.",
         image_url: null
     },
     {
