@@ -4,10 +4,100 @@
  */
 
 // Knowledge base embedded directly to avoid CORS issues
-const knowledgeBase = window.CHATBOT_KNOWLEDGE || (() => {
+const knowledgeBase = (typeof window !== 'undefined' && window.CHATBOT_KNOWLEDGE) || (() => {
     // Placeholder - will be replaced from external file
     return {};
 })();
+
+function resolveSafeHttpUrl(value, baseUrl) {
+    try {
+        const fallbackBase = typeof window !== 'undefined'
+            ? window.location.href
+            : 'https://example.invalid/';
+        const url = new URL(String(value).trim(), baseUrl || fallbackBase);
+
+        return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : null;
+    } catch (error) {
+        return null;
+    }
+}
+
+function appendInlineFormatting(parent, value, baseUrl) {
+    const doc = parent.ownerDocument || document;
+    const text = String(value);
+    const tokenPattern = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g;
+    let cursor = 0;
+    let match;
+
+    while ((match = tokenPattern.exec(text)) !== null) {
+        if (match.index > cursor) {
+            parent.append(doc.createTextNode(text.slice(cursor, match.index)));
+        }
+
+        if (match[1] !== undefined) {
+            const safeUrl = resolveSafeHttpUrl(match[2], baseUrl);
+            if (safeUrl) {
+                const link = doc.createElement('a');
+                link.className = 'message-link';
+                link.href = safeUrl;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = `${match[1]} →`;
+                parent.append(link);
+            } else {
+                parent.append(doc.createTextNode(match[0]));
+            }
+        } else {
+            const strong = doc.createElement('strong');
+            strong.textContent = match[3];
+            parent.append(strong);
+        }
+
+        cursor = tokenPattern.lastIndex;
+    }
+
+    if (cursor < text.length) {
+        parent.append(doc.createTextNode(text.slice(cursor)));
+    }
+}
+
+function renderSafeMessageContent(container, value, baseUrl) {
+    const doc = container.ownerDocument || document;
+    const lines = String(value).replace(/\r\n?/g, '\n').split('\n');
+    let currentList = null;
+    let currentListType = null;
+
+    for (const line of lines) {
+        if (!line.trim()) {
+            currentList = null;
+            currentListType = null;
+            continue;
+        }
+
+        const unordered = line.match(/^\s*(?:[-*•])\s+(.+)$/);
+        const ordered = line.match(/^\s*\d+[.)]\s+(.+)$/);
+        const listType = ordered ? 'ol' : unordered ? 'ul' : null;
+
+        if (listType) {
+            if (!currentList || currentListType !== listType) {
+                currentList = doc.createElement(listType);
+                currentListType = listType;
+                container.append(currentList);
+            }
+
+            const item = doc.createElement('li');
+            appendInlineFormatting(item, (ordered || unordered)[1], baseUrl);
+            currentList.append(item);
+            continue;
+        }
+
+        currentList = null;
+        currentListType = null;
+        const paragraph = doc.createElement('p');
+        appendInlineFormatting(paragraph, line, baseUrl);
+        container.append(paragraph);
+    }
+}
 
 class GeminiChatbot {
     constructor() {
@@ -28,52 +118,66 @@ class GeminiChatbot {
     }
 
     createChatbotHTML() {
-        const chatbotHTML = `
-            <!-- Chatbot Button -->
-            <button class="chatbot-button pulse" id="chatbot-toggle" aria-label="Otevřít chat asistenta">
-                💬
-            </button>
+        const toggle = document.createElement('button');
+        toggle.type = 'button';
+        toggle.className = 'chatbot-button pulse';
+        toggle.id = 'chatbot-toggle';
+        toggle.setAttribute('aria-label', 'Otevřít chat asistenta');
+        toggle.textContent = '💬';
 
-            <!-- Chatbot Window -->
-            <div class="chatbot-window" id="chatbot-window">
-                <!-- Header -->
-                <div class="chatbot-header">
-                    <div>
-                        <div class="chatbot-title">
-                            <span>🤖</span>
-                            <span>NotebookLM Asistent</span>
-                        </div>
-                        <div class="chatbot-status">
-                            <span class="status-dot"></span>
-                            <span>Online</span>
-                        </div>
-                    </div>
-                    <button class="chatbot-close" id="chatbot-close" aria-label="Zavřít chat">
-                        ×
-                    </button>
-                </div>
+        const chatbotWindow = document.createElement('div');
+        chatbotWindow.className = 'chatbot-window';
+        chatbotWindow.id = 'chatbot-window';
 
-                <!-- Messages Area -->
-                <div class="chatbot-messages" id="chatbot-messages">
-                    <!-- Messages will be inserted here -->
-                </div>
+        const header = document.createElement('div');
+        header.className = 'chatbot-header';
+        const headerInfo = document.createElement('div');
+        const title = document.createElement('div');
+        title.className = 'chatbot-title';
+        const titleIcon = document.createElement('span');
+        titleIcon.textContent = '🤖';
+        const titleText = document.createElement('span');
+        titleText.textContent = 'NotebookLM Asistent';
+        title.append(titleIcon, titleText);
 
-                <!-- Input Area -->
-                <div class="chatbot-input">
-                    <textarea 
-                        id="chatbot-textarea" 
-                        placeholder="Zeptejte se na NotebookLM..."
-                        rows="1"
-                        maxlength="500"
-                    ></textarea>
-                    <button class="chatbot-send" id="chatbot-send" aria-label="Odeslat zprávu">
-                        📤
-                    </button>
-                </div>
-            </div>
-        `;
+        const status = document.createElement('div');
+        status.className = 'chatbot-status';
+        const statusDot = document.createElement('span');
+        statusDot.className = 'status-dot';
+        const statusText = document.createElement('span');
+        statusText.textContent = 'Online';
+        status.append(statusDot, statusText);
+        headerInfo.append(title, status);
 
-        document.body.insertAdjacentHTML('beforeend', chatbotHTML);
+        const close = document.createElement('button');
+        close.type = 'button';
+        close.className = 'chatbot-close';
+        close.id = 'chatbot-close';
+        close.setAttribute('aria-label', 'Zavřít chat');
+        close.textContent = '×';
+        header.append(headerInfo, close);
+
+        const messages = document.createElement('div');
+        messages.className = 'chatbot-messages';
+        messages.id = 'chatbot-messages';
+
+        const inputArea = document.createElement('div');
+        inputArea.className = 'chatbot-input';
+        const textarea = document.createElement('textarea');
+        textarea.id = 'chatbot-textarea';
+        textarea.placeholder = 'Zeptejte se na NotebookLM...';
+        textarea.rows = 1;
+        textarea.maxLength = 500;
+        const send = document.createElement('button');
+        send.type = 'button';
+        send.className = 'chatbot-send';
+        send.id = 'chatbot-send';
+        send.setAttribute('aria-label', 'Odeslat zprávu');
+        send.textContent = '📤';
+        inputArea.append(textarea, send);
+
+        chatbotWindow.append(header, messages, inputArea);
+        document.body.append(toggle, chatbotWindow);
     }
 
     attachEventListeners() {
@@ -117,26 +221,42 @@ class GeminiChatbot {
     }
 
     showWelcomeMessage() {
-        const welcomeHTML = `
-            <div class="welcome-message">
-                <h3>👋 Ahoj! Jsem váš AI asistent</h3>
-                <p>Pomohu vám najít informace o NotebookLM pro učitele.</p>
-                <div class="welcome-suggestions">
-                    <div class="suggestion-chip" onclick="chatbot.quickAsk('Jak začít s NotebookLM?')">
-                        🚀 Jak začít s NotebookLM?
-                    </div>
-                    <div class="suggestion-chip" onclick="chatbot.quickAsk('Use cases pro video')">
-                        🎥 Use cases pro video
-                    </div>
-                    <div class="suggestion-chip" onclick="chatbot.quickAsk('Co je Studio?')">
-                        🎬 Co je Studio?
-                    </div>
-                </div>
-            </div>
-        `;
-
         const messagesContainer = document.getElementById('chatbot-messages');
-        messagesContainer.innerHTML = welcomeHTML;
+        messagesContainer.replaceChildren();
+
+        const welcome = document.createElement('div');
+        welcome.className = 'welcome-message';
+        const heading = document.createElement('h3');
+        heading.textContent = '👋 Ahoj! Jsem váš AI asistent';
+        const description = document.createElement('p');
+        description.textContent = 'Pomohu vám najít informace o NotebookLM pro učitele.';
+        const suggestions = document.createElement('div');
+        suggestions.className = 'welcome-suggestions';
+
+        const questions = [
+            ['🚀 Jak začít s NotebookLM?', 'Jak začít s NotebookLM?'],
+            ['🎥 Use cases pro video', 'Use cases pro video'],
+            ['🎬 Co je Studio?', 'Co je Studio?']
+        ];
+
+        for (const [label, question] of questions) {
+            const suggestion = document.createElement('div');
+            suggestion.className = 'suggestion-chip';
+            suggestion.setAttribute('role', 'button');
+            suggestion.tabIndex = 0;
+            suggestion.textContent = label;
+            suggestion.addEventListener('click', () => this.quickAsk(question));
+            suggestion.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    this.quickAsk(question);
+                }
+            });
+            suggestions.append(suggestion);
+        }
+
+        welcome.append(heading, description, suggestions);
+        messagesContainer.append(welcome);
     }
 
     quickAsk(question) {
@@ -177,49 +297,48 @@ class GeminiChatbot {
         const welcome = messagesContainer.querySelector('.welcome-message');
         if (welcome) welcome.remove();
 
-        const messageHTML = `
-            <div class="message ${type}">
-                ${type === 'bot' ? '<div class="message-avatar">🤖</div>' : ''}
-                <div class="message-bubble">
-                    <p class="message-text">${this.formatMessage(content)}</p>
-                </div>
-                ${type === 'user' ? '<div class="message-avatar">👤</div>' : ''}
-            </div>
-        `;
+        const safeType = type === 'bot' ? 'bot' : 'user';
+        const message = document.createElement('div');
+        message.className = `message ${safeType}`;
+        const avatar = document.createElement('div');
+        avatar.className = 'message-avatar';
+        avatar.textContent = safeType === 'bot' ? '🤖' : '👤';
+        const bubble = document.createElement('div');
+        bubble.className = 'message-bubble';
+        const messageText = document.createElement('div');
+        messageText.className = 'message-text';
+        renderSafeMessageContent(messageText, content, window.location.href);
+        bubble.append(messageText);
 
-        messagesContainer.insertAdjacentHTML('beforeend', messageHTML);
+        if (safeType === 'bot') {
+            message.append(avatar, bubble);
+        } else {
+            message.append(bubble, avatar);
+        }
+
+        messagesContainer.append(message);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    }
-
-    formatMessage(text) {
-        // Simple markdown-like formatting
-        // Convert [text](url) to links
-        text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="message-link" target="_blank">$1 →</a>');
-
-        // Convert **bold** to <strong>
-        text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-
-        // Convert line breaks
-        text = text.replace(/\n/g, '<br>');
-
-        return text;
     }
 
     showTypingIndicator() {
         const messagesContainer = document.getElementById('chatbot-messages');
-        const typingHTML = `
-            <div class="message bot typing-message">
-                <div class="message-avatar">🤖</div>
-                <div class="message-bubble">
-                    <div class="typing-indicator">
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                        <div class="typing-dot"></div>
-                    </div>
-                </div>
-            </div>
-        `;
-        messagesContainer.insertAdjacentHTML('beforeend', typingHTML);
+        const typing = document.createElement('div');
+        typing.className = 'message bot typing-message';
+        const avatar = document.createElement('div');
+        avatar.className = 'message-avatar';
+        avatar.textContent = '🤖';
+        const bubble = document.createElement('div');
+        bubble.className = 'message-bubble';
+        const indicator = document.createElement('div');
+        indicator.className = 'typing-indicator';
+        for (let index = 0; index < 3; index += 1) {
+            const dot = document.createElement('div');
+            dot.className = 'typing-dot';
+            indicator.append(dot);
+        }
+        bubble.append(indicator);
+        typing.append(avatar, bubble);
+        messagesContainer.append(typing);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
@@ -334,10 +453,21 @@ class GeminiChatbot {
 
 // Initialize chatbot when DOM is ready
 let chatbot;
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
+if (typeof document !== 'undefined') {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            chatbot = new GeminiChatbot();
+        });
+    } else {
         chatbot = new GeminiChatbot();
-    });
-} else {
-    chatbot = new GeminiChatbot();
+    }
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        appendInlineFormatting,
+        GeminiChatbot,
+        renderSafeMessageContent,
+        resolveSafeHttpUrl
+    };
 }
