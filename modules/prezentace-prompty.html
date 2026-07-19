@@ -4475,6 +4475,10 @@
 
         let currentAdmin = null;
 
+        const localPrompts = Array.isArray(globalThis.PREZENTACE_PROMPTS)
+            ? globalThis.PREZENTACE_PROMPTS
+            : [];
+
 
 
 
@@ -5873,7 +5877,7 @@
 
 
 
-                prompts = PREZENTACE_PROMPTS; // From prezentace-prompts-db.js
+                prompts = localPrompts;
 
 
 
@@ -7234,7 +7238,7 @@
 
 
 
-            PREZENTACE_PROMPTS.forEach(prompt => {
+            localPrompts.forEach(prompt => {
 
 
 
@@ -7678,7 +7682,7 @@
 
 
 
-            return [...PREZENTACE_PROMPTS, ...customPrompts];
+            return [...localPrompts, ...customPrompts];
 
 
 

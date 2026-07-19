@@ -4485,6 +4485,10 @@
 
         let currentAdmin = null;
 
+        const localPrompts = Array.isArray(globalThis.AUDIO_PROMPTS)
+            ? globalThis.AUDIO_PROMPTS
+            : [];
+
 
 
 
@@ -5883,7 +5887,7 @@
 
 
 
-                prompts = AUDIO_PROMPTS; // From audio-prompts-db.js
+                prompts = localPrompts;
 
 
 
@@ -7244,7 +7248,7 @@
 
 
 
-            AUDIO_PROMPTS.forEach(prompt => {
+            localPrompts.forEach(prompt => {
 
 
 
@@ -7688,7 +7692,7 @@
 
 
 
-            return [...AUDIO_PROMPTS, ...customPrompts];
+            return [...localPrompts, ...customPrompts];
 
 
 

@@ -4475,6 +4475,10 @@
 
         let currentAdmin = null;
 
+        const localPrompts = Array.isArray(globalThis.VIDEO_PROMPTS)
+            ? globalThis.VIDEO_PROMPTS
+            : [];
+
 
 
 
@@ -5873,7 +5877,7 @@
 
 
 
-                prompts = VIDEO_PROMPTS; // From video-prompts-db.js
+                prompts = localPrompts;
 
 
 
@@ -7234,7 +7238,7 @@
 
 
 
-            VIDEO_PROMPTS.forEach(prompt => {
+            localPrompts.forEach(prompt => {
 
 
 
@@ -7678,7 +7682,7 @@
 
 
 
-            return [...VIDEO_PROMPTS, ...customPrompts];
+            return [...localPrompts, ...customPrompts];
 
 
 
