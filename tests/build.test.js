@@ -67,3 +67,35 @@ test('Netlify publishes dist, revalidates unhashed assets and sets security head
     assert.match(config, /to\s*=\s*"\/404\.html"/);
     assert.match(config, /status\s*=\s*404/);
 });
+
+test('production HTML cache-busts security-sensitive JavaScript', () => {
+    const expectedReferences = new Map([
+        ['chatbot.js', '/chatbot.js?v=m0b1'],
+        ['supabase-config.js', '/supabase-config.js?v=m0b1']
+    ]);
+    const references = [];
+    const invalid = [];
+
+    for (const htmlFile of walk(outputRoot).filter((file) => path.extname(file) === '.html')) {
+        const html = fs.readFileSync(htmlFile, 'utf8');
+        const scriptPattern = /<script\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi;
+        let match;
+
+        while ((match = scriptPattern.exec(html)) !== null) {
+            const reference = match[1];
+            const pathname = reference.split(/[?#]/, 1)[0];
+            const filename = path.posix.basename(pathname.replace(/\\/g, '/'));
+            const expected = expectedReferences.get(filename);
+
+            if (!expected) continue;
+            references.push({ htmlFile, reference });
+            if (reference !== expected) {
+                invalid.push({ htmlFile, reference, expected });
+            }
+        }
+    }
+
+    assert.ok(references.some(({ reference }) => reference === expectedReferences.get('chatbot.js')));
+    assert.ok(references.some(({ reference }) => reference === expectedReferences.get('supabase-config.js')));
+    assert.deepEqual(invalid, []);
+});
