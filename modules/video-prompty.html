@@ -3381,7 +3381,7 @@
 
 
 
-                    <a href="troubleshooting.html" class="sidebar-link">
+                    <a href="../troubleshooting.html" class="sidebar-link">
 
 
 
@@ -3409,7 +3409,7 @@
 
 
 
-                    <a href="spu-adhd.html" class="sidebar-link">
+                    <a href="../spu-adhd.html" class="sidebar-link">
 
 
 
@@ -3437,7 +3437,7 @@
 
 
 
-                    <a href="novinky.html" class="sidebar-link">
+                    <a href="../novinky.html" class="sidebar-link">
 
 
 
@@ -3535,7 +3535,7 @@
 
 
 
-            <a href="infografika.html#studio-moduly" class="nav-link">📚 Studio Moduly</a>
+            <a href="../index.html#studio-moduly" class="nav-link">📚 Studio Moduly</a>
 
 
 
@@ -4458,7 +4458,6 @@
 
 
 
-    <script src="../video-prompts-db.js"></script>
 
 
 
@@ -4475,6 +4474,10 @@
 
 
         let currentAdmin = null;
+
+        const localPrompts = Array.isArray(globalThis.VIDEO_PROMPTS)
+            ? globalThis.VIDEO_PROMPTS
+            : [];
 
 
 
@@ -5874,7 +5877,7 @@
 
 
 
-                prompts = VIDEO_PROMPTS; // From video-prompts-db.js
+                prompts = localPrompts;
 
 
 
@@ -7235,7 +7238,7 @@
 
 
 
-            VIDEO_PROMPTS.forEach(prompt => {
+            localPrompts.forEach(prompt => {
 
 
 
@@ -7679,7 +7682,7 @@
 
 
 
-            return [...VIDEO_PROMPTS, ...customPrompts];
+            return [...localPrompts, ...customPrompts];
 
 
 
