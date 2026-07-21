@@ -7236,6 +7236,14 @@
 
             const promptSelect = document.getElementById('prompt-select');
 
+            const uploadArea = document.getElementById('upload-area');
+
+            const fileInput = document.getElementById('file-input');
+
+            if (!promptSelect || !uploadArea || !fileInput) {
+                return;
+            }
+
 
 
             localPrompts.forEach(prompt => {
@@ -7267,18 +7275,6 @@
 
 
             // Upload area drag & drop
-
-
-
-            const uploadArea = document.getElementById('upload-area');
-
-
-
-            const fileInput = document.getElementById('file-input');
-
-
-
-
 
 
 
