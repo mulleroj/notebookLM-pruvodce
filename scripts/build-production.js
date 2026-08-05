@@ -10,6 +10,7 @@ const outputRoot = path.join(projectRoot, 'dist');
 
 const rootFiles = [
     '404.html',
+    'agentni-funkce.html',
     'chatbot.css',
     'chatbot.js',
     'chatbot-knowledge.js',
