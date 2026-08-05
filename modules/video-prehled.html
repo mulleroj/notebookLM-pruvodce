@@ -128,7 +128,7 @@
                     <a href="../use-cases.html" class="sidebar-link">
                         <span class="sidebar-icon">💡</span>
                         <span class="sidebar-text">Use Cases</span>
-                        <span class="sidebar-badge">192</span>
+                        <span class="sidebar-badge">✦</span>
                     </a>
                 </div>
 
@@ -176,6 +176,7 @@
     <nav class="sticky-nav">
         <div class="sticky-nav-content">
             <a href="#tips" class="nav-link">💡 Tipy</a>
+            <a href="#formaty-videa" class="nav-link">🎬 Formáty</a>
             <a href="#video-metody" class="nav-link">📹 Metody</a>
             <a href="#use-cases" class="nav-link">🛠️ Use Cases</a>
             <a href="#top-use-cases" class="nav-link">🏆 TOP 10</a>
@@ -194,18 +195,16 @@
 
     <main class="container">
 
-        <!-- Visual Preview of Video Module -->
-        <div class="tip-box gradient-bg-primary mt-3 border-left-primary">
-            <div class="tip-box-title">👁️ Jak vypadá modul po otevření</div>
-            <p class="mt-2">Po kliknutí na "Video přehled" se zobrazí dialog s nastavením:</p>
-            <img src="../assets/screenshots/video-prehled-dialog.png"
-                alt="Dialog přizpůsobení video přehledu v NotebookLM"
-                style="width: 100%; border-radius: 8px; margin-top: 1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-            <p class="mt-2 text-secondary" style="font-size: 0.9rem;">
-                V dialogu můžete specifikovat, na co se má video zaměřit. Můžete také vybrat délku videa (krátké nebo
-                výchozí).
-            </p>
-        </div>
+        <section class="category-section" id="formaty-videa">
+            <div class="category-header"><span class="category-icon">🎬</span><h2 class="category-title">Formáty Video přehledu</h2></div>
+            <p>Při vytváření Video přehledu můžete podle aktuální dostupnosti účtu zvolit jeden z několika formátů.</p>
+            <div class="cards-grid">
+                <div class="card"><div class="card-header"><h3 class="card-title">Filmové (Cinematic)</h3></div><div class="card-content"><p>Bohatě vizuální a příběhově pojaté video, které pomáhá rozebrat složitější myšlenky ze zdrojů prostřednictvím výrazných vizuálů a vyprávění.</p><p><strong>Pro výuku:</strong> Hodí se pro motivaci, úvod do tématu a obsah, u něhož pomáhá vizuální příběh.</p></div></div>
+                <div class="card"><div class="card-header"><h3 class="card-title">Výkladové (Explainer)</h3></div><div class="card-content"><p>Strukturovaný a podrobnější přehled, který propojuje hlavní informace a souvislosti obsažené ve vybraných zdrojích.</p><p><strong>Pro výuku:</strong> Hodí se pro systematický výklad, opakování a objasnění vztahů mezi pojmy.</p></div></div>
+                <div class="card"><div class="card-header"><h3 class="card-title">Krátké video (Short)</h3></div><div class="card-content"><p>Stručný vertikální přehled, který pomáhá rychle zachytit hlavní myšlenky ze zdrojů.</p><p><strong>Pro výuku:</strong> Hodí se pro rychlou aktivizaci, připomenutí tématu, úvodní otázku nebo krátký obsah pro mobilní zobrazení.</p></div></div>
+            </div>
+            <p class="text-secondary">Dostupnost formátů a jejich nastavení se může lišit podle účtu, jazyka a aktuální verze rozhraní.</p>
+        </section>
 
         <!-- Visual Styles Preview -->
         <div class="tip-box gradient-bg-primary mt-3 border-left-primary">
@@ -244,7 +243,7 @@
                         <h3 class="card-title">Zaměření obsahu</h3>
                     </div>
                     <div class="card-content">
-                        <p>Pro velké sešity diskutuj v chatu o tématu PŘED kliknutím na Video - AI použije kontext!</p>
+                        <p>U konkrétního Video přehledu vyberte zdroje a podle dostupného rozhraní nastavte formát, zaměření a případné vlastní pokyny.</p>
                     </div>
                 </div>
 
@@ -270,45 +269,31 @@
             </div>
 
             <div class="use-case-card">
-                <h3>Metody pro fokusované video (bez vytváření nového sešitu):</h3>
+                <h3>Postup pro fokusované video:</h3>
 
                 <div class="example-box" class="mt-1">
-                    <div class="example-title">💡 Metoda 1 - Chat prompt</div>
-                    <p>V chatu: "Vytvoř video přehled pouze o [konkrétní téma] z dokumentu [název]"</p>
-                    <p>Pak klikni na Video v Studio.</p>
+                    <div class="example-title">💡 Metoda 1 - Výběr zdrojů</div>
+                    <p>Ve Studiu otevřete Video přehled a vyberte dokumenty určené pro konkrétní video.</p>
                 </div>
 
                 <div class="example-box">
-                    <div class="example-title">💡 Metoda 2 - Kontext v chatu (NEJLEPŠÍ)</div>
+                    <div class="example-title">💡 Metoda 2 - Volba formátu a pokynů</div>
                     <ol>
-                        <li>Nejprve diskutuj v chatu o tématu které chceš ve videu</li>
-                        <li>AI si vytvoří kontext a pochopí co tě zajímá</li>
-                        <li>Pak klikni na Video - AI použije kontext konverzace!</li>
+                        <li>Zvolte dostupný formát Cinematic, Explainer nebo Short.</li>
+                        <li>Nastavte dostupné zaměření nebo vlastní pokyny.</li>
+                        <li>Vytvořte video a výsledek porovnejte s vybranými zdroji.</li>
                     </ol>
-                    <p><strong>Příklad:</strong></p>
-                    <ol class="mt-0-5">
-                        <li>"Popiš strukturu politických stran podle dokumentu '10. Politická strana'"</li>
-                        <li>AI odpoví</li>
-                        <li>"Rozveď více o volební kampani"</li>
-                        <li>AI rozve</li>
-                        <li>"Vytvoř video přehled z této konverzace"</li>
-                        <li>Klikni na Video › získáš video zaměřené přesně na politické strany!</li>
-                    </ol>
+                    <p><strong>Příklad:</strong> Pro video o politických stranách vyberte příslušný dokument, nastavte zaměření na strukturu stran a volební kampaň a po vytvoření ověřte obsah.</p>
                 </div>
 
                 <div class="example-box">
-                    <div class="example-title">💡 Metoda 3 - Citace zdrojů</div>
-                    <p>"Vygeneruj video z informací na straně 15-20 dokumentu XYZ"</p>
+                    <div class="example-title">💡 Metoda 3 - Volitelný průzkum v chatu</div>
+                    <p>Chat lze použít k porovnání zdrojů, nalezení hlavních bodů nebo přípravě textu vlastních pokynů. Předchozí konverzace se do Video přehledu automaticky nepřenáší.</p>
                 </div>
 
                 <div class="example-box">
-                    <div class="example-title">💎 Pro tip</div>
-                    <p>Pro nejlepší výsledky kombinuj metody:</p>
-                    <ol>
-                        <li>V chatu vytvoř shrnutí tématu které chceš ve videu</li>
-                        <li>Řekni "Vytvoř video z tohoto shrnutí"</li>
-                        <li>NotebookLM použije váš chat jako základ pro video!</li>
-                    </ol>
+                    <div class="example-title">💎 Kontrola a nová iterace</div>
+                    <p>Hotové video zkontrolujte vůči zdrojům. Pokud nevyhovuje, upravte výběr zdrojů, formát nebo dostupné pokyny a vytvořte novou verzi.</p>
                 </div>
             </div>
         </div>
@@ -370,7 +355,7 @@
             <div class="use-case-section">
                 <h4>ℹ️ Co to je</h4>
                 <div class="use-case-content">
-                    <p>NotebookLM vytvoří animované video vysvětlující vaše zdroje. Video obsahuje vizualizace, animace
+                    <p>Gemini Notebook může vytvořit animované video vysvětlující vaše zdroje. Video může obsahovat vizualizace, animace
                         a hlasový doprovod vysvětlující klíčové koncepty.</p>
                 </div>
             </div>
@@ -392,7 +377,7 @@
                     <span class="prompt-label">📋 Hotový prompt</span>
                     <button class="copy-button">📋 Zkopírovat</button>
                 </div>
-                <div class="prompt-text">Vytvoř krátké video přehled (max 10 minut) o [téma] z nahraných zdrojů. Zaměř
+                <div class="prompt-text">Vytvoř video přehled o [téma] z nahraných zdrojů. Zaměř
                     se na klíčové koncepty a praktické příklady.</div>
             </div>
 
@@ -401,12 +386,11 @@
                 <p><strong>Scénář:</strong> Chceš, aby žáci měli vizuální přehled o fotosyntéze před hodinou.</p>
                 <p><strong>Workflow:</strong></p>
                 <ol>
-                    <li>Nahraj kapitolu o fotosyntéze do NotebookLM</li>
-                    <li>V chatu: "Vytvoř shrnutí fotosyntézy zaměřené na základní proces, vstupy a výstupy"</li>
-                    <li>AI vytvoří textové shrnutí</li>
-                    <li>Řekni: "Použij toto shrnutí jako základ pro video přehled"</li>
-                    <li>Klikni na Video v Studio</li>
-                    <li>Sdílej video se žáky jako domácí přípravu</li>
+                    <li>Nahraj kapitolu o fotosyntéze do Gemini Notebook.</li>
+                    <li>Ve Studiu otevři Video přehled a vyber kapitolu jako zdroj.</li>
+                    <li>Zvol dostupný formát a pokyny zaměřené na proces, vstupy a výstupy.</li>
+                    <li>Vytvořené video zkontroluj vůči kapitole.</li>
+                    <li>Sdílej ověřené video se žáky jako domácí přípravu.</li>
                 </ol>
             </div>
         </div>
@@ -433,7 +417,7 @@
                                 <span class="prompt-label">📋 Hotový prompt</span>
                                 <button class="copy-button">📋 Zkopírovat</button>
                             </div>
-                            <div class="prompt-text">Vytvoř krátké video přehled (max 10 minut) o [téma] z nahraných
+                            <div class="prompt-text">Vytvoř video přehled o [téma] z nahraných
                                 zdrojů. Zaměř se na klíčové koncepty a praktické příklady.</div>
                         </div>
                     </div>
