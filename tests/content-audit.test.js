@@ -3,8 +3,9 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
 const test = require('node:test');
-const { outputRoot } = require('../scripts/build-production.js');
+const { chatbotAssetVersions, outputRoot } = require('../scripts/build-production.js');
 
 const auditedPages = [
     'index.html', 'jak-zacit.html', 'novinky.html', 'troubleshooting.html', 'spu-adhd.html', 'use-cases.html',
@@ -62,6 +63,52 @@ test('citation wording does not guarantee links for every answer', () => {
         assert.doesNotMatch(production, pattern, `dist/index.html: ${pattern}`);
     });
     assert.match(source, /Odpovědi mohou obsahovat odkazy na konkrétní části zdrojů/);
+});
+
+test('entire homepage avoids obsolete limits, guarantees, and chat-first workflow', () => {
+    const root = path.resolve(__dirname, '..');
+    const forbidden = [
+        /Max 50 zdrojů/i,
+        /Max 300 zdrojů/i,
+        /Audio přehledy\s+aktuálně pouze v angličtině/i,
+        /AI bude odpovídat POUZE/i,
+        /Každá odpověď bude mít odkazy/i,
+        /Vždy začněte konverzací v chatu před použitím Studio/i,
+        /Neklikejte na Studio modul bez kontextu z chatu/i,
+        /143\+/i,
+        /Gamma-ready/i,
+        /Vytváří prompty pro AI generátory obrázků/i,
+        /Vytváří strukturovanou osnovu pro PowerPoint/i,
+        /za 2 minuty místo 40 minut/i
+    ];
+    const source = read(root, 'index.html');
+    const production = read(outputRoot, 'index.html');
+    forbidden.forEach((pattern) => {
+        assert.doesNotMatch(source, pattern, `source index.html: ${pattern}`);
+        assert.doesNotMatch(production, pattern, `dist/index.html: ${pattern}`);
+    });
+    assert.match(source, /liší podle účtu, tarifu a aktuální nabídky/);
+    assert.match(source, /Odpovědi mohou obsahovat odkazy na části zdrojů/);
+    assert.match(source, /předchozí chat není povinný/);
+    assert.match(source, /Gemini Notebook/);
+});
+
+test('production chatbot assets use deterministic content-derived versions', () => {
+    const root = path.resolve(__dirname, '..');
+    const versions = chatbotAssetVersions();
+    const hash = (file) => crypto.createHash('sha256').update(read(root, file)).digest('hex').slice(0, 12);
+    assert.equal(versions.knowledge, hash('chatbot-knowledge.js'));
+    assert.equal(versions.chatbot, hash('chatbot.js'));
+    assert.notEqual(versions.knowledge, crypto.createHash('sha256').update(read(root, 'chatbot-knowledge.js') + '\nmutation').digest('hex').slice(0, 12));
+
+    const first = read(outputRoot, 'index.html');
+    assert.match(first, new RegExp(`src="chatbot-knowledge\\.js\\?v=${versions.knowledge}"`));
+    assert.match(first, new RegExp(`src="/chatbot\\.js\\?v=${versions.chatbot}"`));
+    assert.doesNotMatch(first, /src="chatbot-knowledge\.js"/);
+    assert.deepEqual(chatbotAssetVersions(), versions);
+    assert.equal(read(outputRoot, 'index.html'), first);
+    assert.match(read(outputRoot, 'chatbot-knowledge.js'), /Gemini Notebook/);
+    assert.doesNotMatch(read(root, 'script.js'), /CHATBOT_KNOWLEDGE\s*=/);
 });
 
 test('source HTML directly corrects obsolete feature descriptions', () => {

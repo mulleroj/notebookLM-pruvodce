@@ -2,6 +2,7 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
+const crypto = require('node:crypto');
 const { renderAuditedContent } = require('./render-audited-content.js');
 
 const projectRoot = path.resolve(__dirname, '..');
@@ -105,6 +106,36 @@ function countFiles(directory) {
     }, 0);
 }
 
+function contentHash(relativePath) {
+    return crypto.createHash('sha256')
+        .update(fs.readFileSync(path.join(projectRoot, relativePath)))
+        .digest('hex')
+        .slice(0, 12);
+}
+
+function chatbotAssetVersions() {
+    return {
+        knowledge: contentHash('chatbot-knowledge.js'),
+        chatbot: contentHash('chatbot.js')
+    };
+}
+
+function versionChatbotAssets(directory, versions) {
+    fs.readdirSync(directory, { withFileTypes: true }).forEach((entry) => {
+        const absolutePath = path.join(directory, entry.name);
+        if (entry.isDirectory()) {
+            versionChatbotAssets(absolutePath, versions);
+            return;
+        }
+        if (path.extname(entry.name) !== '.html') return;
+
+        const html = fs.readFileSync(absolutePath, 'utf8')
+            .replace(/(src=["'][^"']*chatbot-knowledge\.js)(?:\?[^"']*)?(["'])/gi, `$1?v=${versions.knowledge}$2`)
+            .replace(/(src=["'][^"']*chatbot\.js)(?:\?[^"']*)?(["'])/gi, `$1?v=${versions.chatbot}$2`);
+        fs.writeFileSync(absolutePath, html);
+    });
+}
+
 function buildProduction() {
     assertInsideProject(outputRoot);
     fs.rmSync(outputRoot, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });
@@ -113,6 +144,7 @@ function buildProduction() {
     rootFiles.forEach(copyFile);
     moduleFiles.forEach((file) => copyFile(path.join('modules', file)));
     directoryAllowlist.forEach(copyDirectory);
+    versionChatbotAssets(outputRoot, chatbotAssetVersions());
 
     const fileCount = countFiles(outputRoot);
     process.stdout.write(`Production allowlist built: ${fileCount} files in dist\n`);
@@ -125,6 +157,7 @@ if (require.main === module) {
 module.exports = {
     buildProduction,
     directoryAllowlist,
+    chatbotAssetVersions,
     moduleFiles,
     outputRoot,
     projectRoot,
