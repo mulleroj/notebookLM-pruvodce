@@ -47,6 +47,23 @@ test('source and production HTML use the official Gemini Notebook transition', (
     assert.match(read(root, 'index.html'), /Gemini Notebook \(dříve NotebookLM\)/);
 });
 
+test('citation wording does not guarantee links for every answer', () => {
+    const root = path.resolve(__dirname, '..');
+    const forbidden = [
+        /Všechny odpovědi jsou podložené/i,
+        /každá odpověď je podložená/i,
+        /všechny odpovědi vždy obsahují (?:odkazy|citace)/i,
+        /každá odpověď vždy obsahuje (?:odkazy|citace)/i
+    ];
+    const source = read(root, 'index.html');
+    const production = read(outputRoot, 'index.html');
+    forbidden.forEach((pattern) => {
+        assert.doesNotMatch(source, pattern, `source index.html: ${pattern}`);
+        assert.doesNotMatch(production, pattern, `dist/index.html: ${pattern}`);
+    });
+    assert.match(source, /Odpovědi mohou obsahovat odkazy na konkrétní části zdrojů/);
+});
+
 test('source HTML directly corrects obsolete feature descriptions', () => {
     const root = path.resolve(__dirname, '..');
     const presentation = read(root, 'modules/prezentace.html');
