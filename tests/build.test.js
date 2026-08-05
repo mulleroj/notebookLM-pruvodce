@@ -70,7 +70,7 @@ test('Netlify publishes dist, revalidates unhashed assets and sets security head
 
 test('production HTML cache-busts security-sensitive JavaScript', () => {
     const expectedReferences = new Map([
-        ['chatbot.js', '/chatbot.js?v=m0b1'],
+        ['chatbot.js', /^\/chatbot\.js\?v=[a-f0-9]{12}$/],
         ['supabase-config.js', '/supabase-config.js?v=m0b1']
     ]);
     const references = [];
@@ -89,13 +89,13 @@ test('production HTML cache-busts security-sensitive JavaScript', () => {
 
             if (!expected) continue;
             references.push({ htmlFile, reference });
-            if (reference !== expected) {
+            if (typeof expected === 'string' ? reference !== expected : !expected.test(reference)) {
                 invalid.push({ htmlFile, reference, expected });
             }
         }
     }
 
-    assert.ok(references.some(({ reference }) => reference === expectedReferences.get('chatbot.js')));
+    assert.ok(references.some(({ reference }) => expectedReferences.get('chatbot.js').test(reference)));
     assert.ok(references.some(({ reference }) => reference === expectedReferences.get('supabase-config.js')));
     assert.deepEqual(invalid, []);
 });
