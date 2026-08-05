@@ -159,6 +159,32 @@ test('source HTML directly corrects obsolete feature descriptions', () => {
     assert.match(infographic, /přímo vytvořit infografiku/i);
 });
 
+test('video overview describes current formats and Studio workflow', () => {
+    const root = path.resolve(__dirname, '..');
+    const source = read(root, 'modules/video-prehled.html');
+    const production = read(outputRoot, 'modules/video-prehled.html');
+    const forbidden = [
+        /video-prehled-dialog\.png/i,
+        /krátké nebo\s+výchozí/i,
+        /AI použije kontext/i,
+        /Kontext v chatu \(NEJLEPŠÍ\)/i,
+        /NotebookLM použije váš chat jako základ pro video/i,
+        /Vytvoř video přehled z této konverzace/i,
+        /sidebar-badge">192/i
+    ];
+    [source, production].forEach((html) => {
+        forbidden.forEach((pattern) => assert.doesNotMatch(html, pattern));
+        assert.match(html, /Filmové \(Cinematic\)/);
+        assert.match(html, /Výkladové \(Explainer\)/);
+        assert.match(html, /Krátké video \(Short\)/);
+        assert.match(html, /vyberte zdroje/);
+        assert.match(html, /Chat lze použít/);
+        assert.match(html, /automaticky nepřenáší/);
+        assert.match(html, /Hotové video zkontrolujte/);
+        assert.match(html, /video-prehled-visual-styles\.png/);
+    });
+});
+
 test('renderer is limited to shared audit infrastructure', () => {
     const root = path.resolve(__dirname, '..');
     const renderer = read(root, 'scripts/render-audited-content.js');
