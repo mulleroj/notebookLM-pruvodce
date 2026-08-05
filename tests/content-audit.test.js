@@ -265,7 +265,11 @@ test('agent functions page documents capabilities, limits, and teacher review wi
         /funguje u každého účtu/iu,
         /zcela autonomní/iu,
         /výsledek je vždy správný/iu,
-        /citace zaručují správnost/iu
+        /citace zaručují správnost/iu,
+        /agentní funkce jsou bezpečné/iu,
+        /agentní funkce jsou dostupné všem/iu,
+        /dohled zabrání všem chybám/iu,
+        /výstupy jsou vždy správné/iu
     ];
     [read(root, 'agentni-funkce.html'), read(outputRoot, 'agentni-funkce.html')].forEach((html, index) => {
         assert.match(html, /Deep Research/i, `agent page ${index}: Deep Research`);
@@ -275,6 +279,12 @@ test('agent functions page documents capabilities, limits, and teacher review wi
         assert.match(html, /zaváděny postupně|dostupnost se může lišit/iu, `agent page ${index}: rollout`);
         assert.match(html, /pokročilejší uvažování/iu, `agent page ${index}: reasoning`);
         assert.match(html, /cloudové prostředí.*spouštět kód/isu, `agent page ${index}: cloud code`);
+        assert.match(html, /experimentální/iu, `agent page ${index}: experimental status`);
+        assert.match(html, /počáteční fázi vývoje|rané fázi vývoje/iu, `agent page ${index}: early development`);
+        assert.match(html, /dohled uživatele/iu, `agent page ${index}: user supervision`);
+        assert.match(html, /Google AI Ultra/iu, `agent page ${index}: current availability`);
+        assert.match(html, /na počítači|desktop/iu, `agent page ${index}: desktop availability`);
+        assert.match(html, /answer\/16179559/iu, `agent page ${index}: official chat help`);
         assert.match(html, /Občanská nauka|Praktické využití pro učitele/iu, `agent page ${index}: teacher example`);
         forbidden.forEach((pattern) => assert.doesNotMatch(html, pattern, `agent page ${index}: ${pattern}`));
     });
