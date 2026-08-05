@@ -231,3 +231,51 @@ test('chatbot source and production copy contain audited Gemini Notebook wording
     assert.match(knowledge, /Citace pomáhají dohledat podklad, ale nezaručují správnou ani úplnou interpretaci/);
     assert.match(knowledge, /kontroluje učitel/);
 });
+
+test('every public Studio module explains source selection without chat-first claims', () => {
+    const root = path.resolve(__dirname, '..');
+    const studioModules = [
+        'modules/audio-prehled.html', 'modules/video-prehled.html', 'modules/myslenkova-mapa.html',
+        'modules/zpravy-prehled.html', 'modules/karticky.html', 'modules/quiz.html',
+        'modules/infografika.html', 'modules/prezentace.html', 'modules/tabulka-dat.html'
+    ];
+    const forbidden = [
+        /použije kontext konverzace/iu,
+        /použije váš chat jako základ/iu,
+        /V chatu specifikuj zaměření/iu,
+        /nejprve diskutuj v chatu/iu,
+        /vytvoř výstup z této konverzace/iu
+    ];
+
+    studioModules.forEach((relativePath) => {
+        [read(root, relativePath), read(outputRoot, relativePath)].forEach((html, index) => {
+            assert.match(html, /data-source-guidance="studio-artifact"/i, `${relativePath} (${index}): marker`);
+            assert.match(html, /Zdroje pro tento výstup/iu, `${relativePath} (${index}): heading`);
+            assert.match(html, /relevantn|patří k danému tématu|materiály k (?:danému|procvičovanému) tématu|pouze tematicky/iu, `${relativePath} (${index}): relevant sources`);
+            assert.match(html, /(?:výsledek|hotové video|hotové kartičky|otázky i odpovědi|hotový výstup|hotovou mapu|hotovou zprávu|hodnoty).*zkontrolujte|zkontrolujte.*(?:výsledek|zdroj)/isu, `${relativePath} (${index}): review result`);
+            forbidden.forEach((pattern) => assert.doesNotMatch(html, pattern, `${relativePath} (${index}): ${pattern}`));
+        });
+    });
+});
+
+test('agent functions page documents capabilities, limits, and teacher review without guarantees', () => {
+    const root = path.resolve(__dirname, '..');
+    const forbidden = [
+        /dostupné všem/iu,
+        /funguje u každého účtu/iu,
+        /zcela autonomní/iu,
+        /výsledek je vždy správný/iu,
+        /citace zaručují správnost/iu
+    ];
+    [read(root, 'agentni-funkce.html'), read(outputRoot, 'agentni-funkce.html')].forEach((html, index) => {
+        assert.match(html, /Deep Research/i, `agent page ${index}: Deep Research`);
+        assert.match(html, /agentní funkce/iu, `agent page ${index}: agentic functions`);
+        assert.match(html, /které nalezené výsledky skutečně importujete/iu, `agent page ${index}: import choice`);
+        assert.match(html, /zkontrolujte/iu, `agent page ${index}: review`);
+        assert.match(html, /zaváděny postupně|dostupnost se může lišit/iu, `agent page ${index}: rollout`);
+        assert.match(html, /pokročilejší uvažování/iu, `agent page ${index}: reasoning`);
+        assert.match(html, /cloudové prostředí.*spouštět kód/isu, `agent page ${index}: cloud code`);
+        assert.match(html, /Občanská nauka|Praktické využití pro učitele/iu, `agent page ${index}: teacher example`);
+        forbidden.forEach((pattern) => assert.doesNotMatch(html, pattern, `agent page ${index}: ${pattern}`));
+    });
+});

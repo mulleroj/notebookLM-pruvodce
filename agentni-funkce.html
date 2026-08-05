@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agentní funkce Gemini Notebook: Deep Research, práce se zdroji, limity a bezpečné využití ve výuce.">
+    <title>Agentní funkce Gemini Notebook | Neoficiální průvodce</title>
+    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="sidebar.css?v=3">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="has-sidebar">
+    <button class="sidebar-toggle" aria-label="Otevřít menu">☰</button>
+    <div class="sidebar-overlay"></div>
+    <aside class="sidebar">
+        <div class="sidebar-header"><div class="sidebar-logo" aria-label="Neoficiální průvodce Gemini Notebook"><span class="sidebar-title">Gemini Notebook</span></div></div>
+        <nav class="sidebar-nav">
+            <div class="sidebar-section"><h3 class="sidebar-section-title">Hlavní menu</h3>
+                <div class="sidebar-item"><a href="index.html" class="sidebar-link"><span class="sidebar-icon">🏠</span><span class="sidebar-text">Domů</span></a></div>
+                <div class="sidebar-item"><a href="jak-zacit.html" class="sidebar-link"><span class="sidebar-icon">🚀</span><span class="sidebar-text">Jak začít</span></a></div>
+                <div class="sidebar-item"><a href="novinky.html" class="sidebar-link"><span class="sidebar-icon">📰</span><span class="sidebar-text">Co je nového</span></a></div>
+            </div>
+            <div class="sidebar-section"><h3 class="sidebar-section-title">Obsah</h3>
+                <div class="sidebar-item"><a href="agentni-funkce.html" class="sidebar-link"><span class="sidebar-icon">🧭</span><span class="sidebar-text">Agentní funkce</span></a></div>
+                <div class="sidebar-item"><a href="index.html#studio-moduly" class="sidebar-link"><span class="sidebar-icon">🎬</span><span class="sidebar-text">Studio</span></a></div>
+                <div class="sidebar-item"><a href="use-cases.html" class="sidebar-link"><span class="sidebar-icon">💡</span><span class="sidebar-text">Use Cases</span></a></div>
+            </div>
+        </nav>
+    </aside>
+    <header><div class="header-content"><a href="index.html" class="logo"><div class="logo-icon">📚</div><span>Gemini Notebook pro učitele</span></a><div class="search-box"><span class="search-icon">🔍</span><input type="text" id="search" placeholder="Hledejte na této stránce..."></div></div></header>
+    <nav class="sticky-nav"><div class="sticky-nav-content"><a href="#deep-research" class="nav-link">Deep Research</a><a href="#vyuka" class="nav-link">Pro učitele</a><a href="#kontrola" class="nav-link">Kontrola</a></div></nav>
+    <div class="module-hero"><div class="container"><div class="module-hero-icon">🧭</div><h1>Agentní funkce Gemini Notebook (dříve NotebookLM)</h1><p class="module-hero-description">Co mohou nabídnout při průzkumu a tvorbě výstupů — a co je stále potřeba ověřit.</p></div></div>
+    <main class="container">
+        <section class="section">
+            <h2 class="section-title">Co znamená agentní chování</h2>
+            <div class="use-case-card"><div class="use-case-content"><p>Běžná odpověď reaguje na jednu otázku. Agentní funkce Gemini Notebook mohou složitější úlohu rozdělit do více kroků, průběžně vyhledávat nebo analyzovat informace, využívat dostupné nástroje a vytvářet navazující výstupy. Uživatel však stále kontroluje zadání, zdroje a výsledek.</p></div></div>
+        </section>
+        <section class="section" id="deep-research">
+            <h2 class="section-title">🔎 Deep Research</h2>
+            <div class="use-case-card border-left-primary"><div class="use-case-content"><p>Deep Research je agentní funkce pro rešerši. Spouští se z panelu Zdroje: zadejte výzkumnou otázku a služba může projít větší množství webových zdrojů, připravit vícestránkovou zprávu a ukázat seznam nalezených zdrojů. Během výzkumu můžete v sešitu pokračovat v jiné práci.</p><p>Než něco přidáte do sešitu, vyberte, které nalezené výsledky skutečně importujete. Zkontrolujte původ, relevanci a závěry; Deep Research má limity a dostupnost se může lišit podle účtu, věku, organizace a aktuální verze rozhraní.</p></div></div>
+        </section>
+        <section class="section">
+            <h2 class="section-title">Rozšířené agentní schopnosti</h2>
+            <div class="cards-grid"><div class="card"><div class="card-header"><div class="card-icon">🧠</div><h3 class="card-title">Složitější projekty</h3></div><div class="card-content"><p>Oficiální oznámení Google z června 2026 popisuje pokročilejší uvažování, hledání a organizaci nových webových zdrojů a vícekrokovou výzkumnou práci.</p></div></div><div class="card"><div class="card-header"><div class="card-icon">💻</div><h3 class="card-title">Data a kód</h3></div><div class="card-content"><p>U vybraných účtů může zabezpečené cloudové prostředí pomoci psát a spouštět kód, analyzovat data a připravovat grafy, tabulky, dokumenty nebo prezentace. Výpočty, kód i soubory je potřeba ověřit.</p></div></div></div>
+            <div class="warning-box mt-3"><div class="tip-box-title">Dostupnost</div><p>Rozšířené agentní funkce jsou zaváděny postupně a mohou být dostupné jen u vybraných tarifů, účtů nebo organizací. Aktuální dostupnost vždy ověřte přímo ve svém účtu a v oficiální nápovědě Google.</p></div>
+        </section>
+        <section class="section" id="vyuka">
+            <h2 class="section-title">Praktické využití pro učitele</h2>
+            <div class="use-case-card"><div class="use-case-content"><h3>Občanská nauka: nová rešerše</h3><p><strong>Funkce může:</strong> najít podklady k novému tématu, porovnat několik odborných pohledů a navrhnout soubor zdrojů pro tematický celek.</p><p><strong>Učitel kontroluje:</strong> autora, datum, relevanci pro věk žáků a které nalezené zdroje skutečně importuje.</p><h3>Data, graf a vysvětlení</h3><p><strong>Funkce může:</strong> pomoci analyzovat tabulková data, vytvořit graf a připravit vysvětlení výsledků.</p><p><strong>Učitel kontroluje:</strong> vstupní data, výpočty, popisky grafu a vhodnost interpretace.</p><h3>Podklady pro hodinu</h3><p><strong>Funkce může:</strong> připravit podklady pro prezentaci a navrhnout několik navazujících artefaktů Studia.</p><p><strong>Učitel kontroluje:</strong> věcnou správnost, autorská práva, citace a finální podobu materiálů.</p></div></div>
+        </section>
+        <section class="section" id="kontrola">
+            <h2 class="section-title">Kontrola a bezpečné použití</h2>
+            <div class="tip-box gradient-bg-primary border-left-primary"><div class="tip-box-title">Před sdílením výstupu</div><ul><li>Ověřte původ a relevanci nových zdrojů a zkontrolujte citace.</li><li>Prověřte výpočty, kód, grafy a výsledné soubory.</li><li>Nevkládejte citlivé údaje žáků a ověřte, které funkce umožňuje školní účet.</li><li>Za konečný výstup odpovídá uživatel, který jej používá nebo sdílí.</li></ul></div>
+        </section>
+        <section class="section"><h2 class="section-title">Oficiální zdroje Google</h2><ul class="use-case-content"><li><a class="link-primary" href="https://support.google.com/notebooklm/answer/16206563?hl=cs" target="_blank" rel="noopener noreferrer">Notebook, zdroje a Studio</a></li><li><a class="link-primary" href="https://support.google.com/notebooklm/answer/16215270?co=GENIE.Platform%3DDesktop&amp;hl=cs" target="_blank" rel="noopener noreferrer">Přidání a objevování zdrojů</a></li><li><a class="link-primary" href="https://blog.google/innovation-and-ai/products/notebooklm/better-research-notebooklm/" target="_blank" rel="noopener noreferrer">Google Blog: Do better research with NotebookLM (8. června 2026)</a></li></ul></section>
+    </main>
+    <footer><p>Neoficiální průvodce Gemini Notebook</p><p class="footer-text"><a href="index.html" class="link-primary">Zpět na hlavní průvodce ↑</a></p><p class="site-disclaimer">Neoficiální průvodce pro učitele. Web není provozován ani schválen společností Google.</p></footer>
+    <script src="script.js"></script><script src="sidebar.js"></script><script src="chatbot-knowledge.js"></script><script src="/chatbot.js?v=m0b1"></script>
+</body>
+</html>
