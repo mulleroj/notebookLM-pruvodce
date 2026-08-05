@@ -360,6 +360,14 @@ class GeminiChatbot {
         };
         const normalizedQuestion = removeDiacritics(lowerQuestion);
 
+        // Product facts change more quickly than the historical guide catalogue.
+        // Route questions about them to the audited pages instead of repeating old claims.
+        if (/limit|tarif|zdroj|audio|video|prezent|infograf|mobil|offline|citac|lecture/.test(normalizedQuestion)) {
+            return 'Aktuální produktové informace, limity a nabídka funkcí se liší podle účtu a mohou se průběžně měnit. ' +
+                'Použijte aktualizovaný rozcestník a ověřte detail v nápovědě Google: ' +
+                '[oficiální nápověda NotebookLM](https://support.google.com/notebooklm/) →';
+        }
+
         // 1. Zkus přímou shodu v quick answers
         for (const [key, response] of Object.entries(this.kb.quickAnswers)) {
             const normalizedKey = removeDiacritics(key.toLowerCase());

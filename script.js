@@ -1,3 +1,12 @@
+// Shared current product facts and audited public-page content.
+// The file is loaded from the site root so it works from both root and modules/ routes.
+(function loadGeminiNotebookProductInfo() {
+    const script = document.createElement('script');
+    script.src = '/gemini-notebook-product-info.js?v=20260805';
+    script.defer = true;
+    document.head.appendChild(script);
+}());
+
 // Search functionality
 document.addEventListener('DOMContentLoaded', () => {
     const searchInput = document.getElementById('search');
