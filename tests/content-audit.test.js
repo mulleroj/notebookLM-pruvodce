@@ -289,3 +289,24 @@ test('agent functions page documents capabilities, limits, and teacher review wi
         forbidden.forEach((pattern) => assert.doesNotMatch(html, pattern, `agent page ${index}: ${pattern}`));
     });
 });
+
+test('SPU and ADHD page uses barrier-first, individual and safe guidance', () => {
+    const forbidden = [
+        /ADHD mozek/iu, /zlatý grál/iu, /auditiv(?:ní)? learners/iu, /vysoce funkční/iu,
+        /nízko funkční/iu, /autistické děti často milují/iu, /neměň prompty/iu,
+        /neměň názvy sešitů/iu, /rychlé dokončení\s*=\s*úspěch/iu,
+        /jeden list A4 max/iu, /maximálně 5 otázek/iu, /přesně proto funguje/iu
+    ];
+    [read(path.resolve(__dirname, '..'), 'spu-adhd.html'), read(outputRoot, 'spu-adhd.html')].forEach((html, index) => {
+        assert.match(html, /Gemini Notebook \(dříve NotebookLM\)/iu, `SPU page ${index}: transition name`);
+        assert.match(html, /Diagnóza sama neurčuje/iu, `SPU page ${index}: diagnosis is not a prescription`);
+        assert.match(html, /konkrétní bariér/iu, `SPU page ${index}: barrier first`);
+        assert.match(html, /Rozsah úpravy přizpůsobte konkrétnímu žákovi a učebnímu cíli/iu, `SPU page ${index}: individual adaptation`);
+        assert.match(html, /předchozí konverzace se automaticky nepřenáší do výstupu Studia/iu, `SPU page ${index}: chat boundary`);
+        assert.match(html, /nepoužívejte k diagnostice žáka/iu, `SPU page ${index}: no diagnosis`);
+        assert.match(html, /citlivé údaje/iu, `SPU page ${index}: privacy`);
+        assert.match(html, /Google AI|oficiální nápovědě Google/iu, `SPU page ${index}: account context`);
+        assert.match(html, /Audio přehled.*Video přehled/isu, `SPU page ${index}: current Studio names`);
+        forbidden.forEach((pattern) => assert.doesNotMatch(html, pattern, `SPU page ${index}: ${pattern}`));
+    });
+});
