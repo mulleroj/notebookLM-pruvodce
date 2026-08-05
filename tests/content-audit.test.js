@@ -65,7 +65,7 @@ test('citation wording does not guarantee links for every answer', () => {
     assert.match(source, /Odpovědi mohou obsahovat odkazy na konkrétní části zdrojů/);
 });
 
-test('entire homepage avoids obsolete limits, guarantees, and chat-first workflow', () => {
+test('entire homepage avoids obsolete limits, guarantees, and incorrect Studio chat workflow', () => {
     const root = path.resolve(__dirname, '..');
     const forbidden = [
         /Max 50 zdrojů/i,
@@ -75,6 +75,13 @@ test('entire homepage avoids obsolete limits, guarantees, and chat-first workflo
         /Každá odpověď bude mít odkazy/i,
         /Vždy začněte konverzací v chatu před použitím Studio/i,
         /Neklikejte na Studio modul bez kontextu z chatu/i,
+        /Chat-first přístup \(NEJLEPŠÍ\)/i,
+        /V chatu před použitím Studio modulu napište/i,
+        /plnou kontrolu nad obsahem, který půjde do Studio modulu/i,
+        /vytvořte kontext v chatu[\s\S]{0,120}požádejte o modul/i,
+        /Studio modul[\s\S]{0,80}použije kontext z chatu/i,
+        /předchozí chat je povinný/i,
+        /Studio použije předchozí konverzaci/i,
         /143\+/i,
         /Gamma-ready/i,
         /Vytváří prompty pro AI generátory obrázků/i,
@@ -90,7 +97,36 @@ test('entire homepage avoids obsolete limits, guarantees, and chat-first workflo
     assert.match(source, /liší podle účtu, tarifu a aktuální nabídky/);
     assert.match(source, /Odpovědi mohou obsahovat odkazy na části zdrojů/);
     assert.match(source, /předchozí chat není povinný/);
+    assert.match(source, /U konkrétního výstupu Studia vyberte zdroje/);
+    assert.match(source, /vlastní pokyny/);
+    assert.match(source, /Chat je volitelná příprava/);
+    assert.match(source, /hotový výstup vždy zkontrolujte/);
+    assert.match(production, /U konkrétního výstupu Studia vyberte zdroje/);
+    assert.match(production, /Chat je volitelná příprava/);
+    assert.match(production, /hotový výstup vždy zkontrolujte/);
     assert.match(source, /Gemini Notebook/);
+});
+
+test('homepage describes Studio workflow and optional chat preparation accurately', () => {
+    const source = read(path.resolve(__dirname, '..'), 'index.html');
+    const production = read(outputRoot, 'index.html');
+    const incorrectWorkflow = [
+        /Chat-first přístup \(NEJLEPŠÍ\)/i,
+        /V chatu před použitím Studio modulu napište/i,
+        /Studio modul[\s\S]{0,80}použije kontext z chatu/i,
+        /předchozí chat je povinný/i,
+        /Studio použije předchozí konverzaci/i
+    ];
+
+    [source, production].forEach((html, index) => {
+        incorrectWorkflow.forEach((pattern) => {
+            assert.doesNotMatch(html, pattern, `homepage ${index === 0 ? 'source' : 'production'}: ${pattern}`);
+        });
+        assert.match(html, /U konkrétního výstupu Studia vyberte zdroje/);
+        assert.match(html, /Chat je volitelná příprava/);
+        assert.match(html, /automaticky nepřenáší/);
+        assert.match(html, /hotový výstup vždy zkontrolujte/);
+    });
 });
 
 test('production chatbot assets use deterministic content-derived versions', () => {
