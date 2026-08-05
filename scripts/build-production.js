@@ -2,6 +2,7 @@
 
 const fs = require('node:fs');
 const path = require('node:path');
+const { renderAuditedContent } = require('./render-audited-content.js');
 
 const projectRoot = path.resolve(__dirname, '..');
 const outputRoot = path.join(projectRoot, 'dist');
@@ -12,7 +13,6 @@ const rootFiles = [
     'chatbot.js',
     'chatbot-knowledge.js',
     'formular.html',
-    'gemini-notebook-product-info.js',
     'index.html',
     'infografika-prompts-db.js',
     'jak-zacit.html',
@@ -65,7 +65,11 @@ function copyFile(relativePath) {
     }
 
     fs.mkdirSync(path.dirname(destination), { recursive: true });
-    fs.copyFileSync(source, destination);
+    if (path.extname(source) === '.html') {
+        fs.writeFileSync(destination, renderAuditedContent(relativePath.replace(/\\/g, '/'), fs.readFileSync(source, 'utf8')));
+    } else {
+        fs.copyFileSync(source, destination);
+    }
 }
 
 function copyDirectory(relativePath) {
@@ -77,6 +81,21 @@ function copyDirectory(relativePath) {
     }
 
     fs.cpSync(source, destination, { recursive: true, force: true });
+    renderHtmlFilesInDirectory(destination, relativePath);
+}
+
+function renderHtmlFilesInDirectory(directory, relativePrefix) {
+    fs.readdirSync(directory, { withFileTypes: true }).forEach((entry) => {
+        const absolutePath = path.join(directory, entry.name);
+        const relativePath = path.join(relativePrefix, entry.name);
+        if (entry.isDirectory()) {
+            renderHtmlFilesInDirectory(absolutePath, relativePath);
+            return;
+        }
+        if (path.extname(entry.name) === '.html') {
+            fs.writeFileSync(absolutePath, renderAuditedContent(relativePath.replace(/\\/g, '/'), fs.readFileSync(absolutePath, 'utf8')));
+        }
+    });
 }
 
 function countFiles(directory) {

@@ -4,32 +4,121 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
+const { outputRoot } = require('../scripts/build-production.js');
 
-const root = path.resolve(__dirname, '..');
-const productInfo = fs.readFileSync(path.join(root, 'gemini-notebook-product-info.js'), 'utf8');
-const builder = fs.readFileSync(path.join(root, 'scripts', 'build-production.js'), 'utf8');
+const auditedPages = [
+    'index.html', 'jak-zacit.html', 'novinky.html', 'troubleshooting.html', 'spu-adhd.html', 'use-cases.html',
+    'modules/audio-prehled.html', 'modules/video-prehled.html', 'modules/prezentace.html',
+    'modules/infografika.html', 'modules/tabulka-dat.html', 'modules/karticky.html', 'modules/quiz.html',
+    'modules/myslenkova-mapa.html', 'modules/zpravy-prehled.html'
+];
 
-test('current product content has a dated official-source notice', () => {
-    assert.match(productInfo, /5\. srpna 2026/);
-    assert.match(productInfo, /support\.google\.com\/notebooklm/);
-    assert.match(productInfo, /noopener noreferrer/);
-});
+function read(root, relativePath) {
+    return fs.readFileSync(path.join(root, relativePath), 'utf8');
+}
 
-test('current content rejects obsolete or overconfident claims', () => {
+test('source and production HTML use the official Gemini Notebook transition', () => {
+    const root = path.resolve(__dirname, '..');
     const forbidden = [
-        /Gemini NotebookLM/,
-        /143\+ dokumentů/,
-        /192 Use Cases/,
-        /pouze anglicky/,
-        /dva AI hlasy/,
-        /pouze prompt pro jiný nástroj/,
-        /Lecture Mode -/
+        /Gemini NotebookLM/i,
+        /(?:aktu[aá]ln[ií]|jedin[ýym])[^.]{0,80}NotebookLM/i,
+        /přejmenov[aá]n[ií][^.]*(?:nen[ií]|nebylo)[^.]{0,40}ofici[aá]ln/i,
+        /192\s+(?:praktick[ýych]\s+)?use cases/i,
+        /143\+\s+(?:dokument|zdroj)/i,
+        /Lecture Mode/i,
+        /pouze anglicky/i
     ];
-    forbidden.forEach((pattern) => assert.doesNotMatch(productInfo, pattern));
-    assert.match(productInfo, /Samy o sobě ale nezaručují/);
-    assert.match(productInfo, /PPTX.*bez aktuálního potvrzení/);
+
+    auditedPages.forEach((relativePath) => {
+        const source = read(root, relativePath);
+        const html = read(outputRoot, relativePath);
+        assert.match(source, /Gemini Notebook/i, `${relativePath}: source name`);
+        assert.match(html, /Informačně ověřeno: 5\. srpna 2026/);
+        assert.match(html, /16\. července 2026 přejmenoval z NotebookLM na Gemini Notebook/);
+        assert.match(html, /support\.google\.com\/notebooklm/);
+        assert.match(html, /<title>[^<]*Gemini Notebook/i);
+        assert.match(html, /<meta\s+name="description"\s+content="[^"]*Gemini Notebook/i);
+        forbidden.forEach((pattern) => {
+            assert.doesNotMatch(source, pattern, `${relativePath}: source ${pattern}`);
+            assert.doesNotMatch(html, pattern, `${relativePath}: production ${pattern}`);
+        });
+    });
+
+    assert.match(read(root, 'index.html'), /Gemini Notebook \(dříve NotebookLM\)/);
 });
 
-test('production build includes the central current-product file', () => {
-    assert.match(builder, /gemini-notebook-product-info\.js/);
+test('citation wording does not guarantee links for every answer', () => {
+    const root = path.resolve(__dirname, '..');
+    const forbidden = [
+        /Všechny odpovědi jsou podložené/i,
+        /každá odpověď je podložená/i,
+        /všechny odpovědi vždy obsahují (?:odkazy|citace)/i,
+        /každá odpověď vždy obsahuje (?:odkazy|citace)/i
+    ];
+    const source = read(root, 'index.html');
+    const production = read(outputRoot, 'index.html');
+    forbidden.forEach((pattern) => {
+        assert.doesNotMatch(source, pattern, `source index.html: ${pattern}`);
+        assert.doesNotMatch(production, pattern, `dist/index.html: ${pattern}`);
+    });
+    assert.match(source, /Odpovědi mohou obsahovat odkazy na konkrétní části zdrojů/);
+});
+
+test('source HTML directly corrects obsolete feature descriptions', () => {
+    const root = path.resolve(__dirname, '..');
+    const presentation = read(root, 'modules/prezentace.html');
+    const infographic = read(root, 'modules/infografika.html');
+    const news = read(root, 'novinky.html');
+    assert.doesNotMatch(presentation, /pouze osnova.*(?:Gamma|PowerPoint)/i);
+    assert.doesNotMatch(infographic, /ne přímo infografiku|vytvoří PROMPT/i);
+    assert.doesNotMatch(news, /Lecture Mode|Roadmap 2026|Plánované funkce/i);
+    assert.match(presentation, /prezentaci|slide deck/i);
+    assert.match(infographic, /přímo vytvořit infografiku/i);
+});
+
+test('renderer is limited to shared audit infrastructure', () => {
+    const root = path.resolve(__dirname, '..');
+    const renderer = read(root, 'scripts/render-audited-content.js');
+    const script = read(root, 'script.js');
+    assert.match(renderer, /Gemini NotebookLM/);
+    assert.doesNotMatch(renderer, /Lecture Mode|143\+|192 use cases|Gamma-ready|5-15/);
+    assert.doesNotMatch(script, /main\.innerHTML|TreeWalker|document\.title|gemini-notebook-product-info/);
+    assert.equal(fs.existsSync(path.join(root, 'gemini-notebook-product-info.js')), false);
+});
+
+test('chatbot source and production copy contain audited Gemini Notebook wording', () => {
+    const root = path.resolve(__dirname, '..');
+    const files = ['chatbot-knowledge.js', 'chatbot.js'];
+    const forbidden = [
+        /NotebookLM průvodce/i,
+        /Chat s NotebookLM/i,
+        /Začít s NotebookLM/i,
+        /primárně EN/i,
+        /60\+ use cases/i,
+        /vždy cituje/i,
+        /Umí dokázat, že si nevymýšlí/i,
+        /super-schopnost, kterou ChatGPT nemá/i,
+        /Ověřitelné informace/i,
+        /automatick(?:é|y) (?:hodnocení|kvízy)(?![^.]{0,120}učitel)/i,
+        /pouze osnova/i,
+        /Export možný/i,
+        /5-15 minut/i
+    ];
+
+    files.forEach((relativePath) => {
+        const source = read(root, relativePath);
+        const production = read(outputRoot, relativePath);
+        assert.match(source, /Gemini Notebook/i, `${relativePath}: source name`);
+        assert.match(production, /Gemini Notebook/i, `${relativePath}: production name`);
+        forbidden.forEach((pattern) => {
+            assert.doesNotMatch(source, pattern, `${relativePath}: source ${pattern}`);
+            assert.doesNotMatch(production, pattern, `${relativePath}: production ${pattern}`);
+        });
+    });
+
+    const knowledge = read(root, 'chatbot-knowledge.js');
+    assert.match(knowledge, /notebooklm\.google\.com/);
+    assert.match(knowledge, /dříve NotebookLM/);
+    assert.match(knowledge, /Citace pomáhají dohledat podklad, ale nezaručují správnou ani úplnou interpretaci/);
+    assert.match(knowledge, /kontroluje učitel/);
 });
