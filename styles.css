@@ -185,10 +185,9 @@ body.use-cases-page .sticky-nav {
 }
 
 body.use-cases-page .sticky-nav-content {
-    flex-wrap: nowrap !important;
-    max-height: 60px;
-    overflow: visible !important;
-    /* Override default overflow-x: auto to allow dropdown visibility */
+    flex-wrap: wrap !important;
+    max-height: none;
+    overflow: hidden !important;
 }
 
 body.use-cases-page .nav-link {
@@ -485,6 +484,7 @@ body.use-cases-page .dropdown-menu {
 
 .use-case-header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
@@ -961,6 +961,15 @@ footer p {
     body.has-sidebar .sticky-nav {
         left: 0 !important;
         width: 100% !important;
+    }
+
+    body.use-cases-page .sticky-nav-content {
+        overflow-x: auto !important;
+    }
+
+    .use-case-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .modules-grid {
