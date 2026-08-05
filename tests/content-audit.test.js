@@ -4,32 +4,56 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const test = require('node:test');
+const { outputRoot } = require('../scripts/build-production.js');
 
-const root = path.resolve(__dirname, '..');
-const productInfo = fs.readFileSync(path.join(root, 'gemini-notebook-product-info.js'), 'utf8');
-const builder = fs.readFileSync(path.join(root, 'scripts', 'build-production.js'), 'utf8');
+const auditedPages = [
+    'index.html', 'jak-zacit.html', 'novinky.html', 'troubleshooting.html', 'spu-adhd.html', 'use-cases.html',
+    'modules/audio-prehled.html', 'modules/video-prehled.html', 'modules/prezentace.html',
+    'modules/infografika.html', 'modules/tabulka-dat.html', 'modules/karticky.html', 'modules/quiz.html',
+    'modules/myslenkova-mapa.html', 'modules/zpravy-prehled.html'
+];
 
-test('current product content has a dated official-source notice', () => {
-    assert.match(productInfo, /5\. srpna 2026/);
-    assert.match(productInfo, /support\.google\.com\/notebooklm/);
-    assert.match(productInfo, /noopener noreferrer/);
-});
+function page(relativePath) {
+    return fs.readFileSync(path.join(outputRoot, relativePath), 'utf8');
+}
 
-test('current content rejects obsolete or overconfident claims', () => {
+test('audited content is rendered into production HTML without browser JavaScript', () => {
     const forbidden = [
-        /Gemini NotebookLM/,
-        /143\+ dokumentů/,
-        /192 Use Cases/,
-        /pouze anglicky/,
-        /dva AI hlasy/,
-        /pouze prompt pro jiný nástroj/,
-        /Lecture Mode -/
+        /Gemini NotebookLM/i,
+        /Gemini Notebook pro učitele/i,
+        /143\+ dokumentů/i,
+        /(?:6|9)\s+modulů/i,
+        /192\s+(?:praktických\s+)?use cases/i,
+        /Lecture Mode - univerzitní přednáška/i,
+        /Umí dokázat, že si nevymýšlí/i,
+        /pouze anglicky/i
     ];
-    forbidden.forEach((pattern) => assert.doesNotMatch(productInfo, pattern));
-    assert.match(productInfo, /Samy o sobě ale nezaručují/);
-    assert.match(productInfo, /PPTX.*bez aktuálního potvrzení/);
+
+    auditedPages.forEach((relativePath) => {
+        const html = page(relativePath);
+        assert.match(html, /Informačně ověřeno: 5\. srpna 2026/);
+        assert.match(html, /support\.google\.com\/notebooklm/);
+        assert.match(html, /target="_blank" rel="noopener noreferrer"/);
+        assert.match(html, /<title>[^<]*NotebookLM/i);
+        assert.match(html, /<meta\s+name="description"\s+content="Neoficiální průvodce NotebookLM/i);
+        forbidden.forEach((pattern) => assert.doesNotMatch(html, pattern, `${relativePath}: ${pattern}`));
+    });
 });
 
-test('production build includes the central current-product file', () => {
-    assert.match(builder, /gemini-notebook-product-info\.js/);
+test('production HTML contains corrected presentation and infographic wording', () => {
+    const presentation = page('modules/prezentace.html');
+    const infographic = page('modules/infografika.html');
+    assert.doesNotMatch(presentation, /pouze osnova.*(?:Gamma|PowerPoint)/i);
+    assert.doesNotMatch(infographic, /pouze prompt/i);
+    assert.match(presentation, /prezentaci/i);
+    assert.match(infographic, /infografiku/i);
+});
+
+test('runtime page replacement has been removed', () => {
+    const root = path.resolve(__dirname, '..');
+    const script = fs.readFileSync(path.join(root, 'script.js'), 'utf8');
+    const builder = fs.readFileSync(path.join(root, 'scripts', 'build-production.js'), 'utf8');
+    assert.doesNotMatch(script, /main\.innerHTML|TreeWalker|document\.title|gemini-notebook-product-info/);
+    assert.match(builder, /renderAuditedContent/);
+    assert.equal(fs.existsSync(path.join(root, 'gemini-notebook-product-info.js')), false);
 });

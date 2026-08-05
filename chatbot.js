@@ -1,5 +1,5 @@
 /**
- * Gemini Notebook průvodce - Enhanced Chatbot
+ * NotebookLM průvodce - Enhanced Chatbot
  * Inteligentní AI asistent s knowledge base
  */
 
@@ -137,7 +137,7 @@ class GeminiChatbot {
         const titleIcon = document.createElement('span');
         titleIcon.textContent = '🤖';
         const titleText = document.createElement('span');
-        titleText.textContent = 'Asistent průvodce Gemini Notebook';
+        titleText.textContent = 'Asistent průvodce NotebookLM';
         title.append(titleIcon, titleText);
 
         const status = document.createElement('div');
@@ -165,7 +165,7 @@ class GeminiChatbot {
         inputArea.className = 'chatbot-input';
         const textarea = document.createElement('textarea');
         textarea.id = 'chatbot-textarea';
-        textarea.placeholder = 'Zeptejte se na Gemini Notebook...';
+        textarea.placeholder = 'Zeptejte se na NotebookLM...';
         textarea.rows = 1;
         textarea.maxLength = 500;
         const send = document.createElement('button');
@@ -229,12 +229,12 @@ class GeminiChatbot {
         const heading = document.createElement('h3');
         heading.textContent = '👋 Ahoj! Jsem váš AI asistent';
         const description = document.createElement('p');
-        description.textContent = 'Pomohu vám najít informace o Gemini Notebook pro učitele.';
+        description.textContent = 'Pomohu vám najít informace o NotebookLM pro učitele.';
         const suggestions = document.createElement('div');
         suggestions.className = 'welcome-suggestions';
 
         const questions = [
-            ['🚀 Jak začít s Gemini Notebook?', 'Jak začít s Gemini Notebook?'],
+            ['🚀 Jak začít s NotebookLM?', 'Jak začít s NotebookLM?'],
             ['🎥 Use cases pro video', 'Use cases pro video'],
             ['🎬 Co je Studio?', 'Co je Studio?']
         ];
@@ -440,7 +440,7 @@ class GeminiChatbot {
             'use-cases.html|189 Use Cases pro učitele',
             'modules/video-prehled.html#top-use-cases|TOP 10 Video Use Cases',
             'modules/audio-prehled.html#top-use-cases|TOP 10 Audio Use Cases',
-            'jak-zacit.html|Jak začít s Gemini Notebook',
+            'jak-zacit.html|Jak začít s NotebookLM',
             'troubleshooting.html|Troubleshooting'
         ];
 
@@ -449,7 +449,7 @@ class GeminiChatbot {
             const [url, title] = suggestion.split('|');
             defaultResponse += `• [${title}](${url})\n`;
         });
-        defaultResponse += `\nNebo mi zkuste položit otázku jinak - např:\n"Jak vytvořit video?"\n"Use cases pro flipované učení"\n"Problémy s Gemini Notebook" 😊`;
+        defaultResponse += `\nNebo mi zkuste položit otázku jinak - např:\n"Jak vytvořit video?"\n"Praktické postupy pro flipované učení"\n"Problémy s NotebookLM" 😊`;
 
         return defaultResponse;
     }

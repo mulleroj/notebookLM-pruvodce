@@ -1373,7 +1373,7 @@ body.has-sidebar>*:not(.sidebar):not(.sidebar-toggle):not(.sidebar-overlay) {
     width: 28px;
     height: 28px;
 }
-/* Current-product notice used by the centrally maintained Gemini Notebook content. */
+/* Build-time current-product notice. */
 .product-status {
     margin: 1.5rem 0;
     padding: 1rem 1.2rem;
