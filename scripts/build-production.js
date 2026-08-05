@@ -12,6 +12,7 @@ const rootFiles = [
     'chatbot.js',
     'chatbot-knowledge.js',
     'formular.html',
+    'gemini-notebook-product-info.js',
     'index.html',
     'infografika-prompts-db.js',
     'jak-zacit.html',

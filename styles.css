@@ -1373,3 +1373,16 @@ body.has-sidebar>*:not(.sidebar):not(.sidebar-toggle):not(.sidebar-overlay) {
     width: 28px;
     height: 28px;
 }
+/* Current-product notice used by the centrally maintained Gemini Notebook content. */
+.product-status {
+    margin: 1.5rem 0;
+    padding: 1rem 1.2rem;
+    border-left: 4px solid var(--primary-color, #2563eb);
+    border-radius: 0.5rem;
+    background: #eff6ff;
+    color: #1e3a5f;
+    line-height: 1.55;
+}
+
+.official-sources ul { padding-left: 1.25rem; }
+.official-sources li { margin: 0.55rem 0; }
