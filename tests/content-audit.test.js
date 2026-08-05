@@ -68,3 +68,40 @@ test('renderer is limited to shared audit infrastructure', () => {
     assert.doesNotMatch(script, /main\.innerHTML|TreeWalker|document\.title|gemini-notebook-product-info/);
     assert.equal(fs.existsSync(path.join(root, 'gemini-notebook-product-info.js')), false);
 });
+
+test('chatbot source and production copy contain audited Gemini Notebook wording', () => {
+    const root = path.resolve(__dirname, '..');
+    const files = ['chatbot-knowledge.js', 'chatbot.js'];
+    const forbidden = [
+        /NotebookLM průvodce/i,
+        /Chat s NotebookLM/i,
+        /Začít s NotebookLM/i,
+        /primárně EN/i,
+        /60\+ use cases/i,
+        /vždy cituje/i,
+        /Umí dokázat, že si nevymýšlí/i,
+        /super-schopnost, kterou ChatGPT nemá/i,
+        /Ověřitelné informace/i,
+        /automatick(?:é|y) (?:hodnocení|kvízy)(?![^.]{0,120}učitel)/i,
+        /pouze osnova/i,
+        /Export možný/i,
+        /5-15 minut/i
+    ];
+
+    files.forEach((relativePath) => {
+        const source = read(root, relativePath);
+        const production = read(outputRoot, relativePath);
+        assert.match(source, /Gemini Notebook/i, `${relativePath}: source name`);
+        assert.match(production, /Gemini Notebook/i, `${relativePath}: production name`);
+        forbidden.forEach((pattern) => {
+            assert.doesNotMatch(source, pattern, `${relativePath}: source ${pattern}`);
+            assert.doesNotMatch(production, pattern, `${relativePath}: production ${pattern}`);
+        });
+    });
+
+    const knowledge = read(root, 'chatbot-knowledge.js');
+    assert.match(knowledge, /notebooklm\.google\.com/);
+    assert.match(knowledge, /dříve NotebookLM/);
+    assert.match(knowledge, /Citace pomáhají dohledat podklad, ale nezaručují správnou ani úplnou interpretaci/);
+    assert.match(knowledge, /kontroluje učitel/);
+});
